@@ -3,5 +3,40 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "fm-library": {
+      "projectType": "library",
+      "root": "projects/fm-library",
+      "sourceRoot": "projects/fm-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/fm-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/fm-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/fm-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fm-library/src/test.ts",
+            "tsConfig": "projects/fm-library/tsconfig.spec.json",
+            "karmaConfig": "projects/fm-library/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "fm-library",
+  "cli": {
+    "analytics": false
   }
 }
