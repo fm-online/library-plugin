@@ -1,9 +1,8 @@
 {
   "name": "fm-library",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
-    "build": "ng build" 
-
+    "build": "ng build"
   },
   "peerDependencies": {
     "@angular/common": "~14.2.12",
