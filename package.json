@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "storybook": "ng run fm-library:storybook",
+    "build-storybook": "ng run fm-library:build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +22,7 @@
     "@angular/router": "~14.2.12",
     "@fortawesome/angular-fontawesome": "^0.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.4.1",
@@ -29,6 +32,13 @@
     "@angular-devkit/build-angular": "~14.2.10",
     "@angular/cli": "~14.2.10",
     "@angular/compiler-cli": "~14.2.12",
+    "@compodoc/compodoc": "^1.1.19",
+    "@storybook/addon-essentials": "^7.0.8",
+    "@storybook/addon-interactions": "^7.0.8",
+    "@storybook/addon-links": "^7.0.8",
+    "@storybook/angular": "^7.0.8",
+    "@storybook/blocks": "^7.0.8",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jasmine": "~3.5.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
@@ -38,6 +48,9 @@
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "~1.5.0",
     "ng-packagr": "^14.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.8",
     "typescript": "~4.6.2"
   }
 }
