@@ -53,7 +53,9 @@
 }
 
 button {
+    font-family: "futura-pt", sans-serif;
     width: 160px;
+    font-size: 16px;
     height: 50px;
     border: 1px solid #203864;
     color: #203864;

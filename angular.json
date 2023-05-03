@@ -31,6 +31,48 @@
             "tsConfig": "projects/fm-library/tsconfig.spec.json",
             "karmaConfig": "projects/fm-library/karma.conf.js"
           }
+        },
+        "storybook": {
+          "projectType": "application",
+          "root": "stories",
+          "sourceRoot": "stories",
+          "architect": {
+            "build": {
+              "options": {
+                "tsConfig": "tsconfig.json",
+                "styles": [],
+                "scripts": []
+              }
+            }
+          },
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/fm-library/.storybook",
+            "browserTarget": "fm-library:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/fm-library"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/fm-library/.storybook",
+            "browserTarget": "fm-library:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/fm-library"
+            ],
+            "outputDir": "storybook-static"
+          }
         }
       }
     }

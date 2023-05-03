@@ -1,0 +1,15 @@
+<div class="da-buttons">
+    <ng-container *ngFor="let button of buttons; let num = index">
+        <lib-button 
+            [label]="button.label"
+            [light]="light"
+            [type]="button.type"
+            [iconButton]="button.iconButton"
+            [icon]="button.icon"
+            [iconRight]="button.iconRight"
+            [iconLeft]="button.iconLeft"
+            [value]="button.value"
+            (buttonValue)="sendValue($event)">
+        </lib-button>
+    </ng-container>
+</div>

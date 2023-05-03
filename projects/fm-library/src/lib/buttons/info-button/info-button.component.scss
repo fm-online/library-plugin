@@ -1,0 +1,32 @@
+@import "../../../../styles.scss"; 
+
+.da-info-button {
+    color: $t1-base-color;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 3px 5px $shadow-base-color;
+
+    &.light {
+        color: $t4-secondary-color;
+        background: transparent;
+    }
+
+    .da-info-icon {
+        font-size: 20px;
+        position: absolute;
+        top: -1px;
+        left: 0;
+
+        &:hover {
+            font-size: 22px;
+            top: -2px;
+            left: -1px;
+        }
+    }
+}
