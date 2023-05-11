@@ -1,8 +1,13 @@
 {
   "name": "fm-library",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "scripts": {
     "build": "ng build"
+  },
+  "exports": {
+    "./theming": {
+      "sass": "./src/styles.scss"
+    }
   },
   "peerDependencies": {
     "@angular/common": "~14.2.12",
