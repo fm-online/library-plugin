@@ -8,6 +8,13 @@
     "@fortawesome/angular-fontawesome",
     "@fortawesome/fontawesome-svg-core",
     "@fortawesome/free-regular-svg-icons",
-    "@fortawesome/free-solid-svg-icons"
-  ]
+    "@fortawesome/free-solid-svg-icons",
+    "@angular/material",
+    "angular-star-rating"
+  ],
+  "assets": [
+    "./src/styles/_colors.scss",
+    "./src/styles/_fonts.scss",
+    "./src/styles.scss"
+]
 }

@@ -1,0 +1,23 @@
+<div class="da-input-button-single">
+    <div class="da-input-button-label" [ngClass]="{'light' : light}">{{label}}</div>
+    <label class="da-input">
+        <div class="da-input-button-icons" *ngIf="!touched">
+            <fa-icon 
+                class="da-input-button-icon-yellow" 
+                [icon]="faCircleExclamation" 
+            ></fa-icon>
+        </div>
+        <button 
+            autocomplete="off"
+            [id]="name"
+            (click)="getValue()" 
+            [name]="name"
+            [ngClass]="[light ? 'light' : '', short ? 'short' : '']" 
+            #target
+        >{{ value }}</button>
+        <div class="da-input-button-unit" [ngClass]="{'short' : short}">{{unit}}</div>
+        <div class="da-input-button-info-button" *ngIf="info" [ngClass]="{'light' : light}">
+            <fa-icon class="da-input-button-info-icon" [icon]="faCircleInfo"></fa-icon>
+        </div>
+    </label>
+</div>

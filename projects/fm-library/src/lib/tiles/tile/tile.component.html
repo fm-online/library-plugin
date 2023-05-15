@@ -1,0 +1,21 @@
+<div class="da-tile-single">
+    <label class="da-tile" [ngClass]="{'expanded' : expanded}">
+        <input 
+            type="radio" 
+            (change)="getValue($event)" 
+            [checked]="checked"
+            [name]="name"
+            [value]="value"
+        >
+        <div class="da-tile-icon-wrapper">
+            <fa-icon class="da-tile-icon green" *ngIf="state === 'success'" [icon]="faCheck"></fa-icon>
+            <fa-icon class="da-tile-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
+            <fa-icon class="da-tile-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
+        </div>
+        <fa-icon class="da-tile-image" [icon]="image"></fa-icon>
+        <div class="da-tile-label">{{label}}</div>
+        <div *ngIf="expanded" class="da-tile-expanded" [ngClass]="{'light' : light}">
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+        </div>
+    </label>
+</div>

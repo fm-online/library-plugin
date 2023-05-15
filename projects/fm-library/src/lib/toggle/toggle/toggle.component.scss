@@ -1,0 +1,124 @@
+@import "../../../styles.scss";  
+
+.da-toggle {
+    font-family: $font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px $shadow-base-color;
+
+    &.light {
+        box-shadow: 0 3px 5px $shadow-secondary-color;
+    }
+
+    .da-switch {
+        position: relative;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 21px;
+        width: 92px;
+        height: 42px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked + .da-switch-slider {
+                background-color: $success-color;
+                color: #fff;
+                box-shadow: 0 3px 5px $shadow-base-color;
+                z-index: 2;
+            }
+
+            &:checked + .da-switch-slider.light {
+                background-color: $success-color;
+                color: #fff;
+                box-shadow: 0 3px 5px $shadow-secondary-color;
+                z-index: 2;
+            }
+
+        }
+
+        .da-switch-label {
+            position: relative;
+            white-space: nowrap;
+            pointer-events: none;
+            left: 10px;
+            z-index: 1;
+        }
+        .da-switch-icon {
+            font-size: 1.5rem;
+            z-index: 1;
+            color: #fff;
+            margin-right: 1px;
+            pointer-events: none;
+        }
+
+        .da-switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            bottom: 0;
+            height: 42px;
+            width: 100%;
+            color: $t1-base-color;
+            border-radius: 21px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+
+            &.right {
+                right: -1px;
+                left: 0px;
+                width: 100px;
+            }
+
+            &.left {
+                left: -8px;
+                right: 0px;
+                width: 100px;
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 42px;
+                width: 100%;
+                border-radius: 21px;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+            }
+
+            &.left:hover {
+                background-color: #ccc;
+                box-shadow: 0 3px 5px $shadow-base-color;
+                color: #fff;
+
+
+            }
+
+            &.right:hover {
+                background-color: #ccc;
+                box-shadow: 0 3px 5px $shadow-base-color;
+                color: #fff;
+            }
+        }
+
+
+    }
+}
+

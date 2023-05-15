@@ -1,0 +1,25 @@
+<div class="da-tile-rating-single">
+    
+    <div class="da-tile-rating">
+
+        <div class="da-tile-rating-icon-wrapper" *ngIf="success">
+            <fa-icon class="da-tile-rating-icon" [icon]="icon"></fa-icon>
+        </div>
+        <div class="da-tile-rating-stars">
+            <star-rating 
+            [starType]="'svg'" 
+            size="large"
+            [numOfStars]="stars" 
+            [rating]="rating"
+            [hoverEnabled]="true"
+            (starClickChange)="getValue($event)"
+            ></star-rating>
+        </div>
+
+        <div class="da-tile-rating-label">{{label}}
+            <div class="da-tile-rating-info-button" *ngIf="info">
+                <lib-info-button [light]="false" (infoPressed)="getInfo($event)"></lib-info-button>
+            </div>
+        </div>
+    </div>
+</div>

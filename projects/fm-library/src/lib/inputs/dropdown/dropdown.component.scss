@@ -1,0 +1,78 @@
+@import "../../../styles.scss"; 
+
+.mat-option,
+.mat-select {
+    font-family: $font!important;
+    color: $button-base-color!important;
+}
+
+.mat-select {
+    padding-top: 4px!important;
+}
+
+.mat-option {
+ text-align: center!important;
+ border-radius: 24px!important;
+
+ &:hover {
+     background-color: $radiobutton-base-color!important;
+ }
+}
+
+.mat-option-disabled {
+    opacity: 0.5!important;
+}
+
+.mat-form-field {
+    margin-top: -8px!important;
+    font-family: $font!important;
+    width: 185px!important;
+    text-align: center!important;
+}
+
+.da-input-select-single {
+    font-family: $font!important;
+    position: relative;
+    background: #fff;
+    border-radius: 24px;
+    border: 0px solid transparent;
+    border-bottom: 1px solid $button-base-color;
+    box-shadow: 0 3px 5px $shadow-base-color;
+    height: 42px;
+    width: 185px;
+
+    &.light {
+        box-shadow: 0 3px 5px $shadow-secondary-color;
+    }
+
+    .da-input-select-label {
+        font-size: $t4-base-size;
+        top: -18px;
+        position: absolute;
+        margin-left: 20px;
+        color: $t4-base-color;
+    
+        &.light {
+            color: $t4-secondary-color;
+        }
+    }
+
+    .da-input-select {
+        display: flex;
+        align-items: start;
+
+        .da-input-info-button {
+            top: 5px;
+            position: absolute;
+            right: -29px;
+        }
+    }
+
+    .da-input-select-success-icon {
+        color: $success-color;
+        margin-top: 5px;
+        margin-left: 8px;
+        position: absolute;
+        font-size: 25px;
+    }
+}

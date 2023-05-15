@@ -1,0 +1,15 @@
+<div class="da-tiles">
+    <ng-container *ngFor="let tile of tiles; let num = index">
+        <app-tile 
+            [label]="tile.label"
+            [name]="tile.name"
+            [checked]="tile.checked"
+            [image]="tile.image"
+            [state]="tile.state"
+            [value]="tile.value"
+            [content]="tile.content"
+            [localValue]="localValue"
+            (checkboxValue)="sendValue($event)">
+        </app-tile>
+    </ng-container>
+</div>

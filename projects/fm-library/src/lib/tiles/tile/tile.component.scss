@@ -1,0 +1,113 @@
+@import "../../../styles.scss"; 
+
+.da-tile-single {
+    font-family: $font;
+
+    .da-tile {
+        position: relative;
+        display: inline-block;
+        border-radius: 25px;
+        border: 1px solid transparent;
+        width: 242px;
+        min-height: 222px;
+        background-color: $radiobutton-base-color;
+        box-shadow: 0 3px 5px $shadow-base-color;
+        transition: all 0.25s ease-in-out;
+        padding-bottom: 14px;
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid $button-base-color;
+        }
+
+        &.expanded {
+            background-color: $button-base-color;
+            border: 1px solid $button-base-color;
+        }
+     
+        .da-tile-icon-wrapper {
+                margin-left: 15px;
+                top: 15px;
+                position: absolute;
+                z-index: 1;
+                font-size: 1.5rem;
+                background: #fff;
+                border-radius: 20px;
+                width: 20px;
+                height: 20px;
+                display: none;
+            .da-tile-icon {
+                position: absolute;
+                top: -4px;
+                left: -1px;
+
+                &.green {
+                    color: $success-color;
+                }
+
+                &.yellow {
+                    color: $attention-color;
+                }
+
+                &.red {
+                    color: $warning-base-color;
+                }
+            }
+        }
+        .da-tile-image {
+            width: 244px;
+            height: 90px;
+            color: $t4-base-color;
+            display: flex;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 5px;
+            justify-content: center;
+            pointer-events: none;
+            font-size: 90px;
+        }
+    
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+    
+            &:checked ~ .da-tile-icon-wrapper {
+                display: block;
+            }
+
+            &:checked ~ .da-tile-image {
+                color: $t4-secondary-color;
+            }
+    
+            &:checked ~ .da-tile-label {
+                color: $t4-secondary-color;
+            }
+        }
+
+        .da-tile-label {
+            font-size: 20px;
+            color: $t4-base-color;
+            height: 100px;
+            display: flex;
+            z-index: 1;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 214px;
+            margin: 0 15px 15px;
+            overflow: hidden;
+            pointer-events: none;
+
+        }
+    }
+
+    .da-tile-expanded {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: all 0.25s ease-in-out;
+    }
+}
+

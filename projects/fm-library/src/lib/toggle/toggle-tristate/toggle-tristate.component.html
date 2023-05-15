@@ -1,0 +1,16 @@
+<div class="da-toggle-tristate">
+    <label class="da-tab" *ngFor="let tab of tabs; let num = index">
+        <input 
+            type="radio" 
+            (change)="getValue($event)" 
+            [name]="tab.name" 
+            [checked]="tab.checked"
+            [value]="tab.value"
+        >
+        <div class="da-tab-slider">
+            <span class="da-tab-label">{{tab.label}}</span>
+            <span class="da-tab-state" [ngClass]="tab.state === 'success' ? 'success' : 'warning'"></span>
+        </div>
+    </label>
+</div>
+

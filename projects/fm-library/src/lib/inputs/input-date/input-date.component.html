@@ -1,0 +1,26 @@
+<div class="da-input-date-single">
+    <div class="da-input-date-label" [ngClass]="{'light' : light}">{{label}}</div>
+    <label class="da-input-date">
+      <div class="da-input-icons" *ngIf="success">
+        <fa-icon [icon]="icon" class="da-input-date-success-icon"></fa-icon>
+      </div>
+      <mat-form-field appearance="fill" color="accent">
+        <!-- <mat-label>{{label}}</mat-label> -->
+        <input 
+            matInput 
+            [matDatepicker]="picker" 
+            (dateChange)="getValue($event)" 
+            [placeholder]="placeholder"
+            [ngClass]="{'light' : light}"
+        >
+        <mat-hint></mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <fa-icon [icon]="icon" class="da-input-date-success-icon"></fa-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker color="primary"></mat-datepicker>
+      </mat-form-field>
+      <div class="da-input-info-button" *ngIf="info">
+          <lib-info-button [light]="light" (infoPressed)="getInfo($event)"></lib-info-button>
+      </div>
+    </label>
+  </div>

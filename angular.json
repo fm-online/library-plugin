@@ -33,18 +33,7 @@
           }
         },
         "storybook": {
-          "projectType": "application",
-          "root": "stories",
-          "sourceRoot": "stories",
-          "architect": {
-            "build": {
-              "options": {
-                "tsConfig": "tsconfig.json",
-                "styles": [],
-                "scripts": []
-              }
-            }
-          },
+
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "configDir": "projects/fm-library/.storybook",

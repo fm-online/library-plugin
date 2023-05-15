@@ -1,0 +1,29 @@
+<div class="da-counter-wrapper">
+    <button 
+        type="button" 
+        class="da-counter-btn left" 
+        (click)="count(counter, 'down', min, max, step)"
+        [ngClass]="{'light' : light}"
+    >
+        <fa-icon class="da-switch-icon" [icon]="faMinus"></fa-icon>
+    </button>
+    <label class="da-counter" [ngClass]="{'light' : light}">
+        <input
+        type="string" 
+        [placeholder]="placeholder"
+        [step]=step
+        [min]=min
+        [max]=max
+        #counter
+        [name]="name"
+        [value]=value />
+    </label>
+    <button 
+        type="button" 
+        class="da-counter-btn right" 
+        (click)="count(counter, 'up', min, max, step)"
+        [ngClass]="{'light' : light}"
+    >
+        <fa-icon class="da-switch-icon" [icon]="faPlus"></fa-icon>
+    </button>
+</div>

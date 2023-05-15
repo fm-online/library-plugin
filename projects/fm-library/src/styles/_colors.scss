@@ -1,0 +1,92 @@
+
+:host {
+    --button-base-color: 32, 56, 100; /* hintergrund button */
+    --radiobutton-base-color: 221, 231, 238; /* hintergrund Auswahlfelder  */
+    --input-base-color: 255, 255, 255;  /* hintergrund Eingabefelder  */
+    --border-base-color: transparent;  /* randfarbe buttons, inputs etc und hintergrund für kleine Checkboxen */
+    --icon-base-color: 255,255,255;  /*header icons  */
+    --warning-base-color: 253, 43, 81; /* error messages  */
+    --progress-color: 255,255,255;  /* progress bar  */
+    --body-base-color: 221, 231, 238; /*hintergrund body standard */
+    --header-base-color: 192, 209, 225; /* hintergrund header standard */
+    --shadow-base-color: 32, 56, 100, 0.5; /* schattenfarbe standard  */
+    --info-base-color: 255,255,255; /*info hintergrund standard  */
+
+
+    --button-secondary-color: 192, 209, 225; /* hintergrund button */
+    --radiobutton-secondary-color: 255, 255, 255; /* hintergrund Auswahlfelder */
+    --input-secondary-color: 255, 255, 255; /* hintergrund Eingabefelder */
+    --border-secondary-color: 255,255,255; /* randfarbe buttons, inputs etc */
+    --icon-secondary-color: 255,255,255; /* header icons */
+    --warning-secondary-color: 255,255,255; /* error messages */
+    --attention-color: 255, 231, 122; /* error messages  */
+    --success-color: 2, 212, 174; /* erfolgreich übertragen */
+    --error-background: 254, 202, 211; /* hintergrund error */
+    --tab-background: 124, 143, 175; /* hintergrund error */
+    --body-secondary-color: 32, 56, 100; /* hintergrund body overlay */
+    --header-secondary-color: 255,255,255; /* hintergrund header overlay */
+    --shadow-secondary-color: 255,255,255, 0.5; /* schattenfarbe overlay */
+    --info-secondary-color: 255,255,255; /* info hintergrund overlay */
+}
+
+// grau: #C7C7C7 / rgb(199, 199, 199)
+// grün: #02D4AE / rgb(2, 212, 174)
+// rot: #FD2B51 / rgb(253, 43, 81)
+// gelb: #FFE77A / rgb(255, 231, 122)
+// pink: #FECAD3 / rgb(254, 202, 211)
+
+// dunkelblau: #203864 / rgb(32, 56, 100)
+// blaugrau: #7C8FAF / rgb(124, 143, 175)
+// blau: #C0D1E1 / rgb(192, 209, 225)
+// hellblau: #DDE7EE / rgb(221, 231, 238)
+
+// buttons / inputs / auswahlfelder
+$button-base-color: rgb(var(--button-base-color));
+$radiobutton-base-color: rgb(var(--radiobutton-base-color));
+$input-base-color: rgb(var(--input-base-color));
+$border-base-color: rgb(var(--border-base-color));
+
+$button-secondary-color: rgb(var(--button-secondary-color));
+$radiobutton-secondary-color: rgb(var(--radiobutton-secondary-color));
+$input-secondary-color: rgb(var(--input-secondary-color));
+$border-secondary-color: rgb(var(--border-secondary-color));
+
+// slide colors
+$body-base-color: rgb(var(--body-base-color));
+$header-base-color: rgb(var(--header-base-color));
+$shadow-base-color: rgb(var(--shadow-base-color));
+
+$body-secondary-color: rgb(var(--body-secondary-color));
+$header-secondary-color: rgb(var(--header-secondary-color));
+$shadow-secondary-color: rgb(var(--shadow-secondary-color));
+
+// gradients
+$gradient-bg: linear-gradient(0deg, rgb(var(--body-base-color)) 0%, rgb(var(--header-base-color)) 100%); 
+$gradient-progress: linear-gradient(90deg, rgb(var(--header-base-color)) 0%,rgb(var(--progress-color)) 100%);
+
+// misc
+$icon-base-color: rgb(var(--icon-base-color));
+$error-background: rgb(var(--error-background));
+$warning-base-color: rgb(var(--warning-base-color));
+$info-base-color: rgb(var(--info-base-color));
+
+$icon-secondary-color: rgb(var(--icon-secondary-color));
+$warning-secondary-color: rgb(var(--warning-secondary-color));
+$attention-color: rgb(var(--attention-color));
+$success-color: rgb(var(--success-color)); //done
+$info-secondary-color: rgb(var(--info-secondary-color));
+$tab-background: rgb(var(--tab-background));
+
+// Transparencies
+$body-base-color-90: rgba(var(--body-base-color),0.9);
+$body-base-color-70: rgba(var(--body-base-color),0.7);
+$info-base-color-20: rgba(var(--info-base-color),0.2);
+
+// new
+$disabled: rgba(var(--info-base-color),0.2);
+
+$color-negative-rating: rgb(var(--button-base-color)) !default;
+$color-ok-rating: rgb(var(--button-base-color)) !default;
+$color-positive-rating: rgb(var(--button-base-color)) !default;
+$color-default-rating: rgb(var(--button-base-color)) !default;
+

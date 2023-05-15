@@ -1,0 +1,99 @@
+@import "../../../styles.scss"; 
+
+.da-button-single {
+    font-family: $font;
+    position: relative;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover > .da-button-icon-label{
+        display: block;
+    }
+
+    button {
+        width: 160px;
+        height: 50px;
+        border: 1px solid $button-base-color;
+        color: $button-base-color;
+        font-size: $t2-base-size;
+        font-family: $font;
+        border-radius: 25px 25px 25px 0;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+        cursor: pointer;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+        &.light {
+            border: 1px solid $input-secondary-color;
+            color: $input-secondary-color;
+        }
+
+        &.short {
+            width: 50px;
+            justify-content: center;
+        }
+
+        &:hover,
+        &:active {
+            border: 1px solid $button-base-color;
+            background: $button-base-color;
+            color: $t2-secondary-color;
+
+            &.light {
+                border: 1px solid $input-secondary-color;
+                background: $input-secondary-color;
+                color: $t2-base-color;
+            }
+        }
+
+        &:active {
+            padding: 0;
+        }
+
+        .da-button-label {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .da-button-icon {
+            font-size: 14px;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+
+            &.left {
+                margin-left: 10px;
+            }
+
+            &.right {
+                margin-right: 10px;
+            }
+
+            &.main {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .da-button-icon-label {
+        font-family: $font;
+        color: $button-base-color;
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        bottom: -25px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+        &.light {
+            color: $input-secondary-color;
+        }
+    }
+}

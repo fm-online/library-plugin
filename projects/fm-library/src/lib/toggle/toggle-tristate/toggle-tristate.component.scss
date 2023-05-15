@@ -1,0 +1,94 @@
+@import "../../../styles.scss";  
+
+.da-toggle-tristate {
+    font-family: $font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px $shadow-base-color;
+
+    .da-tab {
+        position: relative;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 21px;
+        width: 100px;
+        height: 42px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked + .da-tab-slider {
+                background-color: $tab-background;
+                color: #fff;
+                box-shadow: 0 3px 5px $shadow-base-color;
+                z-index: 2;
+                height: 50px;
+                border-radius: 25px;
+                top: -4px;
+            }
+        }
+
+        .da-tab-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            bottom: 0;
+            height: 42px;
+            width: 100%;
+            color: $t1-base-color;
+            border-radius: 21px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 42px;
+                width: 100%;
+                border-radius: 21px;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+            }
+
+            .da-tab-label {
+                position: relative;
+                white-space: nowrap;
+                pointer-events: none;
+                z-index: 1;
+            }
+    
+            .da-tab-state {
+                background-color: $attention-color;
+                width: 14px;
+                height: 14px;
+                border-radius: 7px;
+                box-shadow: 0 -1px 5px $shadow-base-color;
+                position: absolute;
+                bottom: -7px;
+                // right: 20px;
+
+                &.success {
+                    background-color: $success-color;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,174 @@
+@import "../../../styles.scss"; 
+
+.da-input-single {
+    font-family: $font;
+
+    .da-input-label {
+        font-size: $t4-base-size;
+        margin-bottom: 3px;
+        margin-left: 21px;
+        color: $t4-base-color;
+
+        &.light {
+            color: $t4-secondary-color;
+        }
+    }
+
+    .da-input {
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+        .da-input-icons {
+            height: 23px;
+            width: 23px;
+            font-size: 24px;
+            position: absolute;
+            left: 10px;
+            top: 9px;
+            border-radius: 25px;
+            box-shadow: 0 3px 5px $shadow-base-color;
+            background: #fff;
+
+            .da-input-icon-green {
+                color: $success-color;
+                position: absolute;
+                top: -3px;
+            }
+    
+            .da-input-icon-red {
+                color: $warning-base-color;
+                position: absolute;
+                top: -3px;
+
+            }
+    
+        }
+
+        input {
+            width: 150px;
+            height: 26px;
+            border-radius: 24px;
+            background-color: #fff;
+            border: 0px solid transparent;
+            border-bottom: 1px solid $button-base-color;
+            box-shadow: 0 3px 5px $shadow-base-color;
+            text-align: right;
+            padding: 8px 30px 8px 8px;
+            font-size: $t1-base-size;
+            color: $t1-base-color;
+            font-family: $font;
+
+            &:hover,
+            &:focus,
+            &:focus-visible {
+                // border: 2px solid $button-base-color;
+                outline: none;
+            }
+
+            &::placeholder {
+                color: $t5-base-color;
+                text-align: right;
+            }
+
+            &.light {
+                box-shadow: 0 3px 5px $shadow-secondary-color;
+
+                &:hover,
+                &:focus {
+                    // border: 2px solid $button-secondary-color;
+                    outline: none;
+                }
+            }
+
+            &.error {
+                background-color: $error-background;
+                border-bottom: 1px solid $warning-base-color;
+                color: $warning-base-color;
+
+                &::placeholder {
+                    color: $warning-base-color;
+                }
+            }
+        }
+
+        .da-input-unit {
+            position: absolute;
+            color: $t1-base-color;
+            left: 157px;
+            // margin-bottom: 2px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .da-input-info-button {
+            margin-left: 10px;
+            margin-top: -5px;
+        }
+
+    }
+    .da-input-error {
+            background-color: $button-base-color;
+            font-size: $t1-base-size;
+            color: $t1-secondary-color;
+            max-width: 185px;
+            position: relative;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            z-index: 1;
+            margin-top: 15px;
+            justify-content: center;
+            align-items: center;
+
+            &.light {
+                color: $t1-base-color;
+                background-color: $button-secondary-color;
+            }
+
+        .da-tooltip-arrow {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+
+            .da-arrow-up {
+                width: 0; 
+                height: 0; 
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid $button-base-color;
+
+                &.light {
+                    border-bottom: 20px solid $button-secondary-color;
+                }
+              }
+        }
+
+        .da-input-error-icon-wrapper {
+            background: transparent;
+            border-radius: 20px;
+            position: relative;
+            margin-right: 20px;
+            box-shadow: 0 3px 5px $shadow-base-color;
+            width: 20px;
+            height: 20px;
+
+            .da-input-error-icon {
+                position: absolute;
+                top: -2px;
+                font-size: 20px;
+            }
+
+            &.light {
+                background: #fff;
+            }
+        }
+
+        span {
+            word-break: break-all;
+        }
+    }
+}
+

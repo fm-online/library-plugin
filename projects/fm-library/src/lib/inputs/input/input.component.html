@@ -1,0 +1,41 @@
+<div class="da-input-single">
+    <div class="da-input-label" [ngClass]="{'light' : light}">{{label}}</div>
+    <label class="da-input">
+        <div class="da-input-icons" *ngIf="touched">
+            <fa-icon 
+                *ngIf="!error" 
+                class="da-input-icon-green" 
+                [icon]="faCircleCheck"
+            ></fa-icon>
+            <fa-icon 
+                *ngIf="error" 
+                class="da-input-icon-red" 
+                [icon]="faCircleXmark" 
+            ></fa-icon>
+        </div>
+        <input 
+            autocomplete="off"
+            [type]="type" 
+            [id]="name"
+            (keyup)="getValue($event)" 
+            [placeholder]="placeholder"
+            [name]="name"
+            [value]="value"
+            [ngClass]="[light ? 'light' : '',  error ? 'error' : '']" 
+            #target
+        >
+        <div class="da-input-unit">{{unit}}</div>
+        <div class="da-input-info-button" *ngIf="info">
+            <lib-info-button [light]="light" (infoPressed)="getInfo($event)"></lib-info-button>
+        </div>
+    </label>
+    <div class="da-input-error" *ngIf="error" [ngClass]="{'light' : light}">
+        <div class="da-tooltip-arrow">
+            <div class="da-arrow-up" [ngClass]="{'light' : light}"></div>
+        </div>
+        <div class="da-input-error-icon-wrapper" [ngClass]="{'light' : light}">
+            <fa-icon class="da-input-error-icon" [icon]="faCircleExclamation"></fa-icon>
+        </div>
+        <span>{{errorText}}</span>
+    </div>
+</div>

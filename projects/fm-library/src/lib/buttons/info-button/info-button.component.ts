@@ -4,7 +4,7 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'lib-info-button',
   templateUrl: './info-button.component.html',
-  styleUrls: ['./info-button.component.css']
+  styleUrls: ['./info-button.component.scss']
 })
 export class InfoButtonComponent implements OnInit {
   @Input() light: boolean = false;

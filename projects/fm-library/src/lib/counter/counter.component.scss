@@ -1,0 +1,68 @@
+@import "../../styles.scss"; 
+
+.da-counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 155px;
+    height: 42px;
+
+    .da-counter {
+        font-family: $font;
+        width: 65px;
+        height: 42px;
+        border-radius: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        box-shadow: 0 3px 5px $shadow-base-color;
+
+        &.light {
+            box-shadow: 0 3px 5px $shadow-secondary-color;
+        }
+    
+        input {
+            border: none;
+            text-align: center;
+            width: 80%;
+            font-family: $font;
+            font-size: $t2-base-size;
+        }
+    }
+    .da-counter-btn {
+        color: $button-base-color;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 3px 5px $shadow-base-color;
+        cursor: pointer;
+
+        &.light {
+            box-shadow: 0 3px 5px $shadow-secondary-color;
+        }
+
+        &:hover {
+            background-color: $button-base-color;
+            color: #fff;
+
+            &.light {
+                background-color: $button-secondary-color;
+                color: $button-base-color;
+            }
+        }
+
+        &:active {
+            background-color: $button-base-color;
+            color: #fff;
+
+            &.light {
+                background-color: $button-secondary-color;
+                color: $button-base-color;
+            }
+        }
+    }
+}
+

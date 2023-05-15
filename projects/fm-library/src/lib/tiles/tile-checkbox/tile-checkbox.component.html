@@ -1,0 +1,21 @@
+<div class="da-tile-checkbox-single">
+    <label class="da-tile-checkbox" [ngClass]="{'expanded' : checked}">
+        <input 
+            type="checkbox" 
+            (change)="getValue($event)" 
+            [checked]="checked"
+            [name]="name"
+            [value]="value"
+        >
+        <div class="da-tile-checkbox-icon-wrapper">
+            <fa-icon class="da-tile-checkbox-icon green" *ngIf="state === 'success'" [icon]="icon"></fa-icon>
+            <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="icon"></fa-icon>
+            <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="icon"></fa-icon>
+        </div>
+        <fa-icon class="da-tile-checkbox-image" [icon]="image"></fa-icon>
+        <div class="da-tile-checkbox-label">{{label}}</div>
+        <div *ngIf="checked" class="da-tile-checkbox-expanded" [ngClass]="{'light' : light}">
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+        </div>
+    </label>
+</div>
