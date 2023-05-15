@@ -25,7 +25,7 @@ import { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';
 import { ToggleComponent } from './toggle/toggle/toggle.component';
 import { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';
 import { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';
-
+import { TileTextComponent } from './text/tile-text/tile-text.component';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -43,7 +43,8 @@ import { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristat
     TileRatingComponent,
     ToggleComponent,
     ToggleCheckboxComponent,
-    ToggleTristateComponent
+    ToggleTristateComponent,
+    TileTextComponent,
   ],
   imports: [
     CommonModule,
@@ -72,7 +73,8 @@ import { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristat
     TileRatingComponent,
     ToggleComponent,
     ToggleCheckboxComponent,
-    ToggleTristateComponent
+    ToggleTristateComponent,
+    TileTextComponent,
   ]
 })
 export class FmLibraryModule { }

@@ -33,7 +33,6 @@
           }
         },
         "storybook": {
-
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "configDir": "projects/fm-library/.storybook",

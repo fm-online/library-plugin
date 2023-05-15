@@ -61,3 +61,12 @@ export const Default5Stars: Story = {
     info: true,
   },
 };
+
+export const WithAnImage: Story = {
+  render: () => ({
+    props: {
+      src: '/image.png',
+      alt: 'my image',
+    },
+  }),
+};

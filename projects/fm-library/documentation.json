@@ -412,14 +412,14 @@
         },
         {
             "name": "CounterComponent",
-            "id": "component-CounterComponent-334cfce5587792d3cfa2520a4df67557c74a46b32bbe3a2cfc177dc1ad2fea69850113deab9ebebe5c3dccf0f4a8a4dff23e54a8e1487befe6bd6011a56c1bb6",
+            "id": "component-CounterComponent-49d95248899413ba793ed97acce268023c980ce5d0fe08a638bce02086792d3297b170e2303bac3a153a1ba17016ff856afbff24b8e82e2b89af4ff48d092be4",
             "file": "projects/fm-library/src/lib/counter/counter.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-counter",
+            "selector": "lib-counter",
             "styleUrls": [
                 "./counter.component.scss"
             ],
@@ -632,7 +632,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-counter',\n  templateUrl: './counter.component.html',\n  styleUrls: ['./counter.component.scss']\n})\nexport class CounterComponent implements OnInit {\n  @Input() name: string = 'test';\n  @Input() placeholder: string = '0 00';\n  @Input() value: number = 0;\n  @Input() step: number = 1;\n  @Input() min: number = 0;\n  @Input() max: number = 10;\n  @Input() light: boolean = false;\n  faMinus = faMinus\n  faPlus = faPlus\n  @Output() public counterValue:EventEmitter<any> = new EventEmitter<number>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  count(element: any, type: string, min: number, max: number, step: number) {\n    let newCount, oldCount;\n\n    if (element.value !== '') {\n      oldCount = parseInt(element.value);\n      if (type === 'up') {\n        if(element.value < max) {\n          newCount = oldCount + step;\n        } else {\n          newCount = max\n        }\n        element.value = newCount;\n      } else {\n        if(element.value > min) {\n          newCount = oldCount - step;\n        } else {\n          newCount = min\n        }\n        element.value = newCount;\n      }\n    } else {\n      newCount = min\n      element.value = newCount;\n    }\n\n    this.counterValue.emit(newCount);\n    console.log(element.value)\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-counter',\n  templateUrl: './counter.component.html',\n  styleUrls: ['./counter.component.scss']\n})\nexport class CounterComponent implements OnInit {\n  @Input() name: string = 'test';\n  @Input() placeholder: string = '0 00';\n  @Input() value: number = 0;\n  @Input() step: number = 1;\n  @Input() min: number = 0;\n  @Input() max: number = 10;\n  @Input() light: boolean = false;\n  faMinus = faMinus\n  faPlus = faPlus\n  @Output() public counterValue:EventEmitter<any> = new EventEmitter<number>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  count(element: any, type: string, min: number, max: number, step: number) {\n    let newCount, oldCount;\n\n    if (element.value !== '') {\n      oldCount = parseInt(element.value);\n      if (type === 'up') {\n        if(element.value < max) {\n          newCount = oldCount + step;\n        } else {\n          newCount = max\n        }\n        element.value = newCount;\n      } else {\n        if(element.value > min) {\n          newCount = oldCount - step;\n        } else {\n          newCount = min\n        }\n        element.value = newCount;\n      }\n    } else {\n      newCount = min\n      element.value = newCount;\n    }\n\n    this.counterValue.emit(newCount);\n    console.log(element.value)\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -656,14 +656,14 @@
         },
         {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-093c3897c8c187b173239c7d1a0bcbb09367606171df1f1ad13eb4b318464ac3ba953df9feb6d2855db4dda1bd7a98c0d135acc3814aaf005825e36844ce1f17",
+            "id": "component-DropdownComponent-f53b9bfb11e18aa46afd6bc1c1c22a3e8160ab2fcdf1e35694d7ef03d6189d6ee67ca94111bacae04aa822ef947b9bd461f51f8992d4adad1ee0d74e7f0dc3d4",
             "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-dropdown",
+            "selector": "lib-dropdown",
             "styleUrls": [
                 "./dropdown.component.scss"
             ],
@@ -860,7 +860,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';\nimport { FormControl } from '@angular/forms';\nimport { faArrowDown, faArrowUp, faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport class DropdownComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() selectItems!: any;\n  @Input() icon = faCircleCheck;\n  @Input() light: boolean = false;\n  @Input() info: boolean = false;\n  @Input() selectedItem!: any;\n  @Output() public selectValue:EventEmitter<any> = new EventEmitter<string>();\n\n  success: boolean = false;\n  faCheck = faCircleCheck;\n  faArrowDown = faArrowDown;\n  faArrowUp = faArrowUp;\n\n  constructor() { }\n\n  ngOnInit(): void {}\n\n  getValue(e: any) {\n    console.log('change', e);\n    this.success = true;\n    this.selectValue.emit(e);\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';\nimport { FormControl } from '@angular/forms';\nimport { faArrowDown, faArrowUp, faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport class DropdownComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() selectItems!: any;\n  @Input() icon = faCircleCheck;\n  @Input() light: boolean = false;\n  @Input() info: boolean = false;\n  @Input() selectedItem!: any;\n  @Output() public selectValue:EventEmitter<any> = new EventEmitter<string>();\n\n  success: boolean = false;\n  faCheck = faCircleCheck;\n  faArrowDown = faArrowDown;\n  faArrowUp = faArrowUp;\n\n  constructor() { }\n\n  ngOnInit(): void {}\n\n  getValue(e: any) {\n    console.log('change', e);\n    this.success = true;\n    this.selectValue.emit(e);\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1059,14 +1059,14 @@
         },
         {
             "name": "InputButtonComponent",
-            "id": "component-InputButtonComponent-2004dc3bc2f2ea5835428018bbb27fa1de5870fdb92b7f81885936e45f8d3d6203a5892a0b8f8ba8c6e94485293f5822cd4bb28708a10689af877561cdb14aa8",
+            "id": "component-InputButtonComponent-551b59f46135a77cbb3a1c68743cb8b297000ae1a15d03c5f83c249b8cbe85e012b90ce9fee3965a9956d29c731ed16074b18679a05a8a3c65eadd3e25bfb39d",
             "file": "projects/fm-library/src/lib/inputs/input-button/input-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-input-button",
+            "selector": "lib-input-button",
             "styleUrls": [
                 "./input-button.component.scss"
             ],
@@ -1237,7 +1237,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleCheck, faCircleXmark, faCircleExclamation, faCircleInfo } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-input-button',\n  templateUrl: './input-button.component.html',\n  styleUrls: ['./input-button.component.scss']\n})\nexport class InputButtonComponent implements OnInit {\n\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() type: string = 'nebenkosten';\n  @Input() value: string = 'value';\n  @Input() touched: boolean = false;\n  @Input() short: boolean = false;\n  @Input() unit: string = '€';\n  @Input() info: boolean = false;\n  @Input() infoText: string = 'info text';\n  @Input() infoHeader: string = 'info header';\n  @Input() light: boolean = false;\n\n  faCircleExclamation = faCircleExclamation;\n  faCircleInfo = faCircleInfo;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue() {\n    this.inputValue.emit(this.type);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleCheck, faCircleXmark, faCircleExclamation, faCircleInfo } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-input-button',\n  templateUrl: './input-button.component.html',\n  styleUrls: ['./input-button.component.scss']\n})\nexport class InputButtonComponent implements OnInit {\n\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() type: string = 'nebenkosten';\n  @Input() value: string = 'value';\n  @Input() touched: boolean = false;\n  @Input() short: boolean = false;\n  @Input() unit: string = '€';\n  @Input() info: boolean = false;\n  @Input() infoText: string = 'info text';\n  @Input() infoHeader: string = 'info header';\n  @Input() light: boolean = false;\n\n  faCircleExclamation = faCircleExclamation;\n  faCircleInfo = faCircleInfo;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue() {\n    this.inputValue.emit(this.type);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1261,14 +1261,14 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-fc491f12b1e88cad06a8596fcfa5d00c7ee10f16a8ef78b1209f4a67c255880733977175828b2ec7f559089c08577122615f89eb30ec2d5eb84f60735bf55ad4",
+            "id": "component-InputComponent-643d1ee9e45a8a007bb54d74540908a6ecb96cd813be38a8940df53c88377c8c1fe25c25b9f9500be4c71ac3e20b939c7b86bf22dbc6830239e5102eb3d24e33",
             "file": "projects/fm-library/src/lib/inputs/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-input",
+            "selector": "lib-input",
             "styleUrls": [
                 "./input.component.scss"
             ],
@@ -1523,7 +1523,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleCheck, faCircleInfo, faCircleXmark, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() placeholder: string = '0,00';\n  @Input() value: string = 'value';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() unit: string = '€';\n  @Input() info: boolean = false;\n  @Input() infoText: string = 'info text';\n  @Input() infoHeader: string = 'info header';\n  @Input() error: boolean = false;\n  @Input() errorText: string = 'error text  ';\n  @Input() light: boolean = false;\n\n  faCircleCheck = faCircleCheck;\n  faCircleXmark = faCircleXmark;\n  faCircleExclamation = faCircleExclamation;\n  faCircleInfo = faCircleInfo;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');\n    this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });\n    console.log(e.srcElement.value);\n    this.inputValue.emit(e.srcElement.value);\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleCheck, faCircleInfo, faCircleXmark, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() placeholder: string = '0,00';\n  @Input() value: string = 'value';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() unit: string = '€';\n  @Input() info: boolean = false;\n  @Input() infoText: string = 'info text';\n  @Input() infoHeader: string = 'info header';\n  @Input() error: boolean = false;\n  @Input() errorText: string = 'error text  ';\n  @Input() light: boolean = false;\n\n  faCircleCheck = faCircleCheck;\n  faCircleXmark = faCircleXmark;\n  faCircleExclamation = faCircleExclamation;\n  faCircleInfo = faCircleInfo;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');\n    this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });\n    console.log(e.srcElement.value);\n    this.inputValue.emit(e.srcElement.value);\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1547,14 +1547,14 @@
         },
         {
             "name": "InputDateComponent",
-            "id": "component-InputDateComponent-4ad442ea21500ede0e6cdcc2edc385e0aa403e34973592b3f1485a64fe5a8f210b544f12b80bb18f701c662b7e98f110cc4da72e9bd8f29f945ec7a35adee8a5",
+            "id": "component-InputDateComponent-703165c8c1289fc086fe53a1a3c1a24641f627b9cda911e35968b658ded0028dd81fbe87f26e780def5c968b41760bd8e5364850fea7f3e9f80a2f3d80076269",
             "file": "projects/fm-library/src/lib/inputs/input-date/input-date.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-input-date",
+            "selector": "lib-input-date",
             "styleUrls": [
                 "./input-date.component.scss"
             ],
@@ -1713,7 +1713,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { FormControl } from '@angular/forms';\nimport { faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-input-date',\n  templateUrl: './input-date.component.html',\n  styleUrls: ['./input-date.component.scss']\n})\nexport class InputDateComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() placeholder!: string;\n  @Input() light: boolean = false;\n  @Input() info: boolean = false;\n  @Input() icon = faCircleCheck;\n  @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();\n  success: boolean = false;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log('change', e.value);\n    this.success = true;\n    this.dateValue.emit(e.value);\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { FormControl } from '@angular/forms';\nimport { faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-input-date',\n  templateUrl: './input-date.component.html',\n  styleUrls: ['./input-date.component.scss']\n})\nexport class InputDateComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() placeholder!: string;\n  @Input() light: boolean = false;\n  @Input() info: boolean = false;\n  @Input() icon = faCircleCheck;\n  @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();\n  success: boolean = false;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log('change', e.value);\n    this.success = true;\n    this.dateValue.emit(e.value);\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1817,14 +1817,14 @@
         },
         {
             "name": "TileCheckboxComponent",
-            "id": "component-TileCheckboxComponent-2701e2b94381c7e84616dc63818f9ea2ce810ec3ab2888ba9c33acb74b95a38ab261e865f6562ae644cde99437e8eae378015f76f6a16bd87818f6b982862199",
+            "id": "component-TileCheckboxComponent-e9717c57285477fe462bb251820f2e217f5dbb18970e8b5345286d60ebd136bc5469a09b25819e637aad0a79727d6af8c7aa9b33ef2d16406f107072148fd1be",
             "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-tile-checkbox",
+            "selector": "lib-tile-checkbox",
             "styleUrls": [
                 "./tile-checkbox.component.scss"
             ],
@@ -2020,7 +2020,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';\nimport { DomSanitizer } from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-tile-checkbox',\n  templateUrl: './tile-checkbox.component.html',\n  styleUrls: ['./tile-checkbox.component.scss']\n})\nexport class TileCheckboxComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() state: string = 'state';\n  @Input() image: any;\n  @Input() icon: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n      this.checked = e.srcElement.checked;\n      const checked = e.srcElement.checked;\n      const name = e.srcElement.name;\n      this.checkboxValue.emit({name, checked});\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';\nimport { DomSanitizer } from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-tile-checkbox',\n  templateUrl: './tile-checkbox.component.html',\n  styleUrls: ['./tile-checkbox.component.scss']\n})\nexport class TileCheckboxComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() state: string = 'state';\n  @Input() image: any;\n  @Input() icon: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n      this.checked = e.srcElement.checked;\n      const checked = e.srcElement.checked;\n      const name = e.srcElement.name;\n      this.checkboxValue.emit({name, checked});\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2062,14 +2062,14 @@
         },
         {
             "name": "TileCheckboxGroupComponent",
-            "id": "component-TileCheckboxGroupComponent-1e80f5338c52439e4bedfaa29a91902270be76cfce554bade397c06599d2cb62e81c861f27617f5d78452a497ef2e1dbad5f7d1be912588de81c36db0ce0ae0e",
+            "id": "component-TileCheckboxGroupComponent-eb5bc07f94f5d8f6bce3a9f10c9a15724ff749fec50207332e44604595ba508d6a91d4e5bb42b58ced8a640637a0dd1d6462ab2f4abad2a308d3a18581b2bce4",
             "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-tile-checkbox-group",
+            "selector": "lib-tile-checkbox-group",
             "styleUrls": [
                 "./tile-checkbox-group.component.scss"
             ],
@@ -2146,7 +2146,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-tile-checkbox-group',\n  templateUrl: './tile-checkbox-group.component.html',\n  styleUrls: ['./tile-checkbox-group.component.scss']\n})\nexport class TileCheckboxGroupComponent implements OnInit {\n  @Input() tiles: any;\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.tileValue.emit(e);\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-checkbox-group',\n  templateUrl: './tile-checkbox-group.component.html',\n  styleUrls: ['./tile-checkbox-group.component.scss']\n})\nexport class TileCheckboxGroupComponent implements OnInit {\n  @Input() tiles: any;\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.tileValue.emit(e);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2166,18 +2166,18 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <app-tile-checkbox\n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [icon]=\"tile.icon\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            (checkboxValue)=\"sendValue($event)\">\n        </app-tile-checkbox>\n    </ng-container>\n</div>"
+            "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile-checkbox\n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [icon]=\"tile.icon\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile-checkbox>\n    </ng-container>\n</div>"
         },
         {
             "name": "TileComponent",
-            "id": "component-TileComponent-8d8347ec7ea0bb0b9f8a516c6d6ae115c2187c0480d6aa267034dfbe912f0f425b28ee02ddac6f344cff32028940752a7731748146edf4cacce9e3c6178be050",
+            "id": "component-TileComponent-6e31553a454d87e04ff7b9c2186307fbf19c8118194d7a8fd942a2f0ddf30a2363c58b2b66c0bbf95cf43dbc012488004ca8e4ca4a06a7ecbf03fe600098c57b",
             "file": "projects/fm-library/src/lib/tiles/tile/tile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-tile",
+            "selector": "lib-tile",
             "styleUrls": [
                 "./tile.component.scss"
             ],
@@ -2402,7 +2402,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { DomSanitizer} from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnInit, OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }\n\n  ngOnInit(): void {\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    console.log('tile', e.srcElement.value, e.srcElement.checked);\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { DomSanitizer} from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnInit, OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }\n\n  ngOnInit(): void {\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    console.log('tile', e.srcElement.value, e.srcElement.checked);\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2445,14 +2445,14 @@
         },
         {
             "name": "TileGroupComponent",
-            "id": "component-TileGroupComponent-c28d36f28e6f199992d9d5fc9cc059f12cf6f997ca7116707c2197ad4cb667610ffc79ad7eec35fc494b611366ed3eb6b610cac73e91aef392e507867ccff437",
+            "id": "component-TileGroupComponent-ad23cdf86edbc9a16acb6a439fc290687a49b15d2533955245c5e87075a493520ac8b3ba97c1e71e772e700c4128b94816243b2b65bc8498dd53720b7605dc12",
             "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-tile-group",
+            "selector": "lib-tile-group",
             "styleUrls": [
                 "./tile-group.component.scss"
             ],
@@ -2540,7 +2540,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent implements OnInit {\n  @Input() tiles: any;\n  localValue: string = 'localValue';\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent implements OnInit {\n  @Input() tiles: any;\n  localValue: string = 'localValue';\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2560,18 +2560,18 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <app-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </app-tile>\n    </ng-container>\n</div>\n"
+            "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
         },
         {
             "name": "TileRatingComponent",
-            "id": "component-TileRatingComponent-5f5d7bc0b6916f424817a0438d45257d6f76387803c743a5d5e4afbbc3ffd2511089ee48a19c9e8e96f750913b9a7625404a09258c7a93dcc65115e1bb66cf8d",
+            "id": "component-TileRatingComponent-86ef278de9118ee19714cab73d030e95f9f3fbaeca150b47d89e5e93bf12e032f33ee49e115584af5781abf1914afa8de5e5ccacbbeb8283e61241012ed67e87",
             "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-tile-rating",
+            "selector": "lib-tile-rating",
             "styleUrls": [
                 "./tile-rating.component.scss"
             ],
@@ -2733,7 +2733,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';\nimport { faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-tile-rating',\n  templateUrl: './tile-rating.component.html',\n  styleUrls: ['./tile-rating.component.scss'],\n})\n\nexport class TileRatingComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() stars: number = 5;\n  @Input() icon: any = faCircleCheck;\n  @Input() info:  boolean = true;\n  success!: boolean;\n  rating: number = 0;\n  @Output() public ratingValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const name = this.name;\n    const rating = e.rating;\n    this.success = true;\n    this.ratingValue.emit({rating, name});\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';\nimport { faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-tile-rating',\n  templateUrl: './tile-rating.component.html',\n  styleUrls: ['./tile-rating.component.scss'],\n})\n\nexport class TileRatingComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() stars: number = 5;\n  @Input() icon: any = faCircleCheck;\n  @Input() info:  boolean = true;\n  success!: boolean;\n  rating: number = 0;\n  @Output() public ratingValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const name = this.name;\n    const rating = e.rating;\n    this.success = true;\n    this.ratingValue.emit({rating, name});\n  }\n\n  getInfo(e: boolean) {\n    console.log(e)\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2753,18 +2753,108 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-rating-single\">\n    \n    <div class=\"da-tile-rating\">\n\n        <div class=\"da-tile-rating-icon-wrapper\" *ngIf=\"success\">\n            <fa-icon class=\"da-tile-rating-icon\" [icon]=\"icon\"></fa-icon>\n        </div>\n        <div class=\"da-tile-rating-stars\">\n            <star-rating \n            [starType]=\"'svg'\" \n            size=\"large\"\n            [numOfStars]=\"stars\" \n            [rating]=\"rating\"\n            [hoverEnabled]=\"true\"\n            (starClickChange)=\"getValue($event)\"\n            ></star-rating>\n        </div>\n\n        <div class=\"da-tile-rating-label\">{{label}}\n            <div class=\"da-tile-rating-info-button\" *ngIf=\"info\">\n                <app-info-button [light]=\"false\" (infoPressed)=\"getInfo($event)\"></app-info-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-tile-rating-single\">\n    <img src=\"assets/image.png\" />\n    <div class=\"da-tile-rating\">\n\n        <div class=\"da-tile-rating-icon-wrapper\" *ngIf=\"success\">\n            <fa-icon class=\"da-tile-rating-icon\" [icon]=\"icon\"></fa-icon>\n        </div>\n        <div class=\"da-tile-rating-stars\">\n            <star-rating \n            [starType]=\"'svg'\"\n            size=\"large\"\n            [numOfStars]=\"stars\" \n            [rating]=\"rating\"\n            [hoverEnabled]=\"true\"\n            (starClickChange)=\"getValue($event)\"\n            ></star-rating>\n        </div>\n\n        <div class=\"da-tile-rating-label\">{{label}}\n            <div class=\"da-tile-rating-info-button\" *ngIf=\"info\">\n                <lib-info-button [light]=\"false\" (infoPressed)=\"getInfo($event)\"></lib-info-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+        },
+        {
+            "name": "TileTextComponent",
+            "id": "component-TileTextComponent-4cf5a620662b11ccbef7a284040a270e904a9730587f7da4522d24922bfec79f237fc3b82b1a0e9f49a78ee25734b280105c8d1e51638e70821c758150776d10",
+            "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-tile-text",
+            "styleUrls": [
+                "./tile-text.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tile-text.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "light",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'16px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() size: string = '16px';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../styles.scss\";\n\n.da-tile-text {\n    font-family: $font;\n    font-size: 16px;\n    color: $t1-base-color;\n\n    &.light {\n        color: $t1-secondary-color;\n    }\n}\n",
+                    "styleUrl": "./tile-text.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p \n    class=\"da-tile-text\" \n    [ngClass]=\"[light ? 'light' : '']\" \n    [ngStyle]=\"{'font-size': size}\"\n>\n{{label}}\n</p>\n"
         },
         {
             "name": "ToggleCheckboxComponent",
-            "id": "component-ToggleCheckboxComponent-622a934dd971bc94fd9282370fa4826fe4399a64c301198012331fc656526cb57e15d65a389cfc8e7a6f4da320ada587b0da1e2330874f3db3e9e07807aa4679",
+            "id": "component-ToggleCheckboxComponent-c7cf2e4bcb65d56042f8e9b1552b0d1d041f1d60f81ac6e3f72d1bb506b70be6834af7a2a7b9d44613dd1affef4ac9abd50e118d6f245ac09926686ccaf49edf",
             "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-toggle-checkbox",
+            "selector": "lib-toggle-checkbox",
             "styleUrls": [
                 "./toggle-checkbox.component.scss"
             ],
@@ -2824,7 +2914,7 @@
             "propertiesClass": [
                 {
                     "name": "faCircleXmark",
-                    "defaultValue": "faCircleXmark",
+                    "defaultValue": "faXmark",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -2880,11 +2970,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-toggle-checkbox',\n  templateUrl: './toggle-checkbox.component.html',\n  styleUrls: ['./toggle-checkbox.component.scss']\n})\nexport class ToggleCheckboxComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name'; \n  @Input() checked: boolean = false;\n  @Input() light: boolean = false;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  faCircleXmark = faCircleXmark;\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.checked)\n    this.checkboxValue.emit(e.srcElement.checked);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-toggle-checkbox',\n  templateUrl: './toggle-checkbox.component.html',\n  styleUrls: ['./toggle-checkbox.component.scss']\n})\nexport class ToggleCheckboxComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name'; \n  @Input() checked: boolean = false;\n  @Input() light: boolean = false;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  faCircleXmark = faXmark;\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.checked)\n    this.checkboxValue.emit(e.srcElement.checked);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-toggle-checkbox {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    .da-switch {\n        position: relative;\n        display: inline-block;\n        background-color: #fff;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        border-radius: 25px;\n        width: 50px;\n        height: 25px;\n\n        &.light {\n            box-shadow: 0 3px 5px $shadow-secondary-color;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked + .da-switch-slider:before {\n                content: '';\n                background-color: $success-color;\n                width: 34px;\n            }\n    \n            &:checked + .da-switch-slider:before {\n                -webkit-transform: translateX(-25px);\n                -ms-transform: translateX(-25px);\n                transform: translateX(-25px);\n            }\n        }\n    \n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            border-radius: 25px;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n        }\n    \n        .da-switch-slider:before {\n            position: absolute;\n            content: '\\f00d';\n            font: var(--fa-font-solid);\n            color: #fff;\n            left: 25px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            height: 25px;\n            width: 25px;\n            border-radius: 25px;\n            background-color: #ccc;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n        }\n    }\n    .da-switch-label {\n        font-size: 14px;\n        color: $t4-base-color;\n        position: relative;\n        white-space: nowrap;\n        left: 10px;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n}\n\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-toggle-checkbox {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    .da-switch {\n        position: relative;\n        display: inline-block;\n        background-color: #fff;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        border-radius: 25px;\n        width: 50px;\n        height: 25px;\n\n        &.light {\n            box-shadow: 0 3px 5px $shadow-secondary-color;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                width: 34px;\n            }\n    \n            &:checked + .da-switch-slider {\n                -webkit-transform: translateX(-25px);\n                -ms-transform: translateX(-25px);\n                transform: translateX(-25px);\n            }\n\n            &:checked + .da-switch-slider >  .da-switch-icon{\n                color: $success-color;\n            }\n        }\n    \n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            left: 0;\n            right: 0;\n            bottom: 0;\n            color: #fff;\n            left: 25px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            height: 25px;\n            width: 25px;\n            border-radius: 25px;\n            background-color: #ccc;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            .da-switch-icon {\n                color: #fff;\n                margin-left: 2px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n        }\n    }\n    .da-switch-label {\n        font-size: 14px;\n        color: $t4-base-color;\n        position: relative;\n        white-space: nowrap;\n        left: 10px;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n}\n\n",
                     "styleUrl": "./toggle-checkbox.component.scss"
                 }
             ],
@@ -2900,18 +2990,18 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-toggle-checkbox\">\n    <label class=\"da-switch\" [ngClass]=\"{'light' : light}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n        </span>\n    </label>\n    <span class=\"da-switch-label\" [ngClass]=\"{'light' : light}\">{{label}}</span>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-checkbox\">\n    <label class=\"da-switch\" [ngClass]=\"{'light' : light}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <fa-icon class=\"da-switch-icon\" [icon]=\"faCircleXmark\"></fa-icon>\n        </span>\n    </label>\n    <span class=\"da-switch-label\" [ngClass]=\"{'light' : light}\">{{label}}</span>\n</div>\n\n"
         },
         {
             "name": "ToggleComponent",
-            "id": "component-ToggleComponent-8dbd0caea75b00e996e5baf1621d919136141a730d871daa271db5d0447f937dae2d8cfdff70e3a1015ae644f1439ddbb4007d7af6acfb9b20f492f95d3585c6",
+            "id": "component-ToggleComponent-cebe51f254f03db034987df363d4145a98c542d98643154f6c7fda858aedf429151b31b36c8e53f566f8e8abe50770a17c8ecc97266cd447cbf80f2568aa434c",
             "file": "projects/fm-library/src/lib/toggle/toggle/toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-toggle",
+            "selector": "lib-toggle",
             "styleUrls": [
                 "./toggle.component.scss"
             ],
@@ -3045,7 +3135,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent implements OnInit {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() light: boolean = false;\n  faCheck = faCircleCheck\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.value)\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faCircleCheck } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent implements OnInit {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() light: boolean = false;\n  faCheck = faCircleCheck\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.value)\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3069,14 +3159,14 @@
         },
         {
             "name": "ToggleTristateComponent",
-            "id": "component-ToggleTristateComponent-1b751eed45268c5754648bad701222acd0240879afa054fa7a0664153473611471ef161c52b41ae1e761027faab6b9675cf7918225b67b782aa0c707b5261ae0",
+            "id": "component-ToggleTristateComponent-dab04c66afe4d8da54ff22c48847be08c6fb413aa20edaf98e68ed406796b126db3e5fb56c4d4a4b8492d3cd87c8fed70c1af398fbf26eef92781b2ecfaa8f0f",
             "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-toggle-tristate",
+            "selector": "lib-toggle-tristate",
             "styleUrls": [
                 "./toggle-tristate.component.scss"
             ],
@@ -3153,7 +3243,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-toggle-tristate',\n  templateUrl: './toggle-tristate.component.html',\n  styleUrls: ['./toggle-tristate.component.scss']\n})\nexport class ToggleTristateComponent implements OnInit {\n  @Input() tabs: any;\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.value)\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-toggle-tristate',\n  templateUrl: './toggle-tristate.component.html',\n  styleUrls: ['./toggle-tristate.component.scss']\n})\nexport class ToggleTristateComponent implements OnInit {\n  @Input() tabs: any;\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.value)\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3179,13 +3269,13 @@
     "modules": [
         {
             "name": "FmLibraryModule",
-            "id": "module-FmLibraryModule-edc969ffe05a8e35455dacee0a5424309b0b3d54a40ddf91d9a922f04dc2c28467c1286b5350c76b5c1e28bcfb3d31678641a0ee5f099014f2190765ee4c9c5a",
+            "id": "module-FmLibraryModule-5cff821f08af4162f5912cbd53c66759798bf0f01ddb63a6bb9d59b395653550199e7a53cb0ea07c3e1e6d17223790644107f15a1b2c9ad7584f7ef177ee4e8c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/fm-library/src/lib/fm-library.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent\n  ]\n})\nexport class FmLibraryModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    StarRatingModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -3229,6 +3319,9 @@
                         },
                         {
                             "name": "TileRatingComponent"
+                        },
+                        {
+                            "name": "TileTextComponent"
                         },
                         {
                             "name": "ToggleCheckboxComponent"
@@ -3285,6 +3378,9 @@
                             "name": "TileRatingComponent"
                         },
                         {
+                            "name": "TileTextComponent"
+                        },
+                        {
                             "name": "ToggleCheckboxComponent"
                         },
                         {
@@ -3317,6 +3413,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    placeholder: '0',\n    value: 0,\n    step: 1,\n    min: 0,\n    max: 10,\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dark",
@@ -3422,31 +3528,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    icon: faCircleCheck,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -3477,6 +3563,36 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    icon: faCircleCheck,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -3929,6 +4045,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.200,00',\n    unit: '€',\n    touched: false,\n    light: true,\n    faCircleExclamation: faCircleExclamation,\n    info: false,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
+                "name": "WithAnImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: () => ({\n    props: {\n      src: '/image.png',\n      alt: 'my image',\n    },\n  }),\n}"
+            },
+            {
                 "name": "withInfo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4136,6 +4262,50 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TileTextComponent>",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleTristateComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TileCheckboxComponent>",
                 "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
                 "deprecated": false,
@@ -4171,39 +4341,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<TileRatingComponent>",
                 "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleTristateComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4252,6 +4389,28 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "faPlus"
+                }
+            ],
+            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
@@ -4702,6 +4861,48 @@
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+                },
+                {
+                    "name": "testTabsThree",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  },\n  {\n    'label': 'N° 3',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value3',\n    'checked': false\n  }\n]"
+                },
+                {
+                    "name": "testTabsTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  }\n]"
+                },
+                {
+                    "name": "TwoTabs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
                 {
                     "name": "Default",
@@ -4758,48 +4959,6 @@
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
-                },
-                {
-                    "name": "testTabsThree",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  },\n  {\n    'label': 'N° 3',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value3',\n    'checked': false\n  }\n]"
-                },
-                {
-                    "name": "testTabsTwo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  }\n]"
-                },
-                {
-                    "name": "TwoTabs",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
                 {
                     "name": "Default4Stars",
@@ -4820,6 +4979,16 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'name',\n    icon: faCircleCheck,\n    stars: 5,\n    info: true,\n  },\n}"
+                },
+                {
+                    "name": "WithAnImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: () => ({\n    props: {\n      src: '/image.png',\n      alt: 'my image',\n    },\n  }),\n}"
                 }
             ],
             "projects/fm-library/src/stories/Button.stories.ts": [
@@ -5097,6 +5266,58 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileTextComponent>",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleTristateComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
                 {
                     "name": "Story",
@@ -5143,45 +5364,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TileRatingComponent>",
                     "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleTristateComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5708,6 +5890,35 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TileTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Dark",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5809,6 +6020,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default5Stars",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithAnImage",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

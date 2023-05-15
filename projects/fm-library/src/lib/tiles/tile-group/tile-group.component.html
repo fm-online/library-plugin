@@ -1,6 +1,6 @@
 <div class="da-tiles">
     <ng-container *ngFor="let tile of tiles; let num = index">
-        <app-tile 
+        <lib-tile 
             [label]="tile.label"
             [name]="tile.name"
             [checked]="tile.checked"
@@ -10,6 +10,6 @@
             [content]="tile.content"
             [localValue]="localValue"
             (checkboxValue)="sendValue($event)">
-        </app-tile>
+        </lib-tile>
     </ng-container>
 </div>

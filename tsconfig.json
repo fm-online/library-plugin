@@ -9,6 +9,7 @@
     "paths": {
       "fm-library": [
         "dist/fm-library/fm-library",
+        "dist/fm-library/assets",
         "dist/fm-library"
       ]
     },

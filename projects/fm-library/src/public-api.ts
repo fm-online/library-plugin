@@ -18,4 +18,5 @@ export * from './lib/tiles/tile-rating/tile-rating.component';
 export * from './lib/toggle/toggle/toggle.component';
 export * from './lib/toggle/toggle-checkbox/toggle-checkbox.component';
 export * from './lib/toggle/toggle-tristate/toggle-tristate.component';
+export * from './lib/text/tile-text/tile-text.component';
 export * from './lib/fm-library.module';

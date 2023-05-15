@@ -13,6 +13,7 @@
     "angular-star-rating"
   ],
   "assets": [
+    "./assets/images/star-rating.icons.svg",
     "./src/styles/_colors.scss",
     "./src/styles/_fonts.scss",
     "./src/styles.scss"
