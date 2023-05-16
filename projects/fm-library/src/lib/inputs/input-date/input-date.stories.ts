@@ -4,7 +4,6 @@ import {InputDateComponent} from './input-date.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
-// import { MainPipe } from '../../../pipes/pipe.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,6 @@ export default {
     moduleMetadata({
       imports: [
         FontAwesomeModule, 
-        // MainPipe, 
         MatFormFieldModule, 
         MatDatepickerModule,
         MatInputModule,
@@ -59,7 +57,6 @@ export const Default: Story = {
     light: false,
     placeholder: 'tt.mm.jjjj',
     icon: faCircleCheck,
-    info: false,
   },
 };
 
@@ -70,7 +67,6 @@ export const DefaultDark: Story = {
     light: true,
     placeholder: 'tt.mm.jjjj',
     icon: faCircleCheck,
-    info: false,
   },
   parameters: {
     backgrounds: {
@@ -89,7 +85,7 @@ export const WithInfo: Story = {
     light: false,
     placeholder: 'tt.mm.jjjj',
     icon: faCircleCheck,
-    info: true,
+    info: 'date-info',
   },
 };
 
@@ -100,7 +96,7 @@ export const WithInfoDark: Story = {
     light: true,
     placeholder: 'tt.mm.jjjj',
     icon: faCircleCheck,
-    info: true,
+    info: 'date-info-dark',
   },
   parameters: {
     backgrounds: {

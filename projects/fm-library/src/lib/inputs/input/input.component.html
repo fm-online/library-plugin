@@ -26,7 +26,11 @@
         >
         <div class="da-input-unit">{{unit}}</div>
         <div class="da-input-info-button" *ngIf="info">
-            <lib-info-button [light]="light" (infoPressed)="getInfo($event)"></lib-info-button>
+            <lib-info-button 
+            [light]="light" 
+            (infoPressed)="getInfo($event)"
+            [id]="info"
+            ></lib-info-button>
         </div>
     </label>
     <div class="da-input-error" *ngIf="error" [ngClass]="{'light' : light}">

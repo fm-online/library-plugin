@@ -16,7 +16,11 @@
     </mat-form-field>
     <!-- <fa-icon [icon]="faArrowDown" class="da-input-select-arrow-icon"></fa-icon> -->
     <div class="da-input-info-button" *ngIf="info">
-        <lib-info-button [light]="light" (infoPressed)="getInfo($event)"></lib-info-button>
+        <lib-info-button 
+          [light]="light" 
+          [id]="info"
+          (infoPressed)="getInfo($event)"
+        ></lib-info-button>
     </div>
   </label>
 </div>

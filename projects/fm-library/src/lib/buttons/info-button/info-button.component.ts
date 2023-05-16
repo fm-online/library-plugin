@@ -8,6 +8,7 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 })
 export class InfoButtonComponent implements OnInit {
   @Input() light: boolean = false;
+  @Input() id: string = '';
   @Output() public infoPressed:EventEmitter<any> = new EventEmitter<boolean>();
   faCircleInfo = faCircleInfo;
   
@@ -17,7 +18,7 @@ export class InfoButtonComponent implements OnInit {
   }
 
   getInfo() {
-    this.infoPressed.emit(true);
+    this.infoPressed.emit(this.id);
   }
 
 }

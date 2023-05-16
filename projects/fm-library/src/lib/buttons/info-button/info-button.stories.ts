@@ -33,6 +33,7 @@ type Story = StoryObj<InfoButtonComponent>;
 export const Default: Story = {
   args: {
     light: false,
+    id: 'the-info',
   },
 };
 

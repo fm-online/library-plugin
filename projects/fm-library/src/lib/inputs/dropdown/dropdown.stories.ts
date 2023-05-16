@@ -82,7 +82,6 @@ export const Default: Story = {
     icon: faCircleCheck,
     selectedItem: placeholderTest,
     selectItems: testItems,
-    info: false,
   },
 };
 
@@ -94,7 +93,6 @@ export const DefaultDark: Story = {
     icon: faCircleCheck,
     selectItems: testItems,
     selectedItem: placeholderTest,
-    info: false,
   },
   parameters: {
     backgrounds: {
@@ -114,7 +112,7 @@ export const WithInfo: Story = {
     icon: faCircleCheck,
     selectItems: testItems,
     selectedItem: placeholderTest,
-    info: true,
+    info: 'dropdown-info',
   },
 };
 
@@ -126,7 +124,7 @@ export const WithInfoDark: Story = {
     icon: faCircleCheck,
     selectItems: testItems,
     selectedItem: placeholderTest,
-    info: true,
+    info: 'dropdown-info-dark',
   },
   parameters: {
     backgrounds: {

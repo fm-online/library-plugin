@@ -3,11 +3,11 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { APP_INITIALIZER } from '@angular/core';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
-import {TileTextComponent} from './tile-text.component';
+import {HeaderTextComponent} from './header-text.component';
 
 export default {
-  title: 'text/TileTextComponent',
-  component: TileTextComponent,
+  title: 'text/HeaderTextComponent',
+  component: HeaderTextComponent,
   decorators: [
     moduleMetadata({
       imports: [
@@ -32,21 +32,19 @@ export default {
   ],
 } as Meta;
 
-type Story = StoryObj<TileTextComponent>;
+type Story = StoryObj<HeaderTextComponent>;
 
 export const Default: Story = {
   args: {
-    label: 'der Text',
+    label: 'die Headline',
     light: false,
-    size: '16px',
   },
 };
 
 export const Dark: Story = {
   args: {
-    label: 'der Text',
+    label: 'die Headline',
     light: true,
-    size: '16px',
   },
   parameters: {
     backgrounds: {
@@ -60,19 +58,17 @@ export const Dark: Story = {
 
 export const WithInfo: Story = {
   args: {
-    label: 'der Text',
+    label: 'die Headline',
     light: false,
     info: 'text-info',
-    size: '16px',
   },
 };
 
 export const WithInfoDark: Story = {
   args: {
-    label: 'der Text',
+    label: 'die Headline',
     light: true,
     info: 'text-info-dark',
-    size: '16px',
   },
   parameters: {
     backgrounds: {

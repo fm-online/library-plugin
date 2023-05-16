@@ -47,7 +47,7 @@ export const Default4Stars: Story = {
     name: 'name',
     icon: faCircleCheck,
     stars: 4,
-    info: true,
+    info: 'rating-info',
   },
 };
 export const Default5Stars: Story = {
@@ -56,6 +56,6 @@ export const Default5Stars: Story = {
     name: 'name',
     icon: faCircleCheck,
     stars: 5,
-    info: true,
+    info: 'info-rating-dark',
   },
 };

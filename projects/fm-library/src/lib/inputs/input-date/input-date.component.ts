@@ -12,9 +12,10 @@ export class InputDateComponent implements OnInit {
   @Input() label!: string;
   @Input() placeholder!: string;
   @Input() light: boolean = false;
-  @Input() info: boolean = false;
+  @Input() info: string = '';
   @Input() icon = faCircleCheck;
   @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();
+  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
   success: boolean = false;
 
   constructor() { }
@@ -23,13 +24,12 @@ export class InputDateComponent implements OnInit {
   }
 
   getValue(e: any) {
-    console.log('change', e.value);
     this.success = true;
     this.dateValue.emit(e.value);
   }
 
-  getInfo(e: boolean) {
-    console.log(e)
+  getInfo(e: string) {
+    this.infoValue.emit(e);
   }
 
 }

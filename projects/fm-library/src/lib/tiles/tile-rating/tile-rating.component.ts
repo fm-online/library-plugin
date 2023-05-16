@@ -12,10 +12,11 @@ export class TileRatingComponent implements OnInit {
   @Input() name: string = 'name';
   @Input() stars: number = 5;
   @Input() icon: any = faCircleCheck;
-  @Input() info:  boolean = true;
+  @Input() info:  string = '';
   success!: boolean;
   rating: number = 0;
   @Output() public ratingValue:EventEmitter<any> = new EventEmitter<any>();
+  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 
   constructor() {}
 
@@ -29,8 +30,8 @@ export class TileRatingComponent implements OnInit {
     this.ratingValue.emit({rating, name});
   }
 
-  getInfo(e: boolean) {
-    console.log(e)
+  getInfo(e: string) {
+    this.infoValue.emit(e);
   }
 
 }

@@ -16,7 +16,11 @@
 
         <div class="da-tile-rating-label">{{label}}
             <div class="da-tile-rating-info-button" *ngIf="info">
-                <lib-info-button [light]="false" (infoPressed)="getInfo($event)"></lib-info-button>
+                <lib-info-button 
+                    [light]="false" 
+                    [id]="info"
+                    (infoPressed)="getInfo($event)"
+                ></lib-info-button>
             </div>
         </div>
     </div>

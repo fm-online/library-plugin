@@ -13,9 +13,11 @@ export class DropdownComponent implements OnInit {
   @Input() selectItems!: any;
   @Input() icon = faCircleCheck;
   @Input() light: boolean = false;
-  @Input() info: boolean = false;
+  @Input() info: string = '';
   @Input() selectedItem!: any;
+
   @Output() public selectValue:EventEmitter<any> = new EventEmitter<string>();
+  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 
   success: boolean = false;
   faCheck = faCircleCheck;
@@ -27,13 +29,12 @@ export class DropdownComponent implements OnInit {
   ngOnInit(): void {}
 
   getValue(e: any) {
-    console.log('change', e);
     this.success = true;
     this.selectValue.emit(e);
   }
 
-  getInfo(e: boolean) {
-    console.log(e)
+  getInfo(e: string) {
+    this.infoValue.emit(e);
   }
 
 }

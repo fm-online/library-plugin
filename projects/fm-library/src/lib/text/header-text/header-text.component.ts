@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'lib-tile-text',
-  templateUrl: './tile-text.component.html',
-  styleUrls: ['./tile-text.component.scss']
+  selector: 'lib-header-text',
+  templateUrl: './header-text.component.html',
+  styleUrls: ['./header-text.component.scss']
 })
-export class TileTextComponent implements OnInit {
+export class HeaderTextComponent implements OnInit {
   @Input() label: string = 'label';
   @Input() light: boolean = false;
   @Input() info: string = '';
-  @Input() size: string = '16px';
+  @Input() size: string = '38px';
 
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 

@@ -1,11 +1,11 @@
-<div class="da-tile-text-wrapper">
-    <p class="da-tile-text" 
+<div class="da-header-text-wrapper">
+    <h3 class="da-header-text" 
         [ngClass]="[light ? 'light' : '']" 
         [ngStyle]="{'font-size': size}"
     >
         {{label}}
-    </p>
-    <div class="da-text-info-button" *ngIf="info">
+</h3>
+    <div class="da-header-info-button" *ngIf="info">
         <lib-info-button 
             [light]="light" 
             [id]="info" 

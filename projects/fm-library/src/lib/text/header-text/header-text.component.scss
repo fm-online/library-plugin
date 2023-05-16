@@ -1,10 +1,10 @@
 @import "../../../styles.scss";
 
-.da-tile-text-wrapper {
+.da-header-text-wrapper {
     display: flex;
     align-items: center;
 
-    .da-tile-text {
+    .da-header-text {
         font-family: $font;
         font-size: 16px;
         color: $t1-base-color;
@@ -14,8 +14,7 @@
         }
     }
 
-    .da-text-info-button {
+    .da-header-info-button {
         margin-left: 10px;
     }
 }
-

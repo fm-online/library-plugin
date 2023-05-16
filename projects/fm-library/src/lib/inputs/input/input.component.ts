@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
   @Input() touched: boolean = false;
   @Input() type: string = 'text';
   @Input() unit: string = '€';
-  @Input() info: boolean = false;
+  @Input() info: string = '';
   @Input() infoText: string = 'info text';
   @Input() infoHeader: string = 'info header';
   @Input() error: boolean = false;
@@ -28,6 +28,7 @@ export class InputComponent implements OnInit {
   faCircleInfo = faCircleInfo;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
+  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
   
   constructor() {}
 
@@ -37,12 +38,11 @@ export class InputComponent implements OnInit {
   getValue(e: any) {
     const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');
     this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });
-    console.log(e.srcElement.value);
     this.inputValue.emit(e.srcElement.value);
   }
 
-  getInfo(e: boolean) {
-    console.log(e)
+  getInfo(e: string) {
+    this.infoValue.emit(e);
   }
 
 }
