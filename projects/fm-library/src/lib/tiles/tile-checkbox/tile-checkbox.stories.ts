@@ -2,10 +2,10 @@
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, faCircleExclamation, faCircleXmark, faHouseCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
-// import { MainPipe } from '../../../pipes/pipe.module';
+import { APP_INITIALIZER, TemplateRef } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TileCheckboxComponent } from './tile-checkbox.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export default {
   title: 'tiles/TileCheckboxComponent',
@@ -14,7 +14,7 @@ export default {
     moduleMetadata({
       imports: [
         FontAwesomeModule, 
-        // MainPipe, 
+        BrowserAnimationsModule, 
         HttpClientModule],
       providers: [
         {
@@ -38,7 +38,6 @@ export const Default: Story = {
   args: {
     label: 'das Label',
     image: faHouseCircleXmark,
-    icon: faCircleCheck,
     checked: false,
     name: 'name',
     value: 'the value',

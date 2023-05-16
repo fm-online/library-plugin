@@ -31,8 +31,15 @@
             "tsConfig": "projects/fm-library/tsconfig.spec.json",
             "karmaConfig": "projects/fm-library/karma.conf.js"
           }
-        },
-        "storybook": {
+        }
+      }
+    },
+    "storybook": {
+      "projectType": "application",
+      "root": "stories",
+      "sourceRoot": "stories",
+      "architect": {
+        "start-storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "configDir": "projects/fm-library/.storybook",

@@ -8,9 +8,9 @@
             [value]="value"
         >
         <div class="da-tile-checkbox-icon-wrapper">
-            <fa-icon class="da-tile-checkbox-icon green" *ngIf="state === 'success'" [icon]="icon"></fa-icon>
-            <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="icon"></fa-icon>
-            <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="icon"></fa-icon>
+            <fa-icon class="da-tile-checkbox-icon green" *ngIf="state === 'success'" [icon]="faCheck"></fa-icon>
+            <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
+            <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
         </div>
         <fa-icon class="da-tile-checkbox-image" [icon]="image"></fa-icon>
         <div class="da-tile-checkbox-label">{{label}}</div>

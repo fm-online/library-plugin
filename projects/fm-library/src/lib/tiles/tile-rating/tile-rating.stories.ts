@@ -4,8 +4,6 @@ import { StarRatingModule } from 'angular-star-rating';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, fas } from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
-// import { MainPipe } from '../../../pipes/pipe.module';
-// import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { TileRatingComponent } from './tile-rating.component';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
@@ -60,13 +58,4 @@ export const Default5Stars: Story = {
     stars: 5,
     info: true,
   },
-};
-
-export const WithAnImage: Story = {
-  render: () => ({
-    props: {
-      src: '/image.png',
-      alt: 'my image',
-    },
-  }),
 };

@@ -1,0 +1,27 @@
+:host {
+    --primary-button-radius: 25px 25px 25px 0; /* radius for the primary buttons */
+    --secondary-button-radius: 25px; /* radius for select-buttons and inputs */
+    --primary-button-border: none; /* border width and type for primary buttons */
+    --secondary-button-border: 1px solid; /* border width and type for select-buttons and inputs */
+    --button-padding: 0 30px 0 20px; /* padding for buttons */
+    --button-min-height: 50px; /* minimum height for buttons */
+    --button-min-width: 50px; /* minimum width for buttons */
+}
+
+// Layout
+$page-max-width: 1330px;
+$border-radius: 15px;
+
+$base: 17px;
+$base2: 35px;
+$base3: 52px;
+
+
+// Button settings
+$primary-button-radius: var(--primary-button-radius);
+$secondary-button-radius: var(--secondary-button-radius);
+$primary-button-border: var(--primary-button-border);
+$secondary-button-border: var(--secondary-button-border);
+$button-padding: var(--button-padding);
+$button-min-height: var(--button-min-height);
+$button-min-width: var(--button-min-width);

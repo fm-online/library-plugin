@@ -14,7 +14,6 @@ export class TileCheckboxComponent implements OnInit {
   @Input() value: string = 'value';
   @Input() state: string = 'state';
   @Input() image: any;
-  @Input() icon: any;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
   expanded!: boolean;

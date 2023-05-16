@@ -1,0 +1,75 @@
+:host {
+    --font: 'futura-pt', sans-serif; /* base font */
+    --h1-base-size: 44px; /* Hauptüberschriften (Start-Slide) */
+    --h2-base-size: 28px; /* Überschriften (Slide-Fragen) */
+    --h3-base-size: 28px; /* Text neben Icons */
+    --t1-base-size: 16px; /* alle Textinhalte im Body */
+    --t2-base-size: 16px; /* Buttons, Platzhaltertexte, Infobubbletexte */
+    --t3-base-size: 18px; /* Text in Eingabefeldern und in Auswahlboxen */
+    --t4-base-size: 12px; /* Labels */
+    --t5-base-size: 13px; /* Warnmitteilungen */
+    --h1-base-color: 32, 56, 100; /* Hauptüberschriften (Start-Slide) */
+    --h2-base-color: 32, 56, 100; /* Überschriften (Slide-Fragen */
+    --h3-base-color: 32, 56, 100; /* Text neben Icons */
+    --t1-base-color: 32, 56, 100; /* alle Textinhalte im Body */
+    --t2-base-color: 32, 56, 100; /* Buttons, Platzhaltertexte, Infobubbletexte */
+    --t3-base-color: 255,255,255; /* Text in Eingabefeldern und in Auswahlboxen */
+    --t4-base-color: 32, 56, 100; /* Labels */
+    --t5-base-color: 199, 199, 199; /* Warnmitteilungen */
+    --h1-secondary-color: 255,255,255; /* Hauptüberschriften (Start-Slide) */
+    --h2-secondary-color: 255,255,255; /* Überschriften (Slide-Fragen) */
+    --h3-secondary-color: 255,255,255; /* Text neben Icons */
+    --t1-secondary-color: 255,255,255; /* alle Textinhalte im Body */
+    --t2-secondary-color: 255,255,255; /* Buttons, Platzhaltertexte, Infobubbletexte */
+    --t3-secondary-color: 255,255,255; /* Text in Eingabefeldern und in Auswahlboxen */
+    --t4-secondary-color: 255,255,255; /* Labels */
+    --t5-secondary-color: 255,255,255; /* Warnmitteilungen */
+}
+
+// font-family
+$font: var(--font);
+
+// font sizes
+$h1-base-size: var( --h1-base-size);
+$h2-base-size: var( --h2-base-size);
+$h3-base-size: var( --h3-base-size);
+$h1-base-size-lineheight: var( --h1-base-size);
+$h2-base-size-lineheight: calc(var( --h2-base-size)  * 1.43);
+$h3-base-size-lineheight: calc(var( --h3-base-size) * 1.43);
+
+$h1-base-size-mobile: calc(var( --h1-base-size) * 0.546);
+$h2-base-size-mobile: calc(var( --h2-base-size) * 0.716);
+$h3-base-size-mobile: calc(var( --h3-base-size) * 0.716);
+$h1-base-size-mobile-lineheight: calc(var( --h1-base-size) * 0.636);
+$h2-base-size-mobile-lineheight: calc(var( --h2-base-size) * 0.856);
+$h3-base-size-mobile-lineheight: calc(var( --h3-base-size) * 0.856);
+
+$t1-base-size: var( --t1-base-size);
+$t2-base-size: var( --t2-base-size);
+$t3-base-size: var( --t3-base-size);
+$t4-base-size: var( --t4-base-size);
+$t5-base-size: var( --t5-base-size);
+$t1-base-size-lineheight: calc(var( --t1-base-size) * 1.5);
+$t2-base-size-lineheight: calc(var( --t2-base-size) * 0.856);
+
+$t2-base-size-mobile: calc(var( --t2-base-size));
+$t5-base-size-mobile: calc(var( --t5-base-size));
+
+// font colors
+$h1-base-color: rgb(var(--h1-base-color));
+$h2-base-color: rgb(var(--h2-base-color));
+$h3-base-color: rgb(var(--h3-base-color));
+$t1-base-color: rgb(var(--t1-base-color));
+$t2-base-color: rgb(var(--t2-base-color));
+$t3-base-color: rgb(var(--t3-base-color));
+$t4-base-color: rgb(var(--t4-base-color));
+$t5-base-color: rgb(var(--t5-base-color));
+
+$h1-secondary-color: rgb(var(--h1-secondary-color));
+$h2-secondary-color: rgb(var(--h2-secondary-color));
+$h3-secondary-color: rgb(var(--h3-secondary-color));
+$t1-secondary-color: rgb(var(--t1-secondary-color));
+$t2-secondary-color: rgb(var(--t2-secondary-color));
+$t3-secondary-color: rgb(var(--t3-secondary-color));
+$t4-secondary-color: rgb(var(--t4-secondary-color));
+$t5-secondary-color: rgb(var(--t5-secondary-color));
