@@ -1,7 +1,8 @@
 <div class="da-button-single">
     <button 
         (click)="getValue()" 
-        [ngClass]="[light ? 'light' : '', iconButton ? 'short' : '']" 
+        [ngClass]="[light ? 'light' : '', iconButton ? 'short' : '', disabled ? 'disabled' : '']" 
+        [disabled]="disabled"
         #target
     >
         <fa-icon 

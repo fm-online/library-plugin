@@ -52,7 +52,8 @@ const testButtons = [
   {
     'iconRight': faChevronRight,
     'value': 'weiter',
-    'type': 'next'
+    'type': 'next',
+    'disabled': true,
   }
 ]
 

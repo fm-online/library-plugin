@@ -53,6 +53,29 @@ export const DefaultDark: Story = {
     },
   },
 };
+export const Disabled: Story = {
+  args: {
+    value: 'disabled button',
+    disabled: true,
+    light: false,
+  },
+};
+
+export const DisabledDark: Story = {
+  args: {
+    value: 'disabled button',
+    disabled: true,
+    light: true,
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dunkel',
+      values: [
+        { name: 'dunkel', value: '#203864' },
+      ],
+    },
+  },
+};
 
 export const Icon: Story = {
   args: {
