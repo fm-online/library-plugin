@@ -24,6 +24,10 @@
             background-color: $button-base-color;
             border: 1px solid $button-base-color;
         }
+
+        &.mobile {
+            width: calc(100vw - 50px);
+        }
      
         .da-tile-icon-wrapper {
                 margin-left: 15px;
@@ -65,6 +69,11 @@
             justify-content: center;
             pointer-events: none;
             font-size: 90px;
+
+            &.mobile {
+                width: 100%;
+                min-width: 244px;
+            }
         }
     
         input {
@@ -99,6 +108,11 @@
             margin: 0 15px 15px;
             overflow: hidden;
             pointer-events: none;
+
+            &.mobile {
+                width: 100%;
+                min-width: 244px;
+            }
 
         }
     }

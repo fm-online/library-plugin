@@ -1,5 +1,8 @@
 <div class="da-tile-checkbox-single">
-    <label class="da-tile-checkbox" [ngClass]="{'expanded' : checked}">
+    <label 
+            class="da-tile-checkbox" 
+            [ngClass]="[checked ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']"
+        >
         <input 
             type="checkbox" 
             (change)="getValue($event)" 
@@ -12,8 +15,16 @@
             <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
             <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
         </div>
-        <fa-icon class="da-tile-checkbox-image" [icon]="image"></fa-icon>
-        <div class="da-tile-checkbox-label">{{label}}</div>
+        <fa-icon 
+            class="da-tile-checkbox-image" 
+            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+            [icon]="image"
+        >
+        </fa-icon>
+        <div 
+            class="da-tile-checkbox-label"
+            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+        >{{label}}</div>
         <div *ngIf="checked" class="da-tile-checkbox-expanded" [ngClass]="{'light' : light}">
             <ng-container *ngTemplateOutlet="content"></ng-container>
         </div>

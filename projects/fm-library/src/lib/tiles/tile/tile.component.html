@@ -1,5 +1,8 @@
 <div class="da-tile-single">
-    <label class="da-tile" [ngClass]="{'expanded' : expanded}">
+    <label 
+            class="da-tile" 
+            [ngClass]="[expanded ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']"
+        >
         <input 
             type="radio" 
             (change)="getValue($event)" 
@@ -12,8 +15,16 @@
             <fa-icon class="da-tile-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
             <fa-icon class="da-tile-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
         </div>
-        <fa-icon class="da-tile-image" [icon]="image"></fa-icon>
-        <div class="da-tile-label">{{label}}</div>
+        <fa-icon 
+            class="da-tile-image" 
+            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+            [icon]="image"
+        >
+        </fa-icon>
+        <div 
+            class="da-tile-label"
+            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+        >{{label}}</div>
         <div *ngIf="expanded" class="da-tile-expanded" [ngClass]="{'light' : light}">
             <ng-container *ngTemplateOutlet="content"></ng-container>
         </div>
