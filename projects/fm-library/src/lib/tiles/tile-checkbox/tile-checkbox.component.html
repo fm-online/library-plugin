@@ -16,11 +16,18 @@
             <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
         </div>
         <fa-icon 
+            *ngIf="image"
             class="da-tile-checkbox-image" 
             [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
             [icon]="image"
         >
         </fa-icon>
+        <div
+            *ngIf="!image"
+            class="da-tile-checkbox-image" 
+            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+        >
+    </div>
         <div 
             class="da-tile-checkbox-label"
             [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"

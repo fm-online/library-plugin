@@ -14,7 +14,7 @@ export class TileComponent implements OnInit, OnChanges {
   @Input() value: string = 'value';
   @Input() localValue: string = 'localValue';
   @Input() state: string = 'state';
-  @Input() image: any;
+  @Input() image?: any;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
   expanded!: boolean;
@@ -43,7 +43,6 @@ export class TileComponent implements OnInit, OnChanges {
   }
 
   getValue(e: any) {
-    console.log('tile', e.srcElement.value, e.srcElement.checked);
     this.checkboxValue.emit(e.srcElement.value);
   }
 

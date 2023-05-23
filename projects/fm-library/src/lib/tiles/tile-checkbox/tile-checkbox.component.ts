@@ -13,7 +13,7 @@ export class TileCheckboxComponent implements OnInit {
   @Input() checked: boolean = false;
   @Input() value: string = 'value';
   @Input() state: string = 'state';
-  @Input() image: any;
+  @Input() image?: any;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
   expanded!: boolean;
