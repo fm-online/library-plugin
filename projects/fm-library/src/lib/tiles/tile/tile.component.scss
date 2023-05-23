@@ -110,8 +110,8 @@
             pointer-events: none;
 
             &.mobile {
-                width: 100%;
-                min-width: 244px;
+                width: calc(100% - 30px);
+                font-size: calc(-1.25rem + 12vw);
             }
 
         }

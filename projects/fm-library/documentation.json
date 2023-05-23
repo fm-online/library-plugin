@@ -2102,7 +2102,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -2136,7 +2136,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label class=\"da-tile-checkbox\" [ngClass]=\"{'expanded' : checked}\" [ngStyle]=\"{'width': (screenWidth <= 540) ? '100%': ''}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon class=\"da-tile-checkbox-image\" [icon]=\"image\"></fa-icon>\n        <div class=\"da-tile-checkbox-label\">{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"[checked ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n            [icon]=\"image\"\n        >\n        </fa-icon>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileCheckboxGroupComponent",
@@ -2545,7 +2545,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: clamp(1rem, 20vw, 1.25rem);\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -2580,7 +2580,7 @@
                 "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label class=\"da-tile\" [ngClass]=\"{'expanded' : expanded}\" [ngStyle]=\"{'width': (screenWidth <= 540) ? '100%': ''}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon class=\"da-tile-image\" [icon]=\"image\"></fa-icon>\n        <div class=\"da-tile-label\">{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"[expanded ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon \n            class=\"da-tile-image\" \n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n            [icon]=\"image\"\n        >\n        </fa-icon>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
@@ -3637,21 +3637,21 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Default",
@@ -3717,6 +3717,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3737,61 +3747,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -3807,11 +3767,51 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -4177,21 +4177,21 @@
                 "name": "testTiles",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name1',\n    'state': 'success',\n    'icon': faCircleCheck,\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name2',\n    'state': 'warning',\n    'icon': faCircleExclamation,\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name3',\n    'state': 'error',\n    'checked': false,\n    'icon': faCircleXmark,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
-            },
-            {
-                "name": "testTiles",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
+            },
+            {
+                "name": "testTiles",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name1',\n    'state': 'success',\n    'icon': faCircleCheck,\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name2',\n    'state': 'warning',\n    'icon': faCircleExclamation,\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name3',\n    'state': 'error',\n    'checked': false,\n    'icon': faCircleXmark,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
             },
             {
                 "name": "TwoTabs",
@@ -4257,21 +4257,21 @@
                 "name": "WithInfo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: false,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info',\n  },\n}"
-            },
-            {
-                "name": "WithInfo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n    info: 'text-info',\n  },\n}"
+            },
+            {
+                "name": "WithInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: false,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info',\n  },\n}"
             },
             {
                 "name": "WithInfo",
@@ -4317,21 +4317,21 @@
                 "name": "WithInfoDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "WithInfoDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "WithInfoDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "WithInfoDark",
@@ -4427,6 +4427,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<HeaderTextComponent>",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<InputButtonComponent>",
                 "file": "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts",
                 "deprecated": false,
@@ -4449,74 +4460,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderTextComponent>",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<TileTextComponent>",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileCheckboxGroupComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileGroupComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileRatingComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4537,8 +4482,63 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleTristateComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TileCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TileGroupComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TileCheckboxGroupComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TileRatingComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4673,28 +4673,6 @@
                     "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
                 {
                     "name": "Dark",
@@ -4715,6 +4693,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/buttons/button/button.stories.ts": [
@@ -5141,62 +5141,6 @@
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
-                },
-                {
-                    "name": "testTiles",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name1',\n    'state': 'success',\n    'icon': faCircleCheck,\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name2',\n    'state': 'warning',\n    'icon': faCircleExclamation,\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name3',\n    'state': 'error',\n    'checked': false,\n    'icon': faCircleXmark,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
-                },
-                {
-                    "name": "testTiles",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
                 {
                     "name": "Default",
@@ -5237,6 +5181,62 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+                },
+                {
+                    "name": "testTiles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+                },
+                {
+                    "name": "testTiles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name1',\n    'state': 'success',\n    'icon': faCircleCheck,\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name2',\n    'state': 'warning',\n    'icon': faCircleExclamation,\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name3',\n    'state': 'error',\n    'checked': false,\n    'icon': faCircleXmark,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
                 }
             ],
             "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
@@ -5420,6 +5420,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderTextComponent>",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts": [
                 {
                     "name": "Story",
@@ -5446,19 +5459,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderTextComponent>",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
                 {
                     "name": "Story",
@@ -5466,71 +5466,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TileTextComponent>",
                     "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileCheckboxComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileCheckboxGroupComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileGroupComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileRatingComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5550,6 +5485,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
                 {
                     "name": "Story",
@@ -5557,6 +5505,58 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleTristateComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileCheckboxComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileGroupComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileCheckboxGroupComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileRatingComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
