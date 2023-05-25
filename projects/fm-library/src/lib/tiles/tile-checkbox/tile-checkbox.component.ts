@@ -1,13 +1,14 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-tile-checkbox',
   templateUrl: './tile-checkbox.component.html',
   styleUrls: ['./tile-checkbox.component.scss']
 })
-export class TileCheckboxComponent implements OnInit {
+export class TileCheckboxComponent {
   @Input() label: string = 'label';
   @Input() name: string = 'name';
   @Input() checked: boolean = false;
@@ -24,15 +25,11 @@ export class TileCheckboxComponent implements OnInit {
   screenWidth: any;
   @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.screenWidth = window.innerWidth;
-  }
-  
-  ngOnInit(): void {
-    this.screenWidth = window.innerWidth;
+  constructor(
+    private sanitizer: DomSanitizer,
+    public screen: HelperService
+  ) { 
+    this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) 
   }
 
   getValue(e: any) {

@@ -1,7 +1,7 @@
 <div class="da-tile-single">
     <label 
             class="da-tile" 
-            [ngClass]="[expanded ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']"
+            [ngClass]="[expanded ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']"
         >
         <input 
             type="radio" 
@@ -17,18 +17,18 @@
         </div>
         <fa-icon *ngIf="image"
             class="da-tile-image" 
-            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
             [icon]="image"
         >
         </fa-icon>
         <div *ngIf="!image"
             class="da-tile-image" 
-            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
         >
     </div>
         <div 
             class="da-tile-label"
-            [ngClass]="[(screenWidth <= 540) ? 'mobile': '']"
+            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
         >{{label}}</div>
         <div *ngIf="expanded" class="da-tile-expanded" [ngClass]="{'light' : light}">
             <ng-container *ngTemplateOutlet="content"></ng-container>

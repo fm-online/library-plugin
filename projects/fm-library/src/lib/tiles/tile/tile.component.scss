@@ -27,6 +27,7 @@
 
         &.mobile {
             width: calc(100vw - 50px);
+            min-height: auto;
         }
      
         .da-tile-icon-wrapper {
@@ -73,6 +74,8 @@
             &.mobile {
                 width: 100%;
                 min-width: 244px;
+                font-size: 45px;
+                height: 45px;
             }
         }
     
@@ -111,7 +114,8 @@
 
             &.mobile {
                 width: calc(100% - 30px);
-                font-size: 6vw;
+                font-size: 14px;
+                height: auto;
             }
 
         }

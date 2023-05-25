@@ -1,13 +1,14 @@
-import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-tile',
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.scss']
 })
-export class TileComponent implements OnInit, OnChanges {
+export class TileComponent implements OnChanges {
   @Input() label: string = 'label';
   @Input() name: string = 'name';
   @Input() checked: boolean = false;
@@ -22,19 +23,16 @@ export class TileComponent implements OnInit, OnChanges {
   faCheck = faCircleCheck;
   faAttention = faCircleExclamation;
   faError = faCircleXmark;
-  screenWidth: any;
+
   @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();
 
-  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }
+  constructor(
+      private sanitizer: DomSanitizer,
+      public screen: HelperService
+    ) { 
+      this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) 
+    }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.screenWidth = window.innerWidth;
-  }
-  
-  ngOnInit(): void {
-    this.screenWidth = window.innerWidth;
-  }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes && changes['localValue']) {
