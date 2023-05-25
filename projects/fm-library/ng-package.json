@@ -10,7 +10,8 @@
     "@fortawesome/free-regular-svg-icons",
     "@fortawesome/free-solid-svg-icons",
     "@angular/material",
-    "angular-star-rating"
+    "angular-star-rating",
+    "angular-svg-icon"
   ],
   "assets": [
     "./src/styles/_colors.scss",

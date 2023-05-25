@@ -3,6 +3,7 @@ import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCircleCheck, faCircleExclamation, faCircleXmark, faHouseCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER, TemplateRef } from '@angular/core';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { TileCheckboxComponent } from './tile-checkbox.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +16,9 @@ export default {
       imports: [
         FontAwesomeModule, 
         BrowserAnimationsModule, 
-        HttpClientModule],
+        HttpClientModule,
+        AngularSvgIconModule.forRoot()
+      ],
       providers: [
         {
           provide: APP_INITIALIZER,
@@ -39,6 +42,18 @@ export const Default: Story = {
     label: 'das Label',
     image: faHouseCircleXmark,
     checked: false,
+    name: 'name',
+    value: 'the value',
+    state: 'success',
+  },
+};
+
+export const SVG: Story = {
+  args: {
+    label: 'das Label',
+    image: 'assets/images/signal-bars-poor.svg',
+    checked: false,
+    isSVG: true,
     name: 'name',
     value: 'the value',
     state: 'success',

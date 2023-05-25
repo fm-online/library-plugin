@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
-import { DomSanitizer} from '@angular/platform-browser';
 import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
@@ -18,8 +17,8 @@ export class TileComponent implements OnChanges {
   @Input() image?: any;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
+  @Input() isSVG: boolean = false;
   expanded!: boolean;
-  localImage: any;
   faCheck = faCircleCheck;
   faAttention = faCircleExclamation;
   faError = faCircleXmark;
@@ -27,11 +26,8 @@ export class TileComponent implements OnChanges {
   @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();
 
   constructor(
-      private sanitizer: DomSanitizer,
       public screen: HelperService
-    ) { 
-      this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) 
-    }
+    ) {}
 
 
   ngOnChanges(changes: SimpleChanges) {

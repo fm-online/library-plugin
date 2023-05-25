@@ -63,6 +63,7 @@
             width: 244px;
             height: 90px;
             color: $t4-base-color;
+            fill: $t4-base-color;
             display: flex;
             position: relative;
             z-index: 1;
@@ -90,10 +91,12 @@
 
             &:checked ~ .da-tile-image {
                 color: $t4-secondary-color;
+                fill: $t4-secondary-color;
             }
     
             &:checked ~ .da-tile-label {
                 color: $t4-secondary-color;
+                fill: $t4-secondary-color;
             }
         }
 

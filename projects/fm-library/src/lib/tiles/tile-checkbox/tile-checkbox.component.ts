@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
@@ -17,8 +16,8 @@ export class TileCheckboxComponent {
   @Input() image?: any;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
+  @Input() isSVG: boolean = false;
   expanded!: boolean;
-  localImage: any;
   faCheck = faCircleCheck;
   faAttention = faCircleExclamation;
   faError = faCircleXmark;
@@ -26,11 +25,8 @@ export class TileCheckboxComponent {
   @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
-    private sanitizer: DomSanitizer,
     public screen: HelperService
-  ) { 
-    this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) 
-  }
+  ) {}
 
   getValue(e: any) {
       this.checked = e.srcElement.checked;

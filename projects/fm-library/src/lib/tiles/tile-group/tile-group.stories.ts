@@ -5,7 +5,7 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { faCircleCheck, faHouseCircleCheck, faHouseCircleExclamation, faHouseCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
 // import { MainPipe } from '../../../pipes/pipe.module';
-// import { AngularSvgIconModule } from 'angular-svg-icon';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { TileComponent } from '../tile/tile.component';
 
@@ -20,7 +20,7 @@ export default {
       imports: [
         FontAwesomeModule, 
         // MainPipe, 
-        // AngularSvgIconModule.forRoot(),
+        AngularSvgIconModule.forRoot(),
         HttpClientModule],
       providers: [
         {
@@ -67,8 +67,42 @@ const testTiles = [
   }
 ]
 
+const testTilesSVG = [
+  {
+    'label': 'label1',
+    'name': 'name',
+    'state': 'success',
+    'checked': false,
+    'isSVG': true,
+    'image': 'assets/images/signal-bars-poor.svg',
+    'value': 'value1'
+  },
+  {
+    'label': 'label2',
+    'name': 'name',
+    'state': 'warning',
+    'checked': false,
+    'image': faHouseCircleExclamation,
+    'value': 'value2'
+  },
+  {
+    'label': 'label3',
+    'name': 'name',
+    'state': 'error',
+    'checked': false,
+    'image': faHouseCircleXmark,
+    'value': 'value3'
+  }
+]
+
 export const Default: Story = {
   args: {
     tiles: testTiles
+  },
+};
+
+export const WithSVG: Story = {
+  args: {
+    tiles: testTilesSVG
   },
 };

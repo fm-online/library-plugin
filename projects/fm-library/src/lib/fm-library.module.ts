@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { StarRatingModule } from 'angular-star-rating';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { ButtonComponent } from './buttons/button/button.component';
 import { ButtonGroupComponent } from './buttons/button-group/button-group.component';
@@ -58,6 +59,7 @@ import { HeaderTextComponent } from './text/header-text/header-text.component';
     MatNativeDateModule,
     NgbTooltipModule,
     StarRatingModule.forRoot(),
+    AngularSvgIconModule.forRoot(),
   ],
   exports: [
     ButtonComponent,

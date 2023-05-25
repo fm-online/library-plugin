@@ -14,7 +14,216 @@
             "methods": []
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "HelperService",
+            "id": "injectable-HelperService-d6b2f3be4d1babdc4e2216cca9f561868a7e672a7d3105ec9391984efd4c5943d29916136a99dbd81a4b406fcbe285f8acd5371882dfa560e6d9d23ffa436631",
+            "file": "projects/fm-library/src/lib/services/helper.service.ts",
+            "properties": [
+                {
+                    "name": "displaySizeDesktopL",
+                    "defaultValue": "1920",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "displaySizeDesktopM",
+                    "defaultValue": "1366",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "displaySizeDesktopS",
+                    "defaultValue": "1280",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "displaySizeSmallest",
+                    "defaultValue": "540",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "displaySizeTablet",
+                    "defaultValue": "1024",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "getHeight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "getWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "convertMobileFont",
+                    "args": [
+                        {
+                            "name": "baseSize",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "factor",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "baseSize",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "factor",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "isBiggerThanFullHD",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "isMobile",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "isMobileOrTablet",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "isSmallest",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "updateScreenSizes",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class HelperService {\n\n\n  public getWidth: any;\n  public getHeight: any;\n\n  private displaySizeSmallest = 540;\n  private displaySizeTablet = 1024;\n  private displaySizeDesktopS = 1280;\n  private displaySizeDesktopM = 1366;\n  private displaySizeDesktopL = 1920;\n\n  constructor() {\n    this.getWidth = window.innerWidth;\n    this.getHeight = window.innerHeight;\n  }\n\n  public updateScreenSizes() {\n    this.getWidth = window.innerWidth;\n    this.getHeight = window.innerHeight;\n  }\n\n  isSmallest() {\n    return this.getWidth < this.displaySizeSmallest ? true : false;\n  }\n\n  isMobile() {\n    return this.getWidth < this.displaySizeTablet ? true : false;\n  }\n\n  isMobileOrTablet() {\n    return this.getWidth < this.displaySizeDesktopS ? true : false;\n  }\n\n  isBiggerThanFullHD() {\n    return this.getWidth > this.displaySizeDesktopL ? true : false;\n  }\n\n  convertMobileFont(baseSize: string, factor: number) {\n    const sizeNumber = parseInt(baseSize.substring(0, baseSize.length - 2));\n    const mobileSizeNumber = sizeNumber * factor;\n    return mobileSizeNumber.toString() + 'px';\n  }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
@@ -901,7 +1110,7 @@
         },
         {
             "name": "HeaderTextComponent",
-            "id": "component-HeaderTextComponent-525e03f72d5dd6b9500fe3e29cd7625f871a7839f48f58c02fa0ece23940805a6abffd5c5fb3a1ec6bb2f4b8b5d3b04472d74436851e0c4b8d834a05d04c5dea",
+            "id": "component-HeaderTextComponent-590b60b2e82e34171fedb5518c52530aa6d2c65c719afe596f69f474268a97cd71aa8e7bb85fe7f0859486e366303713fb8a8605a52caa4227a6d3a6b8af079f",
             "file": "projects/fm-library/src/lib/text/header-text/header-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -923,7 +1132,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -932,7 +1141,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 },
@@ -941,7 +1150,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -950,7 +1159,7 @@
                     "defaultValue": "'38px'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
@@ -961,11 +1170,34 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 16,
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "mobileSize",
+                    "defaultValue": "'20px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "getInfo",
@@ -980,7 +1212,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1001,7 +1233,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1013,11 +1245,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n  mobileSize: string = '20px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.527);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-header-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-header-text {\n        font-family: $font;\n        font-size: 16px;\n        color: $t1-base-color;\n        text-align: center;\n        margin-top: 0;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n    }\n\n    .da-header-info-button {\n        margin-left: 10px;\n    }\n}\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-header-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-header-text {\n        font-family: $font;\n        font-size: 16px;\n        color: $t1-base-color;\n        text-align: center;\n        margin: 0;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n    }\n\n    .da-header-info-button {\n        margin-left: 10px;\n    }\n}\n",
                     "styleUrl": "./header-text.component.scss"
                 }
             ],
@@ -1027,13 +1259,31 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 14
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"{'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"screen.isSmallest() ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
         },
         {
             "name": "InfoButtonComponent",
@@ -1842,7 +2092,7 @@
         },
         {
             "name": "TileCheckboxComponent",
-            "id": "component-TileCheckboxComponent-07f23d6f285bcfefd1c284be5d3c0a7fbffa6feb55641293940502234cb81327a8fe6e699cfa6e0aa6f31c857f424596d386a2c6a904e4bcb862858ef46c9fe1",
+            "id": "component-TileCheckboxComponent-83e36e0a3f21d9df0a30cd4f84e7ca0405469ec9d22fa1ec6a45d8a5f273343077581ce1762181bd011e952fcfb25bc058c53f91d4a5289b3664715b1f33d783",
             "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1864,7 +2114,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1872,7 +2122,7 @@
                     "name": "content",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "TemplateRef<any>",
                     "decorators": []
                 },
@@ -1880,7 +2130,7 @@
                     "name": "image",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "any",
                     "decorators": []
                 },
@@ -1889,7 +2139,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -1898,7 +2148,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1907,7 +2157,7 @@
                     "defaultValue": "'name'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -1916,7 +2166,7 @@
                     "defaultValue": "'state'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -1925,7 +2175,7 @@
                     "defaultValue": "'value'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 }
@@ -1936,7 +2186,7 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 27,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -1948,7 +2198,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 20
                 },
                 {
                     "name": "faAttention",
@@ -1958,7 +2208,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 24
                 },
                 {
                     "name": "faCheck",
@@ -1968,7 +2218,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 23
                 },
                 {
                     "name": "faError",
@@ -1978,7 +2228,17 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 25
+                },
+                {
+                    "name": "isSVG",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
                 },
                 {
                     "name": "localImage",
@@ -1987,7 +2247,19 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
+                },
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 31,
+                    "modifierKind": [
+                        123
+                    ]
                 },
                 {
                     "name": "screenWidth",
@@ -1996,7 +2268,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 26
                 }
             ],
             "methodsClass": [
@@ -2013,7 +2285,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2027,82 +2299,20 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 34,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onResize",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 30,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "decorators": [
-                        {
-                            "name": "HostListener",
-                            "stringifiedArguments": "'window:resize', ['$event']"
-                        }
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [
-                {
-                    "name": "window:resize",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "argsDecorator": [
-                        "$event"
-                    ],
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 30
-                }
-            ],
+            "hostListeners": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output, TemplateRef } from '@angular/core';\nimport { DomSanitizer } from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-tile-checkbox',\n  templateUrl: './tile-checkbox.component.html',\n  styleUrls: ['./tile-checkbox.component.scss']\n})\nexport class TileCheckboxComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  screenWidth: any;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.screenWidth = window.innerWidth;\n  }\n  \n  ngOnInit(): void {\n    this.screenWidth = window.innerWidth;\n  }\n\n  getValue(e: any) {\n      this.checked = e.srcElement.checked;\n      const checked = e.srcElement.checked;\n      const name = e.srcElement.name;\n      this.checkboxValue.emit({name, checked});\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';\nimport { DomSanitizer } from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-checkbox',\n  templateUrl: './tile-checkbox.component.html',\n  styleUrls: ['./tile-checkbox.component.scss']\n})\nexport class TileCheckboxComponent {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  isSVG: boolean = false;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  screenWidth: any;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(\n    private sanitizer: DomSanitizer,\n    public screen: HelperService\n  ) { \n    this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) \n  }\n\n  getValue(e: any) {\n      this.checked = e.srcElement.checked;\n      const checked = e.srcElement.checked;\n      const name = e.srcElement.name;\n      this.checkboxValue.emit({name, checked});\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 6vw;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 14px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -2118,9 +2328,15 @@
                         "type": "DomSanitizer",
                         "deprecated": false,
                         "deprecationMessage": ""
+                    },
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
                     }
                 ],
-                "line": 25,
+                "line": 27,
                 "jsdoctags": [
                     {
                         "name": "sanitizer",
@@ -2130,13 +2346,19 @@
                         "tagName": {
                             "text": "param"
                         }
+                    },
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
                     }
                 ]
             },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"[checked ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon \n            *ngIf=\"image\"\n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n            [icon]=\"image\"\n        >\n        </fa-icon>\n        <div\n            *ngIf=\"!image\"\n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n        >\n    </div>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"[checked ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf='isSVG' else #faIcon class=\"da-tile-checkbox-image\" [src]=\"localImage\"></svg-icon>\n        <ng-container #faIcon>\n            <fa-icon \n                *ngIf=\"image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div\n                *ngIf=\"!image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            > </div>\n        </ng-container>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileCheckboxGroupComponent",
@@ -2248,7 +2470,7 @@
         },
         {
             "name": "TileComponent",
-            "id": "component-TileComponent-6e16e0392f753cbb7d2cc88b7f0aa1c7c4d08a814157703fcd53fe8b27414edcf41034c946075970d6c4910407a455bd0a34fa8f6188d53ac554372f01664f42",
+            "id": "component-TileComponent-1d9db5b4cd2f290e7e44d7f2a9a628814cbed0a7ae415b3b259f4921e635e669033d1b6c0deeb12df8e4f3c96c31c634a6f90728ecc586466eb20ae951ce74fb",
             "file": "projects/fm-library/src/lib/tiles/tile/tile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2270,7 +2492,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2278,7 +2500,7 @@
                     "name": "content",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "TemplateRef<any>",
                     "decorators": []
                 },
@@ -2286,7 +2508,7 @@
                     "name": "image",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "any",
                     "decorators": []
                 },
@@ -2295,7 +2517,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -2304,7 +2526,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2313,7 +2535,7 @@
                     "defaultValue": "'localValue'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -2322,7 +2544,7 @@
                     "defaultValue": "'name'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -2331,7 +2553,7 @@
                     "defaultValue": "'state'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -2340,7 +2562,7 @@
                     "defaultValue": "'value'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 }
@@ -2351,7 +2573,7 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -2363,7 +2585,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "faAttention",
@@ -2373,7 +2595,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 24
                 },
                 {
                     "name": "faCheck",
@@ -2383,7 +2605,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 23
                 },
                 {
                     "name": "faError",
@@ -2393,7 +2615,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 25
                 },
                 {
                     "name": "localImage",
@@ -2402,16 +2624,19 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 22
                 },
                 {
-                    "name": "screenWidth",
+                    "name": "screen",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any",
+                    "type": "HelperService",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 31,
+                    "modifierKind": [
+                        123
+                    ]
                 }
             ],
             "methodsClass": [
@@ -2428,7 +2653,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2456,7 +2681,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2470,82 +2695,20 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 35,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onResize",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 31,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "decorators": [
-                        {
-                            "name": "HostListener",
-                            "stringifiedArguments": "'window:resize', ['$event']"
-                        }
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [
-                {
-                    "name": "window:resize",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "argsDecorator": [
-                        "$event"
-                    ],
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 31
-                }
-            ],
+            "hostListeners": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { DomSanitizer} from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnInit, OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  screenWidth: any;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(private sanitizer: DomSanitizer) { this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) }\n\n  @HostListener('window:resize', ['$event'])\n  onResize(event: any) {\n    this.screenWidth = window.innerWidth;\n  }\n  \n  ngOnInit(): void {\n    this.screenWidth = window.innerWidth;\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { DomSanitizer} from '@angular/platform-browser';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n  localImage: any;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n      private sanitizer: DomSanitizer,\n      public screen: HelperService\n    ) { \n      this.localImage = this.sanitizer.bypassSecurityTrustHtml(this.image) \n    }\n\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 6vw;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 14px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -2561,9 +2724,15 @@
                         "type": "DomSanitizer",
                         "deprecated": false,
                         "deprecationMessage": ""
+                    },
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
                     }
                 ],
-                "line": 26,
+                "line": 27,
                 "jsdoctags": [
                     {
                         "name": "sanitizer",
@@ -2573,14 +2742,22 @@
                         "tagName": {
                             "text": "param"
                         }
+                    },
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
                     }
                 ]
             },
             "implements": [
-                "OnInit",
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"[expanded ? 'expanded' : '', (screenWidth <= 540) ? 'mobile': '']\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon *ngIf=\"image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n            [icon]=\"image\"\n        >\n        </fa-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n        >\n    </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"[(screenWidth <= 540) ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"[expanded ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <fa-icon *ngIf=\"image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            [icon]=\"image\"\n        >\n        </fa-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >\n    </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
@@ -2904,7 +3081,7 @@
         },
         {
             "name": "TileTextComponent",
-            "id": "component-TileTextComponent-df9703b19618b9fc1d6508efbdd67442b18c6200c33f18b8fae5b76929dff85d2a6cb82828b86bdd798191bb473d3be2855894f3c82918d3012c37a4542dc547",
+            "id": "component-TileTextComponent-1ea69ed972f53fb98dfb9dc4b6cd7a067330b577eba3ecf24c794238e375427d16aa4a93d066f6e9bc34114c86cf29ff5f5ed037a35f2dd55cf033f4da137dec",
             "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2926,7 +3103,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -2935,7 +3112,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 },
@@ -2944,7 +3121,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2953,7 +3130,7 @@
                     "defaultValue": "'16px'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
@@ -2964,11 +3141,34 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 16,
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "mobileSize",
+                    "defaultValue": "'14px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "getInfo",
@@ -2983,7 +3183,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3004,7 +3204,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3016,7 +3216,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3030,13 +3230,31 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 14
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-text-wrapper\">\n    <p class=\"da-tile-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"{'font-size': size}\"\n    >\n        {{label}}\n    </p>\n    <div class=\"da-text-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>"
+            "templateData": "<div class=\"da-tile-text-wrapper\">\n    <p class=\"da-tile-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"screen.isSmallest() ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n    </p>\n    <div class=\"da-text-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>"
         },
         {
             "name": "ToggleCheckboxComponent",
@@ -3462,13 +3680,13 @@
     "modules": [
         {
             "name": "FmLibraryModule",
-            "id": "module-FmLibraryModule-3f729c89676854cf79405e99129f5a9feef27900c4691c842a43b7717c4a01918764d51f16074d12faba2c8d8cc7c84bca4a073bc43f85c476488adf31c80121",
+            "id": "module-FmLibraryModule-9ca70962a239e9b08b889cf429dae45b7e25ed8e0ed65659580709d91d7c4c62ab9d5d702a42f7fded33b751c00305053203349edfd3f9c61a7676785e927f0c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/fm-library/src/lib/fm-library.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    StarRatingModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -4134,6 +4352,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: true,\n    faCircleCheck: faCircleCheck,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
+                "name": "SVG",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: 'assets/images/signal-bars-poor.svg',\n    checked: false,\n    isSVG: true,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
+            },
+            {
                 "name": "testButtons",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4504,6 +4732,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TileRatingComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
@@ -4528,17 +4767,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleTristateComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileRatingComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5151,6 +5379,16 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: faHouseCircleXmark,\n    checked: false,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
+                },
+                {
+                    "name": "SVG",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    image: 'assets/images/signal-bars-poor.svg',\n    checked: false,\n    isSVG: true,\n    name: 'name',\n    value: 'the value',\n    state: 'success',\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts": [
@@ -5511,6 +5749,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileRatingComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
                 {
                     "name": "Story",
@@ -5544,19 +5795,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleTristateComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileRatingComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6103,12 +6341,21 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/fm-library/src/lib/services/helper.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HelperService",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/fm-library/src/lib/text/header-text/header-text.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -6157,7 +6404,7 @@
                 "linktype": "component",
                 "name": "TileTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -6235,7 +6482,7 @@
                 "linktype": "component",
                 "name": "TileCheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/21",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -6244,6 +6491,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SVG",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6312,7 +6569,7 @@
                 "linktype": "component",
                 "name": "TileComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/23",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {

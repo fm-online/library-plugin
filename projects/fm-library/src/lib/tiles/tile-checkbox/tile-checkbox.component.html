@@ -15,19 +15,21 @@
             <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
             <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
         </div>
-        <fa-icon 
-            *ngIf="image"
-            class="da-tile-checkbox-image" 
-            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
-            [icon]="image"
-        >
-        </fa-icon>
-        <div
-            *ngIf="!image"
-            class="da-tile-checkbox-image" 
-            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
-        >
-    </div>
+        <svg-icon *ngIf="isSVG; else faIcon" class="da-tile-checkbox-image" [src]="image"></svg-icon>
+        <ng-template #faIcon>
+            <fa-icon 
+                *ngIf="image"
+                class="da-tile-checkbox-image" 
+                [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+                [icon]="image"
+            >
+            </fa-icon>
+            <div
+                *ngIf="!image"
+                class="da-tile-checkbox-image" 
+                [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+            > </div>
+        </ng-template>
         <div 
             class="da-tile-checkbox-label"
             [ngClass]="[screen.isSmallest() ? 'mobile': '']"
