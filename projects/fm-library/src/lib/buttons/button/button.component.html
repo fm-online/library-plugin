@@ -1,7 +1,7 @@
 <div class="da-button-single">
     <button 
         (click)="getValue()" 
-        [ngClass]="[light ? 'light' : '', iconButton ? 'short' : '', disabled ? 'disabled' : '']" 
+        [ngClass]="[light ? 'light' : '', iconButton ? 'short' : '', disabled ? 'disabled' : '', screen.isSmallest() ? 'mobile' : '']" 
         [disabled]="disabled"
         #target
     >

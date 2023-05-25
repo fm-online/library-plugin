@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input,Output } from '@angular/core';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-button',
@@ -17,7 +18,9 @@ export class ButtonComponent {
   @Input() iconRight: any;
   @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(
+    public screen: HelperService
+  ) {}
 
   getValue() {
     this.buttonValue.emit(this.type);

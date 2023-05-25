@@ -355,7 +355,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-b99415c8f9c2ae07abb2ee44290eceb1af3639fb25df9243e03657b99bfbf65137459d4adb9597babbdffedb73cdfa9db704f8c5dc604f84effa212cb0232ef0-1",
+            "id": "component-ButtonComponent-0ac758ed654726f6575d26129a9d9503caa06ba7de8174f3fd2a058c935e114f540292a9b1681e39173ab329beeb8ecba5c4f0d8fa2a98de20ac2e0ec59831b7-1",
             "file": "projects/fm-library/src/lib/buttons/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -377,7 +377,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -385,7 +385,7 @@
                     "name": "icon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "any",
                     "decorators": []
                 },
@@ -394,7 +394,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -402,7 +402,7 @@
                     "name": "iconLeft",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "any",
                     "decorators": []
                 },
@@ -410,7 +410,7 @@
                     "name": "iconRight",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "any",
                     "decorators": []
                 },
@@ -418,7 +418,7 @@
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -427,7 +427,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -435,7 +435,7 @@
                     "name": "type",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -443,7 +443,7 @@
                     "name": "value",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
@@ -454,11 +454,24 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "getValue",
@@ -466,7 +479,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -478,11 +491,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input,Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss']\n})\nexport class ButtonComponent {\n  @Input() iconButton: boolean = false;\n  @Input() light: boolean = false;\n  @Input() type!: string;\n  @Input() value!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() disabled: boolean = false;\n  @Input() iconLeft: any;\n  @Input() iconRight: any;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input,Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss']\n})\nexport class ButtonComponent {\n  @Input() iconButton: boolean = false;\n  @Input() light: boolean = false;\n  @Input() type!: string;\n  @Input() value!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() disabled: boolean = false;\n  @Input() iconLeft: any;\n  @Input() iconRight: any;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    -webkit-transition: 0.4s;\n    transition: 0.4s;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    -webkit-transition: 0.4s;\n    transition: 0.4s;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n        }\n\n        &.mobile {\n            width: 94px;\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -492,13 +505,31 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 18
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<div class=\"da-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"[light ? 'light' : '', iconButton ? 'short' : '', disabled ? 'disabled' : '']\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            *ngIf=\"iconLeft\"\n            class=\"da-button-icon left\" \n            [icon]=\"iconLeft\" \n        ></fa-icon>\n        <span class=\"da-button-label\" *ngIf=\"value\">{{ value }}</span> \n        <fa-icon \n            *ngIf=\"icon\"\n            class=\"da-button-icon main\" \n            [icon]=\"icon\" \n        ></fa-icon>\n        <fa-icon \n            *ngIf=\"iconRight\"\n            class=\"da-button-icon right\" \n            [icon]=\"iconRight\" \n        ></fa-icon>\n    </button>\n    <div *ngIf=\"icon\" class=\"da-button-icon-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n</div>"
+            "templateData": "<div class=\"da-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"[light ? 'light' : '', iconButton ? 'short' : '', disabled ? 'disabled' : '', screen.isSmallest() ? 'mobile' : '']\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            *ngIf=\"iconLeft\"\n            class=\"da-button-icon left\" \n            [icon]=\"iconLeft\" \n        ></fa-icon>\n        <span class=\"da-button-label\" *ngIf=\"value\">{{ value }}</span> \n        <fa-icon \n            *ngIf=\"icon\"\n            class=\"da-button-icon main\" \n            [icon]=\"icon\" \n        ></fa-icon>\n        <fa-icon \n            *ngIf=\"iconRight\"\n            class=\"da-button-icon right\" \n            [icon]=\"iconRight\" \n        ></fa-icon>\n    </button>\n    <div *ngIf=\"icon\" class=\"da-button-icon-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n</div>"
         },
         {
             "name": "ButtonGroupComponent",
@@ -1110,7 +1141,7 @@
         },
         {
             "name": "HeaderTextComponent",
-            "id": "component-HeaderTextComponent-5c42ca075f2f6e243eda12574d1cd6cb241ca3db078b48ebb7ff205fe8400f47bdba6703d6edffd7763d26be4546381ef5969fe3c10e07f90541b8b89f367a68",
+            "id": "component-HeaderTextComponent-274333127efa81efbd440bdc21d00c7099735d34b5283cb48127228735d10d014027af4d3e3b36ccdbd15c01217f8557ac56596f7ba8ffb858d6cba9417fa1e8",
             "file": "projects/fm-library/src/lib/text/header-text/header-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1177,7 +1208,7 @@
             "propertiesClass": [
                 {
                     "name": "mobileSize",
-                    "defaultValue": "'20px'",
+                    "defaultValue": "'25px'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -1245,7 +1276,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n  mobileSize: string = '20px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n  mobileSize: string = '25px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1283,7 +1314,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"[screen.isSmallest() ? {'font-size': mobileSize, 'line-height': '34px'} : {'font-size': size}]\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"screen.isSmallest() ? {'font-size': mobileSize, 'line-height': '34px'} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
         },
         {
             "name": "InfoButtonComponent",
@@ -3815,21 +3846,21 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Default",
@@ -3965,21 +3996,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4723,8 +4754,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4734,8 +4765,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4881,28 +4912,6 @@
                     "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
                 {
                     "name": "Dark",
@@ -4923,6 +4932,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/buttons/button/button.stories.ts": [
@@ -5762,19 +5793,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
                 {
                     "name": "Story",
@@ -5782,6 +5800,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleCheckboxComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5863,7 +5894,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
