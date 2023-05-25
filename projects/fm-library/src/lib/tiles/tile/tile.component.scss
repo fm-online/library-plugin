@@ -28,6 +28,7 @@
         &.mobile {
             width: calc(100vw - 50px);
             min-height: auto;
+            padding-bottom: 0;
         }
      
         .da-tile-icon-wrapper {

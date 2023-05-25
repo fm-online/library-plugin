@@ -20,11 +20,10 @@ export class HeaderTextComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.mobileSize = this.screen.convertMobileFont(this.size, 0.527);
+    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);
   }
 
   getInfo(e: string) {
-    console.log(e);
     this.infoValue.emit(e);
   }
 

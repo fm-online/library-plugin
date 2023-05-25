@@ -20,7 +20,7 @@ export class TileTextComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);
+    this.mobileSize = this.screen.convertMobileFont(this.size, 1.1875);
   }
 
   getInfo(e: string) {
