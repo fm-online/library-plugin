@@ -11,13 +11,13 @@ export class HeaderTextComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() info: string = '';
   @Input() size: string = '38px';
-  mobileSize: string = '20px';
+  mobileSize: string = '25px';
 
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 
   constructor(
     public screen: HelperService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);

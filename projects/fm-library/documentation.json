@@ -1110,7 +1110,7 @@
         },
         {
             "name": "HeaderTextComponent",
-            "id": "component-HeaderTextComponent-590b60b2e82e34171fedb5518c52530aa6d2c65c719afe596f69f474268a97cd71aa8e7bb85fe7f0859486e366303713fb8a8605a52caa4227a6d3a6b8af079f",
+            "id": "component-HeaderTextComponent-5c42ca075f2f6e243eda12574d1cd6cb241ca3db078b48ebb7ff205fe8400f47bdba6703d6edffd7763d26be4546381ef5969fe3c10e07f90541b8b89f367a68",
             "file": "projects/fm-library/src/lib/text/header-text/header-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1245,7 +1245,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n  mobileSize: string = '20px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.527);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n  mobileSize: string = '20px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1283,7 +1283,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"screen.isSmallest() ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"[screen.isSmallest() ? {'font-size': mobileSize, 'line-height': '34px'} : {'font-size': size}]\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
         },
         {
             "name": "InfoButtonComponent",
@@ -2302,7 +2302,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 14px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 14px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -2683,7 +2683,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 14px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 14px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -3041,7 +3041,7 @@
         },
         {
             "name": "TileTextComponent",
-            "id": "component-TileTextComponent-1ea69ed972f53fb98dfb9dc4b6cd7a067330b577eba3ecf24c794238e375427d16aa4a93d066f6e9bc34114c86cf29ff5f5ed037a35f2dd55cf033f4da137dec",
+            "id": "component-TileTextComponent-7caaa931b4f6cb8853ca848e80407fae3dd2cac9b565ee7538b06d11a7a85f8c68c8d3bc379fe2b264a1f1fbcca8ba1893f60b49153ddde8c79149fefc5b235d",
             "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3176,7 +3176,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 1.1875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3935,36 +3935,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3990,6 +3960,36 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -4679,39 +4679,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleTristateComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<TileCheckboxComponent>",
                 "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
                 "deprecated": false,
@@ -4747,6 +4714,39 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<TileRatingComponent>",
                 "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleTristateComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5349,48 +5349,6 @@
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
-                },
-                {
-                    "name": "testTabsThree",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  },\n  {\n    'label': 'N° 3',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value3',\n    'checked': false\n  }\n]"
-                },
-                {
-                    "name": "testTabsTwo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  }\n]"
-                },
-                {
-                    "name": "TwoTabs",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
                 {
                     "name": "Default",
@@ -5475,6 +5433,48 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    tiles: testTilesSVG\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+                },
+                {
+                    "name": "testTabsThree",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  },\n  {\n    'label': 'N° 3',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value3',\n    'checked': false\n  }\n]"
+                },
+                {
+                    "name": "testTabsTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  }\n]"
+                },
+                {
+                    "name": "TwoTabs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
@@ -5710,45 +5710,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleTristateComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
                 {
                     "name": "Story",
@@ -5795,6 +5756,45 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TileRatingComponent>",
                     "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleTristateComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
