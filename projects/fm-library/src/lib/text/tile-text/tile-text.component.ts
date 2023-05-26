@@ -11,7 +11,7 @@ export class TileTextComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() info: string = '';
   @Input() size: string = '16px';
-  mobileSize: string = '14px';
+  mobileSize: string = '19px';
 
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 
