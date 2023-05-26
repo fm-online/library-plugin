@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-button-group',
@@ -11,7 +12,9 @@ export class ButtonGroupComponent implements OnInit {
   localValue: string = 'localValue';
   @Output() public buttonValue:EventEmitter<any> = new EventEmitter<any>();
   
-  constructor() { }
+  constructor(
+    public screen: HelperService
+  ) { }
 
   ngOnInit(): void {
   }

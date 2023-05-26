@@ -43,6 +43,10 @@
         &.short {
             width: 50px;
             justify-content: center;
+
+            &.mobile {
+                width: 34px;
+            }
         }
 
         &:hover,
@@ -87,6 +91,10 @@
 
             &.main {
                 font-size: 28px;
+
+                &.mobile {
+                    font-size: 20px;
+                }
             }
         }
     }

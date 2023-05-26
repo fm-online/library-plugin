@@ -495,7 +495,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    -webkit-transition: 0.4s;\n    transition: 0.4s;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n        }\n\n        &.mobile {\n            width: 94px;\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    -webkit-transition: 0.4s;\n    transition: 0.4s;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.mobile {\n            width: 94px;\n            height: 34px;\n        }\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n\n            &.mobile {\n                width: 34px;\n            }\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n\n                &.mobile {\n                    font-size: 20px;\n                }\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -529,11 +529,11 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<div class=\"da-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"[light ? 'light' : '', iconButton ? 'short' : '', disabled ? 'disabled' : '', screen.isSmallest() ? 'mobile' : '']\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            *ngIf=\"iconLeft\"\n            class=\"da-button-icon left\" \n            [icon]=\"iconLeft\" \n        ></fa-icon>\n        <span class=\"da-button-label\" *ngIf=\"value\">{{ value }}</span> \n        <fa-icon \n            *ngIf=\"icon\"\n            class=\"da-button-icon main\" \n            [icon]=\"icon\" \n        ></fa-icon>\n        <fa-icon \n            *ngIf=\"iconRight\"\n            class=\"da-button-icon right\" \n            [icon]=\"iconRight\" \n        ></fa-icon>\n    </button>\n    <div *ngIf=\"icon\" class=\"da-button-icon-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n</div>"
+            "templateData": "<div class=\"da-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"{'light' : light, 'short' : iconButton, 'disabled' : disabled, 'mobile' : screen.isSmallest()}\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            *ngIf=\"iconLeft\"\n            class=\"da-button-icon left\" \n            [icon]=\"iconLeft\" \n        ></fa-icon>\n        <span class=\"da-button-label\" *ngIf=\"value\">{{ value }}</span> \n        <fa-icon \n            *ngIf=\"icon\"\n            class=\"da-button-icon main\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n            [icon]=\"icon\" \n        ></fa-icon>\n        <fa-icon \n            *ngIf=\"iconRight\"\n            class=\"da-button-icon right\" \n            [icon]=\"iconRight\" \n        ></fa-icon>\n    </button>\n    <div *ngIf=\"icon\" class=\"da-button-icon-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n</div>"
         },
         {
             "name": "ButtonGroupComponent",
-            "id": "component-ButtonGroupComponent-c16b47327c95d5c942e7c5ac3b4824538ac82cafd9a195497df968a99e28d416cb7c756c31fa5cf4545d891f296706d24366f8dfb3cd32991608083e084cf30f",
+            "id": "component-ButtonGroupComponent-1900d06fb7818e533328dc0fe954467b98365b724fd183cece9068a8f3fb27c9ee6707b21daaa7ffa1541e98600a0c00988937456461594ad26938100c391fcd",
             "file": "projects/fm-library/src/lib/buttons/button-group/button-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -554,7 +554,7 @@
                     "name": "buttons",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "any",
                     "decorators": []
                 },
@@ -563,7 +563,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -574,7 +574,7 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -587,7 +587,19 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 12
+                },
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
                 }
             ],
             "methodsClass": [
@@ -597,7 +609,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -614,7 +626,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -637,11 +649,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-button-group',\n  templateUrl: './button-group.component.html',\n  styleUrls: ['./button-group.component.scss']\n})\nexport class ButtonGroupComponent implements OnInit {\n  @Input() buttons: any;\n  @Input() light: boolean = false;\n  localValue: string = 'localValue';\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.buttonValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-button-group',\n  templateUrl: './button-group.component.html',\n  styleUrls: ['./button-group.component.scss']\n})\nexport class ButtonGroupComponent implements OnInit {\n  @Input() buttons: any;\n  @Input() light: boolean = false;\n  localValue: string = 'localValue';\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.buttonValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".da-buttons {\n    width: 100%;\n    display: flex;\n    column-gap: 24px;\n    row-gap: 24px;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 1366px;\n}",
+                    "data": ".da-buttons {\n    width: 100%;\n    display: flex;\n    column-gap: 24px;\n    row-gap: 24px;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 1366px;\n\n    &.mobile {\n        column-gap: 10px;\n    }\n}",
                     "styleUrl": "./button-group.component.scss"
                 }
             ],
@@ -651,13 +663,31 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 12
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-buttons\">\n    <ng-container *ngFor=\"let button of buttons; let num = index\">\n        <lib-button \n            [label]=\"button.label\"\n            [light]=\"light\"\n            [type]=\"button.type\"\n            [iconButton]=\"button.iconButton\"\n            [icon]=\"button.icon\"\n            [iconRight]=\"button.iconRight\"\n            [iconLeft]=\"button.iconLeft\"\n            [disabled]=\"button.disabled\"\n            [value]=\"button.value\"\n            (buttonValue)=\"sendValue($event)\">\n        </lib-button>\n    </ng-container>\n</div>"
+            "templateData": "<div class=\"da-buttons\" [ngClass]=\"{'mobile' : screen.isSmallest()}\" >\n    <ng-container *ngFor=\"let button of buttons; let num = index\">\n        <lib-button \n            [label]=\"button.label\"\n            [light]=\"light\"\n            [type]=\"button.type\"\n            [iconButton]=\"button.iconButton\"\n            [icon]=\"button.icon\"\n            [iconRight]=\"button.iconRight\"\n            [iconLeft]=\"button.iconLeft\"\n            [disabled]=\"button.disabled\"\n            [value]=\"button.value\"\n            (buttonValue)=\"sendValue($event)\">\n        </lib-button>\n    </ng-container>\n</div>"
         },
         {
             "name": "CounterComponent",
@@ -2333,7 +2363,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 14px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -2364,7 +2394,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"[checked ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" class=\"da-tile-checkbox-image\" [src]=\"image\"></svg-icon>\n        <ng-template #faIcon>\n            <fa-icon \n                *ngIf=\"image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div\n                *ngIf=\"!image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            > </div>\n        </ng-template>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"[checked ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <ng-template #faIcon>\n            <fa-icon \n                *ngIf=\"image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div\n                *ngIf=\"!image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            > </div>\n        </ng-template>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileCheckboxGroupComponent",
@@ -2714,7 +2744,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 14px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -6px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -2748,7 +2778,7 @@
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"[expanded ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" class=\"da-tile-image\" [src]=\"image\"></svg-icon>\n        <ng-template #faIcon>\n            <fa-icon *ngIf=\"image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div *ngIf=\"!image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            >\n            </div>\n        </ng-template>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"[expanded ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" \n            class=\"da-tile-image\" \n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <ng-template #faIcon>\n            <fa-icon *ngIf=\"image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div *ngIf=\"!image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            >\n            </div>\n        </ng-template>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
@@ -3072,7 +3102,7 @@
         },
         {
             "name": "TileTextComponent",
-            "id": "component-TileTextComponent-7caaa931b4f6cb8853ca848e80407fae3dd2cac9b565ee7538b06d11a7a85f8c68c8d3bc379fe2b264a1f1fbcca8ba1893f60b49153ddde8c79149fefc5b235d",
+            "id": "component-TileTextComponent-2e5ecb109fd0b8e4c5e2fe2636252fe6ae137a5b603e3e8db35ab9b7d59202f3d0905d92a17b6d7377282fa343d691aae87cd116a528f6967c6f2fa78f4ac2d0",
             "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3139,7 +3169,7 @@
             "propertiesClass": [
                 {
                     "name": "mobileSize",
-                    "defaultValue": "'14px'",
+                    "defaultValue": "'19px'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -3207,7 +3237,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 1.1875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '19px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 1.1875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3846,21 +3876,21 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Default",
@@ -3996,21 +4026,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4754,8 +4784,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4765,8 +4795,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4912,28 +4942,6 @@
                     "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
                 {
                     "name": "Dark",
@@ -4954,6 +4962,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/buttons/button/button.stories.ts": [
@@ -5793,19 +5823,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
                 {
                     "name": "Story",
@@ -5813,6 +5830,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5855,7 +5885,7 @@
                 "linktype": "component",
                 "name": "ButtonGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {

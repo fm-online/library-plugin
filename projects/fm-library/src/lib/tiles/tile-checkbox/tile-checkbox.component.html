@@ -15,7 +15,12 @@
             <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
             <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
         </div>
-        <svg-icon *ngIf="isSVG; else faIcon" class="da-tile-checkbox-image" [src]="image"></svg-icon>
+        <svg-icon *ngIf="isSVG; else faIcon" 
+            class="da-tile-checkbox-image" 
+            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+            [src]="image"
+        >
+        </svg-icon>
         <ng-template #faIcon>
             <fa-icon 
                 *ngIf="image"

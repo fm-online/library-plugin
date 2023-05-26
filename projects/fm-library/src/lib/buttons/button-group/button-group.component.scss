@@ -6,4 +6,8 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1366px;
+
+    &.mobile {
+        column-gap: 10px;
+    }
 }

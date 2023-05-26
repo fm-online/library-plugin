@@ -1,4 +1,4 @@
-<div class="da-buttons">
+<div class="da-buttons" [ngClass]="{'mobile' : screen.isSmallest()}" >
     <ng-container *ngFor="let button of buttons; let num = index">
         <lib-button 
             [label]="button.label"

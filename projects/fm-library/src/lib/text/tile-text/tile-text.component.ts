@@ -11,7 +11,7 @@ export class TileTextComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() info: string = '';
   @Input() size: string = '16px';
-  mobileSize: string = '19px';
+  mobileSize: string = '14px';
 
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 
@@ -20,7 +20,7 @@ export class TileTextComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.mobileSize = this.screen.convertMobileFont(this.size, 1.1875);
+    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);
   }
 
   getInfo(e: string) {
