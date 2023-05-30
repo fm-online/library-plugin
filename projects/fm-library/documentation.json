@@ -3102,7 +3102,7 @@
         },
         {
             "name": "TileTextComponent",
-            "id": "component-TileTextComponent-2e5ecb109fd0b8e4c5e2fe2636252fe6ae137a5b603e3e8db35ab9b7d59202f3d0905d92a17b6d7377282fa343d691aae87cd116a528f6967c6f2fa78f4ac2d0",
+            "id": "component-TileTextComponent-1ea69ed972f53fb98dfb9dc4b6cd7a067330b577eba3ecf24c794238e375427d16aa4a93d066f6e9bc34114c86cf29ff5f5ed037a35f2dd55cf033f4da137dec",
             "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3169,7 +3169,7 @@
             "propertiesClass": [
                 {
                     "name": "mobileSize",
-                    "defaultValue": "'19px'",
+                    "defaultValue": "'14px'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
@@ -3237,7 +3237,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '19px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 1.1875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {

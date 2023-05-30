@@ -3,8 +3,6 @@
 .da-button-single {
     font-family: $font;
     position: relative;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,8 +25,6 @@
         align-items: center;
         padding: 0 5px;
         cursor: pointer;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
 
         &.mobile {
             width: 94px;
@@ -78,9 +74,6 @@
 
         .da-button-icon {
             font-size: 14px;
-            -webkit-transition: 0.4s;
-            transition: 0.4s;
-
             &.left {
                 margin-left: 10px;
             }
@@ -106,8 +99,6 @@
         position: absolute;
         white-space: nowrap;
         bottom: -25px;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
 
         &.light {
             color: $input-secondary-color;
