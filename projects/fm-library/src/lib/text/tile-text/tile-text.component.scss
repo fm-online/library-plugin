@@ -6,11 +6,15 @@
 
     .da-tile-text {
         font-family: $font;
-        font-size: 16px;
+        font-weight: 400;
         color: $t1-base-color;
     
         &.light {
             color: $t1-secondary-color;
+        }
+
+        &.thin {
+            font-weight: 300;
         }
     }
 

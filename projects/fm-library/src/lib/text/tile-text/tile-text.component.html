@@ -1,7 +1,7 @@
 <div class="da-tile-text-wrapper">
     <p class="da-tile-text" 
-        [ngClass]="[light ? 'light' : '']" 
-        [ngStyle]="screen.isSmallest() ? {'font-size': mobileSize} : {'font-size': size}"
+        [ngClass]="[light ? 'light' : '', thin ? 'thin' : '']" 
+        [ngStyle]="screen.isSmallest() && convertMobile ? {'font-size': mobileSize} : {'font-size': size}"
     >
         {{label}}
     </p>

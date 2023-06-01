@@ -495,7 +495,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    -webkit-transition: 0.4s;\n    transition: 0.4s;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.mobile {\n            width: 94px;\n            height: 34px;\n        }\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n\n            &.mobile {\n                width: 34px;\n            }\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n\n                &.mobile {\n                    font-size: 20px;\n                }\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n\n        &.mobile {\n            width: 104px;\n            height: 40px;\n        }\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n\n            &.mobile {\n                width: 40px;\n            }\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n\n                &.mobile {\n                    font-size: 20px;\n                }\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -1171,7 +1171,7 @@
         },
         {
             "name": "HeaderTextComponent",
-            "id": "component-HeaderTextComponent-274333127efa81efbd440bdc21d00c7099735d34b5283cb48127228735d10d014027af4d3e3b36ccdbd15c01217f8557ac56596f7ba8ffb858d6cba9417fa1e8",
+            "id": "component-HeaderTextComponent-247080c83608846600e583b44967ac0a8573f6056a7f27a7e66b03798c818bd19e81300254f2275cd454e8b7a1716285558c1c91e40a5c3ac405511e2b14c5ed",
             "file": "projects/fm-library/src/lib/text/header-text/header-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1189,11 +1189,20 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "convertMobile",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "info",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -1220,8 +1229,17 @@
                     "defaultValue": "'38px'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "thin",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
                     "decorators": []
                 }
             ],
@@ -1231,11 +1249,21 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 19,
                     "type": "EventEmitter<any>"
                 }
             ],
             "propertiesClass": [
+                {
+                    "name": "mobileLineHeight",
+                    "defaultValue": "'34px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
                 {
                     "name": "mobileSize",
                     "defaultValue": "'25px'",
@@ -1244,7 +1272,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 16
                 },
                 {
                     "name": "screen",
@@ -1253,7 +1281,7 @@
                     "type": "HelperService",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 22,
                     "modifierKind": [
                         123
                     ]
@@ -1273,7 +1301,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1294,7 +1322,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1306,11 +1334,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '38px';\n  mobileSize: string = '25px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() thin: boolean = false;\n  @Input() info: string = '';\n  @Input() convertMobile: boolean = false;\n  @Input() size: string = '38px';\n  mobileSize: string = '25px';\n  mobileLineHeight: string = '34px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n    this.mobileLineHeight = this.screen.convertMobileFont(this.size, 0.9);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-header-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-header-text {\n        font-family: $font;\n        font-size: 16px;\n        color: $t1-base-color;\n        text-align: center;\n        margin: 0;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n    }\n\n    .da-header-info-button {\n        margin-left: 10px;\n    }\n}\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-header-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-header-text {\n        font-family: $font;\n        color: $t1-base-color;\n        text-align: center;\n        font-weight: 400;\n        margin: 0;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n\n        &.thin {\n            font-weight: 300;\n        }\n    }\n\n    .da-header-info-button {\n        margin-left: 10px;\n    }\n}\n",
                     "styleUrl": "./header-text.component.scss"
                 }
             ],
@@ -1328,7 +1356,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 16,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "screen",
@@ -1344,7 +1372,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"screen.isSmallest() ? {'font-size': mobileSize, 'line-height': '34px'} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '', thin ? 'thin' : '']\" \n        [ngStyle]=\"screen.isSmallest() && convertMobile ? {'font-size': mobileSize, 'line-height': mobileLineHeight} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
         },
         {
             "name": "InfoButtonComponent",
@@ -3102,7 +3130,7 @@
         },
         {
             "name": "TileTextComponent",
-            "id": "component-TileTextComponent-1ea69ed972f53fb98dfb9dc4b6cd7a067330b577eba3ecf24c794238e375427d16aa4a93d066f6e9bc34114c86cf29ff5f5ed037a35f2dd55cf033f4da137dec",
+            "id": "component-TileTextComponent-1d7d9f1caddc60c4d6c3285b4152ce1b8bbc3c99df0ed90051667c49b51b5225a68473311a76aa650e90f4bc9aae20325e945feea2762e14ca1578f11d80ae11",
             "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3120,11 +3148,20 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "convertMobile",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "info",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -3151,8 +3188,17 @@
                     "defaultValue": "'16px'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "thin",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
                     "decorators": []
                 }
             ],
@@ -3162,7 +3208,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 18,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -3175,7 +3221,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 16
                 },
                 {
                     "name": "screen",
@@ -3184,7 +3230,7 @@
                     "type": "HelperService",
                     "optional": false,
                     "description": "",
-                    "line": 19,
+                    "line": 21,
                     "modifierKind": [
                         123
                     ]
@@ -3204,7 +3250,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3225,7 +3271,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3237,11 +3283,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() thin: boolean = false;\n  @Input() info: string = '';\n  @Input() convertMobile: boolean = false;\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-tile-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-tile-text {\n        font-family: $font;\n        font-size: 16px;\n        color: $t1-base-color;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n    }\n\n    .da-text-info-button {\n        margin-left: 10px;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-tile-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-tile-text {\n        font-family: $font;\n        font-weight: 400;\n        color: $t1-base-color;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n\n        &.thin {\n            font-weight: 300;\n        }\n    }\n\n    .da-text-info-button {\n        margin-left: 10px;\n    }\n}\n\n",
                     "styleUrl": "./tile-text.component.scss"
                 }
             ],
@@ -3259,7 +3305,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 16,
+                "line": 18,
                 "jsdoctags": [
                     {
                         "name": "screen",
@@ -3275,7 +3321,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-text-wrapper\">\n    <p class=\"da-tile-text\" \n        [ngClass]=\"[light ? 'light' : '']\" \n        [ngStyle]=\"screen.isSmallest() ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n    </p>\n    <div class=\"da-text-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>"
+            "templateData": "<div class=\"da-tile-text-wrapper\">\n    <p class=\"da-tile-text\" \n        [ngClass]=\"[light ? 'light' : '', thin ? 'thin' : '']\" \n        [ngStyle]=\"screen.isSmallest() && convertMobile ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n    </p>\n    <div class=\"da-text-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>"
         },
         {
             "name": "ToggleCheckboxComponent",
@@ -6416,7 +6462,7 @@
                 "linktype": "component",
                 "name": "HeaderTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -6465,7 +6511,7 @@
                 "linktype": "component",
                 "name": "TileTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {

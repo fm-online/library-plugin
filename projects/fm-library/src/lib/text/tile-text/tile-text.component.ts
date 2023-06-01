@@ -9,7 +9,9 @@ import { HelperService } from '../../services/helper.service';
 export class TileTextComponent implements OnInit {
   @Input() label: string = 'label';
   @Input() light: boolean = false;
+  @Input() thin: boolean = false;
   @Input() info: string = '';
+  @Input() convertMobile: boolean = false;
   @Input() size: string = '16px';
   mobileSize: string = '14px';
 
