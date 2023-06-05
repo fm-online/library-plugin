@@ -28,6 +28,8 @@ import { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbo
 import { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';
 import { TileTextComponent } from './text/tile-text/tile-text.component';
 import { HeaderTextComponent } from './text/header-text/header-text.component';
+import { HeaderButtonComponent } from './buttons/header-button/header-button.component';
+import { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -48,6 +50,8 @@ import { HeaderTextComponent } from './text/header-text/header-text.component';
     ToggleTristateComponent,
     TileTextComponent,
     HeaderTextComponent,
+    HeaderButtonComponent,
+    ProgressButtonComponent,
   ],
   imports: [
     CommonModule,

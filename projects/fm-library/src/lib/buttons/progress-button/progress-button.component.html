@@ -1,0 +1,38 @@
+<div class="da-progress-button-single">
+    <button 
+        (click)="getValue()" 
+        [ngClass]="{'disabled' : disabled}" 
+        [disabled]="disabled"
+        #target
+    >
+        <fa-icon 
+            class="da-progress-button-icon" 
+            [ngClass]="{'green' : state === 'info', 'red' : state === 'end'}"
+            [icon]="icon" 
+        ></fa-icon>
+        <div class="da-progress-button-state">
+            <fa-icon 
+                *ngIf="state && (state === 'open' || state === 'closed'); else stateCircle"
+                class="da-progress-button-state-icon" 
+                [icon]="stateIcon" 
+            ></fa-icon>
+            <ng-template #stateCircle>
+                <div 
+                    *ngIf="state && (state !== 'info' && state !== 'end')"
+                    class="da-progress-button-state-circle"
+                    [ngClass]="{'green' : state === 'success', 'yellow': state === 'warning', 'red' : state === 'error'}"
+                ></div>
+            </ng-template>
+        </div>
+        <div class="da-progress-button-label">
+            <span>
+                {{ label }}
+            </span>
+        </div> 
+    </button>
+    <div *ngIf="stateLabel" class="da-progress-button-state-label">
+        <span>
+            {{ stateLabel }}
+        </span>
+    </div> 
+</div>

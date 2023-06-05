@@ -1,0 +1,20 @@
+<div class="da-header-button-single">
+    <button 
+        (click)="getValue()" 
+        [ngClass]="{'inactive' : inactive, 'active' : active, 'disabled' : disabled, 'icon' : icon, 'mobile' : screen.isSmallest()}" 
+        [disabled]="disabled || active"
+        #target
+    >
+        <fa-icon 
+            *ngIf="icon; else buttonLabel"
+            class="da-header-button-icon" 
+            [ngClass]="{'mobile' : screen.isSmallest()}"
+            [icon]="icon" 
+        ></fa-icon>
+        <ng-template class="da-header-button-label" #buttonLabel>
+            <span>
+                {{ value }}
+            </span>
+        </ng-template> 
+    </button>
+</div>

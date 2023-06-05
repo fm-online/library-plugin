@@ -1,0 +1,73 @@
+@import "../../../styles.scss"; 
+
+.da-header-button-single {
+    font-family: $font;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        border: none;
+        min-height: 22px;
+        min-width: 22px;
+        color: $button-base-color;
+        font-size: $t1-base-size;
+        font-family: $font;
+        transition: all 0.4s ease-in-out 0s, visibility 0s;
+        border-radius: 25px;
+        background: transparent;
+        padding: 8px 12px;
+        cursor: pointer;
+
+        &.mobile {
+            min-height: 20px;
+            min-width: 20px;
+        }
+
+        &:hover,
+        &:active {
+            background: $body-base-color;
+        }
+
+        &.inactive {
+            color: $body-base-color;
+
+            &:hover,
+            &:active {
+                color: $button-base-color;
+            }
+        }
+
+        &.active, 
+        &.disabled {
+            cursor: default;
+
+            &:hover,
+            &:active {
+                background: transparent;
+            }
+        }
+        &.disabled {
+            opacity: 0.2;
+        }
+        &.icon {
+            padding: 5px 10px;
+        }
+
+        .da-header-button-label {
+            width: 100%;
+            text-align: center;
+            display: block;
+        }
+
+        .da-header-button-icon {
+            font-size: 22px;
+            color: $button-base-color;
+
+                &.mobile {
+                    font-size: 20px;
+                }
+        }
+    }
+}

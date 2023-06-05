@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class HelperService {
 
+export class HelperService {
 
   public getWidth: any;
   public getHeight: any;
@@ -46,4 +46,5 @@ export class HelperService {
     const mobileSizeNumber = sizeNumber * factor;
     return mobileSizeNumber.toString() + 'px';
   }
+
 }
