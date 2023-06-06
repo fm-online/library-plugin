@@ -12,7 +12,7 @@
             [id]="name"
             (click)="getValue()" 
             [name]="name"
-            [ngClass]="[light ? 'light' : '', short ? 'short' : '']" 
+            [ngClass]="{'light' : light, 'short' : short}"
             #target
         >{{ value }}</button>
         <div class="da-input-button-unit" [ngClass]="{'short' : short}">{{unit}}</div>

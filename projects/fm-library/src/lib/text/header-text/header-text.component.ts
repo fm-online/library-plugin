@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { HelperService } from '../../services/helper.service';
 
 @Component({
@@ -21,6 +21,11 @@ export class HeaderTextComponent implements OnInit {
   constructor(
     public screen: HelperService
   ) {}
+
+  @HostListener('window:resize', ['$event'])
+    onWindowResize() {
+      this.screen.updateScreenSizes();
+  }
 
   ngOnInit(): void {
     this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);

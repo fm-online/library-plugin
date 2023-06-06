@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
@@ -23,15 +23,19 @@ export class TileComponent implements OnChanges {
   faAttention = faCircleExclamation;
   faError = faCircleXmark;
 
-  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();
+  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();
 
   constructor(
-      public screen: HelperService
-    ) {}
+    public screen: HelperService
+  ) { }
 
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screen.updateScreenSizes();
+  }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(changes && changes['localValue']) {
+    if (changes && changes['localValue']) {
       this.expanded = this.localValue !== this.value ? false : true;
     }
   }

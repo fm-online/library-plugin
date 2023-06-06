@@ -1,6 +1,6 @@
 <div class="da-header-text-wrapper">
     <h3 class="da-header-text" 
-        [ngClass]="[light ? 'light' : '', thin ? 'thin' : '']" 
+        [ngClass]="{'light' : light, 'thin': thin}" 
         [ngStyle]="screen.isSmallest() && convertMobile ? {'font-size': mobileSize, 'line-height': mobileLineHeight} : {'font-size': size}"
     >
         {{label}}

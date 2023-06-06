@@ -1,7 +1,7 @@
 <div class="da-tile-checkbox-single">
     <label 
             class="da-tile-checkbox" 
-            [ngClass]="[checked ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']"
+            [ngClass]="{'expanded' : expanded, 'mobile' : screen.isSmallest()}"
         >
         <input 
             type="checkbox" 
@@ -17,7 +17,7 @@
         </div>
         <svg-icon *ngIf="isSVG; else faIcon" 
             class="da-tile-checkbox-image" 
-            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+            [ngClass]="{'mobile' : screen.isSmallest()}"
             [src]="image"
         >
         </svg-icon>
@@ -25,19 +25,19 @@
             <fa-icon 
                 *ngIf="image"
                 class="da-tile-checkbox-image" 
-                [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+                [ngClass]="{'mobile' : screen.isSmallest()}"
                 [icon]="image"
             >
             </fa-icon>
             <div
                 *ngIf="!image"
                 class="da-tile-checkbox-image" 
-                [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+                [ngClass]="{'mobile' : screen.isSmallest()}"
             > </div>
         </ng-template>
         <div 
             class="da-tile-checkbox-label"
-            [ngClass]="[screen.isSmallest() ? 'mobile': '']"
+            [ngClass]="{'mobile' : screen.isSmallest()}"
         >{{label}}</div>
         <div *ngIf="checked" class="da-tile-checkbox-expanded" [ngClass]="{'light' : light}">
             <ng-container *ngTemplateOutlet="content"></ng-container>

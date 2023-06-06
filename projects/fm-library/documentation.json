@@ -2493,7 +2493,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-progress-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    button {\n        border: none;\n        min-height: 22px;\n        min-width: 22px;\n        color: $button-base-color;\n        font-size: 12px;\n        font-weight: 300;\n        font-family: $font;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n        background: transparent;\n        cursor: pointer;\n\n        &.disabled {\n            cursor: default;\n            pointer-events: none;\n            opacity: 0.2;\n        }\n\n        .da-progress-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n        }\n\n        .da-progress-button-state {\n            position: absolute;\n            left: 47px;\n            bottom: 18px;\n\n            .da-progress-button-state-icon {\n                font-size: 12px;\n                color: $button-base-color;\n            }\n\n            .da-progress-button-state-circle {\n                width: 14px;\n                height: 14px;\n                border-radius: 14px;\n                margin-left: -10px;\n                background-color: $tab-background;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                &.green {\n                    background-color: $success-color;\n                }\n                &.yellow {\n                    background-color: $attention-color;\n                }\n                &.red {\n                    background-color: $warning-base-color;\n                }\n            }\n        }\n        .da-progress-button-icon {\n            font-size: 21px;\n            color: $button-base-color;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n            &.green {\n                color: $success-color;\n            }\n\n            &.red {\n                color: $warning-base-color;\n            }\n        }\n\n        .da-progress-button-state-label {\n            display: none;\n            color: $t1-secondary-color;\n            background-color: $button-base-color;\n            border-radius: 10px;\n            padding: 3px 10px;\n            text-align: center;\n            position: absolute;\n            margin-top: 10px;\n        }\n\n        &:hover{\n            .da-progress-button-icon {\n                font-size: 24px;\n            }\n\n            .da-progress-button-label {\n                font-size: 14px;\n            }\n\n            .da-progress-button-state-circle {\n                width: 16px;\n                height: 16px;\n            }\n\n            .da-progress-button-state-label {\n                display: block;\n            }\n        }\n    }\n}\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-progress-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    button {\n        border: none;\n        min-height: 22px;\n        min-width: 22px;\n        color: $button-base-color;\n        font-size: 12px;\n        font-weight: 300;\n        font-family: $font;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n        background: transparent;\n        cursor: pointer;\n\n        &.disabled {\n            cursor: default;\n            pointer-events: none;\n            opacity: 0.2;\n        }\n\n        .da-progress-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n        }\n\n        .da-progress-button-state {\n            position: absolute;\n            left: 47px;\n            bottom: 18px;\n\n            .da-progress-button-state-icon {\n                font-size: 12px;\n                color: $button-base-color;\n            }\n\n            .da-progress-button-state-circle {\n                width: 14px;\n                height: 14px;\n                border-radius: 14px;\n                margin-left: -10px;\n                background-color: $tab-background;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                &.green {\n                    background-color: $success-color;\n                }\n                &.yellow {\n                    background-color: $attention-color;\n                }\n                &.red {\n                    background-color: $warning-base-color;\n                }\n            }\n        }\n        .da-progress-button-icon {\n            font-size: 21px;\n            color: $button-base-color;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n            &.green {\n                color: $success-color;\n            }\n\n            &.red {\n                color: $warning-base-color;\n            }\n        }\n\n        &:hover{\n            .da-progress-button-icon {\n                font-size: 24px;\n            }\n\n            .da-progress-button-label {\n                font-size: 14px;\n            }\n\n            .da-progress-button-state-circle {\n                // width: 16px;\n                // height: 16px;\n            }\n\n            +.da-progress-button-state-label {\n                visibility: visible;\n            }\n        }\n    }\n    .da-progress-button-state-label {\n        visibility: hidden;\n        color: $t1-secondary-color;\n        background-color: $button-base-color;\n        border-radius: 10px;\n        white-space: nowrap;\n        font-size: 12px;\n        font-weight: 300;\n        padding: 3px 10px;\n        text-align: center;\n        position: absolute;\n        bottom: -25px;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n    }\n}\n",
                     "styleUrl": "./progress-button.component.scss"
                 }
             ],
@@ -2527,7 +2527,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-progress-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"{'disabled' : disabled}\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            class=\"da-progress-button-icon\" \n            [ngClass]=\"{'green' : state === 'info', 'red' : state === 'end'}\"\n            [icon]=\"icon\" \n        ></fa-icon>\n        <div class=\"da-progress-button-state\">\n            <fa-icon \n                *ngIf=\"state && (state === 'open' || state === 'closed'); else stateCircle\"\n                class=\"da-progress-button-state-icon\" \n                [icon]=\"stateIcon\" \n            ></fa-icon>\n            <ng-template #stateCircle>\n                <div \n                    *ngIf=\"state && (state !== 'info' && state !== 'end')\"\n                    class=\"da-progress-button-state-circle\"\n                    [ngClass]=\"{'green' : state === 'success', 'yellow': state === 'warning', 'red' : state === 'error'}\"\n                ></div>\n            </ng-template>\n        </div>\n        <div class=\"da-progress-button-label\">\n            <span>\n                {{ label }}\n            </span>\n        </div> \n        <div *ngIf=\"stateLabel\" class=\"da-progress-button-state-label\">\n            <span>\n                {{ stateLabel }}\n            </span>\n        </div> \n    </button>\n</div>"
+            "templateData": "<div class=\"da-progress-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"{'disabled' : disabled}\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            class=\"da-progress-button-icon\" \n            [ngClass]=\"{'green' : state === 'info', 'red' : state === 'end'}\"\n            [icon]=\"icon\" \n        ></fa-icon>\n        <div class=\"da-progress-button-state\">\n            <fa-icon \n                *ngIf=\"state && (state === 'open' || state === 'closed'); else stateCircle\"\n                class=\"da-progress-button-state-icon\" \n                [icon]=\"stateIcon\" \n            ></fa-icon>\n            <ng-template #stateCircle>\n                <div \n                    *ngIf=\"state && (state !== 'info' && state !== 'end')\"\n                    class=\"da-progress-button-state-circle\"\n                    [ngClass]=\"{'green' : state === 'success', 'yellow': state === 'warning', 'red' : state === 'error'}\"\n                ></div>\n            </ng-template>\n        </div>\n        <div class=\"da-progress-button-label\">\n            <span>\n                {{ label }}\n            </span>\n        </div> \n    </button>\n    <div *ngIf=\"stateLabel\" class=\"da-progress-button-state-label\">\n        <span>\n            {{ stateLabel }}\n        </span>\n    </div> \n</div>"
         },
         {
             "name": "TileCheckboxComponent",
@@ -4458,6 +4458,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4483,16 +4493,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -5286,6 +5286,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TileGroupComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TileRatingComponent>",
                 "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                 "deprecated": false,
@@ -5321,17 +5332,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleTristateComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileGroupComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6082,48 +6082,6 @@
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name1',\n    'state': 'success',\n    'icon': faCircleCheck,\n    'checked': false,\n    'image': faHouseCircleCheck,\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name2',\n    'state': 'warning',\n    'icon': faCircleExclamation,\n    'checked': false,\n    'image': faHouseCircleExclamation,\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name3',\n    'state': 'error',\n    'checked': false,\n    'icon': faCircleXmark,\n    'image': faHouseCircleXmark,\n    'value': 'value3'\n  }\n]"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
-                },
-                {
-                    "name": "testTabsThree",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  },\n  {\n    'label': 'N° 3',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value3',\n    'checked': false\n  }\n]"
-                },
-                {
-                    "name": "testTabsTwo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  }\n]"
-                },
-                {
-                    "name": "TwoTabs",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
                 {
                     "name": "Default",
@@ -6164,6 +6122,48 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    tiles: testTilesSVG\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+                },
+                {
+                    "name": "testTabsThree",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  },\n  {\n    'label': 'N° 3',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value3',\n    'checked': false\n  }\n]"
+                },
+                {
+                    "name": "testTabsTwo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'N° 1',\n    'name': 'name',\n    'state': 'success',\n    'value': 'value1',\n    'checked': true\n  },\n  {\n    'label': 'N° 2',\n    'name': 'name',\n    'value': 'value2',\n    'checked': false\n  }\n]"
+                },
+                {
+                    "name": "TwoTabs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: testTabsTwo\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
@@ -6451,6 +6451,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileGroupComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
                 {
                     "name": "Story",
@@ -6497,19 +6510,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleTristateComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileGroupComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

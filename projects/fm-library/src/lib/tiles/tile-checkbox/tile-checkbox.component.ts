@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output, TemplateRef } from '@angular/core';
 import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
@@ -27,6 +27,11 @@ export class TileCheckboxComponent {
   constructor(
     public screen: HelperService
   ) {}
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screen.updateScreenSizes();
+  }
 
   getValue(e: any) {
       this.checked = e.srcElement.checked;

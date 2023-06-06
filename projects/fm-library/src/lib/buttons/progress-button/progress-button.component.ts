@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { faBarsProgress, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
@@ -22,6 +22,11 @@ export class ProgressButtonComponent implements OnInit{
   constructor(
     public screen: HelperService
   ) {}
+
+  @HostListener('window:resize', ['$event'])
+    onWindowResize() {
+      this.screen.updateScreenSizes();
+  }
 
   ngOnInit() {
     if (this.state) {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input,Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input,Output } from '@angular/core';
 import { HelperService } from '../../services/helper.service';
 
 @Component({
@@ -21,6 +21,11 @@ export class ButtonComponent {
   constructor(
     public screen: HelperService
   ) {}
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screen.updateScreenSizes();
+  }
 
   getValue() {
     this.buttonValue.emit(this.type);

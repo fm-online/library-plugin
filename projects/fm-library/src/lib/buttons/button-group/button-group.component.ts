@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { HelperService } from '../../services/helper.service';
 
 @Component({
@@ -10,11 +10,16 @@ export class ButtonGroupComponent implements OnInit {
   @Input() buttons: any;
   @Input() light: boolean = false;
   localValue: string = 'localValue';
-  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<any>();
-  
+  @Output() public buttonValue: EventEmitter<any> = new EventEmitter<any>();
+
   constructor(
     public screen: HelperService
   ) { }
+
+  @HostListener('window:resize', ['$event'])
+    onWindowResize() {
+      this.screen.updateScreenSizes();
+  }
 
   ngOnInit(): void {
   }
