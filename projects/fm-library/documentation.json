@@ -355,7 +355,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-0ac758ed654726f6575d26129a9d9503caa06ba7de8174f3fd2a058c935e114f540292a9b1681e39173ab329beeb8ecba5c4f0d8fa2a98de20ac2e0ec59831b7-1",
+            "id": "component-ButtonComponent-441d95b1978744121b219e191ba7bcefb503e3757fde2bddc3a9fd3e6082e36956327b63a1968cf68afa732539fecc967d902ff2c29316a6a7d1f4aef97848dd-1",
             "file": "projects/fm-library/src/lib/buttons/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -479,23 +479,50 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input,Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss']\n})\nexport class ButtonComponent {\n  @Input() iconButton: boolean = false;\n  @Input() light: boolean = false;\n  @Input() type!: string;\n  @Input() value!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() disabled: boolean = false;\n  @Input() iconLeft: any;\n  @Input() iconRight: any;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input,Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss']\n})\nexport class ButtonComponent {\n  @Input() iconButton: boolean = false;\n  @Input() light: boolean = false;\n  @Input() type!: string;\n  @Input() value!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() disabled: boolean = false;\n  @Input() iconLeft: any;\n  @Input() iconRight: any;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n\n        &.mobile {\n            width: 104px;\n            height: 40px;\n        }\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n\n            &.mobile {\n                width: 40px;\n            }\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n\n                &.mobile {\n                    font-size: 20px;\n                }\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    &:hover > .da-button-icon-label{\n        display: block;\n    }\n\n    button {\n        width: 160px;\n        height: 50px;\n        border: 1px solid $button-base-color;\n        color: $button-base-color;\n        font-size: $t2-base-size;\n        font-family: $font;\n        border-radius: 25px 25px 25px 0;\n        background: transparent;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 0 5px;\n        cursor: pointer;\n\n        &.mobile {\n            width: 104px;\n            height: 40px;\n            font-size: 20px;\n        }\n\n        &.light {\n            border: 1px solid $input-secondary-color;\n            color: $input-secondary-color;\n        }\n\n        &.short {\n            width: 50px;\n            justify-content: center;\n\n            &.mobile {\n                width: 40px;\n            }\n        }\n\n        &:hover,\n        &:active {\n            border: 1px solid $button-base-color;\n            background: $button-base-color;\n            color: $t2-secondary-color;\n\n            &.light {\n                border: 1px solid $input-secondary-color;\n                background: $input-secondary-color;\n                color: $t2-base-color;\n            }\n        }\n\n        &:active {\n            padding: 0;\n        }\n\n        &.disabled {\n            opacity: 0.2;\n        }\n\n        .da-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n        }\n\n        .da-button-icon {\n            font-size: 14px;\n            &.left {\n                margin-left: 10px;\n            }\n\n            &.right {\n                margin-right: 10px;\n            }\n\n            &.main {\n                font-size: 28px;\n\n                &.mobile {\n                    font-size: 20px;\n                }\n            }\n        }\n    }\n\n    .da-button-icon-label {\n        font-family: $font;\n        color: $button-base-color;\n        display: none;\n        position: absolute;\n        white-space: nowrap;\n        bottom: -25px;\n\n        &.light {\n            color: $input-secondary-color;\n        }\n    }\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -533,7 +560,7 @@
         },
         {
             "name": "ButtonGroupComponent",
-            "id": "component-ButtonGroupComponent-1900d06fb7818e533328dc0fe954467b98365b724fd183cece9068a8f3fb27c9ee6707b21daaa7ffa1541e98600a0c00988937456461594ad26938100c391fcd",
+            "id": "component-ButtonGroupComponent-9631edd28d4fced3f25425e7b1530e5c3e95d6aa98f92738ea296d5ada254de542ed40feb60654217fd2eeba74166a8962d05c97e784604c60303787fd51f015",
             "file": "projects/fm-library/src/lib/buttons/button-group/button-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -609,9 +636,25 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 },
                 {
                     "name": "sendValue",
@@ -626,7 +669,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -645,11 +688,22 @@
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-button-group',\n  templateUrl: './button-group.component.html',\n  styleUrls: ['./button-group.component.scss']\n})\nexport class ButtonGroupComponent implements OnInit {\n  @Input() buttons: any;\n  @Input() light: boolean = false;\n  localValue: string = 'localValue';\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.buttonValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-button-group',\n  templateUrl: './button-group.component.html',\n  styleUrls: ['./button-group.component.scss']\n})\nexport class ButtonGroupComponent implements OnInit {\n  @Input() buttons: any;\n  @Input() light: boolean = false;\n  localValue: string = 'localValue';\n  @Output() public buttonValue: EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n    onWindowResize() {\n      this.screen.updateScreenSizes();\n  }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.buttonValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1171,7 +1225,7 @@
         },
         {
             "name": "HeaderButtonComponent",
-            "id": "component-HeaderButtonComponent-fdcac4f6c8e6e6ab2191eddf7d132c8262a8084e179a4818ad88ef3492d2aff9c78181c325d8996cb60fc825205f5e25d932634aa3f98c9f7285ba4d588b99f5",
+            "id": "component-HeaderButtonComponent-a7c5a986f9649ca84adf3206619d0f6f3723313ffe2fcd3e67aa73b8159b3472f5d6afdd9ca52467090009a13fb954b688bfa25a97bf984d477d169abfd3aa84",
             "file": "projects/fm-library/src/lib/buttons/header-button/header-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1279,19 +1333,46 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-button',\n  templateUrl: './header-button.component.html',\n  styleUrls: ['./header-button.component.scss']\n})\nexport class HeaderButtonComponent {\n  @Input() inactive: boolean = false;\n  @Input() active: boolean = false;\n  @Input() type!: string;\n  @Input() value!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() disabled: boolean = false;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-button',\n  templateUrl: './header-button.component.html',\n  styleUrls: ['./header-button.component.scss']\n})\nexport class HeaderButtonComponent {\n  @Input() inactive: boolean = false;\n  @Input() active: boolean = false;\n  @Input() type!: string;\n  @Input() value!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() disabled: boolean = false;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n    onWindowResize() {\n      this.screen.updateScreenSizes();\n  }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1330,7 +1411,7 @@
         },
         {
             "name": "HeaderTextComponent",
-            "id": "component-HeaderTextComponent-247080c83608846600e583b44967ac0a8573f6056a7f27a7e66b03798c818bd19e81300254f2275cd454e8b7a1716285558c1c91e40a5c3ac405511e2b14c5ed",
+            "id": "component-HeaderTextComponent-fb19358393563a58dcfb517d99a2afb224e95bfa5e79bd5bd727ac0a381b7f1ada8f7abd251281075d1a6e2ea40b6887404dcac2d7436a7ea31fd953b03653bc",
             "file": "projects/fm-library/src/lib/text/header-text/header-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1460,7 +1541,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1481,19 +1562,46 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() thin: boolean = false;\n  @Input() info: string = '';\n  @Input() convertMobile: boolean = false;\n  @Input() size: string = '38px';\n  mobileSize: string = '25px';\n  mobileLineHeight: string = '34px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n    this.mobileLineHeight = this.screen.convertMobileFont(this.size, 0.9);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-header-text',\n  templateUrl: './header-text.component.html',\n  styleUrls: ['./header-text.component.scss']\n})\nexport class HeaderTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() thin: boolean = false;\n  @Input() info: string = '';\n  @Input() convertMobile: boolean = false;\n  @Input() size: string = '38px';\n  mobileSize: string = '25px';\n  mobileLineHeight: string = '34px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n    onWindowResize() {\n      this.screen.updateScreenSizes();\n  }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.658);\n    this.mobileLineHeight = this.screen.convertMobileFont(this.size, 0.9);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1531,7 +1639,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"[light ? 'light' : '', thin ? 'thin' : '']\" \n        [ngStyle]=\"screen.isSmallest() && convertMobile ? {'font-size': mobileSize, 'line-height': mobileLineHeight} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-header-text-wrapper\">\n    <h3 class=\"da-header-text\" \n        [ngClass]=\"{'light' : light, 'thin': thin}\" \n        [ngStyle]=\"screen.isSmallest() && convertMobile ? {'font-size': mobileSize, 'line-height': mobileLineHeight} : {'font-size': size}\"\n    >\n        {{label}}\n</h3>\n    <div class=\"da-header-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>\n"
         },
         {
             "name": "InfoButtonComponent",
@@ -1844,7 +1952,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-input-button-single\">\n    <div class=\"da-input-button-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-button-icons\" *ngIf=\"!touched\">\n            <fa-icon \n                class=\"da-input-button-icon-yellow\" \n                [icon]=\"faCircleExclamation\" \n            ></fa-icon>\n        </div>\n        <button \n            autocomplete=\"off\"\n            [id]=\"name\"\n            (click)=\"getValue()\" \n            [name]=\"name\"\n            [ngClass]=\"[light ? 'light' : '', short ? 'short' : '']\" \n            #target\n        >{{ value }}</button>\n        <div class=\"da-input-button-unit\" [ngClass]=\"{'short' : short}\">{{unit}}</div>\n        <div class=\"da-input-button-info-button\" *ngIf=\"info\" [ngClass]=\"{'light' : light}\">\n            <fa-icon class=\"da-input-button-info-icon\" [icon]=\"faCircleInfo\"></fa-icon>\n        </div>\n    </label>\n</div>\n"
+            "templateData": "<div class=\"da-input-button-single\">\n    <div class=\"da-input-button-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-button-icons\" *ngIf=\"!touched\">\n            <fa-icon \n                class=\"da-input-button-icon-yellow\" \n                [icon]=\"faCircleExclamation\" \n            ></fa-icon>\n        </div>\n        <button \n            autocomplete=\"off\"\n            [id]=\"name\"\n            (click)=\"getValue()\" \n            [name]=\"name\"\n            [ngClass]=\"{'light' : light, 'short' : short}\"\n            #target\n        >{{ value }}</button>\n        <div class=\"da-input-button-unit\" [ngClass]=\"{'short' : short}\">{{unit}}</div>\n        <div class=\"da-input-button-info-button\" *ngIf=\"info\" [ngClass]=\"{'light' : light}\">\n            <fa-icon class=\"da-input-button-info-icon\" [icon]=\"faCircleInfo\"></fa-icon>\n        </div>\n    </label>\n</div>\n"
         },
         {
             "name": "InputComponent",
@@ -2138,7 +2246,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <fa-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon-green\" \n                [icon]=\"faCircleCheck\"\n            ></fa-icon>\n            <fa-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon-red\" \n                [icon]=\"faCircleXmark\" \n            ></fa-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            [id]=\"name\"\n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"[light ? 'light' : '',  error ? 'error' : '']\" \n            #target\n        >\n        <div class=\"da-input-unit\">{{unit}}</div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <fa-icon class=\"da-input-error-icon\" [icon]=\"faCircleExclamation\"></fa-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <fa-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon-green\" \n                [icon]=\"faCircleCheck\"\n            ></fa-icon>\n            <fa-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon-red\" \n                [icon]=\"faCircleXmark\" \n            ></fa-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            [id]=\"name\"\n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'light' : light, 'error' : error}\"\n            #target\n        >\n        <div class=\"da-input-unit\">{{unit}}</div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <fa-icon class=\"da-input-error-icon\" [icon]=\"faCircleExclamation\"></fa-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n"
         },
         {
             "name": "InputDateComponent",
@@ -2340,7 +2448,7 @@
         },
         {
             "name": "ProgressButtonComponent",
-            "id": "component-ProgressButtonComponent-036fd3607aa6543f77982ee99baf8fa7908f457aabe1879ed98b9b7a599708d526fdc8359f044a26dc67e30a8b18465a8eed2ac47840ee1381606d01428e3e48",
+            "id": "component-ProgressButtonComponent-ae57f48ab0bfb7c40c503f1310ce127a235c346ca52345bd9f5b2364f16a3b8e738b6294a7435d9e4256184276dd82ce8809a8dce1c47e7b3c573528bb218d31",
             "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2457,7 +2565,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 40,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2467,9 +2575,25 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 31,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 },
                 {
                     "name": "setStateLabel",
@@ -2477,7 +2601,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 44,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2485,11 +2609,22 @@
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { faBarsProgress, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-progress-button',\n  templateUrl: './progress-button.component.html',\n  styleUrls: ['./progress-button.component.scss']\n})\n\nexport class ProgressButtonComponent implements OnInit{\n  @Input() type!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() state!: string;\n  @Input() iconColor!: string;\n  @Input() disabled: boolean = false;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n  stateIcon: any = faLock;\n  stateLabel!: string;\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  ngOnInit() {\n    if (this.state) {\n      if(this.state === 'open') {\n        this.stateIcon = faLockOpen;\n      }\n      this.setStateLabel();\n    }\n  }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n  setStateLabel() {\n    switch(this.state) {\n      case 'success': this.stateLabel = 'vollständig';\n      break;\n      case 'warning': this.stateLabel = 'unvollständig';\n      break;\n      case 'error': this.stateLabel = 'fehlerhaft';\n      break;\n      case 'open': this.stateLabel = 'freigeschaltet';\n      break;\n      case 'closed': this.stateLabel = 'noch nicht freigeschaltet';\n      break;\n      case 'info': this.stateLabel = 'Zwischenstand erreicht';\n      break;\n      case 'end': this.stateLabel = 'Angebot nicht möglich';\n      break;\n      default: this.stateLabel = 'optional';\n      break;\n    }\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';\nimport { faBarsProgress, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-progress-button',\n  templateUrl: './progress-button.component.html',\n  styleUrls: ['./progress-button.component.scss']\n})\n\nexport class ProgressButtonComponent implements OnInit{\n  @Input() type!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() state!: string;\n  @Input() iconColor!: string;\n  @Input() disabled: boolean = false;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n  stateIcon: any = faLock;\n  stateLabel!: string;\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n    onWindowResize() {\n      this.screen.updateScreenSizes();\n  }\n\n  ngOnInit() {\n    if (this.state) {\n      if(this.state === 'open') {\n        this.stateIcon = faLockOpen;\n      }\n      this.setStateLabel();\n    }\n  }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n  setStateLabel() {\n    switch(this.state) {\n      case 'success': this.stateLabel = 'vollständig';\n      break;\n      case 'warning': this.stateLabel = 'unvollständig';\n      break;\n      case 'error': this.stateLabel = 'fehlerhaft';\n      break;\n      case 'open': this.stateLabel = 'freigeschaltet';\n      break;\n      case 'closed': this.stateLabel = 'noch nicht freigeschaltet';\n      break;\n      case 'info': this.stateLabel = 'Zwischenstand erreicht';\n      break;\n      case 'end': this.stateLabel = 'Angebot nicht möglich';\n      break;\n      default: this.stateLabel = 'optional';\n      break;\n    }\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2531,7 +2666,7 @@
         },
         {
             "name": "TileCheckboxComponent",
-            "id": "component-TileCheckboxComponent-76414e2edcee14f31a590608c51c298a473d207a7c9b8ad0219ecb60973573c41aba41c505ac726b8de5edaea2b4454ec0ab3e2aa8217716f1587f4bcfbe9829",
+            "id": "component-TileCheckboxComponent-65a87976e33eb3585f7458515f8ea0a9e0ee5e0ab0dec51fb969884ba18baae8a2edce0d5d553b667d2c9b6dd7ad7a405d75013687627320a2b34695aab18eb1",
             "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2714,7 +2849,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2728,16 +2863,43 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-checkbox',\n  templateUrl: './tile-checkbox.component.html',\n  styleUrls: ['./tile-checkbox.component.scss']\n})\nexport class TileCheckboxComponent {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  @Input() isSVG: boolean = false;\n  expanded!: boolean;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  screenWidth: any;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  getValue(e: any) {\n      this.checked = e.srcElement.checked;\n      const checked = e.srcElement.checked;\n      const name = e.srcElement.name;\n      this.checkboxValue.emit({name, checked});\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, Output, TemplateRef } from '@angular/core';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-checkbox',\n  templateUrl: './tile-checkbox.component.html',\n  styleUrls: ['./tile-checkbox.component.scss']\n})\nexport class TileCheckboxComponent {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  @Input() isSVG: boolean = false;\n  expanded!: boolean;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n  screenWidth: any;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  getValue(e: any) {\n      this.checked = e.srcElement.checked;\n      const checked = e.srcElement.checked;\n      const name = e.srcElement.name;\n      this.checkboxValue.emit({name, checked});\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2772,7 +2934,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"[checked ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <ng-template #faIcon>\n            <fa-icon \n                *ngIf=\"image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div\n                *ngIf=\"!image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            > </div>\n        </ng-template>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"{'expanded' : expanded, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\">\n            <fa-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <ng-template #faIcon>\n            <fa-icon \n                *ngIf=\"image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div\n                *ngIf=\"!image\"\n                class=\"da-tile-checkbox-image\" \n                [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n            > </div>\n        </ng-template>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileCheckboxGroupComponent",
@@ -2884,7 +3046,7 @@
         },
         {
             "name": "TileComponent",
-            "id": "component-TileComponent-df56231fafabcd032fef7b5bc8776423baabc8485ecbf5539a08214c5bafbfad97ccf77aa713250f01abb6963313200b9466985f18f6392a7acb84de5441c25c",
+            "id": "component-TileComponent-87cb249e4a5afdb8f664b6024148259416a0b1489282ab2089018db0d3a373e4da2b37ef2a8a9e1eb1fe17563b5413992db0cb9deb6b61f1a1e21c39227b8621",
             "file": "projects/fm-library/src/lib/tiles/tile/tile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3067,7 +3229,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3095,7 +3257,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3109,16 +3271,43 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  @Input() isSVG: boolean = false;\n  expanded!: boolean;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n      public screen: HelperService\n    ) {}\n\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: any;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  @Input() isSVG: boolean = false;\n  expanded!: boolean;\n  faCheck = faCircleCheck;\n  faAttention = faCircleExclamation;\n  faError = faCircleXmark;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3156,7 +3345,7 @@
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"[expanded ? 'expanded' : '', screen.isSmallest() ? 'mobile': '']\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" \n            class=\"da-tile-image\" \n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <ng-template #faIcon>\n            <fa-icon *ngIf=\"image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div *ngIf=\"!image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n            >\n            </div>\n        </ng-template>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"[screen.isSmallest() ? 'mobile': '']\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\">\n            <fa-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" [icon]=\"faCheck\"></fa-icon>\n            <fa-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" [icon]=\"faAttention\"></fa-icon>\n            <fa-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" [icon]=\"faError\"></fa-icon>\n        </div>\n        <svg-icon *ngIf=\"isSVG; else faIcon\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <ng-template #faIcon>\n            <fa-icon *ngIf=\"image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n                [icon]=\"image\"\n            >\n            </fa-icon>\n            <div *ngIf=\"!image\"\n                class=\"da-tile-image\" \n                [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n            >\n            </div>\n        </ng-template>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
@@ -3480,7 +3669,7 @@
         },
         {
             "name": "TileTextComponent",
-            "id": "component-TileTextComponent-1d7d9f1caddc60c4d6c3285b4152ce1b8bbc3c99df0ed90051667c49b51b5225a68473311a76aa650e90f4bc9aae20325e945feea2762e14ca1578f11d80ae11",
+            "id": "component-TileTextComponent-bdd3a4639cc3ec79667693178efbfa1261615a0e6ff005ad53bf799617e0d2cc0ca30ecdba3c66e84b83648b7bdfaa42c8acb54ea2ac201ef1d96736e4dd7ff5",
             "file": "projects/fm-library/src/lib/text/tile-text/tile-text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3600,7 +3789,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3621,19 +3810,46 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onWindowResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() thin: boolean = false;\n  @Input() info: string = '';\n  @Input() convertMobile: boolean = false;\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-text',\n  templateUrl: './tile-text.component.html',\n  styleUrls: ['./tile-text.component.scss']\n})\nexport class TileTextComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() light: boolean = false;\n  @Input() thin: boolean = false;\n  @Input() info: string = '';\n  @Input() convertMobile: boolean = false;\n  @Input() size: string = '16px';\n  mobileSize: string = '14px';\n\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnInit(): void {\n    this.mobileSize = this.screen.convertMobileFont(this.size, 0.875);\n  }\n\n  getInfo(e: string) {\n    console.log(e);\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3671,7 +3887,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-text-wrapper\">\n    <p class=\"da-tile-text\" \n        [ngClass]=\"[light ? 'light' : '', thin ? 'thin' : '']\" \n        [ngStyle]=\"screen.isSmallest() && convertMobile ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n    </p>\n    <div class=\"da-text-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>"
+            "templateData": "<div class=\"da-tile-text-wrapper\">\n    <p class=\"da-tile-text\" \n        [ngClass]=\"{'light' : light, 'thin': thin}\"  \n        [ngStyle]=\"screen.isSmallest() && convertMobile ? {'font-size': mobileSize} : {'font-size': size}\"\n    >\n        {{label}}\n    </p>\n    <div class=\"da-text-info-button\" *ngIf=\"info\">\n        <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\" \n            (infoPressed)=\"getInfo($event)\"\n        ></lib-info-button>\n    </div>\n</div>"
         },
         {
             "name": "ToggleCheckboxComponent",
@@ -6539,7 +6755,7 @@
                 "linktype": "component",
                 "name": "ButtonGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -6578,7 +6794,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -6687,7 +6903,7 @@
                 "linktype": "component",
                 "name": "HeaderButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -6775,7 +6991,7 @@
                 "linktype": "component",
                 "name": "ProgressButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -7188,7 +7404,7 @@
                 "linktype": "component",
                 "name": "HeaderTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -7237,7 +7453,7 @@
                 "linktype": "component",
                 "name": "TileTextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -7315,7 +7531,7 @@
                 "linktype": "component",
                 "name": "TileCheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {
@@ -7422,7 +7638,7 @@
                 "linktype": "component",
                 "name": "TileComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/20",
+                "coverageCount": "0/22",
                 "status": "low"
             },
             {

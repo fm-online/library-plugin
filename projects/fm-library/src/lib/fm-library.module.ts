@@ -84,6 +84,8 @@ import { ProgressButtonComponent } from './buttons/progress-button/progress-butt
     ToggleTristateComponent,
     TileTextComponent,
     HeaderTextComponent,
+    HeaderButtonComponent,
+    ProgressButtonComponent,
   ]
 })
 export class FmLibraryModule { }
