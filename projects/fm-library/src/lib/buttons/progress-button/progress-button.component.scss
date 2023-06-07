@@ -12,6 +12,9 @@
         min-height: 22px;
         min-width: 22px;
         color: $button-base-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-size: 12px;
         font-weight: 300;
         font-family: $font;
@@ -31,53 +34,56 @@
             display: block;
             transition: all 0.4s ease-in-out 0s, visibility 0s;
         }
+        .da-progress-button-state-wrapper {
+            position: relative;
+            width: 50px;
 
-        .da-progress-button-state {
-            position: absolute;
-            left: 47px;
-            bottom: 18px;
+            .da-progress-button-state {
+                position: absolute;
+                right: 8px;
+                bottom: 0;
 
-            .da-progress-button-state-icon {
-                font-size: 12px;
-                color: $button-base-color;
+                .da-progress-button-state-icon {
+                    font-size: 12px;
+                    color: $button-base-color;
+                }
+
+                .da-progress-button-state-circle {
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 14px;
+                    margin-left: -10px;
+                    background-color: $tab-background;
+                    box-shadow: 0 3px 5px $shadow-base-color;
+                    transition: all 0.4s ease-in-out 0s, visibility 0s;
+
+                    &.green {
+                        background-color: $success-color;
+                    }
+                    &.yellow {
+                        background-color: $attention-color;
+                    }
+                    &.red {
+                        background-color: $warning-base-color;
+                    }
+                }
             }
-
-            .da-progress-button-state-circle {
-                width: 14px;
-                height: 14px;
-                border-radius: 14px;
-                margin-left: -10px;
-                background-color: $tab-background;
-                box-shadow: 0 3px 5px $shadow-base-color;
+            .da-progress-button-icon {
+                font-size: 21px;
+                color: $button-base-color;
                 transition: all 0.4s ease-in-out 0s, visibility 0s;
 
                 &.green {
-                    background-color: $success-color;
+                    color: $success-color;
                 }
-                &.yellow {
-                    background-color: $attention-color;
-                }
+
                 &.red {
-                    background-color: $warning-base-color;
+                    color: $warning-base-color;
                 }
             }
         }
-        .da-progress-button-icon {
-            font-size: 21px;
-            color: $button-base-color;
-            transition: all 0.4s ease-in-out 0s, visibility 0s;
-
-            &.green {
-                color: $success-color;
-            }
-
-            &.red {
-                color: $warning-base-color;
-            }
-        }
-
-        &:hover{
-            .da-progress-button-icon {
+        &:hover {
+            .da-progress-button-state-wrapper .da-progress-button-icon {
                 font-size: 24px;
             }
 
@@ -85,9 +91,9 @@
                 font-size: 14px;
             }
 
-            .da-progress-button-state-circle {
-                // width: 16px;
-                // height: 16px;
+            .da-progress-button-state-wrapper .da-progress-button-state .da-progress-button-state-circle {
+                width: 16px;
+                height: 16px;
             }
 
             +.da-progress-button-state-label {

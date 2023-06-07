@@ -13,7 +13,6 @@ export class ProgressButtonComponent implements OnInit{
   @Input() label!: string;
   @Input() icon: any;
   @Input() state!: string;
-  @Input() iconColor!: string;
   @Input() disabled: boolean = false;
   @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();
   stateIcon: any = faLock;

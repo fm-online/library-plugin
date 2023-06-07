@@ -5,6 +5,7 @@
         [disabled]="disabled"
         #target
     >
+    <div class="da-progress-button-state-wrapper">
         <fa-icon 
             class="da-progress-button-icon" 
             [ngClass]="{'green' : state === 'info', 'red' : state === 'end'}"
@@ -24,11 +25,12 @@
                 ></div>
             </ng-template>
         </div>
-        <div class="da-progress-button-label">
-            <span>
-                {{ label }}
-            </span>
-        </div> 
+    </div>
+    <div class="da-progress-button-label">
+        <span>
+            {{ label }}
+        </span>
+    </div> 
     </button>
     <div *ngIf="stateLabel" class="da-progress-button-state-label">
         <span>
