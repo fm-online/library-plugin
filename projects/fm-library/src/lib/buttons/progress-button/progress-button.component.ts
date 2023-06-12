@@ -12,6 +12,7 @@ export class ProgressButtonComponent implements OnInit{
   @Input() type!: string;
   @Input() label!: string;
   @Input() icon: any;
+  @Input() svg: any;
   @Input() state!: string;
   @Input() disabled: boolean = false;
   @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();

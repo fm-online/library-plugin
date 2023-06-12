@@ -25,13 +25,21 @@
         &.disabled {
             cursor: default;
             pointer-events: none;
-            opacity: 0.2;
+
+            .da-progress-button-icon {
+                opacity: 0.2;
+            }
+
+            .da-progress-button-state-circle {
+                display: none;
+            }
         }
 
         .da-progress-button-label {
             width: 100%;
             text-align: center;
             display: block;
+            white-space: nowrap;
             transition: all 0.4s ease-in-out 0s, visibility 0s;
         }
         .da-progress-button-state-wrapper {
@@ -70,21 +78,27 @@
             }
             .da-progress-button-icon {
                 font-size: 21px;
+                display: inline-block;
+                width: 25px;
                 color: $button-base-color;
+                fill: $button-base-color;
                 transition: all 0.4s ease-in-out 0s, visibility 0s;
 
                 &.green {
                     color: $success-color;
+                    fill: $success-color;
                 }
 
                 &.red {
                     color: $warning-base-color;
+                    fill: $warning-base-color;
                 }
             }
         }
         &:hover {
             .da-progress-button-state-wrapper .da-progress-button-icon {
                 font-size: 24px;
+                width: 30px;
             }
 
             .da-progress-button-label {

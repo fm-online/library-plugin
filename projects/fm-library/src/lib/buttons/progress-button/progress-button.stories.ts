@@ -5,13 +5,21 @@ import {ProgressButtonComponent} from './progress-button.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser, faBarsProgress, faSquareParking, faCircleExclamation, faCircleCheck} from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 export default {
   title: 'buttons/ProgressButtonComponent',
   component: ProgressButtonComponent,
   decorators: [
     moduleMetadata({
-      imports: [FontAwesomeModule],
+      imports: [
+        FontAwesomeModule, 
+        BrowserAnimationsModule, 
+        HttpClientModule,
+        AngularSvgIconModule.forRoot()
+      ],
       providers: [
         {
           provide: APP_INITIALIZER,
@@ -63,11 +71,11 @@ export const Dashboard: Story = {
   },
 };
 
-export const Info: Story = {
+export const SVG: Story = {
   args: {
-    label: 'Info',
-    icon: faCircleCheck,
-    state: 'info',
+    label: 'SVG Button',
+    svg: 'assets/images/signal-bars-poor.svg',
+    state: 'warning',
   },
   parameters: {
     backgrounds: {

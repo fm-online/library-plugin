@@ -6,11 +6,17 @@
         #target
     >
     <div class="da-progress-button-state-wrapper">
-        <fa-icon 
+        <fa-icon *ngIf="icon" 
             class="da-progress-button-icon" 
             [ngClass]="{'green' : state === 'info', 'red' : state === 'end'}"
             [icon]="icon" 
         ></fa-icon>
+        <svg-icon *ngIf="svg" 
+            class="da-progress-button-icon" 
+            [ngClass]="{'green' : state === 'info', 'red' : state === 'end'}"
+            [src]="svg"
+        >
+        </svg-icon>
         <div class="da-progress-button-state">
             <fa-icon 
                 *ngIf="state && (state === 'open' || state === 'closed'); else stateCircle"

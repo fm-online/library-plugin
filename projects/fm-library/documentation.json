@@ -2448,7 +2448,7 @@
         },
         {
             "name": "ProgressButtonComponent",
-            "id": "component-ProgressButtonComponent-ae57f48ab0bfb7c40c503f1310ce127a235c346ca52345bd9f5b2364f16a3b8e738b6294a7435d9e4256184276dd82ce8809a8dce1c47e7b3c573528bb218d31",
+            "id": "component-ProgressButtonComponent-dea0a010a899bbdcd3d59c7f3ce52f5415f0a613119542bab483be5ee71412ede39c5c3c8ae058d0d2a8fbd8288a34178f248f71150ad716de3c5cd08e2aa2da",
             "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2483,14 +2483,6 @@
                     "decorators": []
                 },
                 {
-                    "name": "iconColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 16,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -2502,8 +2494,16 @@
                     "name": "state",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "svg",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "any",
                     "decorators": []
                 },
                 {
@@ -2624,11 +2624,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';\nimport { faBarsProgress, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-progress-button',\n  templateUrl: './progress-button.component.html',\n  styleUrls: ['./progress-button.component.scss']\n})\n\nexport class ProgressButtonComponent implements OnInit{\n  @Input() type!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() state!: string;\n  @Input() iconColor!: string;\n  @Input() disabled: boolean = false;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n  stateIcon: any = faLock;\n  stateLabel!: string;\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n    onWindowResize() {\n      this.screen.updateScreenSizes();\n  }\n\n  ngOnInit() {\n    if (this.state) {\n      if(this.state === 'open') {\n        this.stateIcon = faLockOpen;\n      }\n      this.setStateLabel();\n    }\n  }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n  setStateLabel() {\n    switch(this.state) {\n      case 'success': this.stateLabel = 'vollständig';\n      break;\n      case 'warning': this.stateLabel = 'unvollständig';\n      break;\n      case 'error': this.stateLabel = 'fehlerhaft';\n      break;\n      case 'open': this.stateLabel = 'freigeschaltet';\n      break;\n      case 'closed': this.stateLabel = 'noch nicht freigeschaltet';\n      break;\n      case 'info': this.stateLabel = 'Zwischenstand erreicht';\n      break;\n      case 'end': this.stateLabel = 'Angebot nicht möglich';\n      break;\n      default: this.stateLabel = 'optional';\n      break;\n    }\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';\nimport { faBarsProgress, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-progress-button',\n  templateUrl: './progress-button.component.html',\n  styleUrls: ['./progress-button.component.scss']\n})\n\nexport class ProgressButtonComponent implements OnInit{\n  @Input() type!: string;\n  @Input() label!: string;\n  @Input() icon: any;\n  @Input() svg: any;\n  @Input() state!: string;\n  @Input() disabled: boolean = false;\n  @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();\n  stateIcon: any = faLock;\n  stateLabel!: string;\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  @HostListener('window:resize', ['$event'])\n    onWindowResize() {\n      this.screen.updateScreenSizes();\n  }\n\n  ngOnInit() {\n    if (this.state) {\n      if(this.state === 'open') {\n        this.stateIcon = faLockOpen;\n      }\n      this.setStateLabel();\n    }\n  }\n\n  getValue() {\n    this.buttonValue.emit(this.type);\n  }\n\n  setStateLabel() {\n    switch(this.state) {\n      case 'success': this.stateLabel = 'vollständig';\n      break;\n      case 'warning': this.stateLabel = 'unvollständig';\n      break;\n      case 'error': this.stateLabel = 'fehlerhaft';\n      break;\n      case 'open': this.stateLabel = 'freigeschaltet';\n      break;\n      case 'closed': this.stateLabel = 'noch nicht freigeschaltet';\n      break;\n      case 'info': this.stateLabel = 'Zwischenstand erreicht';\n      break;\n      case 'end': this.stateLabel = 'Angebot nicht möglich';\n      break;\n      default: this.stateLabel = 'optional';\n      break;\n    }\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-progress-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    button {\n        border: none;\n        min-height: 22px;\n        min-width: 22px;\n        color: $button-base-color;\n        font-size: 12px;\n        font-weight: 300;\n        font-family: $font;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n        background: transparent;\n        cursor: pointer;\n\n        &.disabled {\n            cursor: default;\n            pointer-events: none;\n            opacity: 0.2;\n        }\n\n        .da-progress-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n        }\n\n        .da-progress-button-state {\n            position: absolute;\n            left: 47px;\n            bottom: 18px;\n\n            .da-progress-button-state-icon {\n                font-size: 12px;\n                color: $button-base-color;\n            }\n\n            .da-progress-button-state-circle {\n                width: 14px;\n                height: 14px;\n                border-radius: 14px;\n                margin-left: -10px;\n                background-color: $tab-background;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                &.green {\n                    background-color: $success-color;\n                }\n                &.yellow {\n                    background-color: $attention-color;\n                }\n                &.red {\n                    background-color: $warning-base-color;\n                }\n            }\n        }\n        .da-progress-button-icon {\n            font-size: 21px;\n            color: $button-base-color;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n            &.green {\n                color: $success-color;\n            }\n\n            &.red {\n                color: $warning-base-color;\n            }\n        }\n\n        &:hover{\n            .da-progress-button-icon {\n                font-size: 24px;\n            }\n\n            .da-progress-button-label {\n                font-size: 14px;\n            }\n\n            .da-progress-button-state-circle {\n                // width: 16px;\n                // height: 16px;\n            }\n\n            +.da-progress-button-state-label {\n                visibility: visible;\n            }\n        }\n    }\n    .da-progress-button-state-label {\n        visibility: hidden;\n        color: $t1-secondary-color;\n        background-color: $button-base-color;\n        border-radius: 10px;\n        white-space: nowrap;\n        font-size: 12px;\n        font-weight: 300;\n        padding: 3px 10px;\n        text-align: center;\n        position: absolute;\n        bottom: -25px;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n    }\n}\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-progress-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    button {\n        border: none;\n        min-height: 22px;\n        min-width: 22px;\n        color: $button-base-color;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        font-size: 12px;\n        font-weight: 300;\n        font-family: $font;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n        background: transparent;\n        cursor: pointer;\n\n        &.disabled {\n            cursor: default;\n            pointer-events: none;\n\n            .da-progress-button-icon {\n                opacity: 0.2;\n            }\n\n            .da-progress-button-state-circle {\n                display: none;\n            }\n        }\n\n        .da-progress-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n        }\n        .da-progress-button-state-wrapper {\n            position: relative;\n            width: 50px;\n\n            .da-progress-button-state {\n                position: absolute;\n                right: 8px;\n                bottom: 0;\n\n                .da-progress-button-state-icon {\n                    font-size: 12px;\n                    color: $button-base-color;\n                }\n\n                .da-progress-button-state-circle {\n                    width: 14px;\n                    height: 14px;\n                    border-radius: 14px;\n                    margin-left: -10px;\n                    background-color: $tab-background;\n                    box-shadow: 0 3px 5px $shadow-base-color;\n                    transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                    &.green {\n                        background-color: $success-color;\n                    }\n                    &.yellow {\n                        background-color: $attention-color;\n                    }\n                    &.red {\n                        background-color: $warning-base-color;\n                    }\n                }\n            }\n            .da-progress-button-icon {\n                font-size: 21px;\n                display: inline-block;\n                width: 25px;\n                color: $button-base-color;\n                fill: $button-base-color;\n                transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        &:hover {\n            .da-progress-button-state-wrapper .da-progress-button-icon {\n                font-size: 24px;\n                width: 30px;\n            }\n\n            .da-progress-button-label {\n                font-size: 14px;\n            }\n\n            .da-progress-button-state-wrapper .da-progress-button-state .da-progress-button-state-circle {\n                width: 16px;\n                height: 16px;\n            }\n\n            +.da-progress-button-state-label {\n                visibility: visible;\n            }\n        }\n    }\n    .da-progress-button-state-label {\n        visibility: hidden;\n        color: $t1-secondary-color;\n        background-color: $button-base-color;\n        border-radius: 10px;\n        white-space: nowrap;\n        font-size: 12px;\n        font-weight: 300;\n        padding: 3px 10px;\n        text-align: center;\n        position: absolute;\n        bottom: -25px;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n    }\n}\n",
                     "styleUrl": "./progress-button.component.scss"
                 }
             ],
@@ -2662,7 +2662,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-progress-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"{'disabled' : disabled}\" \n        [disabled]=\"disabled\"\n        #target\n    >\n        <fa-icon \n            class=\"da-progress-button-icon\" \n            [ngClass]=\"{'green' : state === 'info', 'red' : state === 'end'}\"\n            [icon]=\"icon\" \n        ></fa-icon>\n        <div class=\"da-progress-button-state\">\n            <fa-icon \n                *ngIf=\"state && (state === 'open' || state === 'closed'); else stateCircle\"\n                class=\"da-progress-button-state-icon\" \n                [icon]=\"stateIcon\" \n            ></fa-icon>\n            <ng-template #stateCircle>\n                <div \n                    *ngIf=\"state && (state !== 'info' && state !== 'end')\"\n                    class=\"da-progress-button-state-circle\"\n                    [ngClass]=\"{'green' : state === 'success', 'yellow': state === 'warning', 'red' : state === 'error'}\"\n                ></div>\n            </ng-template>\n        </div>\n        <div class=\"da-progress-button-label\">\n            <span>\n                {{ label }}\n            </span>\n        </div> \n    </button>\n    <div *ngIf=\"stateLabel\" class=\"da-progress-button-state-label\">\n        <span>\n            {{ stateLabel }}\n        </span>\n    </div> \n</div>"
+            "templateData": "<div class=\"da-progress-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"{'disabled' : disabled}\" \n        [disabled]=\"disabled\"\n        #target\n    >\n    <div class=\"da-progress-button-state-wrapper\">\n        <fa-icon *ngIf=\"icon\" \n            class=\"da-progress-button-icon\" \n            [ngClass]=\"{'green' : state === 'info', 'red' : state === 'end'}\"\n            [icon]=\"icon\" \n        ></fa-icon>\n        <svg-icon *ngIf=\"svg\" \n            class=\"da-progress-button-icon\" \n            [ngClass]=\"{'green' : state === 'info', 'red' : state === 'end'}\"\n            [src]=\"svg\"\n        >\n        </svg-icon>\n        <div class=\"da-progress-button-state\">\n            <fa-icon \n                *ngIf=\"state && (state === 'open' || state === 'closed'); else stateCircle\"\n                class=\"da-progress-button-state-icon\" \n                [icon]=\"stateIcon\" \n            ></fa-icon>\n            <ng-template #stateCircle>\n                <div \n                    *ngIf=\"state && (state !== 'info' && state !== 'end')\"\n                    class=\"da-progress-button-state-circle\"\n                    [ngClass]=\"{'green' : state === 'success', 'yellow': state === 'warning', 'red' : state === 'error'}\"\n                ></div>\n            </ng-template>\n        </div>\n    </div>\n    <div class=\"da-progress-button-label\">\n        <span>\n            {{ label }}\n        </span>\n    </div> \n    </button>\n    <div *ngIf=\"stateLabel\" class=\"da-progress-button-state-label\">\n        <span>\n            {{ stateLabel }}\n        </span>\n    </div> \n</div>"
         },
         {
             "name": "TileCheckboxComponent",
@@ -4957,16 +4957,6 @@
                 "defaultValue": "{\n  args: {\n    value: 'inactive button',\n    inactive: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
             },
             {
-                "name": "Info",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Info',\n    icon: faCircleCheck,\n    state: 'info',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
-            },
-            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5095,6 +5085,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: true,\n    faCircleCheck: faCircleCheck,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "SVG",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'SVG Button',\n    svg: 'assets/images/signal-bars-poor.svg',\n    state: 'warning',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "SVG",
@@ -5826,14 +5826,14 @@
                     "defaultValue": "{\n  args: {\n    label: 'Info',\n    icon: faCircleExclamation,\n    state: 'end',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
                 },
                 {
-                    "name": "Info",
+                    "name": "SVG",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Info',\n    icon: faCircleCheck,\n    state: 'info',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'SVG Button',\n    svg: 'assets/images/signal-bars-poor.svg',\n    state: 'warning',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/buttons/button/button.stories.ts": [
@@ -7045,7 +7045,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Info",
+                "name": "SVG",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
