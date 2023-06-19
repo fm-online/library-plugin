@@ -7,6 +7,7 @@ import { faFloppyDisk} from '@fortawesome/free-regular-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from '../button/button.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export default {
   title: 'buttons/ButtonGroupComponent',
@@ -18,6 +19,7 @@ export default {
       ],
       imports: [
         FontAwesomeModule,  
+        AngularSvgIconModule.forRoot(),
         HttpClientModule],
       providers: [
         {
@@ -39,18 +41,18 @@ type Story = StoryObj<ButtonGroupComponent>;
 
 const testButtons = [
   {
-    'iconLeft': faChevronLeft,
+    'iconLeft': 'assets/images/chevronLeft.svg',
     'value': 'zurück',
     'type': 'back'
   },
   {
     'label': 'Fortschritt speichern',
     'iconButton': true,
-    'icon': faFloppyDisk,
+    'icon': 'assets/images/diskSave.svg',
     'type': 'save',
   },
   {
-    'iconRight': faChevronRight,
+    'iconRight': 'assets/images/chevronRight.svg',
     'value': 'weiter',
     'type': 'next',
     'disabled': true,

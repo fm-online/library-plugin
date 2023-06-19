@@ -16,6 +16,7 @@
         height: 50px;
         border: 1px solid $button-base-color;
         color: $button-base-color;
+        fill: $button-base-color;
         font-size: $t2-base-size;
         font-family: $font;
         border-radius: 25px 25px 25px 0;
@@ -35,6 +36,7 @@
         &.light {
             border: 1px solid $input-secondary-color;
             color: $input-secondary-color;
+            fill: $input-secondary-color;
         }
 
         &.short {
@@ -51,11 +53,13 @@
             border: 1px solid $button-base-color;
             background: $button-base-color;
             color: $t2-secondary-color;
+            fill: $t2-secondary-color;
 
             &.light {
                 border: 1px solid $input-secondary-color;
                 background: $input-secondary-color;
                 color: $t2-base-color;
+                fill: $t2-base-color;
             }
         }
 
@@ -74,7 +78,13 @@
         }
 
         .da-button-icon {
-            font-size: 14px;
+            display: flex;
+            align-items: flex-end;
+            
+            svg {
+                height: 14px;
+                width: auto;
+            }
             &.left {
                 margin-left: 10px;
             }
@@ -84,10 +94,15 @@
             }
 
             &.main {
-                font-size: 28px;
+                svg {
+                    height: 28px;
+                    width: auto;
+                }
 
                 &.mobile {
-                    font-size: 20px;
+                    svg {
+                        height: 20px;
+                    }
                 }
             }
         }

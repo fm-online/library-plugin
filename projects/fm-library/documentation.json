@@ -2628,7 +2628,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-progress-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    button {\n        border: none;\n        min-height: 22px;\n        min-width: 22px;\n        color: $button-base-color;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        font-size: 12px;\n        font-weight: 300;\n        font-family: $font;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n        background: transparent;\n        cursor: pointer;\n\n        &.disabled {\n            cursor: default;\n            pointer-events: none;\n\n            .da-progress-button-icon {\n                opacity: 0.2;\n            }\n\n            .da-progress-button-state-circle {\n                display: none;\n            }\n        }\n\n        .da-progress-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n        }\n        .da-progress-button-state-wrapper {\n            position: relative;\n            width: 50px;\n\n            .da-progress-button-state {\n                position: absolute;\n                right: 8px;\n                bottom: 0;\n\n                .da-progress-button-state-icon {\n                    font-size: 12px;\n                    color: $button-base-color;\n                }\n\n                .da-progress-button-state-circle {\n                    width: 14px;\n                    height: 14px;\n                    border-radius: 14px;\n                    margin-left: -10px;\n                    background-color: $tab-background;\n                    box-shadow: 0 3px 5px $shadow-base-color;\n                    transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                    &.green {\n                        background-color: $success-color;\n                    }\n                    &.yellow {\n                        background-color: $attention-color;\n                    }\n                    &.red {\n                        background-color: $warning-base-color;\n                    }\n                }\n            }\n            .da-progress-button-icon {\n                font-size: 21px;\n                display: inline-block;\n                width: 25px;\n                color: $button-base-color;\n                fill: $button-base-color;\n                transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        &:hover {\n            .da-progress-button-state-wrapper .da-progress-button-icon {\n                font-size: 24px;\n                width: 30px;\n            }\n\n            .da-progress-button-label {\n                font-size: 14px;\n            }\n\n            .da-progress-button-state-wrapper .da-progress-button-state .da-progress-button-state-circle {\n                width: 16px;\n                height: 16px;\n            }\n\n            +.da-progress-button-state-label {\n                visibility: visible;\n            }\n        }\n    }\n    .da-progress-button-state-label {\n        visibility: hidden;\n        color: $t1-secondary-color;\n        background-color: $button-base-color;\n        border-radius: 10px;\n        white-space: nowrap;\n        font-size: 12px;\n        font-weight: 300;\n        padding: 3px 10px;\n        text-align: center;\n        position: absolute;\n        bottom: -25px;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n    }\n}\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-progress-button-single {\n    font-family: $font;\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    button {\n        border: none;\n        min-height: 22px;\n        min-width: 22px;\n        color: $button-base-color;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        font-size: 12px;\n        font-weight: 300;\n        font-family: $font;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n        background: transparent;\n        cursor: pointer;\n\n        &.disabled {\n            cursor: default;\n            pointer-events: none;\n\n            .da-progress-button-icon {\n                opacity: 0.2;\n            }\n\n            .da-progress-button-state-circle {\n                display: none;\n            }\n        }\n\n        .da-progress-button-label {\n            width: 100%;\n            text-align: center;\n            display: block;\n            white-space: nowrap;\n            transition: all 0.4s ease-in-out 0s, visibility 0s;\n        }\n        .da-progress-button-state-wrapper {\n            position: relative;\n            width: 50px;\n\n            .da-progress-button-state {\n                position: absolute;\n                right: 8px;\n                bottom: 0;\n\n                .da-progress-button-state-icon {\n                    font-size: 12px;\n                    color: $button-base-color;\n                }\n\n                .da-progress-button-state-circle {\n                    width: 14px;\n                    height: 14px;\n                    border-radius: 14px;\n                    margin-left: -10px;\n                    background-color: $tab-background;\n                    box-shadow: 0 3px 5px $shadow-base-color;\n                    transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                    &.green {\n                        background-color: $success-color;\n                    }\n                    &.yellow {\n                        background-color: $attention-color;\n                    }\n                    &.red {\n                        background-color: $warning-base-color;\n                    }\n                }\n            }\n            .da-progress-button-icon {\n                font-size: 21px;\n                display: inline-block;\n                width: 25px;\n                color: $button-base-color;\n                fill: $button-base-color;\n                transition: all 0.4s ease-in-out 0s, visibility 0s;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        &:hover {\n            .da-progress-button-state-wrapper .da-progress-button-icon {\n                font-size: 24px;\n                width: 30px;\n            }\n\n            .da-progress-button-label {\n                font-size: 14px;\n            }\n\n            .da-progress-button-state-wrapper .da-progress-button-state .da-progress-button-state-circle {\n                width: 16px;\n                height: 16px;\n            }\n\n            +.da-progress-button-state-label {\n                visibility: visible;\n            }\n        }\n    }\n    .da-progress-button-state-label {\n        visibility: hidden;\n        color: $t1-secondary-color;\n        background-color: $button-base-color;\n        border-radius: 10px;\n        white-space: nowrap;\n        font-size: 12px;\n        font-weight: 300;\n        padding: 3px 10px;\n        text-align: center;\n        position: absolute;\n        bottom: -25px;\n        transition: all 0.4s ease-in-out 0s, visibility 0s;\n    }\n}\n",
                     "styleUrl": "./progress-button.component.scss"
                 }
             ],
@@ -4560,16 +4560,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    buttons: testButtons,\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4585,6 +4575,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    light: false,\n    id: 'the-info',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    buttons: testButtons,\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4700,21 +4700,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -4750,21 +4750,21 @@
                 "name": "DefaultDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    buttons: testButtons,\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "DefaultDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "DefaultDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    buttons: testButtons,\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "DefaultDark",
@@ -5376,17 +5376,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonGroupComponent>",
-                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<HeaderButtonComponent>",
                 "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
                 "deprecated": false,
@@ -5400,6 +5389,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<InfoButtonComponent>",
                 "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonGroupComponent>",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5541,8 +5541,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "rawtype": "StoryObj<ToggleTristateComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5552,8 +5552,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleTristateComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5938,6 +5938,28 @@
                     "defaultValue": "{\n  args: {\n    value: 'weiter',\n    iconRight: faChevronRight,\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    light: false,\n    id: 'the-info',\n  },\n}"
+                },
+                {
+                    "name": "DefaultDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts": [
                 {
                     "name": "Default",
@@ -5968,28 +5990,6 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  {\n    'iconLeft': faChevronLeft,\n    'value': 'zurück',\n    'type': 'back'\n  },\n  {\n    'label': 'Fortschritt speichern',\n    'iconButton': true,\n    'icon': faFloppyDisk,\n    'type': 'save',\n  },\n  {\n    'iconRight': faChevronRight,\n    'value': 'weiter',\n    'type': 'next',\n    'disabled': true,\n  }\n]"
-                }
-            ],
-            "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    light: false,\n    id: 'the-info',\n  },\n}"
-                },
-                {
-                    "name": "DefaultDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
@@ -6517,19 +6517,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonGroupComponent>",
-                    "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts": [
                 {
                     "name": "Story",
@@ -6550,6 +6537,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<InfoButtonComponent>",
                     "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonGroupComponent>",
+                    "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6712,19 +6712,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
                 {
                     "name": "Story",
@@ -6732,6 +6719,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleTristateComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

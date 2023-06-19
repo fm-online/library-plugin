@@ -5,23 +5,23 @@
         [disabled]="disabled"
         #target
     >
-        <fa-icon 
-            *ngIf="iconLeft"
+        <svg-icon *ngIf="iconLeft" 
             class="da-button-icon left" 
-            [icon]="iconLeft" 
-        ></fa-icon>
+            [src]="iconLeft"
+        >
+        </svg-icon>
         <span class="da-button-label" *ngIf="value">{{ value }}</span> 
-        <fa-icon 
-            *ngIf="icon"
+        <svg-icon *ngIf="icon" 
             class="da-button-icon main" 
             [ngClass]="{'mobile' : screen.isSmallest()}"
-            [icon]="icon" 
-        ></fa-icon>
-        <fa-icon 
-            *ngIf="iconRight"
+            [src]="icon"
+        >
+        </svg-icon>
+        <svg-icon *ngIf="iconRight" 
             class="da-button-icon right" 
-            [icon]="iconRight" 
-        ></fa-icon>
+            [src]="iconRight"
+        >
+        </svg-icon>
     </button>
     <div *ngIf="icon" class="da-button-icon-label" [ngClass]="{'light' : light}">{{label}}</div>
 </div>

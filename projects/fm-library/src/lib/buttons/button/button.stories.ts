@@ -6,13 +6,19 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import { faFloppyDisk} from '@fortawesome/free-regular-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HttpClientModule } from '@angular/common/http';
 
 export default {
   title: 'buttons/ButtonComponent',
   component: ButtonComponent,
   decorators: [
     moduleMetadata({
-      imports: [FontAwesomeModule],
+      imports: [
+        FontAwesomeModule,
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(),
+      ],
       providers: [
         {
           provide: APP_INITIALIZER,
@@ -81,7 +87,7 @@ export const Icon: Story = {
   args: {
     label: 'Fortschritt speichern',
     iconButton: true,
-    icon: faFloppyDisk,
+    icon: 'assets/images/diskSave.svg',
     light: false,
   },
 };
@@ -90,7 +96,7 @@ export const IconDark: Story = {
   args: {
     label: 'Fortschritt speichern',
     iconButton: true,
-    icon: faFloppyDisk,
+    icon: 'assets/images/diskSave.svg',
     light: true,
   },
   parameters: {
@@ -106,7 +112,7 @@ export const IconDark: Story = {
 export const IconLeft: Story = {
   args: {
     value: 'zurück',
-    iconLeft: faChevronLeft,
+    iconLeft: 'assets/images/chevronLeft.svg',
     light: false,
   },
 };
@@ -114,7 +120,7 @@ export const IconLeft: Story = {
 export const IconLeftDark: Story = {
   args: {
     value: 'zurück',
-    iconLeft: faChevronLeft,
+    iconLeft: 'assets/images/chevronLeft.svg',
     light: true,
   },
   parameters: {
@@ -130,7 +136,7 @@ export const IconLeftDark: Story = {
 export const IconRight: Story = {
   args: {
     value: 'weiter',
-    iconRight: faChevronRight,
+    iconRight: 'assets/images/chevronRight.svg',
     light: false,
   },
 };
@@ -138,7 +144,7 @@ export const IconRight: Story = {
 export const IconRightDark: Story = {
   args: {
     value: 'weiter',
-    iconRight: faChevronRight,
+    iconRight: 'assets/images/chevronRight.svg',
     light: true,
   },
   parameters: {
