@@ -2,8 +2,10 @@
 
 .da-info-button {
     color: $t1-base-color;
-    width: 19px;
-    height: 19px;
+    min-width: 19px;
+    min-height: 19px;
+    max-width: 19px;
+    max-height: 19px;
     position: relative;
     background: #fff;
     border-radius: 20px;
@@ -20,12 +22,12 @@
     .da-info-icon {
         font-size: 20px;
         position: absolute;
-        top: -1px;
+        bottom: -5px;
         left: 0;
 
         &:hover {
             font-size: 22px;
-            top: -2px;
+            bottom: -7px;
             left: -1px;
         }
     }
