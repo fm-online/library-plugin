@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class TileGroupComponent implements OnInit {
   @Input() tiles: any;
-  localValue: string = 'localValue';
+  @Input() localValue: string = 'localValue';
   @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();
   
   constructor() { }
