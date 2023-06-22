@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'lib-counter',
@@ -14,8 +13,7 @@ export class CounterComponent implements OnInit {
   @Input() min: number = 0;
   @Input() max: number = 10;
   @Input() light: boolean = false;
-  faMinus = faMinus
-  faPlus = faPlus
+
   @Output() public counterValue:EventEmitter<any> = new EventEmitter<number>();
 
   constructor() { }

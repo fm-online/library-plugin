@@ -15,22 +15,9 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FontAwesomeModule, 
         BrowserAnimationsModule, 
         HttpClientModule,
         AngularSvgIconModule.forRoot()
-      ],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
       ],
     }),
   ],
@@ -42,7 +29,7 @@ type Story = StoryObj<ProgressButtonComponent>;
 export const Default: Story = {
   args: {
     label: 'Stellplätze',
-    icon: faSquareParking,
+    icon: 'assets/images/parking.svg',
     state: 'success',
   },
   parameters: {
@@ -58,24 +45,8 @@ export const Default: Story = {
 export const Dashboard: Story = {
   args: {
     label: 'button label',
-    icon: faBarsProgress,
+    icon: 'assets/images/barsProgress.svg',
     state: 'closed',
-  },
-  parameters: {
-    backgrounds: {
-      default: 'header',
-      values: [
-        { name: 'header', value: '#DDE7EE' },
-      ],
-    },
-  },
-};
-
-export const SVG: Story = {
-  args: {
-    label: 'SVG Button',
-    svg: 'assets/images/signal-bars-poor.svg',
-    state: 'warning',
   },
   parameters: {
     backgrounds: {
@@ -90,7 +61,7 @@ export const SVG: Story = {
 export const Ende: Story = {
   args: {
     label: 'Info',
-    icon: faCircleExclamation,
+    icon: 'assets/images/circleExclamation.svg',
     state: 'end',
   },
   parameters: {
@@ -107,7 +78,7 @@ export const Disabled: Story = {
   args: {
     label: 'disabled',
     disabled: true,
-    icon: faUser,
+    icon: 'assets/images/user.svg',
   },
   parameters: {
     backgrounds: {

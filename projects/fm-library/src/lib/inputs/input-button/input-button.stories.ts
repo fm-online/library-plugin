@@ -1,10 +1,10 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import {InputButtonComponent} from './input-button.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleInfo, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
 
 export default {
   title: 'inputs/InputButtonComponent',
@@ -12,19 +12,12 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FontAwesomeModule, 
-        NgbTooltipModule],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(), 
+        NgbTooltipModule
+      ],
+      declarations: [
+        InfoButtonComponent,
       ],
     }),
   ],
@@ -41,7 +34,6 @@ export const Default: Story = {
     unit: '€',
     touched: true,
     light: false,
-    info: false,
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -55,7 +47,6 @@ export const DefaultDark: Story = {
     unit: '€',
     touched: true,
     light: true,
-    info: false,
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -77,8 +68,7 @@ export const withInfo: Story = {
     unit: '€',
     touched: true,
     light: false,
-    faCircleInfo: faCircleInfo,
-    info: true,
+    info: 'test-info',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -92,8 +82,7 @@ export const withInfoDark: Story = {
     unit: '€',
     touched: true,
     light: true,
-    faCircleInfo: faCircleInfo,
-    info: true,
+    info: 'test-info',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -115,8 +104,6 @@ export const warning: Story = {
     unit: '€',
     touched: false,
     light: false,
-    faCircleExclamation: faCircleExclamation,
-    info: false,
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -130,8 +117,6 @@ export const warningDark: Story = {
     unit: '€',
     touched: false,
     light: true,
-    faCircleExclamation: faCircleExclamation,
-    info: false,
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -154,7 +139,6 @@ export const short: Story = {
     touched: true,
     short: true,
     light: false,
-    info: false,
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -169,7 +153,6 @@ export const shortDark: Story = {
     touched: true,
     short: true,
     light: true,
-    info: false,
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },

@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'lib-input-date',
@@ -13,7 +11,6 @@ export class InputDateComponent implements OnInit {
   @Input() placeholder!: string;
   @Input() light: boolean = false;
   @Input() info: string = '';
-  @Input() icon = faCircleCheck;
   @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
   success: boolean = false;

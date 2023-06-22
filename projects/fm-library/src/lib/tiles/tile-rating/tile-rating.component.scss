@@ -38,15 +38,17 @@
 
             .da-tile-rating-icon {
                 position: absolute;
-                top: -6px;
+                top: -1px;
                 left: -1px;
                 color: $success-color;
+                fill: $success-color;
 
             }
         }
         .da-tile-rating-stars {
             height: 112px;
             color: $t4-base-color;
+            fill: $t4-base-color;
             display: flex;
             position: relative;
             z-index: 1;

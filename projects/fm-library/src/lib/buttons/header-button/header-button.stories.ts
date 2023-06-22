@@ -5,24 +5,17 @@ import {HeaderButtonComponent} from './header-button.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export default {
   title: 'buttons/HeaderButtonComponent',
   component: HeaderButtonComponent,
   decorators: [
     moduleMetadata({
-      imports: [FontAwesomeModule],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
+      imports: [
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(),
       ],
     }),
   ],
@@ -92,7 +85,7 @@ export const Active: Story = {
 
 export const Icon: Story = {
   args: {
-    icon: faUser,
+    icon: 'assets/images/user.svg',
   },
   parameters: {
     backgrounds: {

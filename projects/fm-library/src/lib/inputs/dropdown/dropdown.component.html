@@ -2,7 +2,7 @@
 <div class="da-input-select-single" [ngClass]="{'light' : light}">
   <div class="da-input-select-label" [ngClass]="{'light' : light}">{{label}}</div>
   <label class="da-input-select">
-    <fa-icon [icon]="icon" class="da-input-select-success-icon" *ngIf="success"></fa-icon>
+    <svg-icon [src]="icon" class="da-input-select-success-icon" *ngIf="success"></svg-icon>
     <mat-form-field appearance="fill" class="da-input-select-select">
       <mat-select 
         (valueChange)="getValue($event)" 
@@ -14,7 +14,6 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <!-- <fa-icon [icon]="faArrowDown" class="da-input-select-arrow-icon"></fa-icon> -->
     <div class="da-input-info-button" *ngIf="info">
         <lib-info-button 
           [light]="light" 

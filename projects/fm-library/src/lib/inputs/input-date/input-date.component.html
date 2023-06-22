@@ -2,7 +2,7 @@
     <div class="da-input-date-label" [ngClass]="{'light' : light}">{{label}}</div>
     <label class="da-input-date">
       <div class="da-input-icons" *ngIf="success">
-        <fa-icon [icon]="icon" class="da-input-date-success-icon"></fa-icon>
+        <svg-icon src="assets/images/circleCheck.svg" class="da-input-date-success-icon"></svg-icon>
       </div>
       <mat-form-field appearance="fill" color="accent">
         <!-- <mat-label>{{label}}</mat-label> -->
@@ -15,7 +15,7 @@
         >
         <mat-hint></mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker">
-            <fa-icon [icon]="icon" class="da-input-date-success-icon"></fa-icon>
+            <svg-icon src="assets/images/circleCheck.svg" class="da-input-date-success-icon"></svg-icon>
         </mat-datepicker-toggle>
         <mat-datepicker #picker color="primary"></mat-datepicker>
       </mat-form-field>

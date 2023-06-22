@@ -2,10 +2,6 @@
 
 import { moduleMetadata, Meta, StoryObj} from '@storybook/angular';
 import {ButtonComponent} from './button.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
-import { faFloppyDisk} from '@fortawesome/free-regular-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,21 +11,8 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FontAwesomeModule,
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
-      ],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
       ],
     }),
   ],

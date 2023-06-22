@@ -1,12 +1,10 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { StarRatingModule } from 'angular-star-rating';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleCheck, fas } from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { TileRatingComponent } from './tile-rating.component';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export default {
   title: 'tiles/TileRatingComponent',
@@ -14,26 +12,12 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FontAwesomeModule, 
-        // MainPipe, 
         StarRatingModule.forRoot(),
-        // AngularSvgIconModule.forRoot(),
+        AngularSvgIconModule.forRoot(),
         HttpClientModule
       ],
       declarations: [
         InfoButtonComponent,
-      ],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
       ],
     }),
   ],
@@ -45,7 +29,6 @@ export const Default4Stars: Story = {
   args: {
     label: 'das Label',
     name: 'name',
-    icon: faCircleCheck,
     stars: 4,
     info: 'rating-info',
   },
@@ -54,7 +37,6 @@ export const Default5Stars: Story = {
   args: {
     label: 'das Label',
     name: 'name',
-    icon: faCircleCheck,
     stars: 5,
     info: 'info-rating-dark',
   },

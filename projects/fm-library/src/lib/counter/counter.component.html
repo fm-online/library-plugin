@@ -5,7 +5,7 @@
         (click)="count(counter, 'down', min, max, step)"
         [ngClass]="{'light' : light}"
     >
-        <fa-icon class="da-switch-icon" [icon]="faMinus"></fa-icon>
+        <svg-icon class="da-switch-icon" src="assets/images/minus.svg"></svg-icon>
     </button>
     <label class="da-counter" [ngClass]="{'light' : light}">
         <input
@@ -24,6 +24,6 @@
         (click)="count(counter, 'up', min, max, step)"
         [ngClass]="{'light' : light}"
     >
-        <fa-icon class="da-switch-icon" [icon]="faPlus"></fa-icon>
+        <svg-icon class="da-switch-icon" src="assets/images/plus.svg"></svg-icon>
     </button>
 </div>

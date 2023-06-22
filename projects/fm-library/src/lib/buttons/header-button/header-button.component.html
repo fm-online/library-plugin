@@ -5,12 +5,12 @@
         [disabled]="disabled || active"
         #target
     >
-        <fa-icon 
-            *ngIf="icon; else buttonLabel"
+        <svg-icon  *ngIf="icon; else buttonLabel" 
             class="da-header-button-icon" 
             [ngClass]="{'mobile' : screen.isSmallest()}"
-            [icon]="icon" 
-        ></fa-icon>
+            [src]="icon"
+        >
+        </svg-icon>
         <ng-template class="da-header-button-label" #buttonLabel>
             <span>
                 {{ value }}

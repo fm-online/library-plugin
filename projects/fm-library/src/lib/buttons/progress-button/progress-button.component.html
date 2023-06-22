@@ -1,3 +1,4 @@
+
 <div class="da-progress-button-single">
     <button 
         (click)="getValue()" 
@@ -6,23 +7,18 @@
         #target
     >
     <div class="da-progress-button-state-wrapper">
-        <fa-icon *ngIf="icon" 
+        <svg-icon
             class="da-progress-button-icon" 
             [ngClass]="{'green' : state === 'info', 'red' : state === 'end'}"
-            [icon]="icon" 
-        ></fa-icon>
-        <svg-icon *ngIf="svg" 
-            class="da-progress-button-icon" 
-            [ngClass]="{'green' : state === 'info', 'red' : state === 'end'}"
-            [src]="svg"
+            [src]="icon"
         >
         </svg-icon>
         <div class="da-progress-button-state">
-            <fa-icon 
+            <svg-icon 
                 *ngIf="state && (state === 'open' || state === 'closed'); else stateCircle"
                 class="da-progress-button-state-icon" 
-                [icon]="stateIcon" 
-            ></fa-icon>
+                [src]="stateIcon" 
+            ></svg-icon>
             <ng-template #stateCircle>
                 <div 
                     *ngIf="state && (state !== 'info' && state !== 'end')"

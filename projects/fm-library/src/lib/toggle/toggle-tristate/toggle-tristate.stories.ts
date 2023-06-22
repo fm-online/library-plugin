@@ -1,12 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { ToggleTristateComponent } from './toggle-tristate.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleCheck, faHouseCircleCheck, faHouseCircleExclamation, faHouseCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
-// import { MainPipe } from '../../../pipes/pipe.module';
-// import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
 
 export default {
   title: 'switches/ToggleTristateComponent',
@@ -21,23 +15,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      imports: [
-        FontAwesomeModule, 
-        // MainPipe, 
-        // AngularSvgIconModule.forRoot(),
-        HttpClientModule],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons(faCircleCheck);
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
-      ],
+      imports: [],
     }),
   ],
 } as Meta;

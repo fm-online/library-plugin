@@ -44,19 +44,22 @@
                 display: none;
             .da-tile-checkbox-icon {
                 position: absolute;
-                top: -6px;
+                top: -1px;
                 left: -1px;
 
                 &.green {
                     color: $success-color;
+                    fill: $success-color;
                 }
 
                 &.yellow {
                     color: $attention-color;
+                    fill: $attention-color;
                 }
 
                 &.red {
                     color: $warning-base-color;
+                    fill: $warning-base-color;
                 }
             }
         }

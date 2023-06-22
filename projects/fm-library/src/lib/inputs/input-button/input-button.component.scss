@@ -32,8 +32,8 @@
 
             .da-input-button-icon-yellow {
                 color: $attention-color;
+                fill: $attention-color;
                 position: absolute;
-                top: -3px;
             }
     
         }
@@ -90,33 +90,8 @@
         }
 
         .da-input-button-info-button {
-            color: $t1-base-color;
-            width: 20px;
-            height: 20px;
-            position: relative;
-            background: #fff;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.25s ease-in-out;
-            box-shadow: 0 3px 5px $shadow-base-color;
             margin-left: 10px;
-            text-align: left;
-
-            &.light {
-                color: $t4-secondary-color;
-                background: transparent;
-            }
-
-            .da-input-button-info-icon {
-                font-size: 20px;
-                position: absolute;
-                top: -2px;
-                left: 0px;
-
-                &:hover {
-                    font-size: 22px;
-                }
-            }
+            margin-top: -5px;
         }
     }
 }

@@ -1,30 +1,17 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, StoryObj} from '@storybook/angular';
 import {CounterComponent} from './counter.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
-
-const minus = faMinus
-const plus = faPlus
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export default {
   title: 'switches/CounterComponent',
   component: CounterComponent,
   decorators: [
     moduleMetadata({
-      imports: [FontAwesomeModule],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
+      imports: [
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(),
       ],
     }),
   ],

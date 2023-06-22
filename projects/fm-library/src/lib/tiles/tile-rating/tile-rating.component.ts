@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'lib-tile-rating',
@@ -11,7 +10,7 @@ export class TileRatingComponent implements OnInit {
   @Input() label: string = 'label';
   @Input() name: string = 'name';
   @Input() stars: number = 5;
-  @Input() icon: any = faCircleCheck;
+  @Input() icon: string = 'assets/images/circleCheck.svg';
   @Input() info:  string = '';
   success!: boolean;
   rating: number = 0;

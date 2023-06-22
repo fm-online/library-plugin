@@ -2,10 +2,10 @@
     <div class="da-input-button-label" [ngClass]="{'light' : light}">{{label}}</div>
     <label class="da-input">
         <div class="da-input-button-icons" *ngIf="!touched">
-            <fa-icon 
+            <svg-icon 
                 class="da-input-button-icon-yellow" 
-                [icon]="faCircleExclamation" 
-            ></fa-icon>
+                src="assets/images/circleExclamation.svg" 
+            ></svg-icon>
         </div>
         <button 
             autocomplete="off"
@@ -16,8 +16,12 @@
             #target
         >{{ value }}</button>
         <div class="da-input-button-unit" [ngClass]="{'short' : short}">{{unit}}</div>
-        <div class="da-input-button-info-button" *ngIf="info" [ngClass]="{'light' : light}">
-            <fa-icon class="da-input-button-info-icon" [icon]="faCircleInfo"></fa-icon>
+        <div class="da-input-button-info-button" *ngIf="info">
+            <lib-info-button 
+            [light]="light" 
+            (infoPressed)="getInfo($event)"
+            [id]="info"
+            ></lib-info-button>
         </div>
     </label>
 </div>

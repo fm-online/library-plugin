@@ -1,11 +1,10 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import {InputComponent} from './input.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleCheck, faCircleInfo, faCircleXmark, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export default {
   title: 'inputs/InputComponent',
@@ -13,23 +12,12 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FontAwesomeModule, 
-        NgbTooltipModule
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(),
+        NgbTooltipModule,
       ],
       declarations: [
         InfoButtonComponent,
-      ],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
       ],
     }),
   ],
@@ -91,7 +79,6 @@ export const withInfo: Story = {
     touched: false,
     error: false,
     light: false,
-    faCircleInfo: faCircleInfo,
     errorText: 'die Fehlermeldung',
     info: 'test-info',
     infoText: 'info Text',
@@ -110,7 +97,6 @@ export const withInfoDark: Story = {
     touched: false,
     error: false,
     light: true,
-    faCircleInfo: faCircleInfo,
     errorText: 'die Fehlermeldung',
     info: 'test-info-dark',
     infoText: 'info Text',
@@ -137,8 +123,6 @@ export const error: Story = {
     touched: true,
     error: true,
     light: false,
-    faCircleExclamation: faCircleExclamation,
-    faCircleXmark: faCircleXmark,
     errorText: 'die Fehlermeldung',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
@@ -156,8 +140,6 @@ export const errorDark: Story = {
     touched: true,
     error: true,
     light: true,
-    faCircleExclamation: faCircleExclamation,
-    faCircleXmark: faCircleXmark,
     errorText: 'die Fehlermeldung',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
@@ -183,7 +165,6 @@ export const success: Story = {
     touched: true,
     error: false,
     light: false,
-    faCircleCheck: faCircleCheck,
     errorText: 'die Fehlermeldung',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
@@ -201,7 +182,6 @@ export const successDark: Story = {
     touched: true,
     error: false,
     light: true,
-    faCircleCheck: faCircleCheck,
     errorText: 'die Fehlermeldung',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',

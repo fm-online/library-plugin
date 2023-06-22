@@ -32,6 +32,7 @@
     }
     .da-counter-btn {
         color: $button-base-color;
+        fill: $button-base-color;
         border: none;
         width: 30px;
         height: 30px;
@@ -40,6 +41,10 @@
         box-shadow: 0 3px 5px $shadow-base-color;
         cursor: pointer;
 
+        svg {
+            margin-top: 2px;
+        }
+
         &.light {
             box-shadow: 0 3px 5px $shadow-secondary-color;
         }
@@ -47,20 +52,24 @@
         &:hover {
             background-color: $button-base-color;
             color: #fff;
+            fill: #fff;
 
             &.light {
                 background-color: $button-secondary-color;
                 color: $button-base-color;
+                fill: $button-base-color;
             }
         }
 
         &:active {
             background-color: $button-base-color;
             color: #fff;
+            fill: #fff;
 
             &.light {
                 background-color: $button-secondary-color;
                 color: $button-base-color;
+                fill: $button-base-color;
             }
         }
     }

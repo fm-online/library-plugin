@@ -1,5 +1,4 @@
 import { Component, EventEmitter, HostListener, Input, Output, TemplateRef } from '@angular/core';
-import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
 @Component({
@@ -13,14 +12,10 @@ export class TileCheckboxComponent {
   @Input() checked: boolean = false;
   @Input() value: string = 'value';
   @Input() state: string = 'state';
-  @Input() image?: any;
+  @Input() image?: string;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
-  @Input() isSVG: boolean = false;
   expanded!: boolean;
-  faCheck = faCircleCheck;
-  faAttention = faCircleExclamation;
-  faError = faCircleXmark;
   screenWidth: any;
   @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<any>();
 

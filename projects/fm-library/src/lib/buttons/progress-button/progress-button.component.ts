@@ -1,5 +1,4 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { faBarsProgress, faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
 @Component({
@@ -11,12 +10,11 @@ import { HelperService } from '../../services/helper.service';
 export class ProgressButtonComponent implements OnInit{
   @Input() type!: string;
   @Input() label!: string;
-  @Input() icon: any;
-  @Input() svg: any;
+  @Input() icon!: string;
   @Input() state!: string;
   @Input() disabled: boolean = false;
   @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();
-  stateIcon: any = faLock;
+  stateIcon: string = 'assets/images/lock.svg';
   stateLabel!: string;
 
   constructor(
@@ -31,7 +29,7 @@ export class ProgressButtonComponent implements OnInit{
   ngOnInit() {
     if (this.state) {
       if(this.state === 'open') {
-        this.stateIcon = faLockOpen;
+        this.stateIcon = 'assets/images/lockOpen.svg';
       }
       this.setStateLabel();
     }

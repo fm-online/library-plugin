@@ -1,7 +1,7 @@
 <div class="da-tile-checkbox-single">
     <label 
             class="da-tile-checkbox" 
-            [ngClass]="{'expanded' : expanded, 'mobile' : screen.isSmallest()}"
+            [ngClass]="{'expanded' : checked, 'mobile' : screen.isSmallest()}"
         >
         <input 
             type="checkbox" 
@@ -11,30 +11,21 @@
             [value]="value"
         >
         <div class="da-tile-checkbox-icon-wrapper">
-            <fa-icon class="da-tile-checkbox-icon green" *ngIf="state === 'success'" [icon]="faCheck"></fa-icon>
-            <fa-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" [icon]="faAttention"></fa-icon>
-            <fa-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" [icon]="faError"></fa-icon>
+            <svg-icon class="da-tile-checkbox-icon green" *ngIf="state === 'success'" src="assets/images/circleCheck.svg"></svg-icon>
+            <svg-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" src="assets/images/circleExclamation.svg"></svg-icon>
+            <svg-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" src="assets/images/circleXmark.svg"></svg-icon>
         </div>
-        <svg-icon *ngIf="isSVG; else faIcon" 
+        <svg-icon *ngIf="image" 
             class="da-tile-checkbox-image" 
             [ngClass]="{'mobile' : screen.isSmallest()}"
             [src]="image"
         >
         </svg-icon>
-        <ng-template #faIcon>
-            <fa-icon 
-                *ngIf="image"
-                class="da-tile-checkbox-image" 
-                [ngClass]="{'mobile' : screen.isSmallest()}"
-                [icon]="image"
-            >
-            </fa-icon>
-            <div
-                *ngIf="!image"
-                class="da-tile-checkbox-image" 
-                [ngClass]="{'mobile' : screen.isSmallest()}"
-            > </div>
-        </ng-template>
+        <div *ngIf="!image"
+            class="da-tile-checkbox-image" 
+            [ngClass]="{'mobile' : screen.isSmallest()}"
+        >
+        </div>
         <div 
             class="da-tile-checkbox-label"
             [ngClass]="{'mobile' : screen.isSmallest()}"

@@ -1605,7 +1605,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";\n\n.da-header-text-wrapper {\n    display: flex;\n    align-items: center;\n\n    .da-header-text {\n        font-family: $font;\n        color: $t1-base-color;\n        text-align: center;\n        font-weight: 400;\n        margin: 0;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n\n        &.thin {\n            font-weight: 300;\n        }\n    }\n\n    .da-header-info-button {\n        margin-left: 10px;\n    }\n}\n",
+                    "data": "@import \"../../../styles.scss\";\n\n.da-header-text-wrapper {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n    .da-header-text {\n        font-family: $font;\n        color: $t1-base-color;\n        text-align: center;\n        font-weight: 400;\n        margin: 0;\n    \n        &.light {\n            color: $t1-secondary-color;\n        }\n\n        &.thin {\n            font-weight: 300;\n        }\n    }\n\n    .da-header-info-button {\n        margin-left: 10px;\n    }\n}\n",
                     "styleUrl": "./header-text.component.scss"
                 }
             ],
@@ -1734,7 +1734,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-info-button {\n    color: $t1-base-color;\n    width: 19px;\n    height: 19px;\n    position: relative;\n    background: #fff;\n    border-radius: 20px;\n    border: none;\n    cursor: pointer;\n    transition: all 0.25s ease-in-out;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        color: $t4-secondary-color;\n        background: transparent;\n    }\n\n    .da-info-icon {\n        font-size: 20px;\n        position: absolute;\n        top: -1px;\n        left: 0;\n\n        &:hover {\n            font-size: 22px;\n            top: -2px;\n            left: -1px;\n        }\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-info-button {\n    color: $t1-base-color;\n    min-width: 20px;\n    min-height: 20px;\n    max-width: 20px;\n    max-height: 20px;\n    position: relative;\n    border-radius: 20px;\n    border: none;\n    background: transparent;\n    cursor: pointer;\n    transition: all 0.25s ease-in-out;\n\n    &.light {\n        color: $t4-secondary-color;\n        background: transparent;\n\n        .da-info-icon {\n            fill: $t4-secondary-color;\n            background-color: transparent;\n        }\n    }\n\n    .da-info-icon {\n        fill: $t1-base-color;\n        font-size: 20px;\n        width: 20px;\n        height: 20px;\n        position: absolute;\n        border-radius: 20px;\n        top: 0;\n        left: 0;\n        background-color: #fff;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n        &:hover {\n            font-size: 22px;\n            width: 22px;\n            height: 22px;\n            top: -1px;\n            left: -1px;\n        }\n    }\n}",
                     "styleUrl": "./info-button.component.scss"
                 }
             ],
@@ -1750,7 +1750,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button class=\"da-info-button\" [ngClass]=\"{'light' : light}\" (click)=\"getInfo()\">\n    <fa-icon class=\"da-info-icon\" [icon]=\"faCircleInfo\"></fa-icon>\n</button>\n"
+            "templateData": "<button class=\"da-info-button\" [ngClass]=\"{'light' : light}\" (click)=\"getInfo()\">\n    <svg-icon \n            class=\"da-info-icon\" \n            src=\"assets/images/circleInfo.svg\"\n        >\n        </svg-icon>\n</button>\n"
         },
         {
             "name": "InputButtonComponent",
@@ -3349,7 +3349,7 @@
         },
         {
             "name": "TileGroupComponent",
-            "id": "component-TileGroupComponent-ad23cdf86edbc9a16acb6a439fc290687a49b15d2533955245c5e87075a493520ac8b3ba97c1e71e772e700c4128b94816243b2b65bc8498dd53720b7605dc12",
+            "id": "component-TileGroupComponent-07179971b670c561148f2cf08964ffa25a725d14452bebe816f0645ca493d9760a871beeeb3b2ec666742401e7af274d9a421d69e4446e49979c21cc514b013a",
             "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3366,6 +3366,15 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "localValue",
+                    "defaultValue": "'localValue'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
                 {
                     "name": "tiles",
                     "deprecated": false,
@@ -3385,18 +3394,7 @@
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [
-                {
-                    "name": "localValue",
-                    "defaultValue": "'localValue'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -3444,7 +3442,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent implements OnInit {\n  @Input() tiles: any;\n  localValue: string = 'localValue';\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent implements OnInit {\n  @Input() tiles: any;\n  @Input() localValue: string = 'localValue';\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4600,6 +4598,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4640,16 +4648,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4680,6 +4678,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4695,16 +4703,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4770,6 +4768,16 @@
                 "name": "DefaultDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "DefaultDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4795,16 +4803,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "DefaultDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Disabled",
@@ -5210,21 +5208,21 @@
                 "name": "withInfo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.200,00',\n    unit: '€',\n    touched: true,\n    light: false,\n    faCircleInfo: faCircleInfo,\n    info: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
-            },
-            {
-                "name": "withInfo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    faCircleInfo: faCircleInfo,\n    errorText: 'die Fehlermeldung',\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+            },
+            {
+                "name": "withInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.200,00',\n    unit: '€',\n    touched: true,\n    light: false,\n    faCircleInfo: faCircleInfo,\n    info: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
             },
             {
                 "name": "WithInfo",
@@ -5270,21 +5268,21 @@
                 "name": "withInfoDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.200,00',\n    unit: '€',\n    touched: true,\n    light: true,\n    faCircleInfo: faCircleInfo,\n    info: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "withInfoDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    faCircleInfo: faCircleInfo,\n    errorText: 'die Fehlermeldung',\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "withInfoDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.200,00',\n    unit: '€',\n    touched: true,\n    light: true,\n    faCircleInfo: faCircleInfo,\n    info: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "WithInfoDark",
@@ -5420,6 +5418,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<DropdownComponent>",
                 "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
@@ -5464,17 +5473,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<InputComponent>",
-                "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<TileTextComponent>",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
@@ -5508,6 +5506,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<TileGroupComponent>",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TileRatingComponent>",
                 "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                 "deprecated": false,
@@ -5532,17 +5541,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleCheckboxComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileGroupComponent>",
-                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5992,6 +5990,88 @@
                     "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/inputs/input/input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+                },
+                {
+                    "name": "DefaultDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: false,\n    faCircleExclamation: faCircleExclamation,\n    faCircleXmark: faCircleXmark,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+                },
+                {
+                    "name": "errorDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: true,\n    faCircleExclamation: faCircleExclamation,\n    faCircleXmark: faCircleXmark,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: false,\n    faCircleCheck: faCircleCheck,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+                },
+                {
+                    "name": "successDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: true,\n    faCircleCheck: faCircleCheck,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "withInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    faCircleInfo: faCircleInfo,\n    errorText: 'die Fehlermeldung',\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+                },
+                {
+                    "name": "withInfoDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    faCircleInfo: faCircleInfo,\n    errorText: 'die Fehlermeldung',\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Default",
@@ -6176,88 +6256,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    icon: faCircleCheck,\n    info: 'date-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                }
-            ],
-            "projects/fm-library/src/lib/inputs/input/input.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
-                },
-                {
-                    "name": "DefaultDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "error",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: false,\n    faCircleExclamation: faCircleExclamation,\n    faCircleXmark: faCircleXmark,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
-                },
-                {
-                    "name": "errorDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: true,\n    faCircleExclamation: faCircleExclamation,\n    faCircleXmark: faCircleXmark,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "success",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: false,\n    faCircleCheck: faCircleCheck,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
-                },
-                {
-                    "name": "successDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: true,\n    faCircleCheck: faCircleCheck,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "withInfo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: false,\n    faCircleInfo: faCircleInfo,\n    errorText: 'die Fehlermeldung',\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
-                },
-                {
-                    "name": "withInfoDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: false,\n    error: false,\n    light: true,\n    faCircleInfo: faCircleInfo,\n    errorText: 'die Fehlermeldung',\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
@@ -6569,6 +6567,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/inputs/input/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Story",
@@ -6621,19 +6632,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/inputs/input/input.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<InputComponent>",
-                    "file": "projects/fm-library/src/lib/inputs/input/input.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
                 {
                     "name": "Story",
@@ -6673,6 +6671,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileGroupComponent>",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
                 {
                     "name": "Story",
@@ -6706,19 +6717,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleCheckboxComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileGroupComponent>",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

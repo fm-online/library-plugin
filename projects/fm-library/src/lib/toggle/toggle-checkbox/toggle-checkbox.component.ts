@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'lib-toggle-checkbox',
@@ -13,8 +12,6 @@ export class ToggleCheckboxComponent implements OnInit {
   @Input() light: boolean = false;
   @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();
 
-  faCircleXmark = faXmark;
-  
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';
-import { faCircleCheck, faCircleExclamation, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { HelperService } from '../../services/helper.service';
 
 @Component({
@@ -14,14 +13,10 @@ export class TileComponent implements OnChanges {
   @Input() value: string = 'value';
   @Input() localValue: string = 'localValue';
   @Input() state: string = 'state';
-  @Input() image?: any;
+  @Input() image?: string;
   @Input() light: boolean = true;
   @Input() content!: TemplateRef<any>;
-  @Input() isSVG: boolean = false;
   expanded!: boolean;
-  faCheck = faCircleCheck;
-  faAttention = faCircleExclamation;
-  faError = faCircleXmark;
 
   @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();
 

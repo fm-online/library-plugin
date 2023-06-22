@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faCircleCheck, faCircleXmark, faCircleExclamation, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'lib-input-button',
@@ -15,15 +14,13 @@ export class InputButtonComponent implements OnInit {
   @Input() touched: boolean = false;
   @Input() short: boolean = false;
   @Input() unit: string = '€';
-  @Input() info: boolean = false;
+  @Input() info: string = '';
   @Input() infoText: string = 'info text';
   @Input() infoHeader: string = 'info header';
   @Input() light: boolean = false;
 
-  faCircleExclamation = faCircleExclamation;
-  faCircleInfo = faCircleInfo;
-
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
+  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
   
   constructor() {}
 
@@ -32,6 +29,10 @@ export class InputButtonComponent implements OnInit {
 
   getValue() {
     this.inputValue.emit(this.type);
+  }
+
+  getInfo(e: string) {
+    this.infoValue.emit(e);
   }
 
 }

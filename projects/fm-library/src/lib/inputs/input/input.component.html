@@ -2,16 +2,16 @@
     <div class="da-input-label" [ngClass]="{'light' : light}">{{label}}</div>
     <label class="da-input">
         <div class="da-input-icons" *ngIf="touched">
-            <fa-icon 
+            <svg-icon 
                 *ngIf="!error" 
                 class="da-input-icon-green" 
-                [icon]="faCircleCheck"
-            ></fa-icon>
-            <fa-icon 
+                src="assets/images/circleCheck.svg"
+            ></svg-icon>
+            <svg-icon 
                 *ngIf="error" 
                 class="da-input-icon-red" 
-                [icon]="faCircleXmark" 
-            ></fa-icon>
+                src="assets/images/circleXmark.svg"
+            ></svg-icon>
         </div>
         <input 
             autocomplete="off"
@@ -38,7 +38,7 @@
             <div class="da-arrow-up" [ngClass]="{'light' : light}"></div>
         </div>
         <div class="da-input-error-icon-wrapper" [ngClass]="{'light' : light}">
-            <fa-icon class="da-input-error-icon" [icon]="faCircleExclamation"></fa-icon>
+            <svg-icon class="da-input-error-icon" src="assets/images/circleExclamation.svg"></svg-icon>
         </div>
         <span>{{errorText}}</span>
     </div>

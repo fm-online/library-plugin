@@ -1,9 +1,9 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
-import { APP_INITIALIZER } from '@angular/core';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
 import {HeaderTextComponent} from './header-text.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 export default {
   title: 'text/HeaderTextComponent',
@@ -11,22 +11,11 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        FontAwesomeModule, 
+        HttpClientModule,
+        AngularSvgIconModule.forRoot(), 
       ],
       declarations: [
         InfoButtonComponent,
-      ],
-      providers: [
-        {
-          provide: APP_INITIALIZER,
-          useFactory: (iconLibrary: FaIconLibrary) => async() => {
-            // Add any icons needed here:
-            iconLibrary.addIcons();
-          },
-          // When using a factory provider you need to explicitly specify its dependencies.
-          deps: [FaIconLibrary],
-          multi: true,
-        },
       ],
     }),
   ],

@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-
 @Component({
   selector: 'lib-toggle',
   templateUrl: './toggle.component.html',
@@ -13,7 +11,7 @@ export class ToggleComponent implements OnInit {
   @Input() label2: string = 'label2';
   @Input() value2: string = 'value2';
   @Input() light: boolean = false;
-  faCheck = faCircleCheck
+
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
   
   constructor() { }
