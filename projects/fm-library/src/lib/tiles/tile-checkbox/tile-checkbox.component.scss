@@ -35,7 +35,6 @@
                 margin-left: 15px;
                 top: 15px;
                 position: absolute;
-                z-index: 1;
                 font-size: 1.5rem;
                 background: #fff;
                 border-radius: 20px;
@@ -70,7 +69,6 @@
             fill: $t4-base-color;
             display: flex;
             position: relative;
-            z-index: 1;
             margin-bottom: 5px;
             justify-content: center;
             pointer-events: none;
@@ -109,7 +107,6 @@
             color: $t4-base-color;
             height: 100px;
             display: flex;
-            z-index: 1;
             position: relative;
             align-items: center;
             text-align: center;
