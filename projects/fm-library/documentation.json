@@ -2770,7 +2770,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -3139,7 +3139,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -3475,7 +3475,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-rating-single {\n    font-family: $font;\n\n    .da-tile-rating {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n     \n        .da-tile-rating-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                z-index: 1;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n\n            .da-tile-rating-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n                color: $success-color;\n                fill: $success-color;\n\n            }\n        }\n        .da-tile-rating-stars {\n            height: 112px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            z-index: 1;\n            justify-content: center;\n            align-items: flex-end;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-rating-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-rating-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-rating-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-rating-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            z-index: 1;\n            position: relative;\n            align-items: flex-start;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 15px 15px 0 15px;\n            overflow: hidden;\n\n        }\n\n        .da-tile-rating-info-button {\n            margin-left: 10px;\n            margin-top: -7px;\n        }\n    }\n\n    .da-tile-rating-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-rating-single {\n    font-family: $font;\n\n    .da-tile-rating {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n     \n        .da-tile-rating-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n\n            .da-tile-rating-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n                color: $success-color;\n                fill: $success-color;\n\n            }\n        }\n        .da-tile-rating-stars {\n            height: 112px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            justify-content: center;\n            align-items: flex-end;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-rating-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-rating-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-rating-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-rating-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: flex-start;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 15px 15px 0 15px;\n            overflow: hidden;\n\n        }\n\n        .da-tile-rating-info-button {\n            margin-left: 10px;\n            margin-top: -7px;\n        }\n    }\n\n    .da-tile-rating-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n\n\n",
                     "styleUrl": "./tile-rating.component.scss"
                 }
             ],
@@ -4112,18 +4112,172 @@
                 "OnInit"
             ],
             "templateData": "<div class=\"da-toggle-tristate\">\n    <label class=\"da-tab\" *ngFor=\"let tab of tabs; let num = index\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"tab.name\" \n            [checked]=\"tab.checked\"\n            [value]=\"tab.value\"\n        >\n        <div class=\"da-tab-slider\">\n            <span class=\"da-tab-label\">{{tab.label}}</span>\n            <span class=\"da-tab-state\" [ngClass]=\"tab.state === 'success' ? 'success' : 'warning'\"></span>\n        </div>\n    </label>\n</div>\n\n"
+        },
+        {
+            "name": "ToggleVerticalComponent",
+            "id": "component-ToggleVerticalComponent-f8d8ddff5d0d238cb901617190f2c5f0b33a08c236505223ee39870a82751476947e753da9c19f1f7814238bb89c9bfb9aeba0040a12c426277b91382e1dc017",
+            "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-toggle-vertical",
+            "styleUrls": [
+                "./toggle-vertical.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./toggle-vertical.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label1",
+                    "defaultValue": "'label1'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label2",
+                    "defaultValue": "'label2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "light",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "'name'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value1",
+                    "defaultValue": "'value1'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value2",
+                    "defaultValue": "'value2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "switchValue",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getValue",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent implements OnInit {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.value)\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle-vertical {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    flex-direction: column;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 200px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n                z-index: 2;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 20px;\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: 10px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.bottom {\n                right: 0px;\n                left: 0px;\n                width: 200px;\n            }\n\n            &.top {\n                left: 0px;\n                right: 0px;\n                width: 200px;\n            }\n\n            &:before {\n                position: absolute;\n                content: \"\";\n                height: 42px;\n                width: 200%;\n                border-radius: 21px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n\n            &.top:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n\n\n            }\n\n            &.bottom:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n        }\n    }\n}\n\n",
+                    "styleUrl": "./toggle-vertical.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch top\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value1\"\n        >\n        <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch bottom\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value2\"\n        >\n        <div class=\"da-switch-slider bottom\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
         }
     ],
     "modules": [
         {
             "name": "FmLibraryModule",
-            "id": "module-FmLibraryModule-3d885214c967283ccd669bf061fb97ebc33b11d0493f257aabcae686f90b05eccd5cfa8520e4106f94558ee701de28510256bd8106d8819480bfe51892c83852",
+            "id": "module-FmLibraryModule-415034234138f95415427afcc3cf2a581b0587e42c4fbdb90676dbdb1682bab4dc6340e26f3d4a26830a2322975d4ae4996771a670d6ce4416786f1c5159aac2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/fm-library/src/lib/fm-library.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\nimport { HeaderButtonComponent } from './buttons/header-button/header-button.component';\nimport { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\nimport { HeaderButtonComponent } from './buttons/header-button/header-button.component';\nimport { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -4188,6 +4342,9 @@
                         },
                         {
                             "name": "ToggleTristateComponent"
+                        },
+                        {
+                            "name": "ToggleVerticalComponent"
                         }
                     ]
                 },
@@ -4254,6 +4411,9 @@
                         },
                         {
                             "name": "ToggleTristateComponent"
+                        },
+                        {
+                            "name": "ToggleVerticalComponent"
                         }
                     ]
                 },
@@ -4329,6 +4489,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dashboard",
@@ -4519,6 +4689,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -5302,6 +5482,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleVerticalComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
             }
         ],
         "enumerations": [],
@@ -5506,6 +5697,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts": [
@@ -6416,6 +6629,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleTristateComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleVerticalComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -7345,6 +7571,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "TwoTabs",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToggleVerticalComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Dark",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

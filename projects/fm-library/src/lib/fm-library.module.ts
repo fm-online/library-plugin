@@ -24,6 +24,7 @@ import { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-che
 import { TileGroupComponent } from './tiles/tile-group/tile-group.component';
 import { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';
 import { ToggleComponent } from './toggle/toggle/toggle.component';
+import { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';
 import { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';
 import { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';
 import { TileTextComponent } from './text/tile-text/tile-text.component';
@@ -46,6 +47,7 @@ import { ProgressButtonComponent } from './buttons/progress-button/progress-butt
     TileGroupComponent,
     TileRatingComponent,
     ToggleComponent,
+    ToggleVerticalComponent,
     ToggleCheckboxComponent,
     ToggleTristateComponent,
     TileTextComponent,
@@ -80,6 +82,7 @@ import { ProgressButtonComponent } from './buttons/progress-button/progress-butt
     TileGroupComponent,
     TileRatingComponent,
     ToggleComponent,
+    ToggleVerticalComponent,
     ToggleCheckboxComponent,
     ToggleTristateComponent,
     TileTextComponent,
