@@ -11,6 +11,7 @@ export class ToggleVerticalComponent implements OnInit {
   @Input() label2: string = 'label2';
   @Input() value2: string = 'value2';
   @Input() light: boolean = false;
+  @Input() localValue!: string;
 
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
   
@@ -20,7 +21,7 @@ export class ToggleVerticalComponent implements OnInit {
   }
 
   getValue(e: any) {
-    console.log(e.srcElement.value)
+    this.localValue = e;
     this.switchValue.emit(e.srcElement.value);
   }
 

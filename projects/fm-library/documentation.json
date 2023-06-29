@@ -4115,7 +4115,7 @@
         },
         {
             "name": "ToggleVerticalComponent",
-            "id": "component-ToggleVerticalComponent-f8d8ddff5d0d238cb901617190f2c5f0b33a08c236505223ee39870a82751476947e753da9c19f1f7814238bb89c9bfb9aeba0040a12c426277b91382e1dc017",
+            "id": "component-ToggleVerticalComponent-14acb0e95823f89e997e265ea36bf16c3f8e45a1db92dc7708270926d752edd0343483229d01395f32e71f37407264a25e0b5336e823e8d4be1feaaa164fc461",
             "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4193,11 +4193,21 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "localValue",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "getValue",
@@ -4212,7 +4222,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4233,7 +4243,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -4245,7 +4255,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent implements OnInit {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.value)\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent implements OnInit {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() light: boolean = false;\n  localValue!: string;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4260,12 +4270,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 16
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch top\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value1\"\n        >\n        <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch bottom\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value2\"\n        >\n        <div class=\"da-switch-slider bottom\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch top\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value1\"\n            [checked]=\"localValue === value1\"\n        >\n        <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch bottom\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value2\"\n            [checked]=\"localValue === value2\"\n        >\n        <div class=\"da-switch-slider bottom\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
         }
     ],
     "modules": [
@@ -7581,7 +7591,7 @@
                 "linktype": "component",
                 "name": "ToggleVerticalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
