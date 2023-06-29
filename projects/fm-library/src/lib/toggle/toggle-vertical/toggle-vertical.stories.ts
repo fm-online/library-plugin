@@ -50,3 +50,14 @@ export const Dark: Story = {
   },
 };
 
+export const Checked: Story = {
+  args: {
+    label1: 'Ja',
+    label2: 'Nein',
+    value1: 'true',
+    value2: 'false',
+    name: 'name',
+    localValue: 'true',
+    light: false,
+  },
+};
