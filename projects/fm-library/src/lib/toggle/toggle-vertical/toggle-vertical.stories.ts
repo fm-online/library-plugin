@@ -19,13 +19,45 @@ export default {
 
 type Story = StoryObj<ToggleVerticalComponent>;
 
+const testOptions2 = [
+  {
+    'label': 'label1',
+    'value': 'value1'
+  },
+  {
+    'label': 'label2',
+    'value': 'value2'
+  }
+]
+
+const testOptions5 = [
+  {
+    'label': 'label1',
+    'value': 'value1'
+  },
+  {
+    'label': 'label2',
+    'value': 'value2'
+  },
+  {
+    'label': 'label3',
+    'value': 'value3'
+  },
+  {
+    'label': 'label4',
+    'value': 'value4'
+  },
+  {
+    'label': 'label5',
+    'value': 'value5'
+  }
+]
+
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 export const Default: Story = {
   args: {
-    label1: 'Ja',
-    label2: 'Nein',
-    value1: 'true',
-    value2: 'false',
+    options: testOptions2,
+    localValue: '',
     name: 'name',
     light: false,
   },
@@ -33,10 +65,8 @@ export const Default: Story = {
 
 export const Dark: Story = {
   args: {
-    label1: 'Ja',
-    label2: 'Nein',
-    value1: 'true',
-    value2: 'false',
+    options: testOptions2,
+    localValue: '',
     name: 'name',
     light: true,
   },
@@ -50,14 +80,11 @@ export const Dark: Story = {
   },
 };
 
-export const Checked: Story = {
+export const FiveOptions: Story = {
   args: {
-    label1: 'Ja',
-    label2: 'Nein',
-    value1: 'true',
-    value2: 'false',
+    options: testOptions5,
+    localValue: '',
     name: 'name',
-    localValue: 'true',
     light: false,
   },
 };
