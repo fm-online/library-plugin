@@ -5,7 +5,7 @@
             (change)="getValue($event)" 
             [name]="name" 
             [value]="value1"
-            [checked]="localValue === value1"
+            [checked]="checked1"
         >
         <div class="da-switch-slider top" [ngClass]="{'light' : light}">
             <span class="da-switch-label">{{label1}}</span>
@@ -18,7 +18,7 @@
             (change)="getValue($event)" 
             [name]="name" 
             [value]="value2"
-            [checked]="localValue === value2"
+            [checked]="checked2"
         >
         <div class="da-switch-slider bottom" [ngClass]="{'light' : light}">
             <span class="da-switch-label">{{label2}}</span>

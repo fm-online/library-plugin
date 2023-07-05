@@ -1,5 +1,7 @@
 @import "../../../styles.scss"; 
-
+.test {
+    width: 50vw;
+}
 .da-input-single {
     font-family: $font;
 
@@ -71,6 +73,10 @@
                 text-align: right;
             }
 
+            &.auto-width {
+                width: 100%;
+            }
+
             &.light {
                 box-shadow: 0 3px 5px $shadow-secondary-color;
 
@@ -93,9 +99,9 @@
         }
 
         .da-input-unit {
-            position: absolute;
+            position: relative;
             color: $t1-base-color;
-            left: 157px;
+            right: 25px;
             // margin-bottom: 2px;
             width: 25px;
             text-align: center;

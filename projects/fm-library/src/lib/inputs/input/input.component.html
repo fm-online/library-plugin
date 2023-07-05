@@ -1,3 +1,4 @@
+<div class="test">
 <div class="da-input-single">
     <div class="da-input-label" [ngClass]="{'light' : light}">{{label}}</div>
     <label class="da-input">
@@ -21,7 +22,7 @@
             [placeholder]="placeholder"
             [name]="name"
             [value]="value"
-            [ngClass]="{'light' : light, 'error' : error}"
+            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth}"
             #target
         >
         <div class="da-input-unit">{{unit}}</div>
@@ -42,4 +43,5 @@
         </div>
         <span>{{errorText}}</span>
     </div>
+</div>
 </div>

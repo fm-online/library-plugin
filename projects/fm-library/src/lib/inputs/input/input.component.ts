@@ -19,6 +19,7 @@ export class InputComponent implements OnInit {
   @Input() infoHeader: string = 'info header';
   @Input() error: boolean = false;
   @Input() errorText: string = 'error text  ';
+  @Input() autoWidth: boolean = false;
   @Input() light: boolean = false;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
