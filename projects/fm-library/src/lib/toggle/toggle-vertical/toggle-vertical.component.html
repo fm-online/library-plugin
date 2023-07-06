@@ -1,30 +1,18 @@
 <div class="da-toggle-vertical" [ngClass]="{'light' : light}">
-    <label class="da-switch top">
-        <input 
-            type="radio" 
-            (change)="getValue($event)" 
-            [name]="name" 
-            [value]="value1"
-            [checked]="checked1"
-        >
-        <div class="da-switch-slider top" [ngClass]="{'light' : light}">
-            <span class="da-switch-label">{{label1}}</span>
-            <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
-        </div>
-    </label>
-    <label class="da-switch bottom">
-        <input 
-            type="radio" 
-            (change)="getValue($event)" 
-            [name]="name" 
-            [value]="value2"
-            [checked]="checked2"
-        >
-        <div class="da-switch-slider bottom" [ngClass]="{'light' : light}">
-            <span class="da-switch-label">{{label2}}</span>
-            <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
-        </div>
-
-    </label>
+    <ng-container *ngFor="let option of options; let num = index">
+        <label class="da-switch top">
+            <input 
+                type="radio" 
+                (change)="sendValue($event)" 
+                [name]="name" 
+                [value]="option.value"
+                [checked]="getCheckedOption(option.value)"
+            >
+            <div class="da-switch-slider top" [ngClass]="{'light' : light}">
+                <span class="da-switch-label">{{option.label}}</span>
+                <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
+            </div>
+        </label>
+    </ng-container>
 </div>
 
