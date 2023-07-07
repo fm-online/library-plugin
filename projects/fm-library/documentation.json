@@ -1920,7 +1920,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-f10a8a8e79d08a5d792d82f7267bd249a0d6522a654fe85fd72abc78c69d99333b7846462a2988b50b967b6399908307f440955a986b313e98954d5464c3827a",
+            "id": "component-InputComponent-ff2bf9c271727cdb94ffcf326d4e073d182e6166c4331fb438e266e23c3c5cf069a058c60b5b97ca45958edff625761519c2640e474bc75436c80b1f2972c469",
             "file": "projects/fm-library/src/lib/inputs/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1957,7 +1957,7 @@
                 },
                 {
                     "name": "errorText",
-                    "defaultValue": "'error text  '",
+                    "defaultValue": "'error text'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 21,
@@ -1992,8 +1992,16 @@
                     "decorators": []
                 },
                 {
+                    "name": "isCurrency",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "label",
-                    "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
@@ -2005,7 +2013,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2020,7 +2028,6 @@
                 },
                 {
                     "name": "placeholder",
-                    "defaultValue": "'0,00'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
@@ -2047,7 +2054,6 @@
                 },
                 {
                     "name": "unit",
-                    "defaultValue": "'€'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 16,
@@ -2056,7 +2062,6 @@
                 },
                 {
                     "name": "value",
-                    "defaultValue": "'value'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
@@ -2070,7 +2075,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "EventEmitter<any>"
                 },
                 {
@@ -2078,7 +2083,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -2097,7 +2102,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2125,7 +2130,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2146,7 +2151,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 31,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2158,11 +2163,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() placeholder: string = '0,00';\n  @Input() value: string = 'value';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() unit: string = '€';\n  @Input() info: string = '';\n  @Input() infoText: string = 'info text';\n  @Input() infoHeader: string = 'info header';\n  @Input() error: boolean = false;\n  @Input() errorText: string = 'error text  ';\n  @Input() autoWidth: boolean = false;\n  @Input() light: boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');\n    this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });\n    this.inputValue.emit(e.srcElement.value);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() label!: string;\n  @Input() name: string = 'name';\n  @Input() placeholder!: string;\n  @Input() value!: string;\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = 'info text';\n  @Input() infoHeader: string = 'info header';\n  @Input() error: boolean = false;\n  @Input() errorText: string = 'error text';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() light: boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');\n      this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });\n    }\n    this.inputValue.emit([e.srcElement.value, this.name]);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-input-single {\n    font-family: $font;\n\n    .da-input-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input {\n        position: relative;\n        display: flex;\n        align-items: center;\n        \n        .da-input-icons {\n            height: 23px;\n            width: 23px;\n            font-size: 24px;\n            position: absolute;\n            left: 10px;\n            top: 9px;\n            border-radius: 25px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            background: #fff;\n\n            .da-input-icon-green {\n                color: $success-color;\n                fill: $success-color;\n                position: absolute;\n            }\n    \n            .da-input-icon-red {\n                color: $warning-base-color;\n                fill: $warning-base-color;\n                position: absolute;\n\n            }\n    \n        }\n\n        input {\n            width: 150px;\n            height: 26px;\n            border-radius: 24px;\n            background-color: #fff;\n            border: 0px solid transparent;\n            border-bottom: 1px solid $button-base-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 30px 8px 8px;\n            font-size: $t1-base-size;\n            color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                // border: 2px solid $button-base-color;\n                outline: none;\n            }\n\n            &::placeholder {\n                color: $t5-base-color;\n                text-align: right;\n            }\n\n            &.auto-width {\n                width: 100%;\n            }\n\n            &.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    // border: 2px solid $button-secondary-color;\n                    outline: none;\n                }\n            }\n\n            &.error {\n                background-color: $error-background;\n                border-bottom: 1px solid $warning-base-color;\n                color: $warning-base-color;\n\n                &::placeholder {\n                    color: $warning-base-color;\n                }\n            }\n        }\n\n        .da-input-unit {\n            position: absolute;\n            color: $t1-base-color;\n            left: 157px;\n            // margin-bottom: 2px;\n            width: 25px;\n            text-align: center;\n        }\n\n        .da-input-info-button {\n            margin-left: 10px;\n            margin-top: -5px;\n        }\n\n    }\n    .da-input-error {\n            background-color: $button-base-color;\n            font-size: $t1-base-size;\n            color: $t1-secondary-color;\n            max-width: 185px;\n            position: relative;\n            border-radius: 10px;\n            padding: 10px;\n            display: flex;\n            z-index: 1;\n            margin-top: 15px;\n            justify-content: center;\n            align-items: center;\n\n            &.light {\n                color: $t1-base-color;\n                background-color: $button-secondary-color;\n            }\n\n        .da-tooltip-arrow {\n            width: 20px;\n            height: 20px;\n            position: absolute;\n            top: -20px;\n            left: 20px;\n\n            .da-arrow-up {\n                width: 0; \n                height: 0; \n                border-left: 20px solid transparent;\n                border-right: 20px solid transparent;\n                border-bottom: 20px solid $button-base-color;\n\n                &.light {\n                    border-bottom: 20px solid $button-secondary-color;\n                }\n              }\n        }\n\n        .da-input-error-icon-wrapper {\n            background: transparent;\n            border-radius: 20px;\n            position: relative;\n            margin-right: 20px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            width: 20px;\n            height: 20px;\n\n            .da-input-error-icon {\n                fill: $t1-secondary-color;\n                position: absolute;\n                font-size: 20px;\n            }\n\n            &.light {\n                background: #fff;\n            }\n        }\n\n        span {\n            word-break: break-all;\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n.test {\n    width: 50vw;\n}\n.da-input-single {\n    font-family: $font;\n\n    .da-input-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input {\n        position: relative;\n        display: flex;\n        align-items: center;\n        \n        .da-input-icons {\n            height: 23px;\n            width: 23px;\n            font-size: 24px;\n            position: absolute;\n            left: 10px;\n            top: 9px;\n            border-radius: 25px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            background: #fff;\n\n            .da-input-icon-green {\n                color: $success-color;\n                fill: $success-color;\n                position: absolute;\n            }\n    \n            .da-input-icon-red {\n                color: $warning-base-color;\n                fill: $warning-base-color;\n                position: absolute;\n\n            }\n    \n        }\n\n        input {\n            width: 150px;\n            height: 26px;\n            border-radius: 24px;\n            background-color: #fff;\n            border: 0px solid transparent;\n            border-bottom: 1px solid $button-base-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 30px 8px 8px;\n            font-size: $t1-base-size;\n            color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                // border: 2px solid $button-base-color;\n                outline: none;\n            }\n\n            &::placeholder {\n                color: $t5-base-color;\n                text-align: right;\n            }\n\n            &.auto-width {\n                width: 100%;\n            }\n\n            &.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    // border: 2px solid $button-secondary-color;\n                    outline: none;\n                }\n            }\n\n            &.error {\n                background-color: $error-background;\n                border-bottom: 1px solid $warning-base-color;\n                color: $warning-base-color;\n\n                &::placeholder {\n                    color: $warning-base-color;\n                }\n            }\n        }\n\n        .da-input-unit {\n            position: relative;\n            color: $t1-base-color;\n            right: 25px;\n            // margin-bottom: 2px;\n            width: 25px;\n            text-align: center;\n        }\n\n        .da-input-info-button {\n            margin-left: 10px;\n            margin-top: -5px;\n        }\n\n    }\n    .da-input-error {\n            background-color: $button-base-color;\n            font-size: $t1-base-size;\n            color: $t1-secondary-color;\n            max-width: 185px;\n            position: relative;\n            border-radius: 10px;\n            padding: 10px;\n            display: flex;\n            z-index: 1;\n            margin-top: 15px;\n            justify-content: center;\n            align-items: center;\n\n            &.light {\n                color: $t1-base-color;\n                background-color: $button-secondary-color;\n            }\n\n        .da-tooltip-arrow {\n            width: 20px;\n            height: 20px;\n            position: absolute;\n            top: -20px;\n            left: 20px;\n\n            .da-arrow-up {\n                width: 0; \n                height: 0; \n                border-left: 20px solid transparent;\n                border-right: 20px solid transparent;\n                border-bottom: 20px solid $button-base-color;\n\n                &.light {\n                    border-bottom: 20px solid $button-secondary-color;\n                }\n              }\n        }\n\n        .da-input-error-icon-wrapper {\n            background: transparent;\n            border-radius: 20px;\n            position: relative;\n            margin-right: 20px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            width: 20px;\n            height: 20px;\n\n            .da-input-error-icon {\n                fill: $t1-secondary-color;\n                position: absolute;\n                font-size: 20px;\n            }\n\n            &.light {\n                background: #fff;\n            }\n        }\n\n        span {\n            word-break: break-all;\n        }\n    }\n}\n\n",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -2173,12 +2178,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 26
+                "line": 27
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon-green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon-red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            [id]=\"name\"\n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'light' : light, 'error' : error, 'auto-width' : autoWidth}\"\n            #target\n        >\n        <div class=\"da-input-unit\">{{unit}}</div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <svg-icon class=\"da-input-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"test\">\n<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon-green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon-red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            [id]=\"name\"\n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'light' : light, 'error' : error, 'auto-width' : autoWidth}\"\n            #target\n        >\n        <div class=\"da-input-unit\">{{unit}}</div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <svg-icon class=\"da-input-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n</div>\n"
         },
         {
             "name": "InputDateComponent",
@@ -3186,7 +3191,7 @@
         },
         {
             "name": "TileGroupComponent",
-            "id": "component-TileGroupComponent-07179971b670c561148f2cf08964ffa25a725d14452bebe816f0645ca493d9760a871beeeb3b2ec666742401e7af274d9a421d69e4446e49979c21cc514b013a",
+            "id": "component-TileGroupComponent-b2e7eb6ecd6c0b807110cd0a59df3cc91c21b1381a75583f1da829eaa92aa35a83785fe1a41117dd5f5b76b043501b2c158cc66c9acc7e2eef000ed7d65a6135",
             "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3234,16 +3239,6 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
                     "name": "sendValue",
                     "args": [
                         {
@@ -3256,7 +3251,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3279,7 +3274,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent implements OnInit {\n  @Input() tiles: any;\n  @Input() localValue: string = 'localValue';\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent {\n  @Input() tiles: any;\n  @Input() localValue: string = 'localValue';\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3296,9 +3291,6 @@
                 "args": [],
                 "line": 11
             },
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
         },
         {
@@ -4124,9 +4116,8 @@
         },
         {
             "name": "ToggleVerticalComponent",
-            "id": "component-ToggleVerticalComponent-201c3b38cdb9e3451c68279c4ed89651d002bbd19e48b004121467e63859fad13b5133636e40287490117ea803c9f7a93fdd0fc35f72a8589f00c68aaddd03bd",
+            "id": "component-ToggleVerticalComponent-43101d4ee299656c242d5b20ad87f3eb7f5dc7ea7da65c4521aaa8aad71f20bed9b40f90f68f31b651b96af2e4989832b3ac93200c28889660c1c50a9af96274",
             "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts",
-            "changeDetection": "ChangeDetectionStrategy.Default",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -4143,47 +4134,11 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "checked1",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "checked2",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "label1",
-                    "defaultValue": "'label1'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label2",
-                    "defaultValue": "'label2'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
                     "name": "light",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 10,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -4192,7 +4147,7 @@
                     "defaultValue": "'localValue'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -4201,26 +4156,16 @@
                     "defaultValue": "'name'",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 8,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 9,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "value1",
-                    "defaultValue": "'value1'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "value2",
-                    "defaultValue": "'value2'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "string",
+                    "type": "any",
                     "decorators": []
                 }
             ],
@@ -4230,24 +4175,42 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 13,
                     "type": "EventEmitter<any>"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "getChanges",
-                    "args": [],
+                    "name": "getCheckedOption",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 17,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 },
                 {
-                    "name": "getValue",
+                    "name": "sendValue",
                     "args": [
                         {
                             "name": "e",
@@ -4259,7 +4222,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4273,44 +4236,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "ngOnChanges",
-                    "args": [
-                        {
-                            "name": "changes",
-                            "type": "SimpleChanges",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 31,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "changes",
-                            "type": "SimpleChanges",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 26,
-                    "deprecated": false,
-                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -4320,7 +4245,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  changeDetection: ChangeDetectionStrategy.Default,\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent implements OnChanges, OnInit {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() checked1: boolean = false;\n  @Input() checked2: boolean = false;\n  @Input() light: boolean = false;\n  @Input() localValue: string = 'localValue';\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { \n    this.getChanges();\n    console.log('vertical-toggle constructor', this.localValue);\n  }\n\n  ngOnInit() {\n    this.getChanges();\n    console.log('vertical-toggle onInit', this.localValue);\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    this.getChanges()\n    console.log('vertical-toggle changes', changes, this.localValue);\n  }\n\n  getChanges() {\n    if(this.localValue === this.value1) {\n      this.checked1 = true;\n      this.checked2 = false;\n    } else if (this.localValue === this.value2) {\n      this.checked2 = true;\n      this.checked1 = false;\n    }\n  }\n\n  getValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent {\n  @Input() name: string = 'name';\n  @Input() options: any;\n  @Input() light: boolean = false;\n  @Input() localValue: string = 'localValue';\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4335,13 +4260,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 19
+                "line": 13
             },
-            "implements": [
-                "OnChanges",
-                "OnInit"
-            ],
-            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch top\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value1\"\n            [checked]=\"checked1\"\n        >\n        <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch bottom\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value2\"\n            [checked]=\"checked2\"\n        >\n        <div class=\"da-switch-slider bottom\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [value]=\"option.value\"\n                [checked]=\"getCheckedOption(option.value)\"\n            >\n            <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\">\n                <span class=\"da-switch-label\">{{option.label}}</span>\n                <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
         }
     ],
     "modules": [
@@ -4517,16 +4438,6 @@
                 "defaultValue": "{\n  args: {\n    value: 'active button',\n    active: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
             },
             {
-                "name": "Checked",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    localValue: 'true',\n    light: false,\n  },\n}"
-            },
-            {
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4584,7 +4495,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: '',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dashboard",
@@ -4784,7 +4695,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
+                "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -4945,6 +4856,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: true,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "FiveOptions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    options: testOptions5,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Icon",
@@ -5155,6 +5076,26 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\n  {\n    'value': 'value1',\n    'viewValue': 'Option 1'\n  },\n  {\n    'value': 'value2',\n    'viewValue': 'Option 2'\n  },\n  {\n    'value': 'value3',\n    'viewValue': 'Option 3'\n  },\n  {\n    'value': 'value4',\n    'viewValue': 'Option 4'\n  },\n  {\n    'value': 'value5',\n    'viewValue': 'Option 5'\n  },\n  {\n    'value': 'value6',\n    'viewValue': 'Option 6'\n  }\n]"
+            },
+            {
+                "name": "testOptions2",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  }\n]"
+            },
+            {
+                "name": "testOptions5",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'value': 'value3'\n  },\n  {\n    'label': 'label4',\n    'value': 'value4'\n  },\n  {\n    'label': 'label5',\n    'value': 'value5'\n  }\n]"
             },
             {
                 "name": "testTabsThree",
@@ -5635,38 +5576,6 @@
                     "defaultValue": "{\n  args: {\n    value: 'inactive button',\n    inactive: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
-                {
-                    "name": "Checked",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    localValue: 'true',\n    light: false,\n  },\n}"
-                },
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/counter/counter.stories.ts": [
                 {
                     "name": "Dark",
@@ -5815,6 +5724,58 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: '',\n    name: 'name',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
+                },
+                {
+                    "name": "FiveOptions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    options: testOptions5,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
+                },
+                {
+                    "name": "testOptions2",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  }\n]"
+                },
+                {
+                    "name": "testOptions5",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'value': 'value3'\n  },\n  {\n    'label': 'label4',\n    'value': 'value4'\n  },\n  {\n    'label': 'label5',\n    'value': 'value5'\n  }\n]"
                 }
             ],
             "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts": [
@@ -7288,7 +7249,7 @@
                 "linktype": "component",
                 "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/21",
+                "coverageCount": "0/22",
                 "status": "low"
             },
             {
@@ -7532,7 +7493,7 @@
                 "linktype": "component",
                 "name": "TileGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -7677,17 +7638,7 @@
                 "linktype": "component",
                 "name": "ToggleVerticalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Checked",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -7706,6 +7657,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FiveOptions",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "testOptions2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "testOptions5",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

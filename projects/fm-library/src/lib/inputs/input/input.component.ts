@@ -7,19 +7,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  @Input() label: string = 'label';
-  @Input() name: string = 'name';
-  @Input() placeholder: string = '0,00';
-  @Input() value: string = 'value';
+  @Input() label: string = '';
+  @Input() name: string = '';
+  @Input() placeholder: string = '';
+  @Input() value: string = '';
   @Input() touched: boolean = false;
   @Input() type: string = 'text';
-  @Input() unit: string = '€';
+  @Input() unit!: string;
   @Input() info: string = '';
-  @Input() infoText: string = 'info text';
-  @Input() infoHeader: string = 'info header';
+  @Input() infoText: string = '';
+  @Input() infoHeader: string = '';
   @Input() error: boolean = false;
-  @Input() errorText: string = 'error text  ';
+  @Input() errorText: string = '';
   @Input() autoWidth: boolean = false;
+  @Input() isCurrency: boolean = true;
   @Input() light: boolean = false;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
@@ -31,9 +32,11 @@ export class InputComponent implements OnInit {
   }
 
   getValue(e: any) {
-    const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');
-    this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });
-    this.inputValue.emit(e.srcElement.value);
+    if (this.isCurrency) {
+      const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');
+      this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });
+    }
+    this.inputValue.emit([e.srcElement.value, this.name]);
   }
 
   getInfo(e: string) {
