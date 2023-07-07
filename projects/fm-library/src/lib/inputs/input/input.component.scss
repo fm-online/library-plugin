@@ -1,13 +1,12 @@
 @import "../../../styles.scss"; 
-.test {
-    width: 50vw;
-}
+
 .da-input-single {
     font-family: $font;
 
     .da-input-label {
         font-size: $t4-base-size;
         margin-bottom: 3px;
+        text-align: left;
         margin-left: 21px;
         color: $t4-base-color;
 
@@ -20,6 +19,7 @@
         position: relative;
         display: flex;
         align-items: center;
+        margin-right: -21px;
         
         .da-input-icons {
             height: 23px;
@@ -108,7 +108,7 @@
         }
 
         .da-input-info-button {
-            margin-left: 10px;
+            margin-left: -10px;
             margin-top: -5px;
         }
 

@@ -28,18 +28,7 @@ type Story = StoryObj<InputComponent>;
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 export const Default: Story = {
   args: {
-    label: 'das Label',
     name: 'id',
-    value: '',
-    type: 'text',
-    placeholder: '0,00',
-    unit: '€',
-    touched: false,
-    error: false,
-    light: false,
-    errorText: 'die Fehlermeldung',
-    infoText: 'info Text',
-    infoHeader: 'info Überschrift',
   },
 };
 
