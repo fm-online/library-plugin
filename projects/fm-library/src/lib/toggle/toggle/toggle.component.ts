@@ -10,6 +10,7 @@ export class ToggleComponent implements OnInit {
   @Input() value1: string = 'value1';
   @Input() label2: string = 'label2';
   @Input() value2: string = 'value2';
+  @Input() localValue: string = 'localValue';
   @Input() light: boolean = false;
 
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
@@ -19,8 +20,12 @@ export class ToggleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getCheckedOption(value: string) {
+    return this.localValue === value;
+  }
+
   getValue(e: any) {
-    console.log(e.srcElement.value)
+    this.localValue = e;
     this.switchValue.emit(e.srcElement.value);
   }
 

@@ -35,13 +35,13 @@
             .da-input-icon-green {
                 color: $success-color;
                 fill: $success-color;
-                position: absolute;
+                // position: absolute;
             }
     
             .da-input-icon-red {
                 color: $warning-base-color;
                 fill: $warning-base-color;
-                position: absolute;
+                // position: absolute;
 
             }
     
@@ -170,10 +170,6 @@
             &.light {
                 background: #fff;
             }
-        }
-
-        span {
-            word-break: break-all;
         }
     }
 }

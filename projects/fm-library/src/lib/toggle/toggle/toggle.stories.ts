@@ -38,6 +38,7 @@ export const Dark: Story = {
     value1: 'true',
     value2: 'false',
     name: 'name',
+    localValue: 'true',
     light: true,
   },
   parameters: {

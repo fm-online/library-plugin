@@ -29,6 +29,10 @@
             width: calc(100vw - 50px);
             min-height: auto;
             padding-bottom: 0;
+            
+            &.expanded {
+                padding-bottom: 14px;
+            }
         }
      
         .da-tile-checkbox-icon-wrapper {
