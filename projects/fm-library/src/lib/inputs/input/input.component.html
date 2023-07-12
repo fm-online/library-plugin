@@ -4,12 +4,12 @@
         <div class="da-input-icons" *ngIf="touched">
             <svg-icon 
                 *ngIf="!error" 
-                class="da-input-icon-green" 
+                class="da-input-icon green" 
                 src="assets/images/circleCheck.svg"
             ></svg-icon>
             <svg-icon 
                 *ngIf="error" 
-                class="da-input-icon-red" 
+                class="da-input-icon red" 
                 src="assets/images/circleXmark.svg"
             ></svg-icon>
         </div>
@@ -20,10 +20,14 @@
             [placeholder]="placeholder"
             [name]="name"
             [value]="value"
-            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth}"
+            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}"
             #target
         >
-        <div class="da-input-unit">{{unit}}</div>
+        <div class="da-input-unit" *ngIf="unit">
+            <div class="da-input-unit-wrapper">
+                {{unit}}
+            </div>
+        </div>
         <div class="da-input-info-button" *ngIf="info">
             <lib-info-button 
             [light]="light" 

@@ -35,6 +35,9 @@ export class InputComponent implements OnInit {
   getValue(e: any) {
     if (this.isCurrency) {
       const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');
+      if(isNaN(parseInt(inputValue))) {
+        return;
+      }
       this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });
     }
     this.inputValue.emit([e.srcElement.value, this.name]);
