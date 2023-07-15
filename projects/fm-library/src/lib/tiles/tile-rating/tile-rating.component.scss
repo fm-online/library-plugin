@@ -5,7 +5,9 @@
 
     .da-tile-rating {
         position: relative;
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         border-radius: 25px;
         border: 1px solid transparent;
         width: 242px;
@@ -24,9 +26,15 @@
             background-color: $button-base-color;
             border: 1px solid $button-base-color;
         }
+
+        &.mobile {
+            width: calc(100vw - 50px);
+            min-height: auto;
+            padding-bottom: 0;
+        }
      
         .da-tile-rating-icon-wrapper {
-                margin-left: 15px;
+                left: 15px;
                 top: 15px;
                 position: absolute;
                 font-size: 1.5rem;
@@ -81,7 +89,7 @@
             align-items: flex-start;
             text-align: center;
             justify-content: center;
-            width: 214px;
+            width: 175px;
             margin: 15px 15px 0 15px;
             overflow: hidden;
 

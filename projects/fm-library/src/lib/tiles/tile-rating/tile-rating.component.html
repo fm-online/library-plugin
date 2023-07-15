@@ -1,5 +1,5 @@
 <div class="da-tile-rating-single">
-    <div class="da-tile-rating">
+    <div class="da-tile-rating" [ngClass]="{'mobile' : screen.isSmallest()}">
         <div class="da-tile-rating-icon-wrapper" *ngIf="success">
             <svg-icon class="da-tile-rating-icon" [src]="icon"></svg-icon>
         </div>

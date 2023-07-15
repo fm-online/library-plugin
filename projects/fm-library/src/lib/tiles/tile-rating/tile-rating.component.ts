@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-tile-rating',
@@ -12,12 +13,14 @@ export class TileRatingComponent implements OnInit {
   @Input() stars: number = 5;
   @Input() icon: string = 'assets/images/circleCheck.svg';
   @Input() info:  string = '';
-  success!: boolean;
-  rating: number = 0;
+  @Input() rating: number = 0;
+  @Input() success!: boolean;
   @Output() public ratingValue:EventEmitter<any> = new EventEmitter<any>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(
+    public screen: HelperService
+  ) {}
 
   ngOnInit(): void {
   }

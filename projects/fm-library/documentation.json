@@ -1920,7 +1920,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-28ac65f5666ccf5a34c483cff0e9dd2509f96afa81801b80e0361e58868d9c9d623f1806f8199bf176043fd453ced5270c3a581c56ad08b419ec0cb2721bbdcd",
+            "id": "component-InputComponent-b449e5388084665c372a79b4f536693dda4f8e69b259200cfa26e91c1c0e17df244cb302da82dacc597650fe6088eb834ecbce0820b0ff1fbbfce2f946cd51a6",
             "file": "projects/fm-library/src/lib/inputs/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2114,7 +2114,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2175,11 +2175,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() placeholder: string = '';\n  @Input() value: string = '';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() validationType: string = 'currency';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() light: boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');\n      this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });\n    }\n    this.inputValue.emit([e.srcElement.value, this.name]);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() placeholder: string = '';\n  @Input() value: string = '';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() validationType: string = 'currency';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() light: boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');\n      if(isNaN(parseInt(inputValue))) {\n        return;\n      }\n      this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });\n    }\n    this.inputValue.emit([e.srcElement.value, this.name]);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-input-single {\n    font-family: $font;\n\n    .da-input-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        text-align: left;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-right: -21px;\n        \n        .da-input-icons {\n            height: 23px;\n            width: 23px;\n            font-size: 24px;\n            position: absolute;\n            left: 10px;\n            top: 9px;\n            border-radius: 25px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            background: #fff;\n\n            .da-input-icon-green {\n                color: $success-color;\n                fill: $success-color;\n                // position: absolute;\n            }\n    \n            .da-input-icon-red {\n                color: $warning-base-color;\n                fill: $warning-base-color;\n                // position: absolute;\n\n            }\n    \n        }\n\n        input {\n            width: 150px;\n            height: 26px;\n            border-radius: 24px;\n            background-color: #fff;\n            border: 0px solid transparent;\n            border-bottom: 1px solid $button-base-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 30px 8px 8px;\n            font-size: $t1-base-size;\n            color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                // border: 2px solid $button-base-color;\n                outline: none;\n            }\n\n            &::placeholder {\n                color: $t5-base-color;\n                text-align: right;\n            }\n\n            &.auto-width {\n                width: 100%;\n            }\n\n            &.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    // border: 2px solid $button-secondary-color;\n                    outline: none;\n                }\n            }\n\n            &.error {\n                background-color: $error-background;\n                border-bottom: 1px solid $warning-base-color;\n                color: $warning-base-color;\n\n                &::placeholder {\n                    color: $warning-base-color;\n                }\n            }\n        }\n\n        .da-input-unit {\n            position: relative;\n            color: $t1-base-color;\n            right: 25px;\n            // margin-bottom: 2px;\n            width: 25px;\n            text-align: center;\n        }\n\n        .da-input-info-button {\n            margin-left: -10px;\n            margin-top: -5px;\n        }\n\n    }\n    .da-input-error {\n            background-color: $button-base-color;\n            font-size: $t1-base-size;\n            color: $t1-secondary-color;\n            max-width: 185px;\n            position: relative;\n            border-radius: 10px;\n            padding: 10px;\n            display: flex;\n            z-index: 1;\n            margin-top: 15px;\n            justify-content: center;\n            align-items: center;\n\n            &.light {\n                color: $t1-base-color;\n                background-color: $button-secondary-color;\n            }\n\n        .da-tooltip-arrow {\n            width: 20px;\n            height: 20px;\n            position: absolute;\n            top: -20px;\n            left: 20px;\n\n            .da-arrow-up {\n                width: 0; \n                height: 0; \n                border-left: 20px solid transparent;\n                border-right: 20px solid transparent;\n                border-bottom: 20px solid $button-base-color;\n\n                &.light {\n                    border-bottom: 20px solid $button-secondary-color;\n                }\n              }\n        }\n\n        .da-input-error-icon-wrapper {\n            background: transparent;\n            border-radius: 20px;\n            position: relative;\n            margin-right: 20px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            width: 20px;\n            height: 20px;\n\n            .da-input-error-icon {\n                fill: $t1-secondary-color;\n                position: absolute;\n                font-size: 20px;\n            }\n\n            &.light {\n                background: #fff;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-input-single {\n    font-family: $font;\n\n    .da-input-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        text-align: left;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-right: -21px;\n        \n        .da-input-icons {\n            min-width: 23px;\n            min-height: 23px;\n            max-width: 23px;\n            max-height: 23px;\n            position: absolute;\n            left: 10px;\n            top: 9px;\n            border-radius: 23px;\n            border: none;\n            background: transparent;\n\n            .da-input-icon {\n\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                top: 0;\n                left: 0;\n                position: absolute;\n                border-radius: 25px;\n                background-color: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n\n                &.green {\n                    fill: $success-color;\n                }\n\n                &.red {\n                    fill: $warning-base-color;\n                }\n\n                svg {\n                    position: relative;\n                    top: -1px;\n                    left: -1px;\n                }\n            }\n    \n        }\n\n        input {\n            width: 160px;\n            height: 26px;\n            border-radius: 24px;\n            background-color: #fff;\n            border: 0px solid transparent;\n            border-bottom: 1px solid $button-base-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 20px;\n            font-size: $t1-base-size;\n            color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                // border: 2px solid $button-base-color;\n                outline: none;\n            }\n\n            &::placeholder {\n                color: $t5-base-color;\n                text-align: right;\n            }\n\n            &.withUnit {\n                padding-right: 30px;\n                width: 142px;\n            }\n\n            &.auto-width {\n                width: 100%;\n\n            }\n\n            &.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    // border: 2px solid $button-secondary-color;\n                    outline: none;\n                }\n            }\n\n            &.error {\n                background-color: $error-background;\n                border-bottom: 1px solid $warning-base-color;\n                color: $warning-base-color;\n\n                &::placeholder {\n                    color: $warning-base-color;\n                }\n            }\n        }\n\n        .da-input-unit {\n            position: relative;\n            color: $t1-base-color;\n            right: 27px;\n            width: 25px;\n            // display: flex;\n            // justify-content: flex-end;\n            pointer-events: none;\n\n            // .da-input-unit-wrapper {\n            //     max-width: 25px;\n            //     margin-right: 10px;\n            //     overflow: hidden;\n            // }\n        }\n\n        .da-input-info-button {\n            margin-left: -10px;\n            margin-top: -5px;\n        }\n\n    }\n    .da-input-error {\n            background-color: $button-base-color;\n            font-size: $t1-base-size;\n            color: $t1-secondary-color;\n            max-width: 185px;\n            position: absolute;\n            border-radius: 10px;\n            padding: 10px;\n            display: flex;\n            z-index: 1;\n            margin-top: 15px;\n            justify-content: center;\n            align-items: center;\n\n            &.light {\n                color: $t1-base-color;\n                background-color: $button-secondary-color;\n                box-shadow: 0 3px 5px $shadow-base-color;\n            }\n\n        .da-tooltip-arrow {\n            width: 20px;\n            height: 20px;\n            position: absolute;\n            top: -20px;\n            left: 20px;\n\n            .da-arrow-up {\n                width: 0; \n                height: 0; \n                border-left: 20px solid transparent;\n                border-right: 20px solid transparent;\n                border-bottom: 20px solid $button-base-color;\n\n                &.light {\n                    border-bottom: 20px solid $button-secondary-color;\n                }\n              }\n        }\n\n        .da-input-error-icon-wrapper {\n            background: transparent;\n            border-radius: 20px;\n            position: relative;\n            margin-right: 20px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            width: 20px;\n            height: 20px;\n\n            .da-input-error-icon {\n                fill: $t1-secondary-color;\n                font-size: 20px;\n            }\n\n            &.light {\n                background: #fff;\n\n                .da-input-error-icon {\n                    fill: $t1-base-color;\n                }\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -2195,7 +2195,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon-green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon-red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'light' : light, 'error' : error, 'auto-width' : autoWidth}\"\n            #target\n        >\n        <div class=\"da-input-unit\">{{unit}}</div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <svg-icon class=\"da-input-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n\n"
+            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}\"\n            #target\n        >\n        <div class=\"da-input-unit\">\n            <div class=\"da-input-unit-wrapper\">\n                {{unit}}\n            </div>\n        </div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <svg-icon class=\"da-input-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n\n"
         },
         {
             "name": "InputDateComponent",
@@ -3307,7 +3307,7 @@
         },
         {
             "name": "TileRatingComponent",
-            "id": "component-TileRatingComponent-ac57bd969cd82edd723f4788fbd75de72759233a2d84dfdbda2dda3d75e6f26503abd1ce675d47522fbd69ce5ea49b7e137760d0acee727d6d2c30a005824d1d",
+            "id": "component-TileRatingComponent-9dcb1c360a3bdf84f507cb896a1afb1d980a7ed7510e3a571e3d1f35c3c7f1c76701ef7621277948253f6336d31b87ba5fe0598e0ab32c9d6d069789cea9e5e7",
             "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3329,7 +3329,7 @@
                     "defaultValue": "'assets/images/circleCheck.svg'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -3338,7 +3338,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -3347,7 +3347,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -3356,7 +3356,7 @@
                     "defaultValue": "'name'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 },
@@ -3365,7 +3365,7 @@
                     "defaultValue": "5",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "number",
                     "decorators": []
                 }
@@ -3376,7 +3376,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "EventEmitter<any>"
                 },
                 {
@@ -3384,7 +3384,7 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -3397,7 +3397,19 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 17
+                },
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        123
+                    ]
                 },
                 {
                     "name": "success",
@@ -3406,7 +3418,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 16
                 }
             ],
             "methodsClass": [
@@ -3423,7 +3435,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3451,7 +3463,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3472,7 +3484,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3484,7 +3496,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-rating',\n  templateUrl: './tile-rating.component.html',\n  styleUrls: ['./tile-rating.component.scss'],\n})\n\nexport class TileRatingComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() stars: number = 5;\n  @Input() icon: string = 'assets/images/circleCheck.svg';\n  @Input() info:  string = '';\n  success!: boolean;\n  rating: number = 0;\n  @Output() public ratingValue:EventEmitter<any> = new EventEmitter<any>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const name = this.name;\n    const rating = e.rating;\n    this.success = true;\n    this.ratingValue.emit({rating, name});\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-rating',\n  templateUrl: './tile-rating.component.html',\n  styleUrls: ['./tile-rating.component.scss'],\n})\n\nexport class TileRatingComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() stars: number = 5;\n  @Input() icon: string = 'assets/images/circleCheck.svg';\n  @Input() info:  string = '';\n  success!: boolean;\n  rating: number = 0;\n  @Output() public ratingValue:EventEmitter<any> = new EventEmitter<any>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor(\n    public screen: HelperService\n  ) {}\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    const name = this.name;\n    const rating = e.rating;\n    this.success = true;\n    this.ratingValue.emit({rating, name});\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3498,13 +3510,31 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 18
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-rating-single\">\n    <div class=\"da-tile-rating\">\n        <div class=\"da-tile-rating-icon-wrapper\" *ngIf=\"success\">\n            <svg-icon class=\"da-tile-rating-icon\" [src]=\"icon\"></svg-icon>\n        </div>\n        <div class=\"da-tile-rating-stars\">\n            <star-rating \n            [starType]=\"'svg'\"\n            size=\"large\"\n            [numOfStars]=\"stars\" \n            [rating]=\"rating\"\n            [hoverEnabled]=\"true\"\n            (starClickChange)=\"getValue($event)\"\n            ></star-rating>\n        </div>\n\n        <div class=\"da-tile-rating-label\">{{label}}\n            <div class=\"da-tile-rating-info-button\" *ngIf=\"info\">\n                <lib-info-button \n                    [light]=\"false\" \n                    [id]=\"info\"\n                    (infoPressed)=\"getInfo($event)\"\n                ></lib-info-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-tile-rating-single\">\n    <div class=\"da-tile-rating\" [ngClass]=\"{'mobile' : screen.isSmallest()}\">\n        <div class=\"da-tile-rating-icon-wrapper\" *ngIf=\"success\">\n            <svg-icon class=\"da-tile-rating-icon\" [src]=\"icon\"></svg-icon>\n        </div>\n        <div class=\"da-tile-rating-stars\">\n            <star-rating \n            [starType]=\"'svg'\"\n            size=\"large\"\n            [numOfStars]=\"stars\" \n            [rating]=\"rating\"\n            [hoverEnabled]=\"true\"\n            (starClickChange)=\"getValue($event)\"\n            ></star-rating>\n        </div>\n\n        <div class=\"da-tile-rating-label\">{{label}}\n            <div class=\"da-tile-rating-info-button\" *ngIf=\"info\">\n                <lib-info-button \n                    [light]=\"false\" \n                    [id]=\"info\"\n                    (infoPressed)=\"getInfo($event)\"\n                ></lib-info-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
         },
         {
             "name": "TileTextComponent",
@@ -4298,7 +4328,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle-vertical {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    flex-direction: column;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 200px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n                z-index: 2;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 20px;\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: 10px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.bottom {\n                right: 0px;\n                left: 0px;\n                width: 200px;\n            }\n\n            &.top {\n                left: 0px;\n                right: 0px;\n                width: 200px;\n            }\n\n            &:before {\n                position: absolute;\n                content: \"\";\n                height: 42px;\n                width: 200%;\n                border-radius: 21px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n\n            &.top:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n\n\n            }\n\n            &.bottom:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle-vertical {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    overflow: hidden;\n    flex-direction: column;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 200px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n                z-index: 2;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 20px;\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: 10px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.bottom {\n                right: 0px;\n                left: 0px;\n                width: 200px;\n            }\n\n            &.top {\n                left: 0px;\n                right: 0px;\n                width: 200px;\n            }\n\n            &:before {\n                position: absolute;\n                content: \"\";\n                height: 42px;\n                width: 200%;\n                border-radius: 21px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n\n            &.top:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n\n\n            }\n\n            &.bottom:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./toggle-vertical.component.scss"
                 }
             ],
@@ -7571,7 +7601,7 @@
                 "linktype": "component",
                 "name": "TileRatingComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
