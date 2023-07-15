@@ -1,6 +1,6 @@
 {
   "name": "fm-library",
-  "version": "0.0.73",
+  "version": "0.0.74",
   "scripts": {
     "build": "ng build"
   },
