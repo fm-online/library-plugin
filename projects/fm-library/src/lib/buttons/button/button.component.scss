@@ -48,6 +48,11 @@
             }
         }
 
+        &.auto-width {
+            width: 100%;
+
+        }
+
         &:hover,
         &:active {
             border: 1px solid $button-base-color;
