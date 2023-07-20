@@ -5,6 +5,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export default {
   title: 'inputs/InputComponent',
@@ -15,6 +16,8 @@ export default {
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
         NgbTooltipModule,
+        FormsModule,
+        ReactiveFormsModule
       ],
       declarations: [
         InfoButtonComponent,

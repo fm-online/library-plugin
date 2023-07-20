@@ -1,6 +1,44 @@
 <div class="da-input-single">
     <div class="da-input-label" [ngClass]="{'light' : light}">{{label}}</div>
-    <label class="da-input">
+    <!-- Form Input -->
+    <label *ngIf="form" class="da-input" [formGroup]="form">
+        <div class="da-input-icons" *ngIf="touched">
+            <svg-icon 
+                *ngIf="!error" 
+                class="da-input-icon green" 
+                src="assets/images/circleCheck.svg"
+            ></svg-icon>
+            <svg-icon 
+                *ngIf="error" 
+                class="da-input-icon red" 
+                src="assets/images/circleXmark.svg"
+            ></svg-icon>
+        </div>
+        <input 
+            autocomplete="off"
+            [type]="type" 
+            (keyup)="getValue($event)" 
+            [placeholder]="placeholder"
+            [formControlName]="name"
+            [value]="value"
+            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}"
+            #target
+        >
+        <div class="da-input-unit">
+            <div class="da-input-unit-wrapper">
+                {{unit}}
+            </div>
+        </div>
+        <div class="da-input-info-button" *ngIf="info">
+            <lib-info-button 
+            [light]="light" 
+            (infoPressed)="getInfo($event)"
+            [id]="info"
+            ></lib-info-button>
+        </div>
+    </label>
+    <!-- No Form Input -->
+    <label *ngIf="!form" class="da-input">
         <div class="da-input-icons" *ngIf="touched">
             <svg-icon 
                 *ngIf="!error" 

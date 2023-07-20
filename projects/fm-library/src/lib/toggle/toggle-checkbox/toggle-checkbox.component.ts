@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./toggle-checkbox.component.scss']
 })
 export class ToggleCheckboxComponent implements OnInit {
+  @Input() form: any;
   @Input() label: string = 'label';
   @Input() name: string = 'name'; 
   @Input() checked: boolean = false;

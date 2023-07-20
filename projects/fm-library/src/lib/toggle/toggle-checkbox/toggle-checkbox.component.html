@@ -1,5 +1,18 @@
 <div class="da-toggle-checkbox">
-    <label class="da-switch" [ngClass]="{'light' : light}">
+    <!-- Form Input -->
+    <label *ngIf="form" class="da-switch" [ngClass]="{'light' : light}" [formGroup]="form">
+        <input 
+            type="checkbox" 
+            (change)="getValue($event)" 
+            [checked]="checked"
+            [formControlName]="name"
+        >
+        <span class="da-switch-slider">
+            <svg-icon class="da-switch-icon" src="assets/images/xmark.svg"></svg-icon>
+        </span>
+    </label>
+    <!-- No Form Input -->
+    <label *ngIf="!form" class="da-switch" [ngClass]="{'light' : light}">
         <input 
             type="checkbox" 
             (change)="getValue($event)" 

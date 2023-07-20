@@ -9,6 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { StarRatingModule } from 'angular-star-rating';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonComponent } from './buttons/button/button.component';
 import { ButtonGroupComponent } from './buttons/button-group/button-group.component';
@@ -64,6 +65,8 @@ import { ProgressButtonComponent } from './buttons/progress-button/progress-butt
     MatInputModule,
     MatNativeDateModule,
     NgbTooltipModule,
+    FormsModule,
+    ReactiveFormsModule,
     StarRatingModule.forRoot(),
     AngularSvgIconModule.forRoot(),
   ],
