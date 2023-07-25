@@ -10,14 +10,14 @@
             [name]="name"
             [value]="value"
         >
-        <div class="da-tile-checkbox-icon-wrapper">
+        <div class="da-tile-checkbox-icon-wrapper" [ngClass]="{'checked' : checked}">
             <svg-icon class="da-tile-checkbox-icon green" *ngIf="state === 'success'" src="assets/images/circleCheck.svg"></svg-icon>
             <svg-icon class="da-tile-checkbox-icon yellow" *ngIf="state === 'warning'" src="assets/images/circleExclamation.svg"></svg-icon>
             <svg-icon class="da-tile-checkbox-icon red" *ngIf="state === 'error'" src="assets/images/circleXmark.svg"></svg-icon>
         </div>
         <svg-icon *ngIf="image" 
             class="da-tile-checkbox-image" 
-            [ngClass]="{'mobile' : screen.isSmallest()}"
+            [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked}"
             [src]="image"
         >
         </svg-icon>
@@ -28,7 +28,7 @@
         </div>
         <div 
             class="da-tile-checkbox-label"
-            [ngClass]="{'mobile' : screen.isSmallest()}"
+            [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked}"
         >{{label}}</div>
         <div *ngIf="checked" class="da-tile-checkbox-expanded" [ngClass]="{'light' : light}">
             <ng-container *ngTemplateOutlet="content"></ng-container>

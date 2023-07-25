@@ -32,7 +32,8 @@ export class TileCheckboxComponent {
       this.checked = e.srcElement.checked;
       const checked = e.srcElement.checked;
       const name = e.srcElement.name;
-      this.checkboxValue.emit({name, checked});
+      const value = e.srcElement.value;
+      this.checkboxValue.emit({name, value, checked});
   }
 
 }

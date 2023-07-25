@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TileGroupComponent {
   @Input() tiles: any;
   @Input() localValue: string = 'localValue';
+  @Input() withIndex!: boolean;
   @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();
   
   constructor() { }

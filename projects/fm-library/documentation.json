@@ -2829,7 +2829,7 @@
         },
         {
             "name": "TileComponent",
-            "id": "component-TileComponent-aded1fe3583baf89143ec8a1448a18f67200b07d7330007fd9ac85162e25ffd38bcb1b154835006a3f47b33624eb8cc2946ee7f823bea99c34d7698f17d05c24",
+            "id": "component-TileComponent-4e25ee09db9af2fc7a2ef1f61839e4d977b45750421397235795c420b990c6cb1cb8b181c295cb828220c6862fbbda0b69f8cbdd6368697667813e0ddd6e650b",
             "file": "projects/fm-library/src/lib/tiles/tile/tile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2973,7 +2973,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3051,7 +3051,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: string;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: string;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    console.log('TILE', this.checked, this.localValue, this.state, this.label)\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3648,7 +3648,7 @@
         },
         {
             "name": "ToggleCheckboxComponent",
-            "id": "component-ToggleCheckboxComponent-6f0738a582b191b626d56a245bbc9ad0b8ca5cb270eefa4f37336801a5d271b75867855882a51d2841b0f4f59b975f657957d85d96d614615122e4af046bc8d3",
+            "id": "component-ToggleCheckboxComponent-b29b22fff4adcba8e4cfb093aba78eeb2cd7c94b3ba1b93c4922c2137858d68fbc263803f30e42a3e18cfd90f733379d2855d40dcc5517a16d67ef6f123863ac",
             "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3670,8 +3670,16 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "form",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "any",
                     "decorators": []
                 },
                 {
@@ -3679,7 +3687,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 },
@@ -3688,7 +3696,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3697,7 +3705,7 @@
                     "defaultValue": "'name'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 }
@@ -3708,7 +3716,7 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -3727,7 +3735,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3748,7 +3756,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3760,7 +3768,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-toggle-checkbox',\n  templateUrl: './toggle-checkbox.component.html',\n  styleUrls: ['./toggle-checkbox.component.scss']\n})\nexport class ToggleCheckboxComponent implements OnInit {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name'; \n  @Input() checked: boolean = false;\n  @Input() light: boolean = false;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.checked)\n    this.checkboxValue.emit(e.srcElement.checked);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-toggle-checkbox',\n  templateUrl: './toggle-checkbox.component.html',\n  styleUrls: ['./toggle-checkbox.component.scss']\n})\nexport class ToggleCheckboxComponent implements OnInit {\n  @Input() form: any;\n  @Input() label: string = 'label';\n  @Input() name: string = 'name'; \n  @Input() checked: boolean = false;\n  @Input() light: boolean = false;\n  @Output() public checkboxValue:EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.srcElement.checked)\n    this.checkboxValue.emit(e.srcElement.checked);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3775,12 +3783,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 13
+                "line": 14
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-toggle-checkbox\">\n    <label class=\"da-switch\" [ngClass]=\"{'light' : light}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <span class=\"da-switch-label\" [ngClass]=\"{'light' : light}\">{{label}}</span>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-checkbox\">\n    <!-- Form Input -->\n    <label *ngIf=\"form\" class=\"da-switch\" [ngClass]=\"{'light' : light}\" [formGroup]=\"form\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [formControlName]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <!-- No Form Input -->\n    <label *ngIf=\"!form\" class=\"da-switch\" [ngClass]=\"{'light' : light}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <span class=\"da-switch-label\" [ngClass]=\"{'light' : light}\">{{label}}</span>\n</div>\n\n"
         },
         {
             "name": "ToggleComponent",
@@ -7407,7 +7415,7 @@
                 "linktype": "component",
                 "name": "ToggleCheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {

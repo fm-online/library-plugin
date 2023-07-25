@@ -7,4 +7,8 @@
     justify-content: center;
     max-width: 1366px;
 
+    &.withIndex {
+        width: 100vw;
+        max-width: auto;
+    }
 }

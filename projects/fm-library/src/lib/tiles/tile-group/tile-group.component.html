@@ -9,6 +9,7 @@
             [value]="tile.value"
             [content]="tile.content"
             [localValue]="localValue"
+            [ngClass]="{'withIndex' : withIndex}"
             (checkboxValue)="sendValue($event)">
         </lib-tile>
     </ng-container>

@@ -23,6 +23,7 @@
         &.expanded {
             background-color: $button-base-color;
             border: 1px solid $button-base-color;
+            padding-bottom: 35px;
         }
 
         &.mobile {
@@ -31,7 +32,8 @@
             padding-bottom: 0;
             
             &.expanded {
-                padding-bottom: 40px;
+                padding-bottom: 35px;
+                margin: 0 15px;
             }
         }
      
@@ -45,6 +47,11 @@
                 width: 20px;
                 height: 20px;
                 display: none;
+
+                &.checked {
+                    display: block;
+                }
+
             .da-tile-checkbox-icon {
                 position: absolute;
                 top: -1px;
@@ -83,6 +90,11 @@
                 min-width: 244px;
                 font-size: 45px;
                 height: 45px;
+            }
+
+            &.checked {
+                color: $t4-secondary-color;
+                fill: $t4-secondary-color;
             }
         }
     
@@ -124,6 +136,11 @@
                 width: calc(100% - 30px);
                 height: auto;
                 font-size: 19px;
+            }
+
+            &.checked {
+                color: $t4-secondary-color;
+                fill: $t4-secondary-color;
             }
 
         }
