@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-tile-group',
@@ -11,7 +12,9 @@ export class TileGroupComponent {
   @Input() withIndex!: boolean;
   @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();
   
-  constructor() { }
+  constructor(
+    public screen: HelperService
+  ) { }
 
   sendValue(e: any) {
     this.localValue = e;

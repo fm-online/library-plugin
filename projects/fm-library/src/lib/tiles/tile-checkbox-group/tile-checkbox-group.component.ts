@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { HelperService } from '../../services/helper.service';
 
 @Component({
   selector: 'lib-tile-checkbox-group',
@@ -10,7 +11,9 @@ export class TileCheckboxGroupComponent {
   @Input() withIndex!: boolean;
   @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();
   
-  constructor() { }
+  constructor(
+    public screen: HelperService
+  ) { }
 
   sendValue(e: any) {
     this.tileValue.emit(e);

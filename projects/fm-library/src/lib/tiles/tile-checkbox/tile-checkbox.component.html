@@ -30,7 +30,7 @@
             class="da-tile-checkbox-label"
             [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked}"
         >{{label}}</div>
-        <div *ngIf="checked" class="da-tile-checkbox-expanded" [ngClass]="{'light' : light}">
+        <div *ngIf="checked" class="da-tile-checkbox-expanded" [ngClass]="{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}">
             <ng-container *ngTemplateOutlet="content"></ng-container>
         </div>
     </label>

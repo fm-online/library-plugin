@@ -1,4 +1,4 @@
-<div class="da-tiles">
+<div class="da-tiles" [ngClass]="{'withIndex' : withIndex, 'mobile': screen.isSmallest()}">
     <ng-container *ngFor="let tile of tiles; let num = index">
         <lib-tile 
             [label]="tile.label"
@@ -9,7 +9,6 @@
             [value]="tile.value"
             [content]="tile.content"
             [localValue]="localValue"
-            [ngClass]="{'withIndex' : withIndex}"
             (checkboxValue)="sendValue($event)">
         </lib-tile>
     </ng-container>

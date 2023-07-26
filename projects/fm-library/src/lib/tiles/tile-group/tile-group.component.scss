@@ -9,6 +9,12 @@
 
     &.withIndex {
         width: 100vw;
-        max-width: auto;
+        max-width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+        &.mobile {
+            column-gap: 34px;
+        }
     }
 }
