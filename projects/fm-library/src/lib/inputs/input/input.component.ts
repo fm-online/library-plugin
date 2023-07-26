@@ -43,6 +43,11 @@ export class InputComponent implements OnInit {
     this.inputValue.emit([e.srcElement.value, this.name]);
   }
 
+  removePlaceholder() {
+    console.log('click');
+    this.placeholder = '';
+  }
+
   getInfo(e: string) {
     this.infoValue.emit(e);
   }

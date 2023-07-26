@@ -1581,7 +1581,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button class=\"da-info-button\" [ngClass]=\"{'light' : light}\" (click)=\"getInfo()\">\n    <svg-icon \n            class=\"da-info-icon\" \n            src=\"assets/images/circleInfo.svg\"\n        >\n        </svg-icon>\n</button>\n"
+            "templateData": "<div class=\"da-info-button\" [ngClass]=\"{'light' : light}\" (click)=\"getInfo()\">\n    <svg-icon \n            class=\"da-info-icon\" \n            src=\"assets/images/circleInfo.svg\"\n        >\n        </svg-icon>\n    </div>\n"
         },
         {
             "name": "InputButtonComponent",
@@ -2686,7 +2686,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n            padding-bottom: 35px;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n            \n            &.expanded {\n                padding-bottom: 35px;\n                margin: 0 15px;\n            }\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -2717,11 +2717,11 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"{'expanded' : checked, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"{'expanded' : checked, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileCheckboxGroupComponent",
-            "id": "component-TileCheckboxGroupComponent-aed3d2c539f027f06eaa74dd34ded274576110100bcf9014b1cef6b359c2809bd8b080ac2e8ec2bc2d372d76586944185be63e45277a15c3a3aca38f269e17dc",
+            "id": "component-TileCheckboxGroupComponent-d8a68579c41ca5ec5c90cb6ff9d5f437a3d5ca42f212226921c6c5540b2eda3aa94b6eb473eb5c379d14cb4f2e151b44f6d3cc8d060a6e5f5d72c572c1a4904d",
             "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2742,7 +2742,7 @@
                     "name": "tiles",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "any",
                     "decorators": []
                 },
@@ -2750,7 +2750,7 @@
                     "name": "withIndex",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -2761,11 +2761,24 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "sendValue",
@@ -2780,7 +2793,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2803,11 +2816,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-checkbox-group',\n  templateUrl: './tile-checkbox-group.component.html',\n  styleUrls: ['./tile-checkbox-group.component.scss']\n})\nexport class TileCheckboxGroupComponent {\n  @Input() tiles: any;\n  @Input() withIndex!: boolean;\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  sendValue(e: any) {\n    this.tileValue.emit(e);\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-checkbox-group',\n  templateUrl: './tile-checkbox-group.component.html',\n  styleUrls: ['./tile-checkbox-group.component.scss']\n})\nexport class TileCheckboxGroupComponent {\n  @Input() tiles: any;\n  @Input() withIndex!: boolean;\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor(\n    public screen: HelperService\n  ) { }\n\n  sendValue(e: any) {\n    this.tileValue.emit(e);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".da-tiles {\n    width: 100%;\n    display: flex;\n    column-gap: 24px;\n    row-gap: 24px;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 1366px;\n\n    &.withIndex {\n        width: 100vw;\n        max-width: auto;\n    }\n}",
+                    "data": ".da-tiles {\n    width: 100%;\n    display: flex;\n    column-gap: 24px;\n    row-gap: 24px;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 1366px;\n\n    &.withIndex {\n        width: 100vw;\n        max-width: 100%;\n        justify-content: flex-start;\n        flex-wrap: nowrap;\n\n        &.mobile {\n            column-gap: 34px;\n        }\n    }\n}",
                     "styleUrl": "./tile-checkbox-group.component.scss"
                 }
             ],
@@ -2817,10 +2830,28 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 11
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
-            "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile-checkbox\n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [ngClass]=\"{'withIndex' : withIndex}\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile-checkbox>\n    </ng-container>\n</div>"
+            "templateData": "<div class=\"da-tiles\" [ngClass]=\"{'withIndex' : withIndex, 'mobile': screen.isSmallest()}\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile-checkbox\n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile-checkbox>\n    </ng-container>\n</div>"
         },
         {
             "name": "TileComponent",
@@ -3050,7 +3081,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n            padding-bottom: 35px;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n            &.expanded {\n                padding-bottom: 35px;\n                margin: 0 15px;\n            }\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -3084,11 +3115,11 @@
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
-            "id": "component-TileGroupComponent-53ab370485c073e13ffecb66642539d07c53b346399ebd4295284194eae2dc6d10c3867fbc0629c7733c798745acbb50768a44399906b9f763f7666998a35f90",
+            "id": "component-TileGroupComponent-a16c4d0321c72f1e4fb682aee2594c8da19f3d2008a8cf31e02e74798e59d90681b59373e7a4e0f9d5abd04aa03bbe85aac6c3c5d18117b028a2fbced1168277",
             "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3110,7 +3141,7 @@
                     "defaultValue": "'localValue'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -3118,7 +3149,7 @@
                     "name": "tiles",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "any",
                     "decorators": []
                 },
@@ -3126,7 +3157,7 @@
                     "name": "withIndex",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -3137,11 +3168,24 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "EventEmitter<any>"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "sendValue",
@@ -3156,7 +3200,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3179,11 +3223,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent {\n  @Input() tiles: any;\n  @Input() localValue: string = 'localValue';\n  @Input() withIndex!: boolean;\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor() { }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile-group',\n  templateUrl: './tile-group.component.html',\n  styleUrls: ['./tile-group.component.scss']\n})\nexport class TileGroupComponent {\n  @Input() tiles: any;\n  @Input() localValue: string = 'localValue';\n  @Input() withIndex!: boolean;\n  @Output() public tileValue:EventEmitter<any> = new EventEmitter<any>();\n  \n  constructor(\n    public screen: HelperService\n  ) { }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.tileValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".da-tiles {\n    width: 100%;\n    display: flex;\n    column-gap: 24px;\n    row-gap: 24px;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 1366px;\n\n    &.withIndex {\n        width: 100vw;\n        max-width: auto;\n    }\n}",
+                    "data": ".da-tiles {\n    width: 100%;\n    display: flex;\n    column-gap: 24px;\n    row-gap: 24px;\n    flex-wrap: wrap;\n    justify-content: center;\n    max-width: 1366px;\n\n    &.withIndex {\n        width: 100vw;\n        max-width: 100%;\n        justify-content: flex-start;\n        flex-wrap: nowrap;\n\n        &.mobile {\n            column-gap: 34px;\n        }\n    }\n}",
                     "styleUrl": "./tile-group.component.scss"
                 }
             ],
@@ -3193,10 +3237,28 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 12
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
-            "templateData": "<div class=\"da-tiles\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [localValue]=\"localValue\"\n            [ngClass]=\"{'withIndex' : withIndex}\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
+            "templateData": "<div class=\"da-tiles\" [ngClass]=\"{'withIndex' : withIndex, 'mobile': screen.isSmallest()}\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
         },
         {
             "name": "TileRatingComponent",
@@ -3391,7 +3453,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-rating-single {\n    font-family: $font;\n\n    .da-tile-rating {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-rating-icon-wrapper {\n                left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n\n            .da-tile-rating-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n                color: $success-color;\n                fill: $success-color;\n\n            }\n        }\n        .da-tile-rating-stars {\n            height: 112px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            justify-content: center;\n            align-items: flex-end;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-rating-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-rating-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-rating-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-rating-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: flex-start;\n            text-align: center;\n            justify-content: center;\n            width: 175px;\n            margin: 15px 15px 0 15px;\n            overflow: hidden;\n\n        }\n\n        .da-tile-rating-info-button {\n            margin-left: 10px;\n            margin-top: -7px;\n        }\n    }\n\n    .da-tile-rating-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-rating-single {\n    font-family: $font;\n\n    .da-tile-rating {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-rating-icon-wrapper {\n                left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n\n            .da-tile-rating-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n                color: $success-color;\n                fill: $success-color;\n\n            }\n        }\n        .da-tile-rating-stars {\n            height: 112px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            justify-content: center;\n            align-items: flex-end;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-rating-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-rating-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-rating-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-rating-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: flex-start;\n            text-align: center;\n            justify-content: center;\n            width: 175px;\n            margin: 15px 15px 0 15px;\n            overflow: hidden;\n\n        }\n\n        .da-tile-rating-info-button {\n            margin-left: 10px;\n            margin-top: 5px;\n        }\n    }\n\n    .da-tile-rating-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n\n\n",
                     "styleUrl": "./tile-rating.component.scss"
                 }
             ],
@@ -7303,7 +7365,7 @@
                 "linktype": "component",
                 "name": "TileCheckboxGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -7351,7 +7413,7 @@
                 "linktype": "component",
                 "name": "TileGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

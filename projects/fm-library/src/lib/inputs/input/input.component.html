@@ -21,6 +21,7 @@
             [placeholder]="placeholder"
             [formControlName]="name"
             [value]="value"
+            (click)="removePlaceholder()"
             [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}"
             #target
         >
@@ -58,6 +59,7 @@
             [placeholder]="placeholder"
             [name]="name"
             [value]="value"
+            (click)="removePlaceholder()"
             [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}"
             #target
         >
