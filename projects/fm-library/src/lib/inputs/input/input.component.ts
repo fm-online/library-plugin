@@ -22,6 +22,7 @@ export class InputComponent implements OnInit {
   @Input() errorText: string = '';
   @Input() autoWidth: boolean = false;
   @Input() isCurrency: boolean = true;
+  @Input() inputDisabled: boolean = false;
   @Input() light: boolean = false;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
@@ -44,7 +45,6 @@ export class InputComponent implements OnInit {
   }
 
   removePlaceholder() {
-    console.log('click');
     this.placeholder = '';
   }
 

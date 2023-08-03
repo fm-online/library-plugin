@@ -41,6 +41,14 @@
     height: 42px;
     width: 185px;
 
+    &.auto-width {
+        width: 100%;
+
+        .mat-form-field {
+            width: 100%!important;
+        }
+    }
+
     &.light {
         box-shadow: 0 3px 5px $shadow-secondary-color;
     }

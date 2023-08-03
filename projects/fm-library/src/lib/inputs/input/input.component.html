@@ -21,8 +21,9 @@
             [placeholder]="placeholder"
             [formControlName]="name"
             [value]="value"
+            [disabled]="inputDisabled"
             (click)="removePlaceholder()"
-            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}"
+            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit, 'disabled': inputDisabled}"
             #target
         >
         <div class="da-input-unit">
@@ -58,9 +59,10 @@
             (keyup)="getValue($event)" 
             [placeholder]="placeholder"
             [name]="name"
+            [disabled]="inputDisabled"
             [value]="value"
             (click)="removePlaceholder()"
-            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit}"
+            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit, 'disabled': inputDisabled}"
             #target
         >
         <div class="da-input-unit">

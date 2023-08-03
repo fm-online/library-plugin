@@ -9,6 +9,8 @@
         <input 
             matInput 
             [matDatepicker]="picker" 
+            [max]="maxDate"
+            [value]="value"
             (dateChange)="getValue($event)" 
             [placeholder]="placeholder"
             [ngClass]="{'light' : light}"

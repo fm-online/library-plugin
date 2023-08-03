@@ -117,6 +117,12 @@
                     color: $warning-base-color;
                 }
             }
+
+            &.disabled {
+                background-color: $header-base-color;
+                color: $t1-base-color;
+                opacity: 0.5;
+            }
         }
 
         .da-input-unit {

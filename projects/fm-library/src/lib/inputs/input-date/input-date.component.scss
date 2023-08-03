@@ -47,7 +47,6 @@ input.mat-input-element {
     .da-input-date-success-icon {
         color: $success-color;
         fill: $success-color;
-        position: absolute;
     }
 }
 
@@ -57,7 +56,7 @@ input.mat-input-element {
     .da-input-date-label {
         font-size: $t4-base-size;
         margin-bottom: -4px;
-        margin-left: 20px;
+        margin-left: -55px;
         color: $t4-base-color;
     
         &.light {
