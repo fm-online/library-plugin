@@ -2105,7 +2105,7 @@
         },
         {
             "name": "InputDateComponent",
-            "id": "component-InputDateComponent-3f80996e4effc92205b5b544742057efaa17aafa61cd49145559f0ed4fe0b690acf2e433642f0f05b98bf81e7a5b35151e41c59fbc3fd24ad1779cff6472391f",
+            "id": "component-InputDateComponent-40d55ba9c483a518fb6b435507014859d71efcebed8126d15857149ccd79679a34ad1ef87c9123f5b42c0e95c1780b66989eef33af52d3de0ab16507f8ea9298",
             "file": "projects/fm-library/src/lib/inputs/input-date/input-date.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2123,11 +2123,29 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "error",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "errorText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "info",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -2144,7 +2162,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 21,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2153,6 +2171,14 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 14,
+                    "type": "Date",
+                    "decorators": []
+                },
+                {
+                    "name": "minDate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
                     "type": "Date",
                     "decorators": []
                 },
@@ -2168,15 +2194,24 @@
                     "name": "placeholder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 20,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "touched",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "value",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "Date",
                     "decorators": []
                 }
@@ -2187,7 +2222,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 23,
                     "type": "EventEmitter<any>"
                 },
                 {
@@ -2195,7 +2230,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 24,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -2208,7 +2243,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 25
                 }
             ],
             "methodsClass": [
@@ -2225,7 +2260,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2253,7 +2288,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2274,7 +2309,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 35,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2286,11 +2321,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';\nimport { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';\nimport 'moment/locale/de';\n\n@Component({\n  selector: 'lib-input-date',\n  templateUrl: './input-date.component.html',\n  styleUrls: ['./input-date.component.scss']\n})\n\nexport class InputDateComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() maxDate!: Date;\n  @Input() value!: Date;\n  @Input() placeholder!: string;\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  success: boolean = false;\n\n  constructor(\n    private _adapter: DateAdapter<any>,\n    @Inject(MAT_DATE_LOCALE) private _locale: string,\n  ) {\n    this._locale = 'de';\n    this._adapter.setLocale(this._locale)\n  }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    this.success = true;\n    this.value = e.value;\n    this.dateValue.emit(e.value);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';\nimport { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';\nimport 'moment/locale/de';\n\n@Component({\n  selector: 'lib-input-date',\n  templateUrl: './input-date.component.html',\n  styleUrls: ['./input-date.component.scss']\n})\n\nexport class InputDateComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() maxDate!: Date;\n  @Input() minDate!: Date;\n  @Input() value!: Date;\n  @Input() touched: boolean = false;\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() placeholder!: string;\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  success: boolean = false;\n\n  constructor(\n    private _adapter: DateAdapter<any>,\n    @Inject(MAT_DATE_LOCALE) private _locale: string,\n  ) {\n    this._locale = 'de';\n    this._adapter.setLocale(this._locale)\n  }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    this.value = e.value;\n    this.dateValue.emit(e.value);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    text-align: center!important;\n}\n\ninput.mat-input-element {\n    background-color: #fff!important;\n    border-radius: 24px!important;\n    height: 42px;\n    min-width: 185px!important;\n    width: 185px!important;\n    color: $button-base-color!important;\n    border: 0px solid transparent!important;\n    border-bottom: 1px solid $button-base-color!important;\n    box-shadow: 0 3px 5px $shadow-base-color!important;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color!important;\n    }\n}\n\n.mat-datepicker-toggle {\n    position: absolute;\n    right: -4px;\n\n    button {\n        background-color: transparent!important;\n        color: $button-base-color!important;\n    }\n}\n\n.da-input-icons {\n    height: 23px;\n    width: 23px;\n    font-size: 24px;\n    position: absolute;\n    left: 10px;\n    top: 14px;\n    z-index: 2;\n    border-radius: 25px;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    background: #fff;\n\n    .da-input-date-success-icon {\n        color: $success-color;\n        fill: $success-color;\n    }\n}\n\n.da-input-date-single {\n    font-family: $font; \n\n    .da-input-date-label {\n        font-size: $t4-base-size;\n        margin-bottom: -4px;\n        margin-left: -55px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-date {\n        display: flex;\n        align-items: start;\n        position: relative;\n\n        .da-input-info-button {\n            margin-top: 12px;\n        }\n    }\n\n}\n\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    text-align: center!important;\n}\n\ninput.mat-input-element {\n    background-color: #fff!important;\n    border-radius: 24px!important;\n    height: 42px;\n    min-width: 185px!important;\n    width: 185px!important;\n    color: $button-base-color!important;\n    border: 0px solid transparent!important;\n    border-bottom: 1px solid $button-base-color!important;\n    box-shadow: 0 3px 5px $shadow-base-color!important;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color!important;\n    }\n\n    &.error {\n        background-color: $error-background!important;\n        border-bottom: 1px solid $warning-base-color!important;\n        color: $warning-base-color!important;\n\n        &::placeholder {\n            color: $warning-base-color!important;\n        }\n    }\n}\n\n.mat-datepicker-toggle {\n    position: absolute;\n    right: -4px;\n\n    button {\n        background-color: transparent!important;\n        color: $button-base-color!important;\n    }\n}\n\n.da-input-date-icons {\n    height: 23px;\n    width: 23px;\n    font-size: 24px;\n    position: absolute;\n    left: 10px;\n    top: 14px;\n    z-index: 2;\n    border-radius: 25px;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    background: #fff;\n\n    .da-input-date-icon {\n\n        font-size: 25px;\n        width: 23px;\n        height: 23px;\n        top: 0;\n        left: 0;\n        position: absolute;\n        border-radius: 25px;\n        background-color: #fff;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n        &.green {\n            fill: $success-color;\n        }\n\n        &.red {\n            fill: $warning-base-color;\n        }\n\n        svg {\n            position: relative;\n            top: -1px;\n            left: -1px;\n        }\n    }\n}\n\n.da-input-date-single {\n    font-family: $font; \n\n    .da-input-date-label {\n        font-size: $t4-base-size;\n        margin-bottom: -4px;\n        margin-left: -55px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-date {\n        display: flex;\n        align-items: start;\n        position: relative;\n\n        .da-input-info-button {\n            margin-top: 12px;\n        }\n    }\n    .da-input-date-error {\n        background-color: $button-base-color;\n        font-size: $t1-base-size;\n        color: $t1-secondary-color;\n        max-width: 185px;\n        position: absolute;\n        border-radius: 10px;\n        padding: 10px;\n        display: flex;\n        z-index: 1;\n        margin-top: -18px;\n        justify-content: center;\n        align-items: center;\n\n        &.light {\n            color: $t1-base-color;\n            background-color: $button-secondary-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n        }\n\n    .da-tooltip-arrow {\n        width: 20px;\n        height: 20px;\n        position: absolute;\n        top: -20px;\n        left: 20px;\n\n        .da-arrow-up {\n            width: 0; \n            height: 0; \n            border-left: 20px solid transparent;\n            border-right: 20px solid transparent;\n            border-bottom: 20px solid $button-base-color;\n\n            &.light {\n                border-bottom: 20px solid $button-secondary-color;\n            }\n          }\n    }\n\n    .da-input-date-error-icon-wrapper {\n        background: transparent;\n        border-radius: 20px;\n        position: relative;\n        margin-right: 20px;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        width: 20px;\n        height: 20px;\n\n        .da-input-date-error-icon {\n            fill: $t1-secondary-color;\n            font-size: 20px;\n        }\n\n        &.light {\n            background: #fff;\n\n            .da-input-date-error-icon {\n                fill: $t1-base-color;\n            }\n        }\n    }\n}\n\n}\n\n\n",
                     "styleUrl": "./input-date.component.scss"
                 }
             ],
@@ -2314,7 +2349,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 21,
+                "line": 25,
                 "jsdoctags": [
                     {
                         "name": "_adapter",
@@ -2339,7 +2374,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-input-date-single\">\n    <div class=\"da-input-date-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input-date\">\n      <div class=\"da-input-icons\" *ngIf=\"success\">\n        <svg-icon src=\"assets/images/circleCheck.svg\" class=\"da-input-date-success-icon\"></svg-icon>\n      </div>\n      <mat-form-field appearance=\"fill\" color=\"accent\">\n        <!-- <mat-label>{{label}}</mat-label> -->\n        <input \n            matInput \n            [matDatepicker]=\"picker\" \n            [max]=\"maxDate\"\n            [value]=\"value\"\n            (dateChange)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [ngClass]=\"{'light' : light}\"\n        >\n        <mat-hint></mat-hint>\n        <mat-datepicker-toggle matIconSuffix [for]=\"picker\">\n            <svg-icon src=\"assets/images/circleCheck.svg\" class=\"da-input-date-success-icon\"></svg-icon>\n        </mat-datepicker-toggle>\n        <mat-datepicker #picker color=\"primary\"></mat-datepicker>\n      </mat-form-field>\n      <div class=\"da-input-info-button\" *ngIf=\"info\">\n          <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\"\n            (infoPressed)=\"getInfo($event)\"\n          ></lib-info-button>\n      </div>\n    </label>\n  </div>"
+            "templateData": "<div class=\"da-input-date-single\">\n    <div class=\"da-input-date-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-input-date\">\n      <div class=\"da-input-date-icons\" *ngIf=\"touched\">\n        <svg-icon \n            *ngIf=\"!error\" \n            class=\"da-input-date-icon green\" \n            src=\"assets/images/circleCheck.svg\"\n        ></svg-icon>\n        <svg-icon \n            *ngIf=\"error\" \n            class=\"da-input-date-icon red\" \n            src=\"assets/images/circleXmark.svg\"\n        ></svg-icon>\n    </div>\n      <mat-form-field appearance=\"fill\" color=\"accent\">\n        <!-- <mat-label>{{label}}</mat-label> -->\n        <input \n            matInput \n            [matDatepicker]=\"picker\" \n            [max]=\"maxDate\"\n            [min]=\"minDate\"\n            [value]=\"value\"\n            (dateChange)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [ngClass]=\"{'light' : light, 'error' : error}\"\n        >\n        <mat-hint></mat-hint>\n        <mat-datepicker-toggle matIconSuffix [for]=\"picker\">\n            <svg-icon src=\"assets/images/circleCheck.svg\" class=\"da-input-date-success-icon\"></svg-icon>\n        </mat-datepicker-toggle>\n        <mat-datepicker #picker color=\"primary\"></mat-datepicker>\n      </mat-form-field>\n      <div class=\"da-input-info-button\" *ngIf=\"info\">\n          <lib-info-button \n            [light]=\"light\" \n            [id]=\"info\"\n            (infoPressed)=\"getInfo($event)\"\n          ></lib-info-button>\n      </div>\n    </label>\n    <div class=\"da-input-date-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n      <div class=\"da-tooltip-arrow\">\n          <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n      </div>\n      <div class=\"da-input-date-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n          <svg-icon class=\"da-input-date-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n      </div>\n      <span>{{errorText}}</span>\n  </div>\n  </div>"
         },
         {
             "name": "ProgressButtonComponent",
@@ -4959,6 +4994,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: false,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
             },
             {
+                "name": "error",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: false,\n    placeholder: 'tt.mm.jjjj',\n    value: new Date(),\n    touched: true,\n    error: true,\n    errorText: 'die Fehlermeldung',\n  },\n}"
+            },
+            {
                 "name": "errorDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4967,6 +5012,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'falscher input',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: true,\n    light: true,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "errorDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    value: new Date(),\n    touched: true,\n    error: true,\n    errorText: 'die Fehlermeldung',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "FiveOptions",
@@ -6294,6 +6349,26 @@
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 },
                 {
+                    "name": "error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: false,\n    placeholder: 'tt.mm.jjjj',\n    value: new Date(),\n    touched: true,\n    error: true,\n    errorText: 'die Fehlermeldung',\n  },\n}"
+                },
+                {
+                    "name": "errorDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: true,\n    placeholder: 'tt.mm.jjjj',\n    value: new Date(),\n    touched: true,\n    error: true,\n    errorText: 'die Fehlermeldung',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
                     "name": "WithInfo",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -7225,7 +7300,7 @@
                 "linktype": "component",
                 "name": "InputDateComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/15",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -7244,6 +7319,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "DefaultDark",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "error",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "errorDark",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

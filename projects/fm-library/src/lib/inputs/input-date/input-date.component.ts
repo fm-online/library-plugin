@@ -12,7 +12,11 @@ export class InputDateComponent implements OnInit {
   @Input() name!: string;
   @Input() label!: string;
   @Input() maxDate!: Date;
+  @Input() minDate!: Date;
   @Input() value!: Date;
+  @Input() touched: boolean = false;
+  @Input() error: boolean = false;
+  @Input() errorText: string = '';
   @Input() placeholder!: string;
   @Input() light: boolean = false;
   @Input() info: string = '';
@@ -32,7 +36,7 @@ export class InputDateComponent implements OnInit {
   }
 
   getValue(e: any) {
-    this.success = true;
+    console.log(e.value)
     this.value = e.value;
     this.dateValue.emit(e.value);
   }

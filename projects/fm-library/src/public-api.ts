@@ -8,6 +8,7 @@ export * from './lib/buttons/button/button.component';
 export * from './lib/buttons/header-button/header-button.component';
 export * from './lib/buttons/progress-button/progress-button.component';
 export * from './lib/counter/counter.component';
+export * from './lib/icons/state-icon/state-icon.component';
 export * from './lib/inputs/dropdown/dropdown.component';
 export * from './lib/inputs/input/input.component';
 export * from './lib/inputs/input-button/input-button.component';

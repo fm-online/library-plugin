@@ -20,6 +20,16 @@ input.mat-input-element {
     &.light {
         box-shadow: 0 3px 5px $shadow-secondary-color!important;
     }
+
+    &.error {
+        background-color: $error-background!important;
+        border-bottom: 1px solid $warning-base-color!important;
+        color: $warning-base-color!important;
+
+        &::placeholder {
+            color: $warning-base-color!important;
+        }
+    }
 }
 
 .mat-datepicker-toggle {
@@ -32,7 +42,7 @@ input.mat-input-element {
     }
 }
 
-.da-input-icons {
+.da-input-date-icons {
     height: 23px;
     width: 23px;
     font-size: 24px;
@@ -41,12 +51,33 @@ input.mat-input-element {
     top: 14px;
     z-index: 2;
     border-radius: 25px;
-    box-shadow: 0 3px 5px $shadow-base-color;
     background: #fff;
 
-    .da-input-date-success-icon {
-        color: $success-color;
-        fill: $success-color;
+    .da-input-date-icon {
+
+        font-size: 25px;
+        width: 23px;
+        height: 23px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        border-radius: 25px;
+        background-color: #fff;
+        box-shadow: 0 3px 5px $shadow-base-color;
+
+        &.green {
+            fill: $success-color;
+        }
+
+        &.red {
+            fill: $warning-base-color;
+        }
+
+        svg {
+            position: relative;
+            top: -1px;
+            left: -1px;
+        }
     }
 }
 
@@ -73,6 +104,69 @@ input.mat-input-element {
             margin-top: 12px;
         }
     }
+    .da-input-date-error {
+        background-color: $button-base-color;
+        font-size: $t1-base-size;
+        color: $t1-secondary-color;
+        max-width: 185px;
+        position: absolute;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        z-index: 1;
+        margin-top: -18px;
+        justify-content: center;
+        align-items: center;
+
+        &.light {
+            color: $t1-base-color;
+            background-color: $button-secondary-color;
+            box-shadow: 0 3px 5px $shadow-base-color;
+        }
+
+    .da-tooltip-arrow {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+
+        .da-arrow-up {
+            width: 0; 
+            height: 0; 
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid $button-base-color;
+
+            &.light {
+                border-bottom: 20px solid $button-secondary-color;
+            }
+          }
+    }
+
+    .da-input-date-error-icon-wrapper {
+        background: transparent;
+        border-radius: 20px;
+        position: relative;
+        margin-right: 20px;
+        box-shadow: 0 3px 5px $shadow-base-color;
+        width: 20px;
+        height: 20px;
+
+        .da-input-date-error-icon {
+            fill: $t1-secondary-color;
+            font-size: 20px;
+        }
+
+        &.light {
+            background: #fff;
+
+            .da-input-date-error-icon {
+                fill: $t1-base-color;
+            }
+        }
+    }
+}
 
 }
 

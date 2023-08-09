@@ -123,3 +123,37 @@ export const WithSelectedDate: Story = {
     value: new Date(),
   },
 };
+
+export const error: Story = {
+  args: {
+    name: 'id',
+    label: 'Datum eintragen',
+    light: false,
+    placeholder: 'tt.mm.jjjj',
+    value: new Date(),
+    touched: true,
+    error: true,
+    errorText: 'die Fehlermeldung',
+  },
+};
+
+export const errorDark: Story = {
+  args: {
+    name: 'id',
+    label: 'Datum eintragen',
+    light: true,
+    placeholder: 'tt.mm.jjjj',
+    value: new Date(),
+    touched: true,
+    error: true,
+    errorText: 'die Fehlermeldung',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dunkel',
+      values: [
+        { name: 'dunkel', value: '#203864' },
+      ],
+    },
+  },
+};

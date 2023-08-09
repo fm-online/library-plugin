@@ -1,19 +1,29 @@
 <div class="da-input-date-single">
     <div class="da-input-date-label" [ngClass]="{'light' : light}">{{label}}</div>
     <label class="da-input-date">
-      <div class="da-input-icons" *ngIf="success">
-        <svg-icon src="assets/images/circleCheck.svg" class="da-input-date-success-icon"></svg-icon>
-      </div>
+      <div class="da-input-date-icons" *ngIf="touched">
+        <svg-icon 
+            *ngIf="!error" 
+            class="da-input-date-icon green" 
+            src="assets/images/circleCheck.svg"
+        ></svg-icon>
+        <svg-icon 
+            *ngIf="error" 
+            class="da-input-date-icon red" 
+            src="assets/images/circleXmark.svg"
+        ></svg-icon>
+    </div>
       <mat-form-field appearance="fill" color="accent">
         <!-- <mat-label>{{label}}</mat-label> -->
         <input 
             matInput 
             [matDatepicker]="picker" 
             [max]="maxDate"
+            [min]="minDate"
             [value]="value"
             (dateChange)="getValue($event)" 
             [placeholder]="placeholder"
-            [ngClass]="{'light' : light}"
+            [ngClass]="{'light' : light, 'error' : error}"
         >
         <mat-hint></mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker">
@@ -29,4 +39,13 @@
           ></lib-info-button>
       </div>
     </label>
+    <div class="da-input-date-error" *ngIf="error" [ngClass]="{'light' : light}">
+      <div class="da-tooltip-arrow">
+          <div class="da-arrow-up" [ngClass]="{'light' : light}"></div>
+      </div>
+      <div class="da-input-date-error-icon-wrapper" [ngClass]="{'light' : light}">
+          <svg-icon class="da-input-date-error-icon" src="assets/images/circleExclamation.svg"></svg-icon>
+      </div>
+      <span>{{errorText}}</span>
+  </div>
   </div>
