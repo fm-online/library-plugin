@@ -1036,7 +1036,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.mat-option,\n.mat-select {\n    font-family: $font!important;\n    color: $button-base-color!important;\n}\n\n.mat-select {\n    padding-top: 4px!important;\n}\n\n.mat-option {\n text-align: center!important;\n border-radius: 24px!important;\n\n &:hover {\n     background-color: $radiobutton-base-color!important;\n }\n}\n\n.mat-option-disabled {\n    opacity: 0.5!important;\n}\n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    width: 185px!important;\n    text-align: center!important;\n}\n\n.da-input-select-single {\n    font-family: $font!important;\n    position: relative;\n    background: #fff;\n    border-radius: 24px;\n    border: 0px solid transparent;\n    border-bottom: 1px solid $button-base-color;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    height: 42px;\n    width: 185px;\n\n    &.auto-width {\n        width: 100%;\n\n        .mat-form-field {\n            width: 100%!important;\n        }\n    }\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-input-select-label {\n        font-size: $t4-base-size;\n        top: -18px;\n        position: absolute;\n        margin-left: 20px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-select {\n        display: flex;\n        align-items: start;\n\n        .da-input-info-button {\n            top: 5px;\n            position: absolute;\n            right: -29px;\n        }\n    }\n\n    .da-input-select-success-icon {\n        color: $success-color;\n        fill: $success-color;\n        margin-top: 8px;\n        margin-left: 8px;\n        position: absolute;\n        font-size: 25px;\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.mat-option,\n.mat-select {\n    font-family: $font!important;\n    color: $button-base-color!important;\n}\n\n.mat-select {\n    padding-top: 4px!important;\n}\n\n.mat-option {\n text-align: center!important;\n border-radius: 24px!important;\n\n &:hover {\n     background-color: $radiobutton-base-color!important;\n }\n}\n\n.mat-option-disabled {\n    opacity: 0.5!important;\n}\n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    width: 185px!important;\n    text-align: center!important;\n}\n\n.da-input-select-single {\n    font-family: $font!important;\n    position: relative;\n    background: #fff;\n    border-radius: 24px;\n    border: 0px solid transparent;\n    border-bottom: 1px solid $button-base-color;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    height: 42px;\n    width: 185px;\n\n    &.auto-width {\n        width: 100%;\n\n        .mat-form-field {\n            width: 100%!important;\n        }\n    }\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-input-select-label {\n        font-size: $t4-base-size;\n        top: -18px;\n        position: absolute;\n        margin-left: 20px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-select {\n        display: flex;\n        align-items: start;\n\n        .da-input-info-button {\n            top: 5px;\n            position: absolute;\n            right: -29px;\n        }\n    }\n\n    .da-input-select-success-icon {\n        color: $success-color;\n        fill: $success-color;\n        margin-top: 8px;\n        margin-left: 8px;\n        position: absolute;\n        font-size: 25px;\n        width: 23px;\n        height: 23px;\n        border-radius: 25px;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n    }\n}",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -2105,7 +2105,7 @@
         },
         {
             "name": "InputDateComponent",
-            "id": "component-InputDateComponent-40d55ba9c483a518fb6b435507014859d71efcebed8126d15857149ccd79679a34ad1ef87c9123f5b42c0e95c1780b66989eef33af52d3de0ab16507f8ea9298",
+            "id": "component-InputDateComponent-358c56cb86a8e779c93b156cf66d23c39d2b369958e1be7badad3f58e5958c41b6af3146890378ae57c0d6975979dc6b082a4a4e6e07c4512f6afc677c8be539",
             "file": "projects/fm-library/src/lib/inputs/input-date/input-date.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2260,7 +2260,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43,
+                    "line": 44,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2321,11 +2321,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';\nimport { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';\nimport 'moment/locale/de';\n\n@Component({\n  selector: 'lib-input-date',\n  templateUrl: './input-date.component.html',\n  styleUrls: ['./input-date.component.scss']\n})\n\nexport class InputDateComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() maxDate!: Date;\n  @Input() minDate!: Date;\n  @Input() value!: Date;\n  @Input() touched: boolean = false;\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() placeholder!: string;\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  success: boolean = false;\n\n  constructor(\n    private _adapter: DateAdapter<any>,\n    @Inject(MAT_DATE_LOCALE) private _locale: string,\n  ) {\n    this._locale = 'de';\n    this._adapter.setLocale(this._locale)\n  }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    this.value = e.value;\n    this.dateValue.emit(e.value);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';\nimport { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';\nimport 'moment/locale/de';\n\n@Component({\n  selector: 'lib-input-date',\n  templateUrl: './input-date.component.html',\n  styleUrls: ['./input-date.component.scss']\n})\n\nexport class InputDateComponent implements OnInit {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() maxDate!: Date;\n  @Input() minDate!: Date;\n  @Input() value!: Date;\n  @Input() touched: boolean = false;\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() placeholder!: string;\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  success: boolean = false;\n\n  constructor(\n    private _adapter: DateAdapter<any>,\n    @Inject(MAT_DATE_LOCALE) private _locale: string,\n  ) {\n    this._locale = 'de';\n    this._adapter.setLocale(this._locale)\n  }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    console.log(e.value)\n    this.value = e.value;\n    this.dateValue.emit(e.value);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    text-align: center!important;\n}\n\ninput.mat-input-element {\n    background-color: #fff!important;\n    border-radius: 24px!important;\n    height: 42px;\n    min-width: 185px!important;\n    width: 185px!important;\n    color: $button-base-color!important;\n    border: 0px solid transparent!important;\n    border-bottom: 1px solid $button-base-color!important;\n    box-shadow: 0 3px 5px $shadow-base-color!important;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color!important;\n    }\n\n    &.error {\n        background-color: $error-background!important;\n        border-bottom: 1px solid $warning-base-color!important;\n        color: $warning-base-color!important;\n\n        &::placeholder {\n            color: $warning-base-color!important;\n        }\n    }\n}\n\n.mat-datepicker-toggle {\n    position: absolute;\n    right: -4px;\n\n    button {\n        background-color: transparent!important;\n        color: $button-base-color!important;\n    }\n}\n\n.da-input-date-icons {\n    height: 23px;\n    width: 23px;\n    font-size: 24px;\n    position: absolute;\n    left: 10px;\n    top: 14px;\n    z-index: 2;\n    border-radius: 25px;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    background: #fff;\n\n    .da-input-date-icon {\n\n        font-size: 25px;\n        width: 23px;\n        height: 23px;\n        top: 0;\n        left: 0;\n        position: absolute;\n        border-radius: 25px;\n        background-color: #fff;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n        &.green {\n            fill: $success-color;\n        }\n\n        &.red {\n            fill: $warning-base-color;\n        }\n\n        svg {\n            position: relative;\n            top: -1px;\n            left: -1px;\n        }\n    }\n}\n\n.da-input-date-single {\n    font-family: $font; \n\n    .da-input-date-label {\n        font-size: $t4-base-size;\n        margin-bottom: -4px;\n        margin-left: -55px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-date {\n        display: flex;\n        align-items: start;\n        position: relative;\n\n        .da-input-info-button {\n            margin-top: 12px;\n        }\n    }\n    .da-input-date-error {\n        background-color: $button-base-color;\n        font-size: $t1-base-size;\n        color: $t1-secondary-color;\n        max-width: 185px;\n        position: absolute;\n        border-radius: 10px;\n        padding: 10px;\n        display: flex;\n        z-index: 1;\n        margin-top: -18px;\n        justify-content: center;\n        align-items: center;\n\n        &.light {\n            color: $t1-base-color;\n            background-color: $button-secondary-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n        }\n\n    .da-tooltip-arrow {\n        width: 20px;\n        height: 20px;\n        position: absolute;\n        top: -20px;\n        left: 20px;\n\n        .da-arrow-up {\n            width: 0; \n            height: 0; \n            border-left: 20px solid transparent;\n            border-right: 20px solid transparent;\n            border-bottom: 20px solid $button-base-color;\n\n            &.light {\n                border-bottom: 20px solid $button-secondary-color;\n            }\n          }\n    }\n\n    .da-input-date-error-icon-wrapper {\n        background: transparent;\n        border-radius: 20px;\n        position: relative;\n        margin-right: 20px;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        width: 20px;\n        height: 20px;\n\n        .da-input-date-error-icon {\n            fill: $t1-secondary-color;\n            font-size: 20px;\n        }\n\n        &.light {\n            background: #fff;\n\n            .da-input-date-error-icon {\n                fill: $t1-base-color;\n            }\n        }\n    }\n}\n\n}\n\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    text-align: center!important;\n}\n\ninput.mat-input-element {\n    background-color: #fff!important;\n    border-radius: 24px!important;\n    height: 42px;\n    min-width: 185px!important;\n    width: 185px!important;\n    color: $button-base-color!important;\n    border: 0px solid transparent!important;\n    border-bottom: 1px solid $button-base-color!important;\n    box-shadow: 0 3px 5px $shadow-base-color!important;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color!important;\n    }\n\n    &.error {\n        background-color: $error-background!important;\n        border-bottom: 1px solid $warning-base-color!important;\n        color: $warning-base-color!important;\n\n        &::placeholder {\n            color: $warning-base-color!important;\n        }\n    }\n}\n\n.mat-datepicker-toggle {\n    position: absolute;\n    right: -4px;\n\n    button {\n        background-color: transparent!important;\n        color: $button-base-color!important;\n    }\n}\n\n.da-input-date-icons {\n    height: 23px;\n    width: 23px;\n    font-size: 24px;\n    position: absolute;\n    left: 10px;\n    top: 14px;\n    z-index: 2;\n    border-radius: 25px;\n    background: #fff;\n\n    .da-input-date-icon {\n\n        font-size: 25px;\n        width: 23px;\n        height: 23px;\n        top: 0;\n        left: 0;\n        position: absolute;\n        border-radius: 25px;\n        background-color: #fff;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n        &.green {\n            fill: $success-color;\n        }\n\n        &.red {\n            fill: $warning-base-color;\n        }\n\n        svg {\n            position: relative;\n            top: -1px;\n            left: -1px;\n        }\n    }\n}\n\n.da-input-date-single {\n    font-family: $font; \n\n    .da-input-date-label {\n        font-size: $t4-base-size;\n        margin-bottom: -4px;\n        margin-left: -55px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-date {\n        display: flex;\n        align-items: start;\n        position: relative;\n\n        .da-input-info-button {\n            margin-top: 12px;\n        }\n    }\n    .da-input-date-error {\n        background-color: $button-base-color;\n        font-size: $t1-base-size;\n        color: $t1-secondary-color;\n        max-width: 185px;\n        position: absolute;\n        border-radius: 10px;\n        padding: 10px;\n        display: flex;\n        z-index: 1;\n        margin-top: -18px;\n        justify-content: center;\n        align-items: center;\n\n        &.light {\n            color: $t1-base-color;\n            background-color: $button-secondary-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n        }\n\n    .da-tooltip-arrow {\n        width: 20px;\n        height: 20px;\n        position: absolute;\n        top: -20px;\n        left: 20px;\n\n        .da-arrow-up {\n            width: 0; \n            height: 0; \n            border-left: 20px solid transparent;\n            border-right: 20px solid transparent;\n            border-bottom: 20px solid $button-base-color;\n\n            &.light {\n                border-bottom: 20px solid $button-secondary-color;\n            }\n          }\n    }\n\n    .da-input-date-error-icon-wrapper {\n        background: transparent;\n        border-radius: 20px;\n        position: relative;\n        margin-right: 20px;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        width: 20px;\n        height: 20px;\n\n        .da-input-date-error-icon {\n            fill: $t1-secondary-color;\n            font-size: 20px;\n        }\n\n        &.light {\n            background: #fff;\n\n            .da-input-date-error-icon {\n                fill: $t1-base-color;\n            }\n        }\n    }\n}\n\n}\n\n\n",
                     "styleUrl": "./input-date.component.scss"
                 }
             ],
@@ -2587,6 +2587,56 @@
             "templateData": "\n<div class=\"da-progress-button-single\">\n    <button \n        (click)=\"getValue()\" \n        [ngClass]=\"{'disabled' : disabled}\" \n        [disabled]=\"disabled\"\n        #target\n    >\n    <div class=\"da-progress-button-state-wrapper\">\n        <svg-icon\n            class=\"da-progress-button-icon\" \n            [ngClass]=\"{'green' : state === 'info', 'red' : state === 'end'}\"\n            [src]=\"icon\"\n        >\n        </svg-icon>\n        <div class=\"da-progress-button-state\">\n            <svg-icon \n                *ngIf=\"state && (state === 'open' || state === 'closed'); else stateCircle\"\n                class=\"da-progress-button-state-icon\" \n                [src]=\"stateIcon\" \n            ></svg-icon>\n            <ng-template #stateCircle>\n                <div \n                    *ngIf=\"state && (state !== 'info' && state !== 'end')\"\n                    class=\"da-progress-button-state-circle\"\n                    [ngClass]=\"{'green' : state === 'success', 'yellow': state === 'warning', 'red' : state === 'error'}\"\n                ></div>\n            </ng-template>\n        </div>\n    </div>\n    <div class=\"da-progress-button-label\">\n        <span>\n            {{ label }}\n        </span>\n    </div> \n    </button>\n    <div *ngIf=\"stateLabel\" class=\"da-progress-button-state-label\">\n        <span>\n            {{ stateLabel }}\n        </span>\n    </div> \n</div>"
         },
         {
+            "name": "StateIconComponent",
+            "id": "component-StateIconComponent-4dc2ae40926f26035af4dc21ba7e44d10bd40e036c7bb5b70aebe996e4c0b839aefd61b1d30e33f42d217f8671f40802ec74d21ad9c4483294cb35c8badca9e5",
+            "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-state-icon",
+            "styleUrls": [
+                "./state-icon.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./state-icon.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "state",
+                    "defaultValue": "'warning'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';\n\n@Component({\n  selector: 'lib-state-icon',\n  templateUrl: './state-icon.component.html',\n  styleUrls: ['./state-icon.component.scss']\n})\nexport class StateIconComponent {\n  @Input() state: string = 'warning';\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-state-icon-wrapper {\n    margin-left: 15px;\n    top: 15px;\n    position: absolute;\n    background: #fff;\n    font-size: 25px;\n    width: 23px;\n    height: 23px;\n    border-radius: 25px;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    .da-state-icon {\n        position: absolute;\n        top: -1px;\n        left: -1px;\n\n        &.green {\n            color: $success-color;\n            fill: $success-color;\n        }\n\n        &.yellow {\n            color: $attention-color;\n            fill: $attention-color;\n        }\n\n        &.red {\n            color: $warning-base-color;\n            fill: $warning-base-color;\n        }\n    }\n}\n",
+                    "styleUrl": "./state-icon.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"da-state-icon-wrapper\">\n    <svg-icon class=\"da-state-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n    <svg-icon class=\"da-state-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n    <svg-icon class=\"da-state-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n</div>\n"
+        },
+        {
             "name": "TileCheckboxComponent",
             "id": "component-TileCheckboxComponent-86af04b48f6bbf90e485a3c0780f6e2ac854a202e116933bcc8cd23d91764055adfc7eca0208713ad5edc55718867d6dd4f1d187f75ce0353902d83f05304597",
             "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.component.ts",
@@ -2786,7 +2836,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-checkbox-single {\n    font-family: $font;\n\n    .da-tile-checkbox {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-checkbox-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 25px;\n                background: #fff;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-checkbox-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-checkbox-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-checkbox-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-checkbox-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-checkbox-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-checkbox-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                height: auto;\n                font-size: 19px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-checkbox-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./tile-checkbox.component.scss"
                 }
             ],
@@ -3181,7 +3231,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                background: #fff;\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -3553,7 +3603,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-rating-single {\n    font-family: $font;\n\n    .da-tile-rating {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-rating-icon-wrapper {\n                left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                width: 20px;\n                height: 20px;\n\n            .da-tile-rating-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n                color: $success-color;\n                fill: $success-color;\n\n            }\n        }\n        .da-tile-rating-stars {\n            height: 112px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            justify-content: center;\n            align-items: flex-end;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-rating-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-rating-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-rating-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-rating-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: flex-start;\n            text-align: center;\n            justify-content: center;\n            width: 175px;\n            margin: 15px 15px 0 15px;\n            overflow: hidden;\n\n        }\n\n        .da-tile-rating-info-button {\n            margin-left: 10px;\n            margin-top: 5px;\n        }\n    }\n\n    .da-tile-rating-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-rating-single {\n    font-family: $font;\n\n    .da-tile-rating {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n        }\n     \n        .da-tile-rating-icon-wrapper {\n                left: 15px;\n                top: 15px;\n                position: absolute;\n                font-size: 1.5rem;\n                background: #fff;\n                border-radius: 20px;\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n\n            .da-tile-rating-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n                color: $success-color;\n                fill: $success-color;\n\n            }\n        }\n        .da-tile-rating-stars {\n            height: 112px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            justify-content: center;\n            align-items: flex-end;\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-rating-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-rating-image {\n                color: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-rating-label {\n                color: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-rating-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: flex-start;\n            text-align: center;\n            justify-content: center;\n            width: 175px;\n            margin: 15px 15px 0 15px;\n            overflow: hidden;\n\n        }\n\n        .da-tile-rating-info-button {\n            margin-left: 10px;\n            margin-top: 5px;\n        }\n    }\n\n    .da-tile-rating-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n    }\n}\n\n\n\n",
                     "styleUrl": "./tile-rating.component.scss"
                 }
             ],
@@ -4408,13 +4458,13 @@
     "modules": [
         {
             "name": "FmLibraryModule",
-            "id": "module-FmLibraryModule-efefef525df9e5eaca60524aedbfeab30627a3db5eabce076b7840106cc61f617f474c635ae241f5a5599ca4a93a8be436dcf47825e20f58a58ff33f7a791141",
+            "id": "module-FmLibraryModule-99559ac8c6fee932a1b0807a77e3493ed81cb81eaefe9e0f03accefa3783041ee01507e25d67a034552ac26c1059f85c49f7e1f413228fa6b179dce0d4a840d1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/fm-library/src/lib/fm-library.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\nimport { HeaderButtonComponent } from './buttons/header-button/header-button.component';\nimport { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    FormsModule,\n    ReactiveFormsModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\nimport { HeaderButtonComponent } from './buttons/header-button/header-button.component';\nimport { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';\nimport { StateIconComponent } from './icons/state-icon/state-icon.component';\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n    StateIconComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    FormsModule,\n    ReactiveFormsModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n    StateIconComponent,\n  ]\n})\nexport class FmLibraryModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -4455,6 +4505,9 @@
                         },
                         {
                             "name": "ProgressButtonComponent"
+                        },
+                        {
+                            "name": "StateIconComponent"
                         },
                         {
                             "name": "TileCheckboxComponent"
@@ -4529,6 +4582,9 @@
                             "name": "ProgressButtonComponent"
                         },
                         {
+                            "name": "StateIconComponent"
+                        },
+                        {
                             "name": "TileCheckboxComponent"
                         },
                         {
@@ -4597,26 +4653,6 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4627,11 +4663,31 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dark",
@@ -4677,16 +4733,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    buttons: testButtons,\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4697,11 +4743,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    light: false,\n    id: 'the-info',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    buttons: testButtons,\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4712,6 +4758,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Stellplätze',\n    icon: 'assets/images/parking.svg',\n    state: 'success',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    light: false,\n    id: 'the-info',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4757,26 +4813,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4817,6 +4853,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4827,11 +4873,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -4842,6 +4888,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tabs: testTabsThree\n  },\n}"
             },
             {
                 "name": "Default4Stars",
@@ -5004,6 +5060,16 @@
                 "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'Datum eintragen',\n    light: false,\n    placeholder: 'tt.mm.jjjj',\n    value: new Date(),\n    touched: true,\n    error: true,\n    errorText: 'die Fehlermeldung',\n  },\n}"
             },
             {
+                "name": "Error",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    state: 'error',\n  },\n}"
+            },
+            {
                 "name": "errorDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5164,6 +5230,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.100,00',\n    type: 'text',\n    placeholder: '0,00',\n    unit: '€',\n    touched: true,\n    error: false,\n    light: false,\n    errorText: 'die Fehlermeldung',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
             },
             {
+                "name": "Success",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    state: 'success',\n  },\n}"
+            },
+            {
                 "name": "successDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5272,6 +5348,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '1.200,00',\n    unit: '€',\n    touched: false,\n    light: false,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+            },
+            {
+                "name": "Warning",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    state: 'warning',\n  },\n}"
             },
             {
                 "name": "warningDark",
@@ -5452,6 +5538,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<HeaderButtonComponent>",
+                "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonGroupComponent>",
                 "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
                 "deprecated": false,
@@ -5463,8 +5560,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderButtonComponent>",
-                "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
+                "rawtype": "StoryObj<ProgressButtonComponent>",
+                "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5485,8 +5582,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProgressButtonComponent>",
-                "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
+                "rawtype": "StoryObj<StateIconComponent>",
+                "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5531,28 +5628,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<InputDateComponent>",
                 "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderTextComponent>",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<TileTextComponent>",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5617,6 +5692,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<HeaderTextComponent>",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleCheckboxComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
@@ -5628,8 +5714,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleTristateComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "rawtype": "StoryObj<TileTextComponent>",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5641,6 +5727,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ToggleVerticalComponent>",
                 "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleTristateComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5723,6 +5820,28 @@
                     "defaultValue": "{\n  args: {\n    placeholder: '0',\n    value: 0,\n    step: 1,\n    min: 0,\n    max: 10,\n    name: 'name',\n    light: false,\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    localValue: 'true',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
                 {
                     "name": "Dark",
@@ -5765,6 +5884,28 @@
                     "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
                 {
                     "name": "Dark",
@@ -5805,50 +5946,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    localValue: 'true',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    light: false,\n  },\n}"
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
@@ -6529,6 +6626,38 @@
                     "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'name',\n    stars: 5,\n    info: 'info-rating-dark',\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts": [
+                {
+                    "name": "Error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    state: 'error',\n  },\n}"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    state: 'success',\n  },\n}"
+                },
+                {
+                    "name": "Warning",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    state: 'warning',\n  },\n}"
+                }
+            ],
             "projects/fm-library/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -6571,6 +6700,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderButtonComponent>",
+                    "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts": [
                 {
                     "name": "Story",
@@ -6584,13 +6726,13 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts": [
+            "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderButtonComponent>",
-                    "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
+                    "rawtype": "StoryObj<ProgressButtonComponent>",
+                    "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6610,13 +6752,13 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts": [
+            "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ProgressButtonComponent>",
-                    "file": "projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts",
+                    "rawtype": "StoryObj<StateIconComponent>",
+                    "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6669,32 +6811,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<InputDateComponent>",
                     "file": "projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderTextComponent>",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileTextComponent>",
-                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6766,6 +6882,19 @@
                     "kind": 177
                 }
             ],
+            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderTextComponent>",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
                 {
                     "name": "Story",
@@ -6779,13 +6908,13 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleTristateComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "rawtype": "StoryObj<TileTextComponent>",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6799,6 +6928,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleVerticalComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleTristateComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -7132,6 +7274,45 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/icons/state-icon/state-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StateIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Error",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Warning",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

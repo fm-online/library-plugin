@@ -53,6 +53,11 @@
                 color: $success-color;
                 fill: $success-color;
 
+                &.yellow {
+                    color: $attention-color;
+                    fill: $attention-color;
+                }
+
             }
         }
         .da-tile-rating-stars {

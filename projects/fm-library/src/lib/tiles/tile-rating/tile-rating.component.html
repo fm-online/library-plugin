@@ -1,7 +1,8 @@
 <div class="da-tile-rating-single">
     <div class="da-tile-rating" [ngClass]="{'mobile' : screen.isSmallest()}">
-        <div class="da-tile-rating-icon-wrapper" *ngIf="success">
-            <svg-icon class="da-tile-rating-icon" [src]="icon"></svg-icon>
+        <div class="da-tile-rating-icon-wrapper" >
+            <svg-icon *ngIf="!success" class="da-tile-rating-icon yellow" src="assets/images/circleExclamation.svg"></svg-icon>
+            <svg-icon *ngIf="success" class="da-tile-rating-icon" src="assets/images/circleCheck.svg"></svg-icon>
         </div>
         <div class="da-tile-rating-stars">
             <star-rating 

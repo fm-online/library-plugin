@@ -38,3 +38,9 @@ export const Error: Story = {
     state: 'error',
   },
 };
+
+export const Optional: Story = {
+  args: {
+    state: 'optional',
+  },
+};

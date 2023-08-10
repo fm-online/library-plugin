@@ -11,7 +11,6 @@ export class TileRatingComponent implements OnInit {
   @Input() label: string = 'label';
   @Input() name: string = 'name';
   @Input() stars: number = 5;
-  @Input() icon: string = 'assets/images/circleCheck.svg';
   @Input() info:  string = '';
   @Input() rating: number = 0;
   @Input() success!: boolean;
