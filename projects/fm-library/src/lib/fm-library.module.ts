@@ -33,6 +33,7 @@ import { HeaderTextComponent } from './text/header-text/header-text.component';
 import { HeaderButtonComponent } from './buttons/header-button/header-button.component';
 import { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';
 import { StateIconComponent } from './icons/state-icon/state-icon.component';
+import { TooltipComponent } from './info/tooltip/tooltip.component';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -57,6 +58,7 @@ import { StateIconComponent } from './icons/state-icon/state-icon.component';
     HeaderButtonComponent,
     ProgressButtonComponent,
     StateIconComponent,
+    TooltipComponent,
   ],
   imports: [
     CommonModule,
@@ -95,6 +97,7 @@ import { StateIconComponent } from './icons/state-icon/state-icon.component';
     HeaderButtonComponent,
     ProgressButtonComponent,
     StateIconComponent,
+    TooltipComponent
   ]
 })
 export class FmLibraryModule { }

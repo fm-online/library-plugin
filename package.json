@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "create": "ng generate component",
     "publish": "npm install && cd projects/fm-library && npm version patch && cd ../.. && npm run build && git commit -m bump projects/fm-library/package.json && cd dist/fm-library && npm publish",
     "storybook": "ng run storybook:start-storybook",
     "chromatic": "npx chromatic --project-token=c8b05c1834a0",

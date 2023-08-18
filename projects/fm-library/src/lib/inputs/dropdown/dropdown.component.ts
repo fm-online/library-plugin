@@ -23,7 +23,6 @@ export class DropdownComponent {
   constructor() { }
 
   getValue(e: any) {
-    console.log(e)
     this.success = true;
     this.selectValue.emit(e);
   }

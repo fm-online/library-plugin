@@ -19,7 +19,6 @@ export class ToggleCheckboxComponent implements OnInit {
   }
 
   getValue(e: any) {
-    console.log(e.srcElement.checked)
     this.checkboxValue.emit(e.srcElement.checked);
   }
 

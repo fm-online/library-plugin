@@ -47,7 +47,6 @@ export class CounterComponent implements OnInit {
     }
 
     this.counterValue.emit(newCount);
-    console.log(element.value)
   }
 
 }

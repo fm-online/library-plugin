@@ -36,7 +36,6 @@ export class InputDateComponent implements OnInit {
   }
 
   getValue(e: any) {
-    console.log(e.value)
     this.value = e.value;
     this.dateValue.emit(e.value);
   }

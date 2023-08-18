@@ -14,7 +14,6 @@ export class ToggleTristateComponent implements OnInit {
   }
 
   getValue(e: any) {
-    console.log(e.srcElement.value)
     this.switchValue.emit(e.srcElement.value);
   }
 

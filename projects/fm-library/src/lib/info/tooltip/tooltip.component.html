@@ -1,0 +1,9 @@
+<div class="da-tooltip" [ngClass]="{'light' : light, 'auto-width' : autoWidth}">
+    <div class="da-tooltip-arrow">
+        <div class="da-arrow-up" [ngClass]="{'light' : light}"></div>
+    </div>
+    <div class="da-tooltip-icon-wrapper" [ngClass]="{'light' : light}">
+        <svg-icon class="da-tooltip-icon" [src]="icon"></svg-icon>
+    </div>
+    <span>{{text}}</span>
+</div>

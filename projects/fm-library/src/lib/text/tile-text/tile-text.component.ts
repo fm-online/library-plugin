@@ -31,7 +31,6 @@ export class TileTextComponent implements OnInit {
   }
 
   getInfo(e: string) {
-    console.log(e);
     this.infoValue.emit(e);
   }
 
