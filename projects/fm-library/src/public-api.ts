@@ -21,6 +21,7 @@ export * from './lib/tiles/tile-group/tile-group.component';
 export * from './lib/tiles/tile-rating/tile-rating.component';
 export * from './lib/toggle/toggle/toggle.component';
 export * from './lib/toggle/toggle-vertical/toggle-vertical.component';
+export * from './lib/toggle/toggle-horizontal/toggle-horizontal.component';
 export * from './lib/toggle/toggle-checkbox/toggle-checkbox.component';
 export * from './lib/toggle/toggle-tristate/toggle-tristate.component';
 export * from './lib/text/tile-text/tile-text.component';
