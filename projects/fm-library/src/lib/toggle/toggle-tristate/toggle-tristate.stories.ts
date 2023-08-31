@@ -50,7 +50,7 @@ const testTabsTwo = [
   {
     'label': 'N° 1',
     'name': 'name',
-    'state': 'success',
+    'state': 'error',
     'value': 'value1',
     'checked': true
   },

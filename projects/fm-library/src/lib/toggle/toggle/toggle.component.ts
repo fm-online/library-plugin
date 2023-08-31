@@ -10,7 +10,7 @@ export class ToggleComponent {
   @Input() value1: string = 'value1';
   @Input() label2: string = 'label2';
   @Input() value2: string = 'value2';
-  @Input() localValue: string | undefined = 'localValue';
+  @Input() localValue: string = 'localValue';
   @Input() light: boolean = false;
 
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
@@ -22,7 +22,7 @@ export class ToggleComponent {
   }
 
   getValue(e: any) {
-    this.localValue = e;
+    this.localValue = e.srcElement.value;
     this.switchValue.emit(e.srcElement.value);
   }
 

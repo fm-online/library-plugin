@@ -27,6 +27,7 @@ export const Default: Story = {
     value1: 'true',
     value2: 'false',
     name: 'name',
+    localValue: '',
     light: false,
   },
 };

@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ToggleTristateComponent implements OnInit {
   @Input() tabs: any;
+  @Input() name: string = 'tristate-input'
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
   constructor() { }
 

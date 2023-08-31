@@ -87,6 +87,10 @@
                 &.success {
                     background-color: $success-color;
                 }
+
+                &.error {
+                    background-color: $warning-base-color;
+                }
             }
         }
     }

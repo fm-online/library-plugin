@@ -9,7 +9,7 @@
         >
         <div class="da-tab-slider">
             <span class="da-tab-label">{{tab.label}}</span>
-            <span class="da-tab-state" [ngClass]="tab.state === 'success' ? 'success' : 'warning'"></span>
+            <span class="da-tab-state" [ngClass]="tab.state === 'success' ? 'success' : tab.state === 'error' ? 'error' : 'warning'"></span>
         </div>
     </label>
 </div>
