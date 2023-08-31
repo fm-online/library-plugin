@@ -26,6 +26,7 @@ import { TileGroupComponent } from './tiles/tile-group/tile-group.component';
 import { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';
 import { ToggleComponent } from './toggle/toggle/toggle.component';
 import { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';
+import { ToggleHorizontalComponent } from './toggle/toggle-horizontal/toggle-horizontal.component';
 import { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';
 import { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';
 import { TileTextComponent } from './text/tile-text/tile-text.component';
@@ -59,6 +60,7 @@ import { TooltipComponent } from './info/tooltip/tooltip.component';
     ProgressButtonComponent,
     StateIconComponent,
     TooltipComponent,
+    ToggleHorizontalComponent,
   ],
   imports: [
     CommonModule,
@@ -90,6 +92,7 @@ import { TooltipComponent } from './info/tooltip/tooltip.component';
     TileRatingComponent,
     ToggleComponent,
     ToggleVerticalComponent,
+    ToggleHorizontalComponent,
     ToggleCheckboxComponent,
     ToggleTristateComponent,
     TileTextComponent,

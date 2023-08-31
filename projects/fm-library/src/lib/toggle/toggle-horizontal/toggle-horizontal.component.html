@@ -1,0 +1,22 @@
+<div class="da-toggle-horizontal-wrapper">
+    <div class="da-toggle-horizontal-label" [ngClass]="{'light' : light}" *ngIf="label">{{label}}</div>
+    <div class="da-toggle-horizontal" [ngClass]="{'light' : light}">
+        <ng-container *ngFor="let option of options; let num = index">
+            <label class="da-switch top" [ngStyle]="{ 'width': elementWidth }">
+                <input 
+                    type="radio" 
+                    (change)="sendValue($event)" 
+                    [name]="name" 
+                    [value]="option.value"
+                    [checked]="getCheckedOption(option.value)"
+                >
+                <div class="da-switch-slider top" [ngClass]="{'light' : light}" [ngStyle]="{ 'width': elementWidth }">
+                    <span class="da-switch-label">{{option.label}}</span>
+                    <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
+                </div>
+            </label>
+        </ng-container>
+    </div>
+</div>
+
+
