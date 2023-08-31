@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 @Component({
   selector: 'lib-toggle',
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.component.scss']
 })
-export class ToggleComponent {
+export class ToggleComponent implements OnChanges{
   @Input() name: string = 'name';
   @Input() label1: string = 'label1';
   @Input() value1: string = 'value1';
@@ -17,8 +17,14 @@ export class ToggleComponent {
   
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['localValue']) {
+      this.localValue = changes['localValue'].currentValue;
+    }
+  }
+
   getCheckedOption(value: string) {
-    return this.localValue === value;
+    return this.localValue == value;
   }
 
   getValue(e: any) {

@@ -3998,7 +3998,7 @@
         },
         {
             "name": "ToggleComponent",
-            "id": "component-ToggleComponent-1819928fa61b051d57f1ecc3f6a107aba2fec72c249f17c6532e88b73fd21fc398fff46d04e18bfe87c911cbb3f2b4b0a504b64d74b2326c39a5c8491743f452",
+            "id": "component-ToggleComponent-ecc0e003792d7901aa8b07afb9003b27345b63b49436b427cc7a2a37ab6f0ebab4e6fd582791db426fd51f52db31365aaa1497465fd6a8f4be9b71f0157e3bb2",
             "file": "projects/fm-library/src/lib/toggle/toggle/toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4104,7 +4104,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4132,13 +4132,41 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
                             "name": "e",
                             "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -4155,7 +4183,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() localValue: string = 'localValue';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  getValue(e: any) {\n    this.localValue = e.srcElement.value;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent implements OnChanges{\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() localValue: string = 'localValue';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnChanges(changes: SimpleChanges) {\n    console.log(changes);\n  }\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  getValue(e: any) {\n    this.localValue = e.srcElement.value;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4172,6 +4200,9 @@
                 "args": [],
                 "line": 16
             },
+            "implements": [
+                "OnChanges"
+            ],
             "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value1\"\n            [checked]=\"getCheckedOption(value1)\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value2\"\n            [checked]=\"getCheckedOption(value2)\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
         },
         {
@@ -8593,7 +8624,7 @@
                 "linktype": "component",
                 "name": "ToggleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {
