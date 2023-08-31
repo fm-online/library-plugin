@@ -64,7 +64,7 @@ export const Default: Story = {
     localValue: '',
     name: 'name',
     light: false,
-    elementWidth: '200px',
+    elementWidth: '100px',
   },
 };
 
@@ -74,7 +74,7 @@ export const Dark: Story = {
     localValue: '',
     name: 'name',
     light: true,
-    elementWidth: '200px',
+    elementWidth: '100px',
   },
   parameters: {
     backgrounds: {
@@ -92,6 +92,6 @@ export const FiveOptions: Story = {
     localValue: '',
     name: 'name',
     light: false,
-    elementWidth: '200px',
+    elementWidth: '100px',
   },
 };

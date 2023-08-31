@@ -12,7 +12,7 @@ export class ToggleHorizontalComponent {
   @Input() options: any;
   @Input() light: boolean = false;
   @Input() localValue: string = 'localValue';
-  @Input() elementWidth: string = '110px';
+  @Input() elementWidth: string = '100px';
 
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
   
