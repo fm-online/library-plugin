@@ -25,7 +25,8 @@ export const Default: Story = {
   args: {
     label: 'das Label',
     checked: true,
-    light: false
+    light: false,
+    dynLabelClassName: 'dynamic-class'
   },
 };
 
@@ -33,7 +34,8 @@ export const Dark: Story = {
   args: {
     label: 'das Label',
     checked: true,
-    light: true
+    light: true,
+    dynLabelClassName: 'dynamic-class'
   },
   parameters: {
     backgrounds: {

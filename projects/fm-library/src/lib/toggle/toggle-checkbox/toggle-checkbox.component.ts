@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ToggleCheckboxComponent implements OnInit {
   @Input() form: any;
   @Input() label: string = 'label';
+  @Input() dynLabelClassName?: string;
   @Input() name: string = 'name'; 
   @Input() checked: boolean = false;
   @Input() light: boolean = false;
@@ -22,4 +23,14 @@ export class ToggleCheckboxComponent implements OnInit {
     this.checkboxValue.emit(e.srcElement.checked);
   }
 
+  getLabelClassNames() {
+    let label = 'da-switch-label';
+    if (this.light) {
+      label = label + ' light';
+    }
+    if (this.dynLabelClassName) {
+      label = label + ' ' + this.dynLabelClassName;
+    }
+    return label;
+  }
 }

@@ -23,6 +23,6 @@
             <svg-icon class="da-switch-icon" src="assets/images/xmark.svg"></svg-icon>
         </span>
     </label>
-    <span class="da-switch-label" [ngClass]="{'light' : light}">{{label}}</span>
+    <span [ngClass]="getLabelClassNames()">{{label}}</span>
 </div>
 
