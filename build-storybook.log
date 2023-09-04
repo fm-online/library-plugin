@@ -1,4 +1,4 @@
-info => Cleaning outputDir: C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--3428-6MbBRiAIToAn
+info => Cleaning outputDir: C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--17996-L2uy7eQ3krHj
 
                                                                         
                                                                         
@@ -22,433 +22,433 @@ Node.js version : v16.16.0
 
 Operating system : Windows 10
 
-[15:44:09] No configuration file found, switching to CLI flags.
-[15:44:09] Using tsconfig file : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\tsconfig.json
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\preview.ts
-[15:44:09] Excluding      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\main.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\typings.d.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\public-api.ts
-[15:44:09] Excluding      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\test.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\fm-library.module.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\stories\User.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\counter\counter.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\counter\counter.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\counter\counter.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\services\helper.service.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\services\helper.service.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button-group\button-group.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button-group\button-group.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button-group\button-group.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button\button.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button\button.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button\button.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\info-button\info-button.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\info-button\info-button.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\info-button\info-button.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\header-button\header-button.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\header-button\header-button.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\header-button\header-button.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\progress-button\progress-button.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\progress-button\progress-button.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\progress-button\progress-button.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\icons\state-icon\state-icon.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\icons\state-icon\state-icon.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\icons\state-icon\state-icon.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\info\tooltip\tooltip.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\info\tooltip\tooltip.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\info\tooltip\tooltip.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\dropdown\dropdown.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\dropdown\dropdown.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\dropdown\dropdown.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input\input.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input\input.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input\input.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-button\input-button.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-button\input-button.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-button\input-button.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-date\input-date.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-date\input-date.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-date\input-date.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\tile-text\tile-text.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\tile-text\tile-text.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\tile-text\tile-text.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\header-text\header-text.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\header-text\header-text.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\header-text\header-text.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle\toggle.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle\toggle.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle\toggle.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-checkbox\toggle-checkbox.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-checkbox\toggle-checkbox.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-checkbox\toggle-checkbox.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-horizontal\toggle-horizontal.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-horizontal\toggle-horizontal.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-horizontal\toggle-horizontal.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-tristate\toggle-tristate.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-tristate\toggle-tristate.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile\tile.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile\tile.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-tristate\toggle-tristate.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-vertical\toggle-vertical.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-vertical\toggle-vertical.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-vertical\toggle-vertical.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox\tile-checkbox.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox\tile-checkbox.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox\tile-checkbox.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox-group\tile-checkbox-group.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox-group\tile-checkbox-group.component.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-group\tile-group.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-group\tile-group.stories.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-group\tile-group.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox-group\tile-checkbox-group.stories.ts
-[15:44:09] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-rating\tile-rating.component.spec.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-rating\tile-rating.component.ts
-[15:44:09] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-rating\tile-rating.stories.ts
-[15:44:09] Searching package.json file
-[15:44:09] package.json file found
-[15:44:09] Processing package.json dependencies
-[15:44:09] Searching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files
-[15:44:09] README.md file found
-[15:44:09] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\CHANGELOG read
-[15:44:09] Continuing without CHANGELOG.md file
-[15:44:09] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\CONTRIBUTING read
-[15:44:09] Continuing without CONTRIBUTING.md file
-[15:44:09] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\LICENSE read
-[15:44:09] Continuing without LICENSE.md file
-[15:44:09] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\TODO read
-[15:44:09] Continuing without TODO.md file
-[15:44:09] Get dependencies data
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/.storybook/preview.ts
-[15:44:09] found          : preview
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/public-api.ts
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/fm-library.module.ts
-[15:44:09] found          : FmLibraryModule
-[15:44:09]                : - imports:
-[15:44:09]                : 	- CommonModule
-[15:44:09]                : 	- FontAwesomeModule
-[15:44:09]                : 	- MatSelectModule
-[15:44:09]                : 	- MatFormFieldModule
-[15:44:09]                : 	- MatDatepickerModule
-[15:44:09]                : 	- MatInputModule
-[15:44:09]                : 	- MatNativeDateModule
-[15:44:09]                : 	- NgbTooltipModule
-[15:44:09]                : 	- FormsModule
-[15:44:09]                : 	- ReactiveFormsModule
-[15:44:09]                : 	- StarRatingModule
-[15:44:09]                : 	- AngularSvgIconModule
-[15:44:09]                : - exports:
-[15:44:09]                : 	- ButtonComponent
-[15:44:09]                : 	- ButtonGroupComponent
-[15:44:09]                : 	- InfoButtonComponent
-[15:44:09]                : 	- CounterComponent
-[15:44:09]                : 	- DropdownComponent
-[15:44:09]                : 	- InputComponent
-[15:44:09]                : 	- InputButtonComponent
-[15:44:09]                : 	- InputDateComponent
-[15:44:09]                : 	- TileComponent
-[15:44:09]                : 	- TileCheckboxComponent
-[15:44:09]                : 	- TileCheckboxGroupComponent
-[15:44:09]                : 	- TileGroupComponent
-[15:44:09]                : 	- TileRatingComponent
-[15:44:09]                : 	- ToggleComponent
-[15:44:09]                : 	- ToggleVerticalComponent
-[15:44:09]                : 	- ToggleHorizontalComponent
-[15:44:09]                : 	- ToggleCheckboxComponent
-[15:44:09]                : 	- ToggleTristateComponent
-[15:44:09]                : 	- TileTextComponent
-[15:44:09]                : 	- HeaderTextComponent
-[15:44:09]                : 	- HeaderButtonComponent
-[15:44:09]                : 	- ProgressButtonComponent
-[15:44:09]                : 	- StateIconComponent
-[15:44:09]                : 	- TooltipComponent
-[15:44:09]                : - declarations:
-[15:44:09]                : 	- ButtonComponent
-[15:44:09]                : 	- ButtonGroupComponent
-[15:44:09]                : 	- InfoButtonComponent
-[15:44:09]                : 	- CounterComponent
-[15:44:09]                : 	- DropdownComponent
-[15:44:09]                : 	- InputComponent
-[15:44:09]                : 	- InputButtonComponent
-[15:44:09]                : 	- InputDateComponent
-[15:44:09]                : 	- TileComponent
-[15:44:09]                : 	- TileCheckboxComponent
-[15:44:09]                : 	- TileCheckboxGroupComponent
-[15:44:09]                : 	- TileGroupComponent
-[15:44:09]                : 	- TileRatingComponent
-[15:44:09]                : 	- ToggleComponent
-[15:44:09]                : 	- ToggleVerticalComponent
-[15:44:09]                : 	- ToggleCheckboxComponent
-[15:44:09]                : 	- ToggleTristateComponent
-[15:44:09]                : 	- TileTextComponent
-[15:44:09]                : 	- HeaderTextComponent
-[15:44:09]                : 	- HeaderButtonComponent
-[15:44:09]                : 	- ProgressButtonComponent
-[15:44:09]                : 	- StateIconComponent
-[15:44:09]                : 	- TooltipComponent
-[15:44:09]                : 	- ToggleHorizontalComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/stories/User.ts
-[15:44:09] found          : User
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/counter/counter.component.ts
-[15:44:09] found          : CounterComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/counter/counter.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/services/helper.service.ts
-[15:44:09] found          : HelperService
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button-group/button-group.component.ts
-[15:44:09] found          : ButtonGroupComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testButtons
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button/button.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] found          : Disabled
-[15:44:09] found          : DisabledDark
-[15:44:09] found          : Icon
-[15:44:09] found          : IconDark
-[15:44:09] found          : IconLeft
-[15:44:09] found          : IconLeftDark
-[15:44:09] found          : IconRight
-[15:44:09] found          : IconRightDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button/button.component.ts
-[15:44:09] found          : ButtonComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/info-button/info-button.component.ts
-[15:44:09] found          : InfoButtonComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Disabled
-[15:44:09] found          : Inactive
-[15:44:09] found          : Active
-[15:44:09] found          : Icon
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/header-button/header-button.component.ts
-[15:44:09] found          : HeaderButtonComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Dashboard
-[15:44:09] found          : Ende
-[15:44:09] found          : Disabled
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/progress-button/progress-button.component.ts
-[15:44:09] found          : ProgressButtonComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/icons/state-icon/state-icon.component.ts
-[15:44:09] found          : StateIconComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Success
-[15:44:09] found          : Warning
-[15:44:09] found          : Error
-[15:44:09] found          : Optional
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/info/tooltip/tooltip.component.ts
-[15:44:09] found          : TooltipComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testItems
-[15:44:09] found          : placeholderTest
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] found          : WithInfo
-[15:44:09] found          : WithInfoDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/dropdown/dropdown.component.ts
-[15:44:09] found          : DropdownComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input/input.component.ts
-[15:44:09] found          : InputComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input/input.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] found          : withInfo
-[15:44:09] found          : withInfoDark
-[15:44:09] found          : error
-[15:44:09] found          : errorDark
-[15:44:09] found          : success
-[15:44:09] found          : successDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-button/input-button.component.ts
-[15:44:09] found          : InputButtonComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] found          : withInfo
-[15:44:09] found          : withInfoDark
-[15:44:09] found          : warning
-[15:44:09] found          : warningDark
-[15:44:09] found          : short
-[15:44:09] found          : shortDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-date/input-date.component.ts
-[15:44:09] found          : InputDateComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : DefaultDark
-[15:44:09] found          : WithInfo
-[15:44:09] found          : WithInfoDark
-[15:44:09] found          : WithMaxDate
-[15:44:09] found          : WithSelectedDate
-[15:44:09] found          : error
-[15:44:09] found          : errorDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/tile-text/tile-text.component.ts
-[15:44:09] found          : TileTextComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] found          : WithInfo
-[15:44:09] found          : WithInfoDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/header-text/header-text.component.ts
-[15:44:09] found          : HeaderTextComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/header-text/header-text.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] found          : WithInfo
-[15:44:09] found          : WithInfoDark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle/toggle.component.ts
-[15:44:09] found          : ToggleComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.component.ts
-[15:44:09] found          : ToggleCheckboxComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.component.ts
-[15:44:09] found          : ToggleHorizontalComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testOptions3
-[15:44:09] found          : testOptions5
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] found          : FiveOptions
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testTabsThree
-[15:44:09] found          : testTabsTwo
-[15:44:09] found          : Default
-[15:44:09] found          : TwoTabs
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile/tile.component.ts
-[15:44:09] found          : TileComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.component.ts
-[15:44:09] found          : ToggleTristateComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts
-[15:44:09] found          : ToggleVerticalComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testOptions2
-[15:44:09] found          : testOptions5
-[15:44:09] found          : Default
-[15:44:09] found          : Dark
-[15:44:09] found          : FiveOptions
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : Default
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.component.ts
-[15:44:09] found          : TileCheckboxComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.component.ts
-[15:44:09] found          : TileCheckboxGroupComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testTiles
-[15:44:09] found          : Default
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-group/tile-group.component.ts
-[15:44:09] found          : TileGroupComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts
-[15:44:09] found          : Story
-[15:44:09] found          : testTiles
-[15:44:09] found          : Default
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-rating/tile-rating.component.ts
-[15:44:09] found          : TileRatingComponent
-[15:44:09] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts
-[15:44:10] found          : Story
-[15:44:10] found          : Default4Stars
-[15:44:10] found          : Default5Stars
-[15:44:10] -------------------
-[15:44:10] Project statistics 
-[15:44:10] - files      : 53
-[15:44:10] - module     : 1
-[15:44:10] - component  : 24
-[15:44:10] - injectable : 1
-[15:44:10] - interface  : 1
-[15:44:10] -------------------
-[15:44:10] Prepare components
-[15:44:10]  ButtonComponent has a templateUrl, include it
-[15:44:10]  ButtonComponent has styleUrls, include them
-[15:44:10]  ButtonGroupComponent has a templateUrl, include it
-[15:44:10]  ButtonGroupComponent has styleUrls, include them
-[15:44:10]  CounterComponent has a templateUrl, include it
-[15:44:10]  CounterComponent has styleUrls, include them
-[15:44:10]  DropdownComponent has a templateUrl, include it
-[15:44:10]  DropdownComponent has styleUrls, include them
-[15:44:10]  HeaderButtonComponent has a templateUrl, include it
-[15:44:10]  HeaderButtonComponent has styleUrls, include them
-[15:44:10]  HeaderTextComponent has a templateUrl, include it
-[15:44:10]  HeaderTextComponent has styleUrls, include them
-[15:44:10]  InfoButtonComponent has a templateUrl, include it
-[15:44:10]  InfoButtonComponent has styleUrls, include them
-[15:44:10]  InputButtonComponent has a templateUrl, include it
-[15:44:10]  InputButtonComponent has styleUrls, include them
-[15:44:10]  InputComponent has a templateUrl, include it
-[15:44:10]  InputComponent has styleUrls, include them
-[15:44:10]  InputDateComponent has a templateUrl, include it
-[15:44:10]  InputDateComponent has styleUrls, include them
-[15:44:10]  ProgressButtonComponent has a templateUrl, include it
-[15:44:10]  ProgressButtonComponent has styleUrls, include them
-[15:44:10]  StateIconComponent has a templateUrl, include it
-[15:44:10]  StateIconComponent has styleUrls, include them
-[15:44:10]  TileCheckboxComponent has a templateUrl, include it
-[15:44:10]  TileCheckboxComponent has styleUrls, include them
-[15:44:10]  TileCheckboxGroupComponent has a templateUrl, include it
-[15:44:10]  TileCheckboxGroupComponent has styleUrls, include them
-[15:44:10]  TileComponent has a templateUrl, include it
-[15:44:10]  TileComponent has styleUrls, include them
-[15:44:10]  TileGroupComponent has a templateUrl, include it
-[15:44:10]  TileGroupComponent has styleUrls, include them
-[15:44:10]  TileRatingComponent has a templateUrl, include it
-[15:44:10]  TileRatingComponent has styleUrls, include them
-[15:44:10]  TileTextComponent has a templateUrl, include it
-[15:44:10]  TileTextComponent has styleUrls, include them
-[15:44:10]  ToggleCheckboxComponent has a templateUrl, include it
-[15:44:10]  ToggleCheckboxComponent has styleUrls, include them
-[15:44:10]  ToggleComponent has a templateUrl, include it
-[15:44:10]  ToggleComponent has styleUrls, include them
-[15:44:10]  ToggleHorizontalComponent has a templateUrl, include it
-[15:44:10]  ToggleHorizontalComponent has styleUrls, include them
-[15:44:10]  ToggleTristateComponent has a templateUrl, include it
-[15:44:10]  ToggleTristateComponent has styleUrls, include them
-[15:44:10]  ToggleVerticalComponent has a templateUrl, include it
-[15:44:10]  ToggleVerticalComponent has styleUrls, include them
-[15:44:10]  TooltipComponent has a templateUrl, include it
-[15:44:10]  TooltipComponent has styleUrls, include them
-[15:44:10] Prepare modules
-[15:44:10] Prepare injectables
-[15:44:10] Prepare interfaces
-[15:44:10] Prepare miscellaneous
-[15:44:10] Process documentation coverage report
-[15:44:10] Generating documentation in export format json
-[15:44:10] Documentation generated in projects/fm-library/ in 1.43 seconds
+[10:13:13] No configuration file found, switching to CLI flags.
+[10:13:13] Using tsconfig file : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\tsconfig.json
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\preview.ts
+[10:13:13] Excluding      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\main.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\.storybook\typings.d.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\public-api.ts
+[10:13:13] Excluding      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\test.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\fm-library.module.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\stories\User.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\counter\counter.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\counter\counter.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\counter\counter.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\services\helper.service.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\services\helper.service.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button\button.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button\button.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button\button.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button-group\button-group.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button-group\button-group.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\button-group\button-group.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\header-button\header-button.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\header-button\header-button.stories.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\header-button\header-button.component.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\progress-button\progress-button.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\progress-button\progress-button.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\progress-button\progress-button.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\info-button\info-button.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\info-button\info-button.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\buttons\info-button\info-button.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\icons\state-icon\state-icon.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\icons\state-icon\state-icon.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\icons\state-icon\state-icon.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input\input.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input\input.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input\input.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\dropdown\dropdown.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\dropdown\dropdown.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\dropdown\dropdown.stories.ts
+[10:13:13] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-button\input-button.component.spec.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-button\input-button.component.ts
+[10:13:13] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-button\input-button.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-date\input-date.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-date\input-date.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\inputs\input-date\input-date.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\info\tooltip\tooltip.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\info\tooltip\tooltip.stories.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\info\tooltip\tooltip.component.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\header-text\header-text.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\header-text\header-text.stories.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\header-text\header-text.component.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\tile-text\tile-text.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\tile-text\tile-text.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\text\tile-text\tile-text.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile\tile.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile\tile.component.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox\tile-checkbox.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox\tile-checkbox.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox\tile-checkbox.stories.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox-group\tile-checkbox-group.component.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox-group\tile-checkbox-group.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-checkbox-group\tile-checkbox-group.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-rating\tile-rating.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-rating\tile-rating.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-rating\tile-rating.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-group\tile-group.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-group\tile-group.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\tiles\tile-group\tile-group.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle\toggle.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle\toggle.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle\toggle.stories.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-checkbox\toggle-checkbox.component.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-checkbox\toggle-checkbox.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-checkbox\toggle-checkbox.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-horizontal\toggle-horizontal.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-horizontal\toggle-horizontal.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-horizontal\toggle-horizontal.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-tristate\toggle-tristate.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-tristate\toggle-tristate.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-tristate\toggle-tristate.stories.ts
+[10:13:14] Ignoring       : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-vertical\toggle-vertical.component.spec.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-vertical\toggle-vertical.component.ts
+[10:13:14] Including      : C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\src\lib\toggle\toggle-vertical\toggle-vertical.stories.ts
+[10:13:14] Searching package.json file
+[10:13:14] package.json file found
+[10:13:14] Processing package.json dependencies
+[10:13:14] Searching README.md, CHANGELOG.md, CONTRIBUTING.md, LICENSE.md, TODO.md files
+[10:13:14] README.md file found
+[10:13:14] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\CHANGELOG read
+[10:13:14] Continuing without CHANGELOG.md file
+[10:13:14] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\CONTRIBUTING read
+[10:13:14] Continuing without CONTRIBUTING.md file
+[10:13:14] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\LICENSE read
+[10:13:14] Continuing without LICENSE.md file
+[10:13:14] Error during C:\Angular\Projekte\Finanzmakler Online\library-plugin\TODO read
+[10:13:14] Continuing without TODO.md file
+[10:13:14] Get dependencies data
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/.storybook/preview.ts
+[10:13:14] found          : preview
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/public-api.ts
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/fm-library.module.ts
+[10:13:14] found          : FmLibraryModule
+[10:13:14]                : - imports:
+[10:13:14]                : 	- CommonModule
+[10:13:14]                : 	- FontAwesomeModule
+[10:13:14]                : 	- MatSelectModule
+[10:13:14]                : 	- MatFormFieldModule
+[10:13:14]                : 	- MatDatepickerModule
+[10:13:14]                : 	- MatInputModule
+[10:13:14]                : 	- MatNativeDateModule
+[10:13:14]                : 	- NgbTooltipModule
+[10:13:14]                : 	- FormsModule
+[10:13:14]                : 	- ReactiveFormsModule
+[10:13:14]                : 	- StarRatingModule
+[10:13:14]                : 	- AngularSvgIconModule
+[10:13:14]                : - exports:
+[10:13:14]                : 	- ButtonComponent
+[10:13:14]                : 	- ButtonGroupComponent
+[10:13:14]                : 	- InfoButtonComponent
+[10:13:14]                : 	- CounterComponent
+[10:13:14]                : 	- DropdownComponent
+[10:13:14]                : 	- InputComponent
+[10:13:14]                : 	- InputButtonComponent
+[10:13:14]                : 	- InputDateComponent
+[10:13:14]                : 	- TileComponent
+[10:13:14]                : 	- TileCheckboxComponent
+[10:13:14]                : 	- TileCheckboxGroupComponent
+[10:13:14]                : 	- TileGroupComponent
+[10:13:14]                : 	- TileRatingComponent
+[10:13:14]                : 	- ToggleComponent
+[10:13:14]                : 	- ToggleVerticalComponent
+[10:13:14]                : 	- ToggleHorizontalComponent
+[10:13:14]                : 	- ToggleCheckboxComponent
+[10:13:14]                : 	- ToggleTristateComponent
+[10:13:14]                : 	- TileTextComponent
+[10:13:14]                : 	- HeaderTextComponent
+[10:13:14]                : 	- HeaderButtonComponent
+[10:13:14]                : 	- ProgressButtonComponent
+[10:13:14]                : 	- StateIconComponent
+[10:13:14]                : 	- TooltipComponent
+[10:13:14]                : - declarations:
+[10:13:14]                : 	- ButtonComponent
+[10:13:14]                : 	- ButtonGroupComponent
+[10:13:14]                : 	- InfoButtonComponent
+[10:13:14]                : 	- CounterComponent
+[10:13:14]                : 	- DropdownComponent
+[10:13:14]                : 	- InputComponent
+[10:13:14]                : 	- InputButtonComponent
+[10:13:14]                : 	- InputDateComponent
+[10:13:14]                : 	- TileComponent
+[10:13:14]                : 	- TileCheckboxComponent
+[10:13:14]                : 	- TileCheckboxGroupComponent
+[10:13:14]                : 	- TileGroupComponent
+[10:13:14]                : 	- TileRatingComponent
+[10:13:14]                : 	- ToggleComponent
+[10:13:14]                : 	- ToggleVerticalComponent
+[10:13:14]                : 	- ToggleCheckboxComponent
+[10:13:14]                : 	- ToggleTristateComponent
+[10:13:14]                : 	- TileTextComponent
+[10:13:14]                : 	- HeaderTextComponent
+[10:13:14]                : 	- HeaderButtonComponent
+[10:13:14]                : 	- ProgressButtonComponent
+[10:13:14]                : 	- StateIconComponent
+[10:13:14]                : 	- TooltipComponent
+[10:13:14]                : 	- ToggleHorizontalComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/stories/User.ts
+[10:13:14] found          : User
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/counter/counter.component.ts
+[10:13:14] found          : CounterComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/counter/counter.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/services/helper.service.ts
+[10:13:14] found          : HelperService
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button/button.component.ts
+[10:13:14] found          : ButtonComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button/button.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] found          : Disabled
+[10:13:14] found          : DisabledDark
+[10:13:14] found          : Icon
+[10:13:14] found          : IconDark
+[10:13:14] found          : IconLeft
+[10:13:14] found          : IconLeftDark
+[10:13:14] found          : IconRight
+[10:13:14] found          : IconRightDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button-group/button-group.component.ts
+[10:13:14] found          : ButtonGroupComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testButtons
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Disabled
+[10:13:14] found          : Inactive
+[10:13:14] found          : Active
+[10:13:14] found          : Icon
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/header-button/header-button.component.ts
+[10:13:14] found          : HeaderButtonComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/progress-button/progress-button.component.ts
+[10:13:14] found          : ProgressButtonComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/progress-button/progress-button.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Dashboard
+[10:13:14] found          : Ende
+[10:13:14] found          : Disabled
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/info-button/info-button.component.ts
+[10:13:14] found          : InfoButtonComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/icons/state-icon/state-icon.component.ts
+[10:13:14] found          : StateIconComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Success
+[10:13:14] found          : Warning
+[10:13:14] found          : Error
+[10:13:14] found          : Optional
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input/input.component.ts
+[10:13:14] found          : InputComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input/input.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] found          : withInfo
+[10:13:14] found          : withInfoDark
+[10:13:14] found          : error
+[10:13:14] found          : errorDark
+[10:13:14] found          : success
+[10:13:14] found          : successDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/dropdown/dropdown.component.ts
+[10:13:14] found          : DropdownComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testItems
+[10:13:14] found          : placeholderTest
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] found          : WithInfo
+[10:13:14] found          : WithInfoDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-button/input-button.component.ts
+[10:13:14] found          : InputButtonComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] found          : withInfo
+[10:13:14] found          : withInfoDark
+[10:13:14] found          : warning
+[10:13:14] found          : warningDark
+[10:13:14] found          : short
+[10:13:14] found          : shortDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-date/input-date.component.ts
+[10:13:14] found          : InputDateComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/inputs/input-date/input-date.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] found          : WithInfo
+[10:13:14] found          : WithInfoDark
+[10:13:14] found          : WithMaxDate
+[10:13:14] found          : WithSelectedDate
+[10:13:14] found          : error
+[10:13:14] found          : errorDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : DefaultDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/info/tooltip/tooltip.component.ts
+[10:13:14] found          : TooltipComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/header-text/header-text.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] found          : WithInfo
+[10:13:14] found          : WithInfoDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/header-text/header-text.component.ts
+[10:13:14] found          : HeaderTextComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/tile-text/tile-text.component.ts
+[10:13:14] found          : TileTextComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] found          : WithInfo
+[10:13:14] found          : WithInfoDark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile/tile.component.ts
+[10:13:14] found          : TileComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.component.ts
+[10:13:14] found          : TileCheckboxComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.component.ts
+[10:13:14] found          : TileCheckboxGroupComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testTiles
+[10:13:14] found          : Default
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-rating/tile-rating.component.ts
+[10:13:14] found          : TileRatingComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default4Stars
+[10:13:14] found          : Default5Stars
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-group/tile-group.component.ts
+[10:13:14] found          : TileGroupComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testTiles
+[10:13:14] found          : Default
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle/toggle.component.ts
+[10:13:14] found          : ToggleComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.component.ts
+[10:13:14] found          : ToggleCheckboxComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.component.ts
+[10:13:14] found          : ToggleHorizontalComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testOptions3
+[10:13:14] found          : testOptions5
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] found          : FiveOptions
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.component.ts
+[10:13:14] found          : ToggleTristateComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testTabsThree
+[10:13:14] found          : testTabsTwo
+[10:13:14] found          : Default
+[10:13:14] found          : TwoTabs
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts
+[10:13:14] found          : ToggleVerticalComponent
+[10:13:14] parsing        : C:/Angular/Projekte/Finanzmakler Online/library-plugin/projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts
+[10:13:14] found          : Story
+[10:13:14] found          : testOptions2
+[10:13:14] found          : testOptions5
+[10:13:14] found          : Default
+[10:13:14] found          : Dark
+[10:13:14] found          : FiveOptions
+[10:13:14] -------------------
+[10:13:14] Project statistics 
+[10:13:14] - files      : 53
+[10:13:14] - module     : 1
+[10:13:14] - component  : 24
+[10:13:14] - injectable : 1
+[10:13:14] - interface  : 1
+[10:13:14] -------------------
+[10:13:14] Prepare components
+[10:13:14]  ButtonComponent has a templateUrl, include it
+[10:13:14]  ButtonComponent has styleUrls, include them
+[10:13:14]  ButtonGroupComponent has a templateUrl, include it
+[10:13:14]  ButtonGroupComponent has styleUrls, include them
+[10:13:14]  CounterComponent has a templateUrl, include it
+[10:13:14]  CounterComponent has styleUrls, include them
+[10:13:14]  DropdownComponent has a templateUrl, include it
+[10:13:14]  DropdownComponent has styleUrls, include them
+[10:13:14]  HeaderButtonComponent has a templateUrl, include it
+[10:13:14]  HeaderButtonComponent has styleUrls, include them
+[10:13:14]  HeaderTextComponent has a templateUrl, include it
+[10:13:14]  HeaderTextComponent has styleUrls, include them
+[10:13:14]  InfoButtonComponent has a templateUrl, include it
+[10:13:14]  InfoButtonComponent has styleUrls, include them
+[10:13:14]  InputButtonComponent has a templateUrl, include it
+[10:13:14]  InputButtonComponent has styleUrls, include them
+[10:13:14]  InputComponent has a templateUrl, include it
+[10:13:14]  InputComponent has styleUrls, include them
+[10:13:14]  InputDateComponent has a templateUrl, include it
+[10:13:14]  InputDateComponent has styleUrls, include them
+[10:13:14]  ProgressButtonComponent has a templateUrl, include it
+[10:13:14]  ProgressButtonComponent has styleUrls, include them
+[10:13:14]  StateIconComponent has a templateUrl, include it
+[10:13:14]  StateIconComponent has styleUrls, include them
+[10:13:14]  TileCheckboxComponent has a templateUrl, include it
+[10:13:14]  TileCheckboxComponent has styleUrls, include them
+[10:13:14]  TileCheckboxGroupComponent has a templateUrl, include it
+[10:13:14]  TileCheckboxGroupComponent has styleUrls, include them
+[10:13:14]  TileComponent has a templateUrl, include it
+[10:13:14]  TileComponent has styleUrls, include them
+[10:13:14]  TileGroupComponent has a templateUrl, include it
+[10:13:14]  TileGroupComponent has styleUrls, include them
+[10:13:14]  TileRatingComponent has a templateUrl, include it
+[10:13:14]  TileRatingComponent has styleUrls, include them
+[10:13:14]  TileTextComponent has a templateUrl, include it
+[10:13:14]  TileTextComponent has styleUrls, include them
+[10:13:14]  ToggleCheckboxComponent has a templateUrl, include it
+[10:13:14]  ToggleCheckboxComponent has styleUrls, include them
+[10:13:14]  ToggleComponent has a templateUrl, include it
+[10:13:14]  ToggleComponent has styleUrls, include them
+[10:13:14]  ToggleHorizontalComponent has a templateUrl, include it
+[10:13:14]  ToggleHorizontalComponent has styleUrls, include them
+[10:13:14]  ToggleTristateComponent has a templateUrl, include it
+[10:13:14]  ToggleTristateComponent has styleUrls, include them
+[10:13:14]  ToggleVerticalComponent has a templateUrl, include it
+[10:13:14]  ToggleVerticalComponent has styleUrls, include them
+[10:13:14]  TooltipComponent has a templateUrl, include it
+[10:13:14]  TooltipComponent has styleUrls, include them
+[10:13:14] Prepare modules
+[10:13:14] Prepare injectables
+[10:13:14] Prepare interfaces
+[10:13:14] Prepare miscellaneous
+[10:13:14] Process documentation coverage report
+[10:13:14] Generating documentation in export format json
+[10:13:14] Documentation generated in projects/fm-library/ in 1.558 seconds
 
 info => Loading presets
 info => Building manager..
-info => Manager built (486 ms)
+info => Manager built (511 ms)
 info => Compiling preview..
-info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-plugin\node_modules\@storybook\manager\static at C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--3428-6MbBRiAIToAn\sb-common-assets
+info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-plugin\node_modules\@storybook\manager\static at C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--17996-L2uy7eQ3krHj\sb-common-assets
 info Addon-docs: using MDX2
 info => Using implicit CSS loaders
 info => Using angular browser target options from "fm-library:build"
@@ -562,40 +562,38 @@ info => Using default Webpack5 setup
 <s> [webpack.Progress] 10% building import loader ./node_modules/@angular-devkit/build-angular/src/babel/webpack-loader.js
 <s> [webpack.Progress] 10% building import loader ./node_modules/@storybook/builder-webpack5/node_modules/babel-loader/lib/index.js
 <s> [webpack.Progress] 10% building 0/1 entries 1/1 dependencies 0/1 modules
-info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\assets at C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--3428-6MbBRiAIToAn\
+info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-plugin\projects\fm-library\assets at C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--17996-L2uy7eQ3krHj\
 <s> [webpack.Progress] 10% building 0/1 entries 17/21 dependencies 3/17 modules
 <s> [webpack.Progress] 10% building import loader ./node_modules/@ngtools/webpack/src/ivy/index.js
 <s> [webpack.Progress] 10% building 0/1 entries 24/88 dependencies 4/23 modules
 <s> [webpack.Progress] 10% building import loader ./node_modules/@storybook/mdx2-csf/loader.js
-<s> [webpack.Progress] 10% building 0/1 entries 39/102 dependencies 8/32 modules
+<s> [webpack.Progress] 10% building 0/1 entries 38/98 dependencies 7/32 modules
 <s> [webpack.Progress] 10% building import loader ./node_modules/unplugin/dist/webpack/loaders/load.js
-<s> [webpack.Progress] 10% building 0/1 entries 110/123 dependencies 11/74 modules
-<s> [webpack.Progress] 11% building 0/1 entries 134/147 dependencies 22/85 modules
-<s> [webpack.Progress] 12% building 0/1 entries 234/315 dependencies 43/129 modules
-<s> [webpack.Progress] 12% building import loader ./node_modules/postcss-loader/dist/cjs.js
-<s> [webpack.Progress] 12% building import loader ./node_modules/resolve-url-loader/index.js
-<s> [webpack.Progress] 12% building import loader ./node_modules/sass-loader/dist/cjs.js
-<s> [webpack.Progress] 12% building 0/1 entries 283/354 dependencies 47/149 modules
-<s> [webpack.Progress] 12% building 0/1 entries 320/400 dependencies 48/164 modules
-<s> [webpack.Progress] 12% building 0/1 entries 400/467 dependencies 50/190 modules
-<s> [webpack.Progress] 13% building 0/1 entries 439/470 dependencies 60/200 modules
-<s> [webpack.Progress] 13% building 0/1 entries 445/500 dependencies 67/202 modules
-<s> [webpack.Progress] 14% building 0/1 entries 500/587 dependencies 80/211 modules
-<s> [webpack.Progress] 14% building 0/1 entries 579/600 dependencies 80/239 modules
-<s> [webpack.Progress] 14% building 0/1 entries 586/700 dependencies 84/241 modules
-<s> [webpack.Progress] 15% building 0/1 entries 884/1200 dependencies 105/448 modules
-<s> [webpack.Progress] 17% building 0/1 entries 1290/1300 dependencies 128/617 modules
-<s> [webpack.Progress] 19% building 0/1 entries 1472/1500 dependencies 170/667 modules
-<s> [webpack.Progress] 22% building 0/1 entries 1600/1609 dependencies 226/673 modules
-<s> [webpack.Progress] 24% building 0/1 entries 1685/1700 dependencies 264/685 modules
-<s> [webpack.Progress] 26% building 0/1 entries 1757/1758 dependencies 300/685 modules
-<s> [webpack.Progress] 30% building 0/1 entries 1861/1900 dependencies 373/685 modules
-<s> [webpack.Progress] 35% building 0/1 entries 2100/2125 dependencies 462/740 modules
-<s> [webpack.Progress] 42% building 0/1 entries 2259/2300 dependencies 583/782 modules
-<s> [webpack.Progress] 42% building 0/1 entries 2330/2400 dependencies 597/818 modules
-<s> [webpack.Progress] 47% building 0/1 entries 2488/2500 dependencies 682/860 modules
-<s> [webpack.Progress] 54% building 0/1 entries 2631/2643 dependencies 800/887 modules
-<s> [webpack.Progress] 55% building 0/1 entries 2697/2700 dependencies 820/910 modules
+<s> [webpack.Progress] 10% building 0/1 entries 105/123 dependencies 11/69 modules
+<s> [webpack.Progress] 10% building 0/1 entries 111/123 dependencies 12/75 modules
+<s> [webpack.Progress] 11% building 0/1 entries 153/241 dependencies 22/100 modules
+<s> [webpack.Progress] 11% building import loader ./node_modules/postcss-loader/dist/cjs.js
+<s> [webpack.Progress] 11% building import loader ./node_modules/resolve-url-loader/index.js
+<s> [webpack.Progress] 11% building import loader ./node_modules/sass-loader/dist/cjs.js
+<s> [webpack.Progress] 11% building 0/1 entries 259/313 dependencies 36/130 modules
+<s> [webpack.Progress] 12% building 0/1 entries 297/364 dependencies 38/163 modules
+<s> [webpack.Progress] 12% building 0/1 entries 396/443 dependencies 39/189 modules
+<s> [webpack.Progress] 13% building 0/1 entries 437/500 dependencies 61/198 modules
+<s> [webpack.Progress] 14% building 0/1 entries 500/553 dependencies 75/211 modules
+<s> [webpack.Progress] 14% building 0/1 entries 557/600 dependencies 80/232 modules
+<s> [webpack.Progress] 14% building 0/1 entries 665/734 dependencies 84/300 modules
+<s> [webpack.Progress] 15% building 0/1 entries 847/900 dependencies 105/429 modules
+<s> [webpack.Progress] 17% building 0/1 entries 1090/1100 dependencies 133/532 modules
+<s> [webpack.Progress] 20% building 0/1 entries 1300/1518 dependencies 184/576 modules
+<s> [webpack.Progress] 22% building 0/1 entries 1590/1600 dependencies 219/688 modules
+<s> [webpack.Progress] 25% building 0/1 entries 1800/1812 dependencies 279/741 modules
+<s> [webpack.Progress] 26% building 0/1 entries 1820/1822 dependencies 300/751 modules
+<s> [webpack.Progress] 32% building 0/1 entries 1976/1996 dependencies 400/757 modules
+<s> [webpack.Progress] 35% building 0/1 entries 2091/2100 dependencies 472/758 modules
+<s> [webpack.Progress] 39% building 0/1 entries 2294/2300 dependencies 539/816 modules
+<s> [webpack.Progress] 43% building 0/1 entries 2400/2463 dependencies 617/831 modules
+<s> [webpack.Progress] 51% building 0/1 entries 2595/2600 dependencies 761/877 modules
+<s> [webpack.Progress] 54% building 0/1 entries 2697/2700 dependencies 816/910 modules
 <s> [webpack.Progress] 59% building 0/1 entries 2705/2705 dependencies 900/912 modules
 <s> [webpack.Progress] 64% building 1/1 entries 2705/2705 dependencies 912/912 modules
 <s> [webpack.Progress] 65% building
@@ -699,10 +697,10 @@ info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-pl
 <s> [webpack.Progress] 92% sealing asset processing TerserPlugin
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.f0398d50.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.f0398d50.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.79a1acb9.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.79a1acb9.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.86f30de1.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin main.86f30de1.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.5db82e44.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin runtime~main.5db82e44.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin stories-Introduction-mdx.5d9ebe23.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin stories-Introduction-mdx.5d9ebe23.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-buttons-button-group-button-group-stories.378b2120.iframe.bundle.js generate SourceMap
@@ -741,8 +739,8 @@ info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-pl
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-tiles-tile-group-tile-group-stories.e94968e2.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-tiles-tile-rating-tile-rating-stories.1050f268.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-tiles-tile-rating-tile-rating-stories.1050f268.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.cca2c279.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.cca2c279.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.5e0787b1.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.5e0787b1.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-horizontal-toggle-horizontal-stories.2c0e9ef4.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-horizontal-toggle-horizontal-stories.2c0e9ef4.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin lib-toggle-toggle-tristate-toggle-tristate-stories.974bc37f.iframe.bundle.js generate SourceMap
@@ -814,10 +812,10 @@ info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-pl
 <s> [webpack.Progress] 92% sealing asset processing HtmlWebpackPlugin
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin main.6f7b9fb3.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin main.6f7b9fb3.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin runtime~main.5cc9fe5a.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin runtime~main.5cc9fe5a.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin main.63e46582.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin main.63e46582.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin runtime~main.2ec206c0.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin runtime~main.2ec206c0.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-buttons-button-group-button-group-stories.60acd666.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-buttons-button-group-button-group-stories.60acd666.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-buttons-button-button-stories.861d54ce.iframe.bundle.js generate SourceMap
@@ -854,8 +852,8 @@ info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-pl
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-tiles-tile-group-tile-group-stories.58297a1a.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-tiles-tile-rating-tile-rating-stories.fb7586b9.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-tiles-tile-rating-tile-rating-stories.fb7586b9.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.ee14e4bd.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.ee14e4bd.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.81614f9d.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-checkbox-toggle-checkbox-stories.81614f9d.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-horizontal-toggle-horizontal-stories.e47d3170.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-horizontal-toggle-horizontal-stories.e47d3170.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin lib-toggle-toggle-tristate-toggle-tristate-stories.8fa8ed94.iframe.bundle.js generate SourceMap
@@ -932,7 +930,7 @@ info => Copying static files: C:\Angular\Projekte\Finanzmakler Online\library-pl
 <s> [webpack.Progress] 99% cache begin idle
 <s> [webpack.Progress] 100% 
 
-info => Preview built (1.82 min)
+info => Preview built (1.73 min)
 WARN Module Warning (from ./node_modules/postcss-loader/dist/cjs.js):
 WARN Warning
 WARN 
@@ -950,7 +948,7 @@ WARN Add only entry points to the 'files' or 'include' properties in your tsconf
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
 WARN Assets: 
-WARN   main.6f7b9fb3.iframe.bundle.js (344 KiB)
+WARN   main.63e46582.iframe.bundle.js (345 KiB)
 WARN   103.f4455e7b.iframe.bundle.js (391 KiB)
 WARN   123.26beda81.iframe.bundle.js (583 KiB)
 WARN   641.9d895412.iframe.bundle.js (760 KiB)
@@ -960,12 +958,12 @@ WARN   97.e80bbb14.iframe.bundle.js (594 KiB)
 WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
 WARN Entrypoints:
 WARN   main (2.14 MiB)
-WARN       runtime~main.5cc9fe5a.iframe.bundle.js
+WARN       runtime~main.2ec206c0.iframe.bundle.js
 WARN       888.c7e9f68f.iframe.bundle.js
-WARN       main.6f7b9fb3.iframe.bundle.js
+WARN       main.63e46582.iframe.bundle.js
 WARN 
 <s> [webpack.Progress] 99% cache shutdown
 <s> [webpack.Progress] 99% cache shutdown
 <s> [webpack.Progress] 100% 
 
-info => Output directory: C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--3428-6MbBRiAIToAn
+info => Output directory: C:\Users\ROBIN~1.BEH\AppData\Local\Temp\chromatic--17996-L2uy7eQ3krHj
