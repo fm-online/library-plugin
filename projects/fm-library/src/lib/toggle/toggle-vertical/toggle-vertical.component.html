@@ -1,16 +1,20 @@
-<div class="da-toggle-vertical" [ngClass]="{'light' : light}">
+<div class="da-toggle-vertical" [ngClass]="{'light' : light, 'auto-height' : multiLine}">
     <ng-container *ngFor="let option of options; let num = index">
-        <label class="da-switch top">
+        <label class="da-switch top" [ngClass]="{'auto-height' : multiLine, 'disabled': inputDisabled}">
             <input 
                 type="radio" 
                 (change)="sendValue($event)" 
                 [name]="name" 
+                [disabled]="inputDisabled"
                 [value]="option.value"
                 [checked]="getCheckedOption(option.value)"
             >
-            <div class="da-switch-slider top" [ngClass]="{'light' : light}">
-                <span class="da-switch-label">{{option.label}}</span>
-                <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
+            <div class="da-switch-slider top" 
+                 [ngClass]="{'light' : light, 
+                             'auto-height' : multiLine, 
+                             'disabled': inputDisabled}">
+                <div class="da-switch-label">{{option.label}}</div>
+                <svg-icon *ngIf="!inputDisabled" class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
             </div>
         </label>
     </ng-container>

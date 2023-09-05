@@ -35,6 +35,7 @@ import { HeaderButtonComponent } from './buttons/header-button/header-button.com
 import { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';
 import { StateIconComponent } from './icons/state-icon/state-icon.component';
 import { TooltipComponent } from './info/tooltip/tooltip.component';
+import { TextAreaComponent } from './inputs/text-area/text-area.component';
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -61,6 +62,7 @@ import { TooltipComponent } from './info/tooltip/tooltip.component';
     StateIconComponent,
     TooltipComponent,
     ToggleHorizontalComponent,
+    TextAreaComponent,
   ],
   imports: [
     CommonModule,
@@ -100,7 +102,8 @@ import { TooltipComponent } from './info/tooltip/tooltip.component';
     HeaderButtonComponent,
     ProgressButtonComponent,
     StateIconComponent,
-    TooltipComponent
+    TooltipComponent,
+    TextAreaComponent
   ]
 })
 export class FmLibraryModule { }

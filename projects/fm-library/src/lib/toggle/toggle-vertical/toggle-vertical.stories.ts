@@ -30,6 +30,17 @@ const testOptions2 = [
   }
 ]
 
+const testOptions3 = [
+  {
+    'label': 'label1',
+    'value': 'value1'
+  },
+  {
+    'label': 'Grundstück wird für das Neubauvorhaben verwendet',
+    'value': 'value2'
+  }
+]
+
 const testOptions5 = [
   {
     'label': 'label1',
@@ -84,6 +95,25 @@ export const FiveOptions: Story = {
   args: {
     options: testOptions5,
     localValue: '',
+    name: 'name',
+    light: false,
+  },
+};
+
+export const disabled: Story = {
+  args: {
+    options: testOptions2,
+    localValue: 'value2',
+    inputDisabled: true,
+    name: 'name',
+    light: false,
+  },
+};
+
+export const multiLine: Story = {
+  args: {
+    options: testOptions3,
+    multiLine: true,
     name: 'name',
     light: false,
   },

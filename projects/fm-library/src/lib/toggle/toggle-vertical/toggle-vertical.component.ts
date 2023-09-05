@@ -8,6 +8,8 @@ export class ToggleVerticalComponent {
   @Input() name: string = 'name';
   @Input() options: any;
   @Input() light: boolean = false;
+  @Input() inputDisabled: boolean = false;
+  @Input() multiLine: boolean = false;
   @Input() localValue: string = 'localValue';
 
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();

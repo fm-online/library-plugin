@@ -1,0 +1,26 @@
+<div class="da-text-area-single">
+    <div class="da-text-area-label" [ngClass]="{'light' : light}">{{label}}</div>
+    <label class="da-text-area-wrapper">
+        <div  contenteditable
+            class="da-text-area"
+            autocomplete="off"
+            [innerHTML]="value ? value : placeholder"
+            (keyup)="getValue($event)"
+            (click)="removePlaceholder()"
+            [ngClass]="{'light' : light, 
+                        'auto-width' : autoWidth,
+                        'with-placeholder' : !value && placeholder, 
+                        'auto-height' : multiLine, 
+                        'disabled': inputDisabled}"
+            #target
+        ></div>
+        <div class="da-text-area-info-button" *ngIf="info">
+            <lib-info-button 
+            [light]="light" 
+            (infoPressed)="getInfo($event)"
+            [id]="info"
+            ></lib-info-button>
+        </div>
+    </label>
+</div>
+

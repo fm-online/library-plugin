@@ -1,0 +1,81 @@
+@import "../../../styles.scss"; 
+
+.da-text-area-single {
+    font-family: $font;
+
+    .da-text-area-label {
+        font-size: $t4-base-size;
+        margin-bottom: 3px;
+        text-align: left;
+        margin-left: 21px;
+        color: $t4-base-color;
+
+        &.light {
+            color: $t4-secondary-color;
+        }
+    }
+
+    .da-text-area-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: -21px;
+        
+        .da-text-area {
+            width: 160px;
+            height: 26px;
+            border-radius: 24px;
+            background-color: #fff;
+            border: 0px solid transparent;
+            border-bottom: 1px solid $button-base-color;
+            box-shadow: 0 3px 5px $shadow-base-color;
+            text-align: left;
+            padding: 8px 20px;
+            font-size: $t1-base-size;
+            color: $t1-base-color;
+            font-family: $font;
+            cursor: text;
+            overflow: hidden;
+
+            &:hover,
+            &:focus,
+            &:focus-visible {
+                outline: none;
+            }
+
+            &.auto-width {
+                width: 100%;
+            }
+
+            &.auto-height {
+                min-height: 26px;
+                height: auto;
+            }
+
+            &.light {
+                box-shadow: 0 3px 5px $shadow-secondary-color;
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &.disabled {
+                background-color: $header-base-color;
+                color: $t1-base-color;
+                opacity: 0.5;
+                cursor: default;
+            }
+            &.with-placeholder {
+                color: $t5-base-color;
+            }
+        }
+
+        .da-text-area-info-button {
+            margin-left: 10px;
+        }
+
+    }
+}
+
