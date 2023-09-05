@@ -2638,7 +2638,7 @@
         },
         {
             "name": "TextAreaComponent",
-            "id": "component-TextAreaComponent-a97972b4c126c18568afd3660e454ce6ce45fd536d9d654d4ebc295561fcfa0db3d5ea1ede8b233e31f951a86e36833e9827e4679b5dce9a4fb7dc9a170e2767",
+            "id": "component-TextAreaComponent-ab8cbcf88e866de64a5346dbf398652e88ac966c758745b0e776d21beb4f5d8a15cf59f237dc4a7f1cad1f396a2cc2a9f067467ed582ff28a9112b3f56bcd0d2",
             "file": "projects/fm-library/src/lib/inputs/text-area/text-area.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2660,7 +2660,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2669,7 +2669,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -2678,7 +2678,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "string",
                     "decorators": []
                 },
@@ -2687,7 +2687,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 },
@@ -2696,7 +2696,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2714,7 +2714,16 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "multiLine",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2728,8 +2737,8 @@
                     "decorators": []
                 },
                 {
-                    "name": "type",
-                    "defaultValue": "'text'",
+                    "name": "placeholder",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
@@ -2752,7 +2761,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 21,
                     "type": "EventEmitter<any>"
                 },
                 {
@@ -2760,7 +2769,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -2779,7 +2788,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2795,12 +2804,50 @@
                     ]
                 },
                 {
+                    "name": "getValue",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "removePlaceholder",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2812,11 +2859,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-text-area',\n  templateUrl: './text-area.component.html',\n  styleUrls: ['./text-area.component.scss']\n})\nexport class TextAreaComponent implements OnInit {\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() value: string = '';\n  @Input() type: string = 'text';\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() inputDisabled: boolean = false;\n  @Input() light: boolean = false;\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-text-area',\n  templateUrl: './text-area.component.html',\n  styleUrls: ['./text-area.component.scss']\n})\nexport class TextAreaComponent implements OnInit {\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() value: string = '';\n  @Input() placeholder: string = '';\n  @Input() multiLine: boolean = false;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() inputDisabled: boolean = false;\n  @Input() light: boolean = false;\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  getValue(e: any) {\n    this.inputValue.emit([e.srcElement.innerHTML, this.name]);\n  }\n\n  removePlaceholder() {\n    this.placeholder = '';\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-text-area-single {\n    font-family: $font;\n\n    .da-text-area-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        text-align: left;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-text-area {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-right: -21px;\n        \n        text-area {\n            width: 160px;\n            height: 26px;\n            border-radius: 24px;\n            background-color: #fff;\n            border: 0px solid transparent;\n            border-bottom: 1px solid $button-base-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 20px;\n            font-size: $t1-base-size;\n            color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                outline: none;\n            }\n\n            &.auto-width {\n                width: 100%;\n\n            }\n\n            &.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    outline: none;\n                }\n            }\n\n            &.disabled {\n                background-color: $header-base-color;\n                color: $t1-base-color;\n                opacity: 0.5;\n            }\n        }\n\n        .da-text-area-info-button {\n            margin-left: -10px;\n            margin-top: -5px;\n        }\n\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-text-area-single {\n    font-family: $font;\n\n    .da-text-area-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        text-align: left;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-text-area-wrapper {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-right: -21px;\n        \n        .da-text-area {\n            width: 160px;\n            height: 26px;\n            border-radius: 24px;\n            background-color: #fff;\n            border: 0px solid transparent;\n            border-bottom: 1px solid $button-base-color;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: left;\n            padding: 8px 20px;\n            font-size: $t1-base-size;\n            color: $t1-base-color;\n            font-family: $font;\n            cursor: text;\n            overflow: hidden;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                outline: none;\n            }\n\n            &.auto-width {\n                width: 100%;\n            }\n\n            &.auto-height {\n                min-height: 26px;\n                height: auto;\n            }\n\n            &.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    outline: none;\n                }\n            }\n\n            &.disabled {\n                background-color: $header-base-color;\n                color: $t1-base-color;\n                opacity: 0.5;\n                cursor: default;\n            }\n            &.with-placeholder {\n                color: $t5-base-color;\n            }\n        }\n\n        .da-text-area-info-button {\n            margin-left: 10px;\n        }\n\n    }\n}\n\n",
                     "styleUrl": "./text-area.component.scss"
                 }
             ],
@@ -2827,12 +2874,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 20
+                "line": 21
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-text-area-single\">\n    <div class=\"da-text-area-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-text-area\">\n        <textarea \n            autocomplete=\"off\"\n            [name]=\"name\"\n            [readonly]=\"inputDisabled\"\n            [value]=\"value\"\n            [ngClass]=\"{'light' : light, 'auto-width' : autoWidth, 'disabled': inputDisabled}\"\n            #target\n        ></textarea>\n        <div class=\"da-text-area-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-text-area-single\">\n    <div class=\"da-text-area-label\" [ngClass]=\"{'light' : light}\">{{label}}</div>\n    <label class=\"da-text-area-wrapper\">\n        <div  contenteditable\n            class=\"da-text-area\"\n            autocomplete=\"off\"\n            [innerHTML]=\"value ? value : placeholder\"\n            (keyup)=\"getValue($event)\"\n            (click)=\"removePlaceholder()\"\n            [ngClass]=\"{'light' : light, \n                        'auto-width' : autoWidth,\n                        'with-placeholder' : !value && placeholder, \n                        'auto-height' : multiLine, \n                        'disabled': inputDisabled}\"\n            #target\n        ></div>\n        <div class=\"da-text-area-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n</div>\n\n"
         },
         {
             "name": "TileCheckboxComponent",
@@ -4707,7 +4754,7 @@
         },
         {
             "name": "ToggleVerticalComponent",
-            "id": "component-ToggleVerticalComponent-43101d4ee299656c242d5b20ad87f3eb7f5dc7ea7da65c4521aaa8aad71f20bed9b40f90f68f31b651b96af2e4989832b3ac93200c28889660c1c50a9af96274",
+            "id": "component-ToggleVerticalComponent-b0cd4fb43a620c84d6a87cc5383eeab802e9d9739a33c8e5ec37839c93e094f8bec257c7975ff912154a80d0105f58ccb4a8a79c8b98a324340c7ba25faf8327",
             "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4725,6 +4772,15 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "inputDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "light",
                     "defaultValue": "false",
                     "deprecated": false,
@@ -4738,8 +4794,17 @@
                     "defaultValue": "'localValue'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 13,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "multiLine",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -4766,7 +4831,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -4785,7 +4850,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4813,7 +4878,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4836,11 +4901,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent {\n  @Input() name: string = 'name';\n  @Input() options: any;\n  @Input() light: boolean = false;\n  @Input() localValue: string = 'localValue';\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent {\n  @Input() name: string = 'name';\n  @Input() options: any;\n  @Input() light: boolean = false;\n  @Input() inputDisabled: boolean = false;\n  @Input() multiLine: boolean = false;\n  @Input() localValue: string = 'localValue';\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle-vertical {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    overflow: hidden;\n    flex-direction: column;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 200px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n                z-index: 2;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 20px;\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: 10px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.bottom {\n                right: 0px;\n                left: 0px;\n                width: 200px;\n            }\n\n            &.top {\n                left: 0px;\n                right: 0px;\n                width: 200px;\n            }\n\n            &:before {\n                position: absolute;\n                content: \"\";\n                height: 42px;\n                width: 200%;\n                border-radius: 21px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n\n            &.top:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n\n\n            }\n\n            &.bottom:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle-vertical {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    overflow: hidden;\n    flex-direction: column;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 200px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.disabled {\n            cursor: default;\n        }\n        &.auto-height {\n            min-height: 42px;\n            height: auto;\n        }\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n            }\n\n            &:checked + .da-switch-slider.disabled {\n                background-color: $header-base-color;\n                color: $t1-base-color;\n                fill: $t1-base-color;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 20px;\n            width: calc(100% - 60px);\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: 10px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: relative;\n            cursor: pointer;\n            margin-top: -3px;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.top:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n\n            &.disabled {\n                cursor: auto;\n                pointer-events: none;\n            }\n\n            &.auto-height {\n                min-height: 42px;\n                height: auto;\n\n                .da-switch-label {\n                    white-space: normal;\n                    display: block;\n                    padding: 10px 0;\n                }\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./toggle-vertical.component.scss"
                 }
             ],
@@ -4851,9 +4916,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 13
+                "line": 15
             },
-            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [value]=\"option.value\"\n                [checked]=\"getCheckedOption(option.value)\"\n            >\n            <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\">\n                <span class=\"da-switch-label\">{{option.label}}</span>\n                <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light, 'auto-height' : multiLine}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\" [ngClass]=\"{'auto-height' : multiLine, 'disabled': inputDisabled}\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [disabled]=\"inputDisabled\"\n                [value]=\"option.value\"\n                [checked]=\"getCheckedOption(option.value)\"\n            >\n            <div class=\"da-switch-slider top\" \n                 [ngClass]=\"{'light' : light, \n                             'auto-height' : multiLine, \n                             'disabled': inputDisabled}\">\n                <div class=\"da-switch-label\">{{option.label}}</div>\n                <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
         },
         {
             "name": "TooltipComponent",
@@ -5355,7 +5420,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'id',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    value: '',\n    placeholder: 'placeholder text',\n    label: 'label'\n  },\n}"
             },
             {
                 "name": "Default",
@@ -5565,7 +5630,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    light: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    value: '',\n    light: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "disabled",
@@ -5585,7 +5650,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'ganz langer Text, zum Beispiel Anschlussfinanzierung',\n    type: 'text',\n    inputDisabled: true,\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'der Text',\n    inputDisabled: true,\n  },\n}"
+            },
+            {
+                "name": "disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: 'value2',\n    inputDisabled: true,\n    name: 'name',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Disabled",
@@ -5788,6 +5863,26 @@
                 "defaultValue": "{\n  args: {\n    value: 'inactive button',\n    inactive: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
             },
             {
+                "name": "multiLine",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    options: testOptions3,\n    multiLine: true,\n    name: 'name',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "multipleRows",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/text-area/text-area.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    multiLine: true,\n    value: 'ganz langer Text, <br> zum Beispiel Anschlussfinanzierung. Kann auch <a href=\"#\">links</a> enthalten.',\n    inputDisabled: true,\n  },\n}"
+            },
+            {
                 "name": "Optional",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5906,6 +6001,16 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'value': 'value3'\n  }\n]"
+            },
+            {
+                "name": "testOptions3",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'Grundstück wird für das Neubauvorhaben verwendet',\n    'value': 'value2'\n  }\n]"
             },
             {
                 "name": "testOptions5",
@@ -6035,7 +6140,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    light: false,\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    light: false,\n    value: 'Input kann auch <a href=\"#\">links</a.',\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
             },
             {
                 "name": "WithInfo",
@@ -6105,7 +6210,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    light: true,\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    value: '',\n    light: true,\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "WithInfoDark",
@@ -6713,6 +6818,16 @@
                     "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
                 },
                 {
+                    "name": "disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    options: testOptions2,\n    localValue: 'value2',\n    inputDisabled: true,\n    name: 'name',\n    light: false,\n  },\n}"
+                },
+                {
                     "name": "FiveOptions",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -6723,6 +6838,16 @@
                     "defaultValue": "{\n  args: {\n    options: testOptions5,\n    localValue: '',\n    name: 'name',\n    light: false,\n  },\n}"
                 },
                 {
+                    "name": "multiLine",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    options: testOptions3,\n    multiLine: true,\n    name: 'name',\n    light: false,\n  },\n}"
+                },
+                {
                     "name": "testOptions2",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -6731,6 +6856,16 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  }\n]"
+                },
+                {
+                    "name": "testOptions3",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'Grundstück wird für das Neubauvorhaben verwendet',\n    'value': 'value2'\n  }\n]"
                 },
                 {
                     "name": "testOptions5",
@@ -7290,7 +7425,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    name: 'id',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    value: '',\n    placeholder: 'placeholder text',\n    label: 'label'\n  },\n}"
                 },
                 {
                     "name": "DefaultDark",
@@ -7300,7 +7435,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    light: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    value: '',\n    light: true,\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 },
                 {
                     "name": "disabled",
@@ -7310,7 +7445,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'ganz langer Text, zum Beispiel Anschlussfinanzierung',\n    type: 'text',\n    inputDisabled: true,\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: 'der Text',\n    inputDisabled: true,\n  },\n}"
+                },
+                {
+                    "name": "multipleRows",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/inputs/text-area/text-area.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    multiLine: true,\n    value: 'ganz langer Text, <br> zum Beispiel Anschlussfinanzierung. Kann auch <a href=\"#\">links</a> enthalten.',\n    inputDisabled: true,\n  },\n}"
                 },
                 {
                     "name": "withInfo",
@@ -7320,7 +7465,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    light: false,\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    light: false,\n    value: 'Input kann auch <a href=\"#\">links</a.',\n    info: 'test-info',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n}"
                 },
                 {
                     "name": "withInfoDark",
@@ -7330,7 +7475,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    name: 'id',\n    value: '',\n    type: 'text',\n    light: true,\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    value: '',\n    light: true,\n    info: 'test-info-dark',\n    infoText: 'info Text',\n    infoHeader: 'info Überschrift',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
@@ -8584,7 +8729,7 @@
                 "linktype": "component",
                 "name": "TextAreaComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {
@@ -8613,6 +8758,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/inputs/text-area/text-area.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "multipleRows",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9002,7 +9157,7 @@
                 "linktype": "component",
                 "name": "ToggleVerticalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -9030,6 +9185,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "FiveOptions",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -9040,7 +9205,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "multiLine",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "testOptions2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "testOptions3",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
