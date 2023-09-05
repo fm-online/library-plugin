@@ -614,3 +614,4 @@ info => Copying static files: /Volumes/BEEMO-SSD/02_WorkFiles/02_ScubboClients/0
 <s> [webpack.Progress] 38% building 0/1 entries 2263/2300 dependencies 524/806 modules
 <s> [webpack.Progress] 41% building 0/1 entries 2400/2439 dependencies 577/837 modules
 <s> [webpack.Progress] 45% building 0/1 entries 2493/2500 dependencies 645/865 modules
+<s> [webpack.Progress] 53% building 0/1 entries 2662/2662 dependencies 797/900 modules
