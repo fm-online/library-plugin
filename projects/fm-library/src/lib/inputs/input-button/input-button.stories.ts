@@ -166,3 +166,23 @@ export const shortDark: Story = {
   },
 };
 
+export const noValue: Story = {
+  args: {
+    label: 'das Label',
+    name: 'id',
+    touched: false,
+    light: false,
+  },
+};
+
+export const disabled: Story = {
+  args: {
+    label: 'das Label',
+    name: 'id',
+    value: 'the value',
+    touched: true,
+    inputDisabled: true,
+    light: false,
+  },
+};
+

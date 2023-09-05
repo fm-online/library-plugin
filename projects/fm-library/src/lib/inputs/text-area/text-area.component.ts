@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class TextAreaComponent implements OnInit {
   @Input() label: string = '';
   @Input() name: string = '';
-  @Input() value: string = '';
+  @Input() value: any = '';
   @Input() placeholder: string = '';
   @Input() multiLine: boolean = false;
   @Input() info: string = '';

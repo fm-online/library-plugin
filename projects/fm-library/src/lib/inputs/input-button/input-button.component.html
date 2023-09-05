@@ -12,10 +12,16 @@
             [id]="name"
             (click)="getValue()" 
             [name]="name"
-            [ngClass]="{'light' : light, 'short' : short}"
-            #target
-        >{{ value }}</button>
-        <div class="da-input-button-unit" [ngClass]="{'short' : short}">{{unit}}</div>
+            [ngClass]="{'light' : light, 'short' : short, 'disabled' : inputDisabled, 'with-icon' : !value}"
+            #target>
+            <svg-icon 
+                *ngIf="!value"
+                class="da-input-button-icon-click" 
+                [src]="icon" 
+            ></svg-icon>
+            <span *ngIf="value">{{value}}</span>
+        </button>
+        <div class="da-input-button-unit" *ngIf="unit" [ngClass]="{'short' : short}">{{unit}}</div>
         <div class="da-input-button-info-button" *ngIf="info">
             <lib-info-button 
             [light]="light" 

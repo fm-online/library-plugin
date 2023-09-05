@@ -42,7 +42,7 @@
             width: 185px;
             height: 42px;
             border-radius: 24px;
-            background-color: $button-secondary-color;
+            background-color: #fff;
             border: 0px solid transparent;
             border-bottom: 1px solid $button-base-color;
             box-shadow: 0 3px 5px $shadow-base-color;
@@ -72,7 +72,22 @@
 
             &.short {
                 width: 100px;
+            }
 
+            &.disabled {
+                cursor: default;
+                background-color: $header-base-color;
+                color: $t1-base-color; 
+            }
+            &.with-icon {
+                display: flex;
+                justify-content: center;
+            }
+
+            .da-input-button-icon-click {
+                fill: $button-base-color;
+                font-size: 26px;
+                margin-left: 30px;
             }
         }
 
