@@ -17,6 +17,7 @@ export class InputButtonComponent implements OnInit {
   @Input() unit!: string;
   @Input() info: string = '';
   @Input() inputDisabled: boolean = false;
+  @Input() autoWidth: boolean = false;
   @Input() infoText: string = 'info text';
   @Input() infoHeader: string = 'info header';
   @Input() light: boolean = false;

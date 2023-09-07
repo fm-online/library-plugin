@@ -83,6 +83,11 @@
                 justify-content: center;
             }
 
+            &.auto-width {
+                width: 100%;
+
+            }
+
             .da-input-button-icon-click {
                 fill: $button-base-color;
                 font-size: 26px;
