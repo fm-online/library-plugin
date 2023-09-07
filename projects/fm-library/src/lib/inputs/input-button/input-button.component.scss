@@ -38,8 +38,8 @@
         }
 
         button {
-            width: 185px;
-            height: 42px;
+            width: 200px;
+            height: 43px;
             border-radius: 24px;
             background-color: #fff;
             border: 0px solid transparent;
@@ -81,11 +81,6 @@
             &.with-icon {
                 display: flex;
                 justify-content: center;
-            }
-
-            &.auto-width {
-                width: 100%;
-
             }
 
             .da-input-button-icon-click {
