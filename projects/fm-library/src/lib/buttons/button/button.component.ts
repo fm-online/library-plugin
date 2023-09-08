@@ -16,7 +16,7 @@ export class ButtonComponent {
   @Input() disabled: boolean = false;
   @Input() iconLeft: any;
   @Input() iconRight: any;
-  @Input() autoWidth: boolean = false;
+  @Input() width!: string;
   @Output() public buttonValue:EventEmitter<any> = new EventEmitter<string>();
 
   constructor(

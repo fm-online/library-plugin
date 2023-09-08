@@ -91,6 +91,7 @@ export const disabled: Story = {
     name: 'id',
     value: 'der Text',
     inputDisabled: true,
+    touched: true,
   },
 };
 
@@ -100,7 +101,16 @@ export const multipleRows: Story = {
     name: 'id',
     multiLine: true,
     value: 'ganz langer Text, <br> zum Beispiel Anschlussfinanzierung. Kann auch <a href="#">links</a> enthalten.',
-    inputDisabled: true,
+  },
+};
+
+export const multipleRowsTouched: Story = {
+  args: {
+    label: 'das Label',
+    name: 'id',
+    touched: true,
+    multiLine: true,
+    value: 'ganz langer Text, <br> zum Beispiel Anschlussfinanzierung. Kann auch <a href="#">links</a> enthalten.',
   },
 };
 

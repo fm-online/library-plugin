@@ -11,7 +11,7 @@ export class InputButtonComponent implements OnInit {
   @Input() name: string = 'name';
   @Input() type: string = 'nebenkosten';
   @Input() value!: string;
-  @Input() icon: string = 'assets/images/bullseyePointer.svg';
+  @Input() icon: string = 'assets/images/pen.svg';
   @Input() touched: boolean = false;
   @Input() short: boolean = false;
   @Input() unit!: string;
@@ -28,6 +28,9 @@ export class InputButtonComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    if(this.unit && this.value) {
+      this.value = this.value + ' ' + this.unit;
+    }
   }
 
   getValue() {

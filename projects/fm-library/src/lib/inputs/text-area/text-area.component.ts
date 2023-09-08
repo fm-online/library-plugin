@@ -9,11 +9,13 @@ export class TextAreaComponent implements OnInit {
   @Input() label: string = '';
   @Input() name: string = '';
   @Input() value: any = '';
+  @Input() touched: boolean = false;
   @Input() placeholder: string = '';
   @Input() multiLine: boolean = false;
   @Input() info: string = '';
   @Input() infoText: string = '';
   @Input() infoHeader: string = '';
+  @Input() error: boolean = false;
   @Input() autoWidth: boolean = false;
   @Input() inputDisabled: boolean = false;
   @Input() light: boolean = false;
