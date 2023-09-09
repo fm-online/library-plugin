@@ -20,9 +20,10 @@
                     src="assets/images/circleExclamation.svg" 
                 ></svg-icon>
             </div>
-            <span class="da-input-button-value">{{value}}</span>
+            <span class="da-input-button-value" [innerHTML]="value"></span>
             <svg-icon 
                 *ngIf="!inputDisabled"
+                [ngClass]="{'with-info' : info}"
                 class="da-input-button-icon-click" 
                 [src]="icon" 
             ></svg-icon>

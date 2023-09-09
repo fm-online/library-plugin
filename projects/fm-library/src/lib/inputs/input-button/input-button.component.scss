@@ -28,7 +28,7 @@
             border: 0px solid transparent;
             border-bottom: 1px solid $button-base-color;
             box-shadow: 0 3px 5px $shadow-base-color;
-            text-align: right;
+            text-align: left;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -91,18 +91,24 @@
                 fill: $button-base-color;
                 font-size: 16px;
                 margin: 5px 5px 0 0;
+                position: absolute;
+                right: 5px;
                 transition: all 0.4s ease-in-out 0s, visibility 0s;
                 cursor: pointer;
 
                 &:hover {
                     font-size: 20px;
-                    margin: 8px 5px 0 0;
+                    margin: 3px 5px 0 0;
+                }
+
+                &.with-info {
+                    right: 35px;
                 }
             }
 
             .da-input-button-value {
                 width: auto;
-                margin: 3px 10px 0 35px;
+                margin: 3px 25px 0 35px;
                 display: block;
             }
         }
