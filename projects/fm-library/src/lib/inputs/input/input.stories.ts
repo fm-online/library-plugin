@@ -188,3 +188,13 @@ export const successDark: Story = {
   },
 };
 
+export const disabled: Story = {
+  args: {
+    label: 'das Label',
+    name: 'id',
+    value: 'ganz langer Text, zum Beispiel Anschlussfinanzierung',
+    type: 'text',
+    inputDisabled: true,
+  },
+};
+

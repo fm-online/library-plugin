@@ -1,0 +1,120 @@
+@import "../../../styles.scss"; 
+
+.da-text-area-single {
+    font-family: $font;
+
+    .da-text-area-label {
+        font-size: $t4-base-size;
+        margin-bottom: 3px;
+        text-align: left;
+        margin-left: 21px;
+        color: $t4-base-color;
+
+        &.light {
+            color: $t4-secondary-color;
+        }
+    }
+
+    .da-text-area-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: -21px;
+
+        .da-text-area-icons {
+            min-width: 23px;
+            min-height: 23px;
+            max-width: 23px;
+            max-height: 23px;
+            position: absolute;
+            left: 10px;
+            top: 9px;
+            border-radius: 23px;
+            border: none;
+            background: transparent;
+
+            .da-text-area-icon {
+                font-size: 25px;
+                width: 23px;
+                height: 23px;
+                top: 0;
+                left: 0;
+                position: absolute;
+                border-radius: 25px;
+                background-color: #fff;
+                box-shadow: 0 3px 5px $shadow-base-color;
+
+                &.green {
+                    fill: $success-color;
+                }
+
+                &.red {
+                    fill: $warning-base-color;
+                }
+
+                svg {
+                    position: relative;
+                    top: -1px;
+                    left: -1px;
+                }
+            }
+    
+        }
+        
+        .da-text-area {
+            width: 140px;
+            height: 24px;
+            border-radius: 24px;
+            background-color: #fff;
+            border: 0px solid transparent;
+            border-bottom: 1px solid $button-base-color;
+            box-shadow: 0 3px 5px $shadow-base-color;
+            text-align: left;
+            padding: 10px 20px 8px 40px;
+            font-size: $t1-base-size;
+            color: $t1-base-color;
+            font-family: $font;
+            cursor: text;
+            overflow: hidden;
+
+            &:hover,
+            &:focus,
+            &:focus-visible {
+                outline: none;
+            }
+
+            &.auto-width {
+                width: 100%;
+            }
+
+            &.auto-height {
+                min-height: 26px;
+                height: auto;
+            }
+
+            &.light {
+                box-shadow: 0 3px 5px $shadow-secondary-color;
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &.disabled {
+                background-color: $header-base-color;
+                color: $t1-base-color-disabled;
+                cursor: default;
+            }
+            &.with-placeholder {
+                color: $t5-base-color;
+            }
+        }
+
+        .da-text-area-info-button {
+            margin-left: 10px;
+        }
+
+    }
+}
+

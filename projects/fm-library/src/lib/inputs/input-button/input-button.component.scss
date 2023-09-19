@@ -7,6 +7,7 @@
         font-size: $t4-base-size;
         margin-bottom: 3px;
         margin-left: 21px;
+        text-align: left;
         color: $t4-base-color;
 
         &.light {
@@ -18,40 +19,23 @@
         position: relative;
         display: flex;
         align-items: center;
-        
-        .da-input-button-icons {
-            height: 23px;
-            width: 23px;
-            font-size: 24px;
-            position: absolute;
-            left: 10px;
-            top: 9px;
-            border-radius: 25px;
-            box-shadow: 0 3px 5px $shadow-base-color;
-            background: #fff;
-
-            .da-input-button-icon-yellow {
-                color: $attention-color;
-                fill: $attention-color;
-                position: absolute;
-            }
-    
-        }
 
         button {
-            width: 185px;
-            height: 42px;
+            width: 200px;
+            min-height: 43px;
             border-radius: 24px;
-            background-color: $button-secondary-color;
+            background-color: #fff;
             border: 0px solid transparent;
             border-bottom: 1px solid $button-base-color;
             box-shadow: 0 3px 5px $shadow-base-color;
-            text-align: right;
-            padding: 8px 30px 8px 8px;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 8px;
             font-size: $t1-base-size;
             color: $t1-base-color;
             font-family: $font;
-            cursor: pointer;
 
             &:hover,
             &:focus,
@@ -71,27 +55,66 @@
             }
 
             &.short {
-                width: 100px;
+                width: 120px;
+            }
+
+            &.disabled {
+                cursor: default;
+                background-color: $header-base-color;
+                color: $t1-base-color; 
+            }
+
+            .da-input-button-icons {
+                height: 23px;
+                width: 23px;
+                font-size: 24px;
+                position: absolute;
+                left: 10px;
+                top: 9px;
+                border-radius: 25px;
+                box-shadow: 0 3px 5px $shadow-base-color;
+                background: #fff;
+    
+                .da-input-button-icon-yellow {
+                    color: $attention-color;
+                    fill: $attention-color;
+                }
+    
+                .da-input-button-icon-green {
+                    color: $success-color;
+                    fill: $success-color;
+                }
 
             }
-        }
 
-        .da-input-button-unit {
-            position: absolute;
-            color: $t1-base-color;
-            left: 157px;
-            // margin-bottom: 2px;
-            width: 25px;
-            text-align: center;
+            .da-input-button-icon-click {
+                fill: $button-base-color;
+                font-size: 16px;
+                margin: 5px 5px 0 0;
+                position: absolute;
+                right: 5px;
+                transition: all 0.4s ease-in-out 0s, visibility 0s;
+                cursor: pointer;
 
-            &.short {
-                left: 70px;
+                &:hover {
+                    font-size: 20px;
+                    margin: 3px 5px 0 0;
+                }
+
+                &.with-info {
+                    right: 35px;
+                }
+            }
+
+            .da-input-button-value {
+                width: auto;
+                margin: 3px 25px 0 35px;
+                display: block;
             }
         }
 
         .da-input-button-info-button {
             margin-left: 10px;
-            margin-top: -5px;
         }
     }
 }

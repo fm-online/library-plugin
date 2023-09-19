@@ -3,6 +3,7 @@
         (click)="getValue()" 
         [ngClass]="{'light' : light, 'short' : iconButton, 'disabled' : disabled, 'auto-width' : autoWidth, 'mobile' : screen.isSmallest()}" 
         [disabled]="disabled"
+        [ngStyle]="{'width': width ? width + 'px' : ''}"
         #target
     >
         <svg-icon *ngIf="iconLeft" 

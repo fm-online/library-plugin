@@ -12,13 +12,12 @@ export class DropdownComponent {
   @Input() icon: string = 'assets/images/circleCheck.svg';
   @Input() light: boolean = false;
   @Input() info: string = '';
-  @Input() selectedItem!: any;
+  @Input() selectedItem: any = {'value': '', 'viewValue': 'bitte auswählen'};
   @Input() autoWidth: boolean = false;
+  @Input() success: boolean = false;
 
   @Output() public selectValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
-
-  success: boolean = false;
 
   constructor() { }
 

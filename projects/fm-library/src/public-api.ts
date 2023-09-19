@@ -14,6 +14,7 @@ export * from './lib/inputs/dropdown/dropdown.component';
 export * from './lib/inputs/input/input.component';
 export * from './lib/inputs/input-button/input-button.component';
 export * from './lib/inputs/input-date/input-date.component';
+export * from './lib/inputs/text-area/text-area.component';
 export * from './lib/tiles/tile/tile.component';
 export * from './lib/tiles/tile-checkbox/tile-checkbox.component';
 export * from './lib/tiles/tile-checkbox-group/tile-checkbox-group.component';

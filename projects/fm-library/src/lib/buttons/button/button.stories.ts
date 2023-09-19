@@ -139,3 +139,12 @@ export const IconRightDark: Story = {
     },
   },
 };
+
+export const customWidth: Story = {
+  args: {
+    value: 'weiter',
+    width: '200',
+    iconRight: 'assets/images/chevronRight.svg',
+    light: false,
+  },
+};

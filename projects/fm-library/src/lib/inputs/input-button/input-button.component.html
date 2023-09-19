@@ -1,21 +1,33 @@
 <div class="da-input-button-single">
     <div class="da-input-button-label" [ngClass]="{'light' : light}">{{label}}</div>
     <label class="da-input">
-        <div class="da-input-button-icons" *ngIf="!touched">
-            <svg-icon 
-                class="da-input-button-icon-yellow" 
-                src="assets/images/circleExclamation.svg" 
-            ></svg-icon>
-        </div>
         <button 
             autocomplete="off"
             [id]="name"
             (click)="getValue()" 
             [name]="name"
-            [ngClass]="{'light' : light, 'short' : short}"
-            #target
-        >{{ value }}</button>
-        <div class="da-input-button-unit" [ngClass]="{'short' : short}">{{unit}}</div>
+            [ngClass]="{'light' : light, 'short' : short, 'disabled' : inputDisabled}"
+            #target>
+            <div class="da-input-button-icons" *ngIf="touched">
+                <svg-icon 
+                    class="da-input-button-icon-green" 
+                    src="assets/images/circleCheck.svg" 
+                ></svg-icon>
+            </div>
+            <div class="da-input-button-icons" *ngIf="!touched">
+                <svg-icon 
+                    class="da-input-button-icon-yellow" 
+                    src="assets/images/circleExclamation.svg" 
+                ></svg-icon>
+            </div>
+            <span class="da-input-button-value" [innerHTML]="value"></span>
+            <svg-icon 
+                *ngIf="!inputDisabled"
+                [ngClass]="{'with-info' : info}"
+                class="da-input-button-icon-click" 
+                [src]="icon" 
+            ></svg-icon>
+        </button>
         <div class="da-input-button-info-button" *ngIf="info">
             <lib-info-button 
             [light]="light" 

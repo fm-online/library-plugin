@@ -10,11 +10,14 @@ export class InputButtonComponent implements OnInit {
   @Input() label: string = 'label';
   @Input() name: string = 'name';
   @Input() type: string = 'nebenkosten';
-  @Input() value: string = 'value';
+  @Input() value!: string;
+  @Input() icon: string = 'assets/images/pen.svg';
   @Input() touched: boolean = false;
   @Input() short: boolean = false;
-  @Input() unit: string = '€';
+  @Input() unit!: string;
   @Input() info: string = '';
+  @Input() inputDisabled: boolean = false;
+  @Input() autoWidth: boolean = false;
   @Input() infoText: string = 'info text';
   @Input() infoHeader: string = 'info header';
   @Input() light: boolean = false;
@@ -25,6 +28,9 @@ export class InputButtonComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    if(this.unit && this.value) {
+      this.value = this.value + ' ' + this.unit;
+    }
   }
 
   getValue() {
