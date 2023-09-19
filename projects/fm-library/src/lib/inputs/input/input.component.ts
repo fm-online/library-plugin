@@ -24,6 +24,9 @@ export class InputComponent implements OnInit {
   @Input() isCurrency: boolean = true;
   @Input() inputDisabled: boolean = false;
   @Input() light: boolean = false;
+  @Input() skinnyLabel: boolean = false;
+  @Input() textAlign: string = 'right';
+  @Input() customBackground: string | undefined;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
@@ -31,6 +34,7 @@ export class InputComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    console.log('Text align: ', this.textAlign);
   }
 
   getValue(e: any) {
@@ -52,4 +56,13 @@ export class InputComponent implements OnInit {
     this.infoValue.emit(e);
   }
 
+  textAlignIsLeft() {
+    console.log('IS LEFT!');
+    return this.textAlign === 'left' ? true : false;
+  }
+
+  textAlignIsCenter() {
+    console.log('IS CENTER!');
+    return this.textAlign === 'center' ? true : false;
+  }
 }

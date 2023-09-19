@@ -1,5 +1,5 @@
 <div class="da-input-single">
-    <div class="da-input-label" [ngClass]="{'light' : light}">{{label}}</div>
+    <div class="da-input-label" [ngClass]="{'light' : light, 'skinny': skinnyLabel}">{{label}}</div>
     <!-- Form Input -->
     <label *ngIf="form" class="da-input" [formGroup]="form">
         <div class="da-input-icons" *ngIf="touched">
@@ -23,7 +23,14 @@
             [value]="value"
             [disabled]="inputDisabled"
             (click)="removePlaceholder()"
-            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit, 'disabled': inputDisabled}"
+            [ngClass]="{'light' : light,
+                        'error' : error,
+                        'auto-width' : autoWidth,
+                        'withUnit': unit,
+                        'disabled': inputDisabled,
+                        'text-align-left': textAlignIsLeft(),
+                        'text-align-center': textAlignIsCenter()}"
+            [ngStyle]="{'background-color': customBackground ? customBackground : 'rgb(255, 255, 255)'}"
             #target
         >
         <div class="da-input-unit">
@@ -62,7 +69,14 @@
             [disabled]="inputDisabled"
             [value]="value"
             (click)="removePlaceholder()"
-            [ngClass]="{'light' : light, 'error' : error, 'auto-width' : autoWidth, 'withUnit': unit, 'disabled': inputDisabled}"
+            [ngClass]="{'light' : light,
+                        'error' : error,
+                        'auto-width' : autoWidth,
+                        'withUnit': unit,
+                        'disabled': inputDisabled,
+                        'text-align-left': textAlignIsLeft(),
+                        'text-align-center': textAlignIsCenter()}"
+            [ngStyle]="{'background-color': customBackground ? customBackground : 'rgb(255, 255, 255)'}"
             #target
         >
         <div class="da-input-unit">

@@ -32,6 +32,8 @@ type Story = StoryObj<InputComponent>;
 export const Default: Story = {
   args: {
     name: 'id',
+    textAlign: 'left',
+    skinnyLabel: true
   },
 };
 
@@ -49,6 +51,7 @@ export const DefaultDark: Story = {
     errorText: 'die Fehlermeldung',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
+    textAlign: 'left'
   },
   parameters: {
     backgrounds: {
