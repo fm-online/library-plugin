@@ -34,11 +34,11 @@ export const Default: Story = {
     name: 'id',
     textAlign: 'left',
     skinnyLabel: true,
-    customBackground: 'rgb(255, 255, 255)',
-    customBorder: 'rgb(32, 56, 100)',
-    customBoxShadow: 'rgba(32, 56, 100, 0.5)',
-    customTextColor: 'red',
-    customPlaceholderType: 'dark'
+    backgroundColor: 'rgb(255, 255, 255)',
+    borderColor: 'rgb(32, 56, 100)',
+    boxShadowColor: 'rgba(32, 56, 100, 0.5)',
+    textColor: 'red',
+    placeholderType: 'dark'
   },
 };
 

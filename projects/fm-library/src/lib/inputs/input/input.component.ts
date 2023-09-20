@@ -26,12 +26,12 @@ export class InputComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() skinnyLabel: boolean = false;
   @Input() textAlign: string = 'right';
-  @Input() customTextColor: string = 'rgb(32, 56, 100)';
-  @Input() customPlaceholderType: string | boolean = false;
-  @Input() customBackground: string = 'rgb(255, 255, 255)';
-  @Input() customBorder: string = 'rgb(32, 56, 100)';
-  defaultBoxShadow!: string;
-  @Input() customBoxShadow: string | boolean = false;
+  @Input() textColor: string = 'rgb(32, 56, 100)';
+  @Input() placeholderType: string | boolean = false;
+  @Input() backgroundColor: string = 'rgb(255, 255, 255)';
+  @Input() borderColor: string = 'rgb(32, 56, 100)';
+  defaultBoxShadowColor!: string;
+  @Input() boxShadowColor: string | boolean = false;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
@@ -40,8 +40,8 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
     this.light
-      ? this.defaultBoxShadow = '0 3px 5px rgba(32, 56, 100, 0.5)'
-      : this.defaultBoxShadow = '0 3px 5px rgba(255, 255, 255, 0.5)';
+      ? this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)'
+      : this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)';
   }
 
   getValue(e: any) {
@@ -72,10 +72,10 @@ export class InputComponent implements OnInit {
   }
 
   placeholderIsLight() {
-    return this.customPlaceholderType === 'light' ? true : false;
+    return this.placeholderType === 'light' ? true : false;
   }
 
   placeholderIsDark() {
-    return this.customPlaceholderType === 'dark' ? true : false;
+    return this.placeholderType === 'dark' ? true : false;
   }
 }
