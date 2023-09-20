@@ -76,7 +76,7 @@
             text-align: right;
             padding: 8px 20px;
             font-size: $t1-base-size;
-            color: $t1-base-color;
+            // color: $t1-base-color;
             font-family: $font;
 
             &:hover,
@@ -89,6 +89,18 @@
             &::placeholder {
                 color: $t5-base-color;
                 text-align: right;
+            }
+
+            &.light-placeholder {
+                &::placeholder {
+                    color: rgb(255, 255, 255);
+                }
+            }
+
+            &.dark-placeholder {
+                &::placeholder {
+                    color: rgb(0, 0, 0);
+                }
             }
 
             &.withUnit {

@@ -36,7 +36,9 @@ export const Default: Story = {
     skinnyLabel: true,
     customBackground: 'rgb(255, 255, 255)',
     customBorder: 'rgb(32, 56, 100)',
-    customBoxShadow: 'rgba(32, 56, 100, 0.5)'
+    customBoxShadow: 'rgba(32, 56, 100, 0.5)',
+    customTextColor: 'red',
+    customPlaceholderType: 'dark'
   },
 };
 

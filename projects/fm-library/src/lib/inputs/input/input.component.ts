@@ -26,10 +26,10 @@ export class InputComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() skinnyLabel: boolean = false;
   @Input() textAlign: string = 'right';
-  defaultBackground: string = 'rgb(255, 255, 255)';
-  @Input() customBackground: string | boolean = false;
-  defaultBorder: string = '1px solid rgb(32, 56, 100)';
-  @Input() customBorder: string | boolean = false;
+  @Input() customTextColor: string = 'rgb(32, 56, 100)';
+  @Input() customPlaceholderType: string | boolean = false;
+  @Input() customBackground: string = 'rgb(255, 255, 255)';
+  @Input() customBorder: string = 'rgb(32, 56, 100)';
   defaultBoxShadow!: string;
   @Input() customBoxShadow: string | boolean = false;
 
@@ -69,5 +69,13 @@ export class InputComponent implements OnInit {
 
   textAlignIsCenter() {
     return this.textAlign === 'center' ? true : false;
+  }
+
+  placeholderIsLight() {
+    return this.customPlaceholderType === 'light' ? true : false;
+  }
+
+  placeholderIsDark() {
+    return this.customPlaceholderType === 'dark' ? true : false;
   }
 }

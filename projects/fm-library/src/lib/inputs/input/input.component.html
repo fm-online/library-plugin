@@ -29,10 +29,13 @@
                         'withUnit': unit,
                         'disabled': inputDisabled,
                         'text-align-left': textAlignIsLeft(),
-                        'text-align-center': textAlignIsCenter()}"
-            [ngStyle]="{'background-color': !!customBackground ? customBackground : defaultBackground,
-                        'border-bottom': !!customBorder ? '1px solid ' + customBorder : defaultBorder,
-                        'box-shadow': !!customBoxShadow ? '0 3px 5px ' + customBoxShadow : defaultBoxShadow}"
+                        'text-align-center': textAlignIsCenter(),
+                        'light-placeholder': placeholderIsLight(),
+                        'dark-placeholder': placeholderIsDark()}"
+            [ngStyle]="{'color': customTextColor,
+                        'background-color': customBackground,
+                        'border-bottom': '1px solid ' + customBorder,
+                        'box-shadow': customBoxShadow ? '0 3px 5px ' + customBoxShadow : defaultBoxShadow}"
             #target
         >
         <div class="da-input-unit">
@@ -77,9 +80,12 @@
                         'withUnit': unit,
                         'disabled': inputDisabled,
                         'text-align-left': textAlignIsLeft(),
-                        'text-align-center': textAlignIsCenter()}"
-            [ngStyle]="{'background-color': customBackground ? customBackground : defaultBackground,
-                        'border-bottom': customBorder ? '1px solid ' + customBorder : defaultBorder,
+                        'text-align-center': textAlignIsCenter(),
+                        'light-placeholder': placeholderIsLight(),
+                        'dark-placeholder': placeholderIsDark()}"
+            [ngStyle]="{'color': customTextColor,
+                        'background-color': customBackground,
+                        'border-bottom': '1px solid ' + customBorder,
                         'box-shadow': customBoxShadow ? '0 3px 5px ' + customBoxShadow : defaultBoxShadow}"
             #target
         >
