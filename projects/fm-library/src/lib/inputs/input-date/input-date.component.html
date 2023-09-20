@@ -22,6 +22,7 @@
             [min]="minDate"
             [value]="value"
             (dateChange)="getValue($event)" 
+            (dateInput)="getInput($event)" 
             [placeholder]="placeholder"
             [ngClass]="{'light' : light, 'error' : error}"
         >

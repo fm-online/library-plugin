@@ -21,6 +21,7 @@ export class InputDateComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() info: string = '';
   @Output() public dateValue:EventEmitter<any> = new EventEmitter<string>();
+  @Output() public dateInputValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
   success: boolean = false;
 
@@ -38,6 +39,9 @@ export class InputDateComponent implements OnInit {
   getValue(e: any) {
     this.value = e.value;
     this.dateValue.emit(e.value);
+  }
+  getInput(e: any) {
+    this.dateInputValue.emit(e.value);
   }
 
   getInfo(e: string) {
