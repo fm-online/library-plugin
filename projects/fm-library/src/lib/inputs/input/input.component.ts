@@ -26,7 +26,12 @@ export class InputComponent implements OnInit {
   @Input() light: boolean = false;
   @Input() skinnyLabel: boolean = false;
   @Input() textAlign: string = 'right';
-  @Input() customBackground: string | undefined;
+  defaultBackground: string = 'rgb(255, 255, 255)';
+  @Input() customBackground: string | boolean = false;
+  defaultBorder: string = '1px solid rgb(32, 56, 100)';
+  @Input() customBorder: string | boolean = false;
+  defaultBoxShadow!: string;
+  @Input() customBoxShadow: string | boolean = false;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
@@ -34,7 +39,9 @@ export class InputComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('Text align: ', this.textAlign);
+    this.light
+      ? this.defaultBoxShadow = '0 3px 5px rgba(32, 56, 100, 0.5)'
+      : this.defaultBoxShadow = '0 3px 5px rgba(255, 255, 255, 0.5)';
   }
 
   getValue(e: any) {
@@ -57,12 +64,10 @@ export class InputComponent implements OnInit {
   }
 
   textAlignIsLeft() {
-    console.log('IS LEFT!');
     return this.textAlign === 'left' ? true : false;
   }
 
   textAlignIsCenter() {
-    console.log('IS CENTER!');
     return this.textAlign === 'center' ? true : false;
   }
 }

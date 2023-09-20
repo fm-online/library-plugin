@@ -30,7 +30,9 @@
                         'disabled': inputDisabled,
                         'text-align-left': textAlignIsLeft(),
                         'text-align-center': textAlignIsCenter()}"
-            [ngStyle]="{'background-color': customBackground ? customBackground : 'rgb(255, 255, 255)'}"
+            [ngStyle]="{'background-color': !!customBackground ? customBackground : defaultBackground,
+                        'border-bottom': !!customBorder ? '1px solid ' + customBorder : defaultBorder,
+                        'box-shadow': !!customBoxShadow ? '0 3px 5px ' + customBoxShadow : defaultBoxShadow}"
             #target
         >
         <div class="da-input-unit">
@@ -76,7 +78,9 @@
                         'disabled': inputDisabled,
                         'text-align-left': textAlignIsLeft(),
                         'text-align-center': textAlignIsCenter()}"
-            [ngStyle]="{'background-color': customBackground ? customBackground : 'rgb(255, 255, 255)'}"
+            [ngStyle]="{'background-color': customBackground ? customBackground : defaultBackground,
+                        'border-bottom': customBorder ? '1px solid ' + customBorder : defaultBorder,
+                        'box-shadow': customBoxShadow ? '0 3px 5px ' + customBoxShadow : defaultBoxShadow}"
             #target
         >
         <div class="da-input-unit">

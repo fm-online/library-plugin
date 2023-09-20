@@ -33,7 +33,10 @@ export const Default: Story = {
   args: {
     name: 'id',
     textAlign: 'left',
-    skinnyLabel: true
+    skinnyLabel: true,
+    customBackground: 'rgb(255, 255, 255)',
+    customBorder: 'rgb(32, 56, 100)',
+    customBoxShadow: 'rgba(32, 56, 100, 0.5)'
   },
 };
 
@@ -51,7 +54,7 @@ export const DefaultDark: Story = {
     errorText: 'die Fehlermeldung',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
-    textAlign: 'left'
+    textAlign: 'left',
   },
   parameters: {
     backgrounds: {
