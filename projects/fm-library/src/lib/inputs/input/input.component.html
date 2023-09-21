@@ -30,8 +30,9 @@
                         'disabled': inputDisabled,
                         'text-align-left': textAlignIsLeft(),
                         'text-align-center': textAlignIsCenter(),
-                        'light-placeholder': placeholderIsLight(),
-                        'dark-placeholder': placeholderIsDark()}"
+                        'white-placeholder': placeholderIsWhite(),
+                        'black-placeholder': placeholderIsBlack(),
+                        'blue-placeholder': placeholderIsBlue()}"
             [ngStyle]="{'color': textColor,
                         'background-color': backgroundColor,
                         'border-bottom': '1px solid ' + borderColor,
@@ -81,12 +82,13 @@
                         'disabled': inputDisabled,
                         'text-align-left': textAlignIsLeft(),
                         'text-align-center': textAlignIsCenter(),
-                        'light-placeholder': placeholderIsLight(),
-                        'dark-placeholder': placeholderIsDark()}"
+                        'white-placeholder': placeholderIsWhite(),
+                        'black-placeholder': placeholderIsBlack(),
+                        'blue-placeholder': placeholderIsBlue()}"
             [ngStyle]="{'color': textColor,
                         'background-color': backgroundColor,
-                        'border-bottom': '1px solid ' + borderColor,
-                        'box-shadow': boxShadowColor ? '0 3px 5px ' + boxShadowColor : defaultBoxShadowColor}"
+                        'border-bottom': getCustomBorderColor(),
+                        'box-shadow': boxShadowColor ? getCustomBoxShadowColor() : defaultBoxShadowColor}"
             #target
         >
         <div class="da-input-unit">

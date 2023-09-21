@@ -40,8 +40,8 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
     this.light
-      ? this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)'
-      : this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)';
+      ? this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)'
+      : this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)';
   }
 
   getValue(e: any) {
@@ -71,11 +71,23 @@ export class InputComponent implements OnInit {
     return this.textAlign === 'center' ? true : false;
   }
 
-  placeholderIsLight() {
-    return this.placeholderType === 'light' ? true : false;
+  placeholderIsWhite() {
+    return this.placeholderType === 'white' ? true : false;
   }
 
-  placeholderIsDark() {
-    return this.placeholderType === 'dark' ? true : false;
+  placeholderIsBlack() {
+    return this.placeholderType === 'black' ? true : false;
+  }
+
+  placeholderIsBlue() {
+    return this.placeholderType === 'blue' ? true : false;
+  }
+
+  getCustomBorderColor() {
+    return '1px solid ' + this.borderColor;
+  }
+
+  getCustomBoxShadowColor() {
+    return '0 3px 5px ' + this.boxShadowColor;
   }
 }

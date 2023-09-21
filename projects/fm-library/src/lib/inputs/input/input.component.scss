@@ -91,15 +91,21 @@
                 text-align: right;
             }
 
-            &.light-placeholder {
+            &.white-placeholder {
                 &::placeholder {
                     color: rgb(255, 255, 255);
                 }
             }
 
-            &.dark-placeholder {
+            &.black-placeholder {
                 &::placeholder {
                     color: rgb(0, 0, 0);
+                }
+            }
+
+            &.blue-placeholder {
+                &::placeholder {
+                    color: $button-base-color;
                 }
             }
 
