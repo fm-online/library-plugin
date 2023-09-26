@@ -25,6 +25,10 @@
         align-items: center;
         margin-right: -21px;
         
+        &.no-negative-margin {
+            margin-right: 0;
+        }
+
         .da-input-icons {
             min-width: 23px;
             min-height: 23px;

@@ -1,7 +1,7 @@
 <div class="da-input-single">
     <div class="da-input-label" [ngClass]="{'light' : light, 'skinny': skinnyLabel}">{{label}}</div>
     <!-- Form Input -->
-    <label *ngIf="form" class="da-input" [formGroup]="form">
+    <label *ngIf="form" class="da-input" [ngClass]="{'no-negative-margin' : disableNegativeMargin}" [formGroup]="form">
         <div class="da-input-icons" *ngIf="touched">
             <svg-icon 
                 *ngIf="!error" 

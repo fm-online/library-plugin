@@ -32,6 +32,7 @@ export class InputComponent implements OnInit {
   @Input() borderColor: string = 'rgb(32, 56, 100)';
   defaultBoxShadowColor!: string;
   @Input() boxShadowColor: string | boolean = false;
+  @Input() disableNegativeMargin: string | boolean = false;
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
