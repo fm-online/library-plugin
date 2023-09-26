@@ -178,6 +178,10 @@
             //     margin-right: 10px;
             //     overflow: hidden;
             // }
+
+            &.no-width {
+                width: 0;
+            }
         }
 
         .da-input-info-button {

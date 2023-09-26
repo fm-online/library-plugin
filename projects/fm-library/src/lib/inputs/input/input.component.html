@@ -39,7 +39,7 @@
                         'box-shadow': boxShadowColor ? '0 3px 5px ' + boxShadowColor : defaultBoxShadowColor}"
             #target
         >
-        <div class="da-input-unit">
+        <div class="da-input-unit" [ngClass]="{'no-width' : disableNegativeMargin}">
             <div class="da-input-unit-wrapper">
                 {{unit}}
             </div>
