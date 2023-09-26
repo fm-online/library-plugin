@@ -63,7 +63,7 @@
             .da-switch-icon {
                 fill: #fff;
                 color: #fff;
-                margin-top: 3px;
+                margin-top: 6px;
                 -webkit-transition: 0.4s;
                 transition: 0.4s;
             }
@@ -78,6 +78,10 @@
 
         &.light {
             color: $t4-secondary-color;
+        }
+
+        &.wrap {
+            white-space: normal !important;
         }
     }
 
