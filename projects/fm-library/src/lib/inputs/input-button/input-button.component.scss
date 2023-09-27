@@ -20,6 +20,35 @@
         display: flex;
         align-items: center;
 
+        .da-input-button-icons {
+            height: 23px;
+            width: 23px;
+            font-size: 24px;
+            position: absolute;
+            left: 10px;
+            top: 9px;
+            z-index: 1;
+            border-radius: 25px;
+            box-shadow: 0 3px 5px $shadow-base-color;
+            background: #fff;
+
+            .da-input-button-icon-yellow {
+                color: $attention-color;
+                fill: $attention-color;
+            }
+
+            .da-input-button-icon-green {
+                color: $success-color;
+                fill: $success-color;
+            }
+
+            .da-input-button-icon-red {
+                color: $warning-base-color;
+                fill: $warning-base-color;
+            }
+
+        }
+
         button {
             width: 200px;
             min-height: 43px;
@@ -31,7 +60,7 @@
             text-align: left;
             display: flex;
             align-items: flex-start;
-            justify-content: space-between;
+            justify-content: flex-end;
             padding: 8px;
             font-size: $t1-base-size;
             color: $t1-base-color;
@@ -60,31 +89,20 @@
 
             &.disabled {
                 cursor: default;
-                background-color: $header-base-color;
+                opacity: 0.5;
                 color: $t1-base-color; 
             }
 
-            .da-input-button-icons {
-                height: 23px;
-                width: 23px;
-                font-size: 24px;
-                position: absolute;
-                left: 10px;
-                top: 9px;
-                border-radius: 25px;
-                box-shadow: 0 3px 5px $shadow-base-color;
-                background: #fff;
-    
-                .da-input-button-icon-yellow {
-                    color: $attention-color;
-                    fill: $attention-color;
-                }
-    
-                .da-input-button-icon-green {
-                    color: $success-color;
-                    fill: $success-color;
-                }
+            &.text-align-left {
+                justify-content: flex-start;
+            }
 
+            &.text-align-center {
+                justify-content: center;
+            }
+
+            &.auto-width {
+                width: 100%;
             }
 
             .da-input-button-icon-click {

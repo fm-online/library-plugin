@@ -40,6 +40,7 @@
             border-radius: 23px;
             border: none;
             background: transparent;
+            z-index: 1;
 
             .da-input-icon {
 
@@ -62,8 +63,8 @@
                 }
 
                 svg {
-                    position: relative;
-                    top: -1px;
+                    position: absolute;
+                    top: -2px;
                     left: -1px;
                 }
             }
@@ -71,14 +72,14 @@
         }
 
         input {
-            width: 160px;
+            width: 135px;
             height: 26px;
             border-radius: 24px;
             border: 0px solid transparent;
             // border-bottom: 1px solid $button-base-color;
             // box-shadow: 0 3px 5px $shadow-base-color;
             text-align: right;
-            padding: 8px 20px;
+            padding: 8px 20px 8px 45px;
             font-size: $t1-base-size;
             // color: $t1-base-color;
             font-family: $font;
@@ -198,7 +199,7 @@
             border-radius: 10px;
             padding: 10px;
             display: flex;
-            z-index: 1;
+            z-index: 2;
             margin-top: 15px;
             justify-content: center;
             align-items: center;
@@ -237,10 +238,14 @@
             box-shadow: 0 3px 5px $shadow-base-color;
             width: 20px;
             height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             .da-input-error-icon {
                 fill: $t1-secondary-color;
                 font-size: 20px;
+                margin-top: 6px;
             }
 
             &.light {

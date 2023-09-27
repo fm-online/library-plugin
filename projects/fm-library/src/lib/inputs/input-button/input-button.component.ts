@@ -14,10 +14,12 @@ export class InputButtonComponent implements OnInit {
   @Input() icon: string = 'assets/images/pen.svg';
   @Input() touched: boolean = false;
   @Input() short: boolean = false;
+  @Input() error: boolean = false;
   @Input() unit!: string;
   @Input() info: string = '';
   @Input() inputDisabled: boolean = false;
   @Input() autoWidth: boolean = false;
+  @Input() textAlign: string = 'right';
   @Input() infoText: string = 'info text';
   @Input() infoHeader: string = 'info header';
   @Input() light: boolean = false;
@@ -31,6 +33,14 @@ export class InputButtonComponent implements OnInit {
     if(this.unit && this.value) {
       this.value = this.value + ' ' + this.unit;
     }
+  }
+
+  textAlignIsLeft() {
+    return this.textAlign === 'left' ? true : false;
+  }
+
+  textAlignIsCenter() {
+    return this.textAlign === 'center' ? true : false;
   }
 
   getValue() {

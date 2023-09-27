@@ -34,6 +34,7 @@ export const Default: Story = {
     unit: '€',
     touched: true,
     light: false,
+    textAlign: 'center',
     infoText: 'info Text',
     infoHeader: 'info Überschrift',
   },
@@ -127,6 +128,20 @@ export const warningDark: Story = {
         { name: 'dunkel', value: '#203864' },
       ],
     },
+  },
+};
+
+export const error: Story = {
+  args: {
+    label: 'das Label',
+    name: 'id',
+    value: '1.200,00',
+    unit: '€',
+    touched: false,
+    light: false,
+    error: true,
+    infoText: 'info Text',
+    infoHeader: 'info Überschrift',
   },
 };
 
