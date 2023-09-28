@@ -64,7 +64,7 @@ export const Default: Story = {
     localValue: '',
     name: 'name',
     light: false,
-    elementWidth: '100px',
+    toggleWidth: '500px',
   },
 };
 
