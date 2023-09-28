@@ -1,6 +1,6 @@
 <div class="toggle-container" #toggleContainer>
     <div class="da-toggle-horizontal-wrapper">
-        <div class="da-toggle-horizontal-label" [ngClass]="{'light' : light}" *ngIf="label">{{label}}</div>
+        <div class="da-toggle-horizontal-label" [ngClass]="{'light' : light}" [ngStyle]="{ 'width': toggleWidth }" *ngIf="label">{{label}}</div>
         <div class="da-toggle-horizontal" [ngClass]="{'light' : light}">
             <ng-container *ngFor="let option of options; let num = index">
                 <label class="da-switch top" [ngStyle]="{ 'width': elementWidth }">
