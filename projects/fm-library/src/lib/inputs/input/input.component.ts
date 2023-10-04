@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'lib-input',
@@ -6,6 +6,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
+  typingTimer: any;
+  @Input() doneTypingInterval: number = 5000;
   @Input() form: any;
   @Input() label: string = '';
   @Input() name: string = '';
@@ -22,6 +24,7 @@ export class InputComponent implements OnInit {
   @Input() errorText: string = '';
   @Input() autoWidth: boolean = false;
   @Input() isCurrency: boolean = true;
+  @Input() decimals: number = 2;
   @Input() inputDisabled: boolean = false;
   @Input() light: boolean = false;
   @Input() skinnyLabel: boolean = false;
@@ -36,6 +39,7 @@ export class InputComponent implements OnInit {
 
   @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();
   @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();
+  @ViewChild('target') target!: any;
   
   constructor() {}
 
@@ -46,14 +50,26 @@ export class InputComponent implements OnInit {
   }
 
   getValue(e: any) {
+    if (!!this.target.nativeElement.value) {
+      this.typingTimer = setTimeout(() => this.doneTyping(e), this.doneTypingInterval);
+    }
+  }
+
+  doneTyping(e: any) {
+    this.inputValue.emit([this.getCurrency(e.srcElement.value), this.name]);
+  }
+
+  getCurrency(e: any) {
     if (this.isCurrency) {
-      const inputValue = e.srcElement.value.replaceAll('.', '').replaceAll(',', '.');
+      const inputValue = e.replaceAll('.', '').replaceAll(',', '.');
       if(isNaN(parseInt(inputValue))) {
         return;
       }
-      this.value = parseInt(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 0 });
+      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: this.decimals });
+    } else {
+      this.value = e;
     }
-    this.inputValue.emit([e.srcElement.value, this.name]);
+    return this.value
   }
 
   removePlaceholder() {

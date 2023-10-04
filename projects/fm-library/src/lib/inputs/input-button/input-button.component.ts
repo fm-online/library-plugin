@@ -30,9 +30,9 @@ export class InputButtonComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    if(this.unit && this.value) {
-      this.value = this.value + ' ' + this.unit;
-    }
+    // if(this.unit && this.value) {
+    //   this.value = this.value + ' ' + this.unit;
+    // }
   }
 
   textAlignIsLeft() {

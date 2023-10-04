@@ -196,6 +196,15 @@ export const successDark: Story = {
   },
 };
 
+export const currency: Story = {
+  args: {
+    label: 'das Label',
+    name: 'id',
+    type: 'text',
+    isCurrency: true,
+  },
+};
+
 export const disabled: Story = {
   args: {
     label: 'das Label',

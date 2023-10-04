@@ -28,19 +28,27 @@
             [ngClass]="{
                 'light' : light,
                 'short' : short,
+                'withUnit': unit,
                 'auto-width' : autoWidth,
                 'text-align-left': textAlignIsLeft(),
                 'text-align-center': textAlignIsCenter(),
                 'disabled' : inputDisabled
             }"
             #target>
-            <span class="da-input-button-value" [innerHTML]="value"></span>
             <svg-icon 
                 *ngIf="!inputDisabled"
-                [ngClass]="{'with-info' : info}"
+                [ngClass]="{'no-unit' : !unit}"
                 class="da-input-button-icon-click" 
                 [src]="icon" 
             ></svg-icon>
+            <div class="da-input-button-content">
+                <span class="da-input-button-value" [innerHTML]="value"></span>
+                <div class="da-input-unit">
+                    <div class="da-input-unit-wrapper">
+                        {{unit}}
+                    </div>
+                </div>
+            </div>
         </button>
         <div class="da-input-button-info-button" *ngIf="info">
             <lib-info-button 

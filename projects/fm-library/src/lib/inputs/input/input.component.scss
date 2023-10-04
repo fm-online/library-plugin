@@ -72,7 +72,7 @@
         }
 
         input {
-            width: 135px;
+            width: 115px;
             height: 26px;
             border-radius: 24px;
             border: 0px solid transparent;
@@ -115,8 +115,16 @@
             }
 
             &.withUnit {
-                padding-right: 30px;
-                width: 142px;
+                padding-right: 24px;
+                width: 128px;
+
+                &.auto-width {
+                    padding-right: 30px;
+
+                    .da-input-unit { 
+                        top: 0;
+                    }
+                }
             }
 
             &.auto-width {
@@ -169,6 +177,7 @@
             position: relative;
             color: $t1-base-color;
             right: 27px;
+            top: -1px;
             width: 25px;
             // display: flex;
             // justify-content: flex-end;
@@ -179,6 +188,10 @@
             //     margin-right: 10px;
             //     overflow: hidden;
             // }
+
+            .da-input-unit-wrapper {
+                text-align: center;
+            }
 
             &.no-width {
                 width: 0;

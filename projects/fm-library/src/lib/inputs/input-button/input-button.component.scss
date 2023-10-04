@@ -57,7 +57,7 @@
             border: 0px solid transparent;
             border-bottom: 1px solid $button-base-color;
             box-shadow: 0 3px 5px $shadow-base-color;
-            text-align: left;
+            text-align: right;
             display: flex;
             align-items: flex-start;
             justify-content: flex-end;
@@ -83,6 +83,10 @@
                 }
             }
 
+            &.withUnit {
+                // padding-right: 30px;
+            }
+
             &.short {
                 width: 120px;
             }
@@ -105,12 +109,39 @@
                 width: 100%;
             }
 
+            .da-input-button-content {
+                display: flex;
+                width: 100%;
+                position: relative;
+                top: 2px;
+
+                .da-input-unit {
+                    position: relative;
+                    color: $t1-base-color;
+                    right: 6px;
+                    width: 25px;
+                    // display: flex;
+                    // justify-content: flex-end;
+                    pointer-events: none;
+        
+                    // .da-input-unit-wrapper {
+                    //     max-width: 25px;
+                    //     margin-right: 10px;
+                    //     overflow: hidden;
+                    // }
+        
+                    &.no-width {
+                        width: 0;
+                    }
+                }
+            }
+
             .da-input-button-icon-click {
                 fill: $button-base-color;
                 font-size: 16px;
                 margin: 5px 5px 0 0;
                 position: absolute;
-                right: 5px;
+                left: 55px;
                 transition: all 0.4s ease-in-out 0s, visibility 0s;
                 cursor: pointer;
 
@@ -119,14 +150,14 @@
                     margin: 3px 5px 0 0;
                 }
 
-                &.with-info {
-                    right: 35px;
+                &.no-unit {
+                    right: 5px;
                 }
             }
 
             .da-input-button-value {
-                width: auto;
-                margin: 3px 25px 0 35px;
+                width: 100%;
+                // margin: 3px 25px 0 35px;
                 display: block;
             }
         }
