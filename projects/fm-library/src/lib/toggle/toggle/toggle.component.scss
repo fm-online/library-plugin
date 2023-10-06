@@ -28,6 +28,9 @@
         -webkit-transition: 0.4s;
         transition: 0.4s;
 
+        &.disabled {
+            cursor: default;
+        }
 
         input {
             opacity: 0;
@@ -48,6 +51,12 @@
                 fill: #fff;
                 box-shadow: 0 3px 5px $shadow-secondary-color;
                 z-index: 2;
+            }
+
+            &:checked + .da-switch-slider.disabled {
+                background-color: $header-base-color;
+                color: $t1-base-color;
+                fill: $t1-base-color;
             }
 
         }
@@ -85,6 +94,11 @@
             justify-content: space-around;
             -webkit-transition: 0.4s;
             transition: 0.4s;
+
+            &.disabled {
+                cursor: auto;
+                pointer-events: none;
+            }
 
             &.right {
                 right: -1px;

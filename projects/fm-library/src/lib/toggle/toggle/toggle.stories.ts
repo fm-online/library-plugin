@@ -52,3 +52,16 @@ export const Dark: Story = {
   },
 };
 
+export const Disabled: Story = {
+  args: {
+    label1: 'Ja',
+    label2: 'Nein',
+    value1: 'true',
+    value2: 'false',
+    name: 'name',
+    inputDisabled: true,
+    localValue: 'true',
+    light: false,
+  },
+};
+

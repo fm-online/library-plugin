@@ -10,6 +10,7 @@ export class ToggleComponent implements OnChanges{
   @Input() value1: string = 'value1';
   @Input() label2: string = 'label2';
   @Input() value2: string = 'value2';
+  @Input() inputDisabled: boolean = false;
   @Input() localValue: string = 'localValue';
   @Input() light: boolean = false;
 

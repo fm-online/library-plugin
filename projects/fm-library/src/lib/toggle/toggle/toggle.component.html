@@ -1,28 +1,30 @@
 <div class="da-toggle" [ngClass]="{'light' : light}">
-    <label class="da-switch left">
+    <label class="da-switch left" [ngClass]="{'disabled': inputDisabled}">
         <input 
             type="radio" 
             (change)="getValue($event)" 
             [name]="name" 
+            [disabled]="inputDisabled"
             [value]="value1"
             [checked]="getCheckedOption(value1)"
         >
-        <div class="da-switch-slider left" [ngClass]="{'light' : light}">
+        <div class="da-switch-slider left" [ngClass]="{'light' : light, 'disabled': inputDisabled}">
             <span class="da-switch-label">{{label1}}</span>
-            <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
+            <svg-icon *ngIf="!inputDisabled" class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
         </div>
     </label>
-    <label class="da-switch right">
+    <label class="da-switch right" [ngClass]="{'disabled': inputDisabled}">
         <input 
             type="radio" 
             (change)="getValue($event)" 
             [name]="name" 
+            [disabled]="inputDisabled"
             [value]="value2"
             [checked]="getCheckedOption(value2)"
         >
-        <div class="da-switch-slider right" [ngClass]="{'light' : light}">
+        <div class="da-switch-slider right" [ngClass]="{'light' : light, 'disabled': inputDisabled}">
             <span class="da-switch-label">{{label2}}</span>
-            <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
+            <svg-icon *ngIf="!inputDisabled" class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
         </div>
 
     </label>
