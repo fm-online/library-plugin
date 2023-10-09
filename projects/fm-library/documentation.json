@@ -1869,7 +1869,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-93161dac288053e8c64e63a87df6fb58a4eb872b4789355942eedeced1aa06438a4c0bc334e3d43651526853ad638ed31dac29c0ef13934913dd7f7380d93c10",
+            "id": "component-InputComponent-90a06f0b4177c862cd7893226ece8d97b79359cabc385aedd98df45d95f938fe93dd4ae4c5edcbd319bbf59f3dc4f172338ecd5783dbbca950ff985cf6e3df39",
             "file": "projects/fm-library/src/lib/inputs/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1942,7 +1942,7 @@
                 },
                 {
                     "name": "doneTypingInterval",
-                    "defaultValue": "5000",
+                    "defaultValue": "3000",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 10,
@@ -2401,7 +2401,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n  typingTimer: any;\n  @Input() doneTypingInterval: number = 5000;\n  @Input() form: any;\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() placeholder: string = '';\n  @Input() value: string = '';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() validationType: string = 'currency';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() decimals: number = 2;\n  @Input() inputDisabled: boolean = false;\n  @Input() light: boolean = false;\n  @Input() skinnyLabel: boolean = false;\n  @Input() textAlign: string = 'right';\n  @Input() textColor: string = 'rgb(32, 56, 100)';\n  @Input() placeholderType: string | boolean = false;\n  @Input() backgroundColor: string = 'rgb(255, 255, 255)';\n  @Input() borderColor: string = 'rgb(32, 56, 100)';\n  defaultBoxShadowColor!: string;\n  @Input() boxShadowColor: string | boolean = false;\n  @Input() disableNegativeMargin: string | boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  @ViewChild('target') target!: any;\n  \n  constructor() {}\n\n  ngOnInit(): void {\n    this.light\n      ? this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)'\n      : this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)';\n  }\n\n  getValue(e: any) {\n    if (!!this.target.nativeElement.value) {\n      this.typingTimer = setTimeout(() => this.doneTyping(e), this.doneTypingInterval);\n    }\n  }\n\n  doneTyping(e: any) {\n    this.inputValue.emit([this.getCurrency(e.srcElement.value), this.name]);\n  }\n\n  getCurrency(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.replaceAll('.', '').replaceAll(',', '.');\n      if(isNaN(parseInt(inputValue))) {\n        return;\n      }\n      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: this.decimals });\n    } else {\n      this.value = e;\n    }\n    return this.value\n  }\n\n  removePlaceholder() {\n    this.placeholder = '';\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n  textAlignIsLeft() {\n    return this.textAlign === 'left' ? true : false;\n  }\n\n  textAlignIsCenter() {\n    return this.textAlign === 'center' ? true : false;\n  }\n\n  placeholderIsWhite() {\n    return this.placeholderType === 'white' ? true : false;\n  }\n\n  placeholderIsBlack() {\n    return this.placeholderType === 'black' ? true : false;\n  }\n\n  placeholderIsBlue() {\n    return this.placeholderType === 'blue' ? true : false;\n  }\n\n  getCustomBorderColor() {\n    return '1px solid ' + this.borderColor;\n  }\n\n  getCustomBoxShadowColor() {\n    return '0 3px 5px ' + this.boxShadowColor;\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n  typingTimer: any;\n  @Input() doneTypingInterval: number = 3000;\n  @Input() form: any;\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() placeholder: string = '';\n  @Input() value: string = '';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() validationType: string = 'currency';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() decimals: number = 2;\n  @Input() inputDisabled: boolean = false;\n  @Input() light: boolean = false;\n  @Input() skinnyLabel: boolean = false;\n  @Input() textAlign: string = 'right';\n  @Input() textColor: string = 'rgb(32, 56, 100)';\n  @Input() placeholderType: string | boolean = false;\n  @Input() backgroundColor: string = 'rgb(255, 255, 255)';\n  @Input() borderColor: string = 'rgb(32, 56, 100)';\n  defaultBoxShadowColor!: string;\n  @Input() boxShadowColor: string | boolean = false;\n  @Input() disableNegativeMargin: string | boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  @ViewChild('target') target!: any;\n  \n  constructor() {}\n\n  ngOnInit(): void {\n    this.light\n      ? this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)'\n      : this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)';\n  }\n\n  getValue(e: any) {\n    if (!!this.target.nativeElement.value) {\n      this.typingTimer = setTimeout(() => this.doneTyping(e), this.doneTypingInterval);\n    }\n  }\n\n  doneTyping(e: any) {\n    this.inputValue.emit([this.getCurrency(e.srcElement.value), this.name]);\n  }\n\n  getCurrency(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.replaceAll('.', '').replaceAll(',', '.');\n      if(isNaN(parseInt(inputValue))) {\n        return;\n      }\n      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: this.decimals });\n    } else {\n      this.value = e;\n    }\n    return this.value\n  }\n\n  removePlaceholder() {\n    this.placeholder = '';\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n  textAlignIsLeft() {\n    return this.textAlign === 'left' ? true : false;\n  }\n\n  textAlignIsCenter() {\n    return this.textAlign === 'center' ? true : false;\n  }\n\n  placeholderIsWhite() {\n    return this.placeholderType === 'white' ? true : false;\n  }\n\n  placeholderIsBlack() {\n    return this.placeholderType === 'black' ? true : false;\n  }\n\n  placeholderIsBlue() {\n    return this.placeholderType === 'blue' ? true : false;\n  }\n\n  getCustomBorderColor() {\n    return '1px solid ' + this.borderColor;\n  }\n\n  getCustomBoxShadowColor() {\n    return '0 3px 5px ' + this.boxShadowColor;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4635,7 +4635,7 @@
         },
         {
             "name": "ToggleComponent",
-            "id": "component-ToggleComponent-d37e4ef79e5b2a0c150e7415c3b188b9792d0456612e2bb4e080f2dafc5fffe12607d7ce66eae813270a451beb460f6eb19efdb32dae2c181bb15b0e07a84f2d",
+            "id": "component-ToggleComponent-12aa76a23c58e8399922723b2a76464cbfff52f69e9023f7564e48121d7b7150937e6289efa35fc6fe3b8a426b83cd24471b89036b47a98518de4f70296bf39a",
             "file": "projects/fm-library/src/lib/toggle/toggle/toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4652,6 +4652,15 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "inputDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
                 {
                     "name": "label1",
                     "defaultValue": "'label1'",
@@ -4675,7 +4684,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -4684,7 +4693,7 @@
                     "defaultValue": "'localValue'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -4722,7 +4731,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -4741,7 +4750,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4769,7 +4778,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 31,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4797,7 +4806,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4820,11 +4829,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent implements OnChanges{\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() localValue: string = 'localValue';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes['localValue']) {\n      this.localValue = changes['localValue'].currentValue;\n    }\n  }\n\n  getCheckedOption(value: string) {\n    return this.localValue == value;\n  }\n\n  getValue(e: any) {\n    this.localValue = e.srcElement.value;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent implements OnChanges{\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() inputDisabled: boolean = false;\n  @Input() localValue: string = 'localValue';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes['localValue']) {\n      this.localValue = changes['localValue'].currentValue;\n    }\n  }\n\n  getCheckedOption(value: string) {\n    return this.localValue == value;\n  }\n\n  getValue(e: any) {\n    this.localValue = e.srcElement.value;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    height: 42px;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 92px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n                z-index: 2;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 10px;\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: -5px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-around;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.right {\n                right: -1px;\n                left: 0px;\n                width: 100px;\n            }\n\n            &.left {\n                left: -8px;\n                right: 0px;\n                width: 100px;\n            }\n\n            &:before {\n                position: absolute;\n                content: \"\";\n                height: 42px;\n                width: 100%;\n                border-radius: 21px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n\n            &.left:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n\n\n            }\n\n            &.right:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n        }\n\n\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\";  \n\n.da-toggle {\n    font-family: $font;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 200px;\n    height: 42px;\n    border-radius: 21px;\n    background-color: #fff;\n    box-shadow: 0 3px 5px $shadow-base-color;\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-switch {\n        position: relative;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border-radius: 21px;\n        width: 92px;\n        height: 42px;\n        -webkit-transition: 0.4s;\n        transition: 0.4s;\n\n        &.disabled {\n            cursor: default;\n        }\n\n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n\n            &:checked + .da-switch-slider {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.light {\n                background-color: $success-color;\n                color: #fff;\n                fill: #fff;\n                box-shadow: 0 3px 5px $shadow-secondary-color;\n                z-index: 2;\n            }\n\n            &:checked + .da-switch-slider.disabled {\n                background-color: $header-base-color;\n                color: $t1-base-color;\n                fill: $t1-base-color;\n            }\n\n        }\n\n        .da-switch-label {\n            position: relative;\n            white-space: nowrap;\n            pointer-events: none;\n            left: 10px;\n            z-index: 1;\n        }\n        .da-switch-icon {\n            font-size: 1.5rem;\n            z-index: 1;\n            color: #fff;\n            fill: #fff;\n            margin-right: -5px;\n            margin-top: 5px;\n            pointer-events: none;\n        }\n\n        .da-switch-slider {\n            position: absolute;\n            cursor: pointer;\n            top: 0;\n            bottom: 0;\n            height: 42px;\n            width: 100%;\n            color: $t1-base-color;\n            fill: $t1-base-color;\n            border-radius: 21px;\n            z-index: 1;\n            display: flex;\n            align-items: center;\n            justify-content: space-around;\n            -webkit-transition: 0.4s;\n            transition: 0.4s;\n\n            &.disabled {\n                cursor: auto;\n                pointer-events: none;\n            }\n\n            &.right {\n                right: -1px;\n                left: 0px;\n                width: 100px;\n            }\n\n            &.left {\n                left: -8px;\n                right: 0px;\n                width: 100px;\n            }\n\n            &:before {\n                position: absolute;\n                content: \"\";\n                height: 42px;\n                width: 100%;\n                border-radius: 21px;\n                -webkit-transition: 0.4s;\n                transition: 0.4s;\n            }\n\n            &.left:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n\n\n            }\n\n            &.right:hover {\n                background-color: #ccc;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                color: #fff;\n                fill: #fff;\n            }\n        }\n\n\n    }\n}\n\n",
                     "styleUrl": "./toggle.component.scss"
                 }
             ],
@@ -4835,12 +4844,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 16
+                "line": 17
             },
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value1\"\n            [checked]=\"getCheckedOption(value1)\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [value]=\"value2\"\n            [checked]=\"getCheckedOption(value2)\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value1\"\n            [checked]=\"getCheckedOption(value1)\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value2\"\n            [checked]=\"getCheckedOption(value2)\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
         },
         {
             "name": "ToggleHorizontalComponent",
@@ -5736,21 +5745,21 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dark",
@@ -5766,21 +5775,21 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    options: testOptions3,\n    localValue: '',\n    name: 'name',\n    light: true,\n    elementWidth: '100px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dark",
@@ -5866,21 +5875,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: false,\n    icon: 'assets/images/circleCheck.svg',\n    selectedItem: placeholderTest,\n    selectItems: testItems,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -5926,21 +5935,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -5986,21 +5995,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    options: testOptions3,\n    localValue: '',\n    name: 'name',\n    light: false,\n    toggleWidth: '500px',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
             },
             {
                 "name": "Default",
@@ -6076,21 +6085,21 @@
                 "name": "DefaultDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "DefaultDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: true,\n    icon: 'assets/images/circleCheck.svg',\n    selectItems: testItems,\n    selectedItem: placeholderTest,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "DefaultDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "DefaultDark",
@@ -6201,6 +6210,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'disabled',\n    disabled: true,\n    icon: 'assets/images/user.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'header',\n      values: [\n        { name: 'header', value: '#DDE7EE' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    inputDisabled: true,\n    localValue: 'true',\n    light: false,\n  },\n}"
             },
             {
                 "name": "DisabledDark",
@@ -6706,21 +6725,21 @@
                 "name": "WithInfo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n    info: 'text-info',\n  },\n}"
-            },
-            {
-                "name": "WithInfo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    info: 'text-info',\n    size: '16px',\n  },\n}"
+            },
+            {
+                "name": "WithInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n    info: 'text-info',\n  },\n}"
             },
             {
                 "name": "withInfoDark",
@@ -6776,21 +6795,21 @@
                 "name": "WithInfoDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "WithInfoDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "WithInfoDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "WithMaxDate",
@@ -6896,8 +6915,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TooltipComponent>",
-                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                "rawtype": "StoryObj<DropdownComponent>",
+                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6907,8 +6926,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<DropdownComponent>",
-                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
+                "rawtype": "StoryObj<TooltipComponent>",
+                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6962,8 +6981,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderTextComponent>",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "rawtype": "StoryObj<TileTextComponent>",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6973,8 +6992,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TileTextComponent>",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "rawtype": "StoryObj<HeaderTextComponent>",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7039,8 +7058,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "rawtype": "StoryObj<ToggleHorizontalComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7050,8 +7069,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleHorizontalComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7370,48 +7389,6 @@
                     "defaultValue": "{\n  args: {\n    placeholder: '0',\n    value: 0,\n    step: 1,\n    min: 0,\n    max: 10,\n    name: 'name',\n    light: false,\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
-                },
-                {
-                    "name": "WithInfo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n    info: 'text-info',\n  },\n}"
-                },
-                {
-                    "name": "WithInfoDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
                 {
                     "name": "Dark",
@@ -7454,6 +7431,48 @@
                     "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
+                },
+                {
+                    "name": "WithInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n    info: 'text-info',\n  },\n}"
+                },
+                {
+                    "name": "WithInfoDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
                 {
                     "name": "Dark",
@@ -7474,28 +7493,16 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    localValue: '',\n    light: false,\n  },\n}"
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 },
                 {
-                    "name": "Default",
+                    "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "file": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    inputDisabled: true,\n    localValue: 'true',\n    light: false,\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts": [
@@ -7548,6 +7555,28 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'value': 'value3'\n  },\n  {\n    'label': 'label4',\n    'value': 'value4'\n  },\n  {\n    'label': 'label5',\n    'value': 'value5'\n  }\n]"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
@@ -7728,28 +7757,6 @@
                     "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
-                },
-                {
-                    "name": "DefaultDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Default",
@@ -7810,6 +7817,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: true,\n    icon: 'assets/images/circleCheck.svg',\n    selectItems: testItems,\n    selectedItem: placeholderTest,\n    info: 'dropdown-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
+                },
+                {
+                    "name": "DefaultDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts": [
@@ -8347,19 +8376,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TooltipComponent>",
-                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Story",
@@ -8367,6 +8383,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<DropdownComponent>",
                     "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TooltipComponent>",
+                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -8425,19 +8454,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderTextComponent>",
-                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
                 {
                     "name": "Story",
@@ -8445,6 +8461,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TileTextComponent>",
                     "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderTextComponent>",
+                    "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -8516,19 +8545,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts": [
                 {
                     "name": "Story",
@@ -8536,6 +8552,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleHorizontalComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -9906,7 +9935,7 @@
                 "linktype": "component",
                 "name": "ToggleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -9925,6 +9954,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

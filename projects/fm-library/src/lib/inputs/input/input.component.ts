@@ -65,7 +65,7 @@ export class InputComponent implements OnInit {
       if(isNaN(parseInt(inputValue))) {
         return;
       }
-      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: this.decimals });
+      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: this.decimals, minimumFractionDigits: this.decimals });
     } else {
       this.value = e;
     }
