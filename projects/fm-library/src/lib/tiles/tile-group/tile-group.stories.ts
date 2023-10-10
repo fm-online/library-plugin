@@ -49,8 +49,52 @@ const testTiles = [
   }
 ]
 
+const testTilesDark = [
+  {
+    'label': 'label1',
+    'name': 'name',
+    'state': 'success',
+    'checked': false,
+    'image': 'assets/images/houseCheckmark.svg',
+    'value': 'value1',
+    'dark': true,
+  },
+  {
+    'label': 'label2',
+    'name': 'name',
+    'state': 'warning',
+    'checked': false,
+    'image': 'assets/images/houseFlag.svg',
+    'value': 'value2',
+    'dark': true,
+  },
+  {
+    'label': 'label3',
+    'name': 'name',
+    'state': 'error',
+    'checked': false,
+    'image': 'assets/images/houseTree.svg',
+    'value': 'value3',
+    'dark': true,
+  }
+]
+
 export const Default: Story = {
   args: {
     tiles: testTiles
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    tiles: testTilesDark
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dunkel',
+      values: [
+        { name: 'dunkel', value: '#203864' },
+      ],
+    },
   },
 };

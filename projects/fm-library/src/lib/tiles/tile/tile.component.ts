@@ -15,6 +15,7 @@ export class TileComponent implements OnChanges {
   @Input() state: string = 'state';
   @Input() image?: string;
   @Input() light: boolean = true;
+  @Input() dark: boolean = false;
   @Input() content!: TemplateRef<any>;
   expanded!: boolean;
 

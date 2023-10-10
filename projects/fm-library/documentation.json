@@ -1869,7 +1869,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-90a06f0b4177c862cd7893226ece8d97b79359cabc385aedd98df45d95f938fe93dd4ae4c5edcbd319bbf59f3dc4f172338ecd5783dbbca950ff985cf6e3df39",
+            "id": "component-InputComponent-f995dba70fc8a9687d799f55f4ade462a9cf49d1bf1a6fe020b78d247f6ba5d29810d5284d52dafcf7b8bce522981573e23d58db6b2f12d645c21f53dd987fb0",
             "file": "projects/fm-library/src/lib/inputs/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2401,11 +2401,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n  typingTimer: any;\n  @Input() doneTypingInterval: number = 3000;\n  @Input() form: any;\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() placeholder: string = '';\n  @Input() value: string = '';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() validationType: string = 'currency';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() decimals: number = 2;\n  @Input() inputDisabled: boolean = false;\n  @Input() light: boolean = false;\n  @Input() skinnyLabel: boolean = false;\n  @Input() textAlign: string = 'right';\n  @Input() textColor: string = 'rgb(32, 56, 100)';\n  @Input() placeholderType: string | boolean = false;\n  @Input() backgroundColor: string = 'rgb(255, 255, 255)';\n  @Input() borderColor: string = 'rgb(32, 56, 100)';\n  defaultBoxShadowColor!: string;\n  @Input() boxShadowColor: string | boolean = false;\n  @Input() disableNegativeMargin: string | boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  @ViewChild('target') target!: any;\n  \n  constructor() {}\n\n  ngOnInit(): void {\n    this.light\n      ? this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)'\n      : this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)';\n  }\n\n  getValue(e: any) {\n    if (!!this.target.nativeElement.value) {\n      this.typingTimer = setTimeout(() => this.doneTyping(e), this.doneTypingInterval);\n    }\n  }\n\n  doneTyping(e: any) {\n    this.inputValue.emit([this.getCurrency(e.srcElement.value), this.name]);\n  }\n\n  getCurrency(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.replaceAll('.', '').replaceAll(',', '.');\n      if(isNaN(parseInt(inputValue))) {\n        return;\n      }\n      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: this.decimals });\n    } else {\n      this.value = e;\n    }\n    return this.value\n  }\n\n  removePlaceholder() {\n    this.placeholder = '';\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n  textAlignIsLeft() {\n    return this.textAlign === 'left' ? true : false;\n  }\n\n  textAlignIsCenter() {\n    return this.textAlign === 'center' ? true : false;\n  }\n\n  placeholderIsWhite() {\n    return this.placeholderType === 'white' ? true : false;\n  }\n\n  placeholderIsBlack() {\n    return this.placeholderType === 'black' ? true : false;\n  }\n\n  placeholderIsBlue() {\n    return this.placeholderType === 'blue' ? true : false;\n  }\n\n  getCustomBorderColor() {\n    return '1px solid ' + this.borderColor;\n  }\n\n  getCustomBoxShadowColor() {\n    return '0 3px 5px ' + this.boxShadowColor;\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';\n\n@Component({\n  selector: 'lib-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss']\n})\nexport class InputComponent implements OnInit {\n  typingTimer: any;\n  @Input() doneTypingInterval: number = 3000;\n  @Input() form: any;\n  @Input() label: string = '';\n  @Input() name: string = '';\n  @Input() placeholder: string = '';\n  @Input() value: string = '';\n  @Input() touched: boolean = false;\n  @Input() type: string = 'text';\n  @Input() validationType: string = 'currency';\n  @Input() unit!: string;\n  @Input() info: string = '';\n  @Input() infoText: string = '';\n  @Input() infoHeader: string = '';\n  @Input() error: boolean = false;\n  @Input() errorText: string = '';\n  @Input() autoWidth: boolean = false;\n  @Input() isCurrency: boolean = true;\n  @Input() decimals: number = 2;\n  @Input() inputDisabled: boolean = false;\n  @Input() light: boolean = false;\n  @Input() skinnyLabel: boolean = false;\n  @Input() textAlign: string = 'right';\n  @Input() textColor: string = 'rgb(32, 56, 100)';\n  @Input() placeholderType: string | boolean = false;\n  @Input() backgroundColor: string = 'rgb(255, 255, 255)';\n  @Input() borderColor: string = 'rgb(32, 56, 100)';\n  defaultBoxShadowColor!: string;\n  @Input() boxShadowColor: string | boolean = false;\n  @Input() disableNegativeMargin: string | boolean = false;\n\n  @Output() public inputValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n  @ViewChild('target') target!: any;\n  \n  constructor() {}\n\n  ngOnInit(): void {\n    this.light\n      ? this.defaultBoxShadowColor = '0 3px 5px rgba(255, 255, 255, 0.5)'\n      : this.defaultBoxShadowColor = '0 3px 5px rgba(32, 56, 100, 0.5)';\n  }\n\n  getValue(e: any) {\n    if (!!this.target.nativeElement.value) {\n      this.typingTimer = setTimeout(() => this.doneTyping(e), this.doneTypingInterval);\n    }\n  }\n\n  doneTyping(e: any) {\n    this.inputValue.emit([this.getCurrency(e.srcElement.value), this.name]);\n  }\n\n  getCurrency(e: any) {\n    if (this.isCurrency) {\n      const inputValue = e.replaceAll('.', '').replaceAll(',', '.');\n      if(isNaN(parseInt(inputValue))) {\n        return;\n      }\n      this.value = parseFloat(inputValue).toLocaleString('de-DE', { maximumFractionDigits: this.decimals, minimumFractionDigits: this.decimals });\n    } else {\n      this.value = e;\n    }\n    return this.value\n  }\n\n  removePlaceholder() {\n    this.placeholder = '';\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n  textAlignIsLeft() {\n    return this.textAlign === 'left' ? true : false;\n  }\n\n  textAlignIsCenter() {\n    return this.textAlign === 'center' ? true : false;\n  }\n\n  placeholderIsWhite() {\n    return this.placeholderType === 'white' ? true : false;\n  }\n\n  placeholderIsBlack() {\n    return this.placeholderType === 'black' ? true : false;\n  }\n\n  placeholderIsBlue() {\n    return this.placeholderType === 'blue' ? true : false;\n  }\n\n  getCustomBorderColor() {\n    return '1px solid ' + this.borderColor;\n  }\n\n  getCustomBoxShadowColor() {\n    return '0 3px 5px ' + this.boxShadowColor;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-input-single {\n    font-family: $font;\n\n    .da-input-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        text-align: left;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n\n        &.skinny {\n            font-weight: 100;\n        }\n    }\n\n    .da-input {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-right: -21px;\n        \n        &.no-negative-margin {\n            margin-right: 0;\n        }\n\n        .da-input-icons {\n            min-width: 23px;\n            min-height: 23px;\n            max-width: 23px;\n            max-height: 23px;\n            position: absolute;\n            left: 10px;\n            top: 9px;\n            border-radius: 23px;\n            border: none;\n            background: transparent;\n            z-index: 1;\n\n            .da-input-icon {\n\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                top: 0;\n                left: 0;\n                position: absolute;\n                border-radius: 25px;\n                background-color: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n\n                &.green {\n                    fill: $success-color;\n                }\n\n                &.red {\n                    fill: $warning-base-color;\n                }\n\n                svg {\n                    position: absolute;\n                    top: -2px;\n                    left: -1px;\n                }\n            }\n    \n        }\n\n        input {\n            width: 115px;\n            height: 26px;\n            border-radius: 24px;\n            border: 0px solid transparent;\n            // border-bottom: 1px solid $button-base-color;\n            // box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 20px 8px 45px;\n            font-size: $t1-base-size;\n            // color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                // border: 2px solid $button-base-color;\n                outline: none;\n            }\n\n            &::placeholder {\n                color: $t5-base-color;\n                text-align: right;\n            }\n\n            &.white-placeholder {\n                &::placeholder {\n                    color: rgb(255, 255, 255);\n                }\n            }\n\n            &.black-placeholder {\n                &::placeholder {\n                    color: rgb(0, 0, 0);\n                }\n            }\n\n            &.blue-placeholder {\n                &::placeholder {\n                    color: $button-base-color;\n                }\n            }\n\n            &.withUnit {\n                padding-right: 24px;\n                width: 128px;\n\n                &.auto-width {\n                    padding-right: 30px;\n\n                    .da-input-unit { \n                        top: 0;\n                    }\n                }\n            }\n\n            &.auto-width {\n                width: 100%;\n\n            }\n\n            &.light {\n                // box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    // border: 2px solid $button-secondary-color;\n                    outline: none;\n                }\n            }\n\n            &.error {\n                background-color: $error-background;\n                border-bottom: 1px solid $warning-base-color;\n                color: $warning-base-color;\n\n                &::placeholder {\n                    color: $warning-base-color;\n                }\n            }\n\n            &.disabled {\n                background-color: $header-base-color;\n                color: $t1-base-color;\n                opacity: 0.5;\n            }\n\n            &.text-align-left {\n                text-align: left;\n                &::placeholder {\n                    text-align: left;\n                }\n            }\n\n            &.text-align-center {\n                text-align: center;\n                &::placeholder {\n                    text-align: center;\n                }\n            }\n        }\n\n        .da-input-unit {\n            position: relative;\n            color: $t1-base-color;\n            right: 27px;\n            top: -1px;\n            width: 25px;\n            // display: flex;\n            // justify-content: flex-end;\n            pointer-events: none;\n\n            // .da-input-unit-wrapper {\n            //     max-width: 25px;\n            //     margin-right: 10px;\n            //     overflow: hidden;\n            // }\n\n            .da-input-unit-wrapper {\n                text-align: center;\n            }\n\n            &.no-width {\n                width: 0;\n            }\n        }\n\n        .da-input-info-button {\n            margin-left: -10px;\n        }\n\n    }\n    .da-input-error {\n            background-color: $button-base-color;\n            font-size: $t1-base-size;\n            color: $t1-secondary-color;\n            max-width: 185px;\n            position: absolute;\n            border-radius: 10px;\n            padding: 10px;\n            display: flex;\n            z-index: 2;\n            margin-top: 15px;\n            justify-content: center;\n            align-items: center;\n\n            &.light {\n                color: $t1-base-color;\n                background-color: $button-secondary-color;\n                box-shadow: 0 3px 5px $shadow-base-color;\n            }\n\n        .da-tooltip-arrow {\n            width: 20px;\n            height: 20px;\n            position: absolute;\n            top: -20px;\n            left: 20px;\n\n            .da-arrow-up {\n                width: 0; \n                height: 0; \n                border-left: 20px solid transparent;\n                border-right: 20px solid transparent;\n                border-bottom: 20px solid $button-base-color;\n\n                &.light {\n                    border-bottom: 20px solid $button-secondary-color;\n                }\n              }\n        }\n\n        .da-input-error-icon-wrapper {\n            background: transparent;\n            border-radius: 20px;\n            position: relative;\n            margin-right: 20px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            width: 20px;\n            height: 20px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n\n            .da-input-error-icon {\n                fill: $t1-secondary-color;\n                font-size: 20px;\n                margin-top: 6px;\n            }\n\n            &.light {\n                background: #fff;\n\n                .da-input-error-icon {\n                    fill: $t1-base-color;\n                }\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-input-single {\n    font-family: $font;\n\n    .da-input-label {\n        font-size: $t4-base-size;\n        margin-bottom: 3px;\n        text-align: left;\n        margin-left: 21px;\n        color: $t4-base-color;\n\n        &.light {\n            color: $t4-secondary-color;\n        }\n\n        &.skinny {\n            font-weight: 100;\n        }\n    }\n\n    .da-input {\n        position: relative;\n        display: flex;\n        align-items: center;\n        margin-right: -21px;\n        \n        &.no-negative-margin {\n            margin-right: 0;\n        }\n\n        .da-input-icons {\n            min-width: 23px;\n            min-height: 23px;\n            max-width: 23px;\n            max-height: 23px;\n            position: absolute;\n            left: 10px;\n            top: 9px;\n            border-radius: 23px;\n            border: none;\n            background: transparent;\n            z-index: 1;\n\n            .da-input-icon {\n\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                top: 0;\n                left: 0;\n                position: absolute;\n                border-radius: 25px;\n                background-color: #fff;\n                box-shadow: 0 3px 5px $shadow-base-color;\n\n                &.green {\n                    fill: $success-color;\n                }\n\n                &.red {\n                    fill: $warning-base-color;\n                }\n\n                svg {\n                    position: absolute;\n                    top: -2px;\n                    left: -1px;\n                }\n            }\n    \n        }\n\n        input {\n            width: 135px;\n            height: 26px;\n            border-radius: 24px;\n            border: 0px solid transparent;\n            // border-bottom: 1px solid $button-base-color;\n            // box-shadow: 0 3px 5px $shadow-base-color;\n            text-align: right;\n            padding: 8px 20px 8px 45px;\n            font-size: $t1-base-size;\n            // color: $t1-base-color;\n            font-family: $font;\n\n            &:hover,\n            &:focus,\n            &:focus-visible {\n                // border: 2px solid $button-base-color;\n                outline: none;\n            }\n\n            &::placeholder {\n                color: $t5-base-color;\n                text-align: right;\n            }\n\n            &.white-placeholder {\n                &::placeholder {\n                    color: rgb(255, 255, 255);\n                }\n            }\n\n            &.black-placeholder {\n                &::placeholder {\n                    color: rgb(0, 0, 0);\n                }\n            }\n\n            &.blue-placeholder {\n                &::placeholder {\n                    color: $button-base-color;\n                }\n            }\n\n            &.withUnit {\n                padding-right: 30px;\n                width: 125px;\n\n                // &.auto-width {\n                //     padding-right: 30px;\n\n                //     .da-input-unit { \n                //         top: 0;\n                //     }\n                // }\n            }\n\n            &.auto-width {\n                width: 100%;\n\n            }\n\n            &.light {\n                // box-shadow: 0 3px 5px $shadow-secondary-color;\n\n                &:hover,\n                &:focus {\n                    // border: 2px solid $button-secondary-color;\n                    outline: none;\n                }\n            }\n\n            &.error {\n                background-color: $error-background;\n                border-bottom: 1px solid $warning-base-color;\n                color: $warning-base-color;\n\n                &::placeholder {\n                    color: $warning-base-color;\n                }\n            }\n\n            &.disabled {\n                background-color: $header-base-color;\n                color: $t1-base-color;\n                opacity: 0.5;\n            }\n\n            &.text-align-left {\n                text-align: left;\n                &::placeholder {\n                    text-align: left;\n                }\n            }\n\n            &.text-align-center {\n                text-align: center;\n                &::placeholder {\n                    text-align: center;\n                }\n            }\n        }\n\n        .da-input-unit {\n            position: relative;\n            color: $t1-base-color;\n            right: 25px;\n            width: 25px;\n            pointer-events: none;\n\n\n            .da-input-unit-wrapper {\n                display: flex;\n                align-items: center;\n                justify-content: flex-start;\n            }\n\n            &.no-width {\n                width: 0;\n            }\n        }\n\n        .da-input-info-button {\n            margin-left: -10px;\n        }\n\n    }\n    .da-input-error {\n            background-color: $button-base-color;\n            font-size: $t1-base-size;\n            color: $t1-secondary-color;\n            max-width: 185px;\n            position: absolute;\n            border-radius: 10px;\n            padding: 10px;\n            display: flex;\n            z-index: 2;\n            margin-top: 15px;\n            justify-content: center;\n            align-items: center;\n\n            &.light {\n                color: $t1-base-color;\n                background-color: $button-secondary-color;\n                box-shadow: 0 3px 5px $shadow-base-color;\n            }\n\n        .da-tooltip-arrow {\n            width: 20px;\n            height: 20px;\n            position: absolute;\n            top: -20px;\n            left: 20px;\n\n            .da-arrow-up {\n                width: 0; \n                height: 0; \n                border-left: 20px solid transparent;\n                border-right: 20px solid transparent;\n                border-bottom: 20px solid $button-base-color;\n\n                &.light {\n                    border-bottom: 20px solid $button-secondary-color;\n                }\n              }\n        }\n\n        .da-input-error-icon-wrapper {\n            background: transparent;\n            border-radius: 20px;\n            position: relative;\n            margin-right: 20px;\n            box-shadow: 0 3px 5px $shadow-base-color;\n            width: 20px;\n            height: 20px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n\n            .da-input-error-icon {\n                fill: $t1-secondary-color;\n                font-size: 20px;\n                margin-top: 6px;\n            }\n\n            &.light {\n                background: #fff;\n\n                .da-input-error-icon {\n                    fill: $t1-base-color;\n                }\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -2421,7 +2421,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light, 'skinny': skinnyLabel}\">{{label}}</div>\n    <!-- Form Input -->\n    <label *ngIf=\"form\" class=\"da-input\" [ngClass]=\"{'no-negative-margin' : disableNegativeMargin}\" [formGroup]=\"form\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [formControlName]=\"name\"\n            [value]=\"value\"\n            [disabled]=\"inputDisabled\"\n            (click)=\"removePlaceholder()\"\n            [ngClass]=\"{'light' : light,\n                        'error' : error,\n                        'auto-width' : autoWidth,\n                        'withUnit': unit,\n                        'disabled': inputDisabled,\n                        'text-align-left': textAlignIsLeft(),\n                        'text-align-center': textAlignIsCenter(),\n                        'white-placeholder': placeholderIsWhite(),\n                        'black-placeholder': placeholderIsBlack(),\n                        'blue-placeholder': placeholderIsBlue()}\"\n            [ngStyle]=\"{'color': textColor,\n                        'background-color': backgroundColor,\n                        'border-bottom': '1px solid ' + borderColor,\n                        'box-shadow': boxShadowColor ? '0 3px 5px ' + boxShadowColor : defaultBoxShadowColor}\"\n            #target\n        >\n        <div class=\"da-input-unit\" [ngClass]=\"{'no-width' : disableNegativeMargin}\">\n            <div class=\"da-input-unit-wrapper\">\n                {{unit}}\n            </div>\n        </div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <!-- No Form Input -->\n    <label *ngIf=\"!form\" class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            (keyup)=\"getValue($event)\" \n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [disabled]=\"inputDisabled\"\n            [value]=\"value\"\n            (click)=\"removePlaceholder()\"\n            [ngClass]=\"{'light' : light,\n                        'error' : error,\n                        'auto-width' : autoWidth,\n                        'withUnit': unit,\n                        'disabled': inputDisabled,\n                        'text-align-left': textAlignIsLeft(),\n                        'text-align-center': textAlignIsCenter(),\n                        'white-placeholder': placeholderIsWhite(),\n                        'black-placeholder': placeholderIsBlack(),\n                        'blue-placeholder': placeholderIsBlue()}\"\n            [ngStyle]=\"{'color': textColor,\n                        'background-color': backgroundColor,\n                        'border-bottom': getCustomBorderColor(),\n                        'box-shadow': boxShadowColor ? getCustomBoxShadowColor() : defaultBoxShadowColor}\"\n            #target\n        >\n        <div class=\"da-input-unit\">\n            <div class=\"da-input-unit-wrapper\">\n                {{unit}}\n            </div>\n        </div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <svg-icon class=\"da-input-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n\n"
+            "templateData": "<div class=\"da-input-single\">\n    <div class=\"da-input-label\" [ngClass]=\"{'light' : light, 'skinny': skinnyLabel}\">{{label}}</div>\n    <!-- Form Input -->\n    <label *ngIf=\"form\" class=\"da-input\" [ngClass]=\"{'no-negative-margin' : disableNegativeMargin}\" [formGroup]=\"form\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            (keyup)=\"getValue($event)\" \n            (change)=\"doneTyping($event)\"\n            [placeholder]=\"placeholder\"\n            [formControlName]=\"name\"\n            [value]=\"value\"\n            [disabled]=\"inputDisabled\"\n            (click)=\"removePlaceholder()\"\n            [ngClass]=\"{'light' : light,\n                        'error' : error,\n                        'auto-width' : autoWidth,\n                        'withUnit': unit,\n                        'disabled': inputDisabled,\n                        'text-align-left': textAlignIsLeft(),\n                        'text-align-center': textAlignIsCenter(),\n                        'white-placeholder': placeholderIsWhite(),\n                        'black-placeholder': placeholderIsBlack(),\n                        'blue-placeholder': placeholderIsBlue()}\"\n            [ngStyle]=\"{'color': textColor,\n                        'background-color': backgroundColor,\n                        'border-bottom': '1px solid ' + borderColor,\n                        'box-shadow': boxShadowColor ? '0 3px 5px ' + boxShadowColor : defaultBoxShadowColor}\"\n            #target\n        >\n        <div class=\"da-input-unit\" [ngClass]=\"{'no-width' : disableNegativeMargin}\">\n            <div class=\"da-input-unit-wrapper\">\n                {{unit}}\n            </div>\n        </div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <!-- No Form Input -->\n    <label *ngIf=\"!form\" class=\"da-input\">\n        <div class=\"da-input-icons\" *ngIf=\"touched\">\n            <svg-icon \n                *ngIf=\"!error\" \n                class=\"da-input-icon green\" \n                src=\"assets/images/circleCheck.svg\"\n            ></svg-icon>\n            <svg-icon \n                *ngIf=\"error\" \n                class=\"da-input-icon red\" \n                src=\"assets/images/circleXmark.svg\"\n            ></svg-icon>\n        </div>\n        <input \n            autocomplete=\"off\"\n            [type]=\"type\" \n            (keyup)=\"getValue($event)\" \n            (change)=\"doneTyping($event)\"\n            [placeholder]=\"placeholder\"\n            [name]=\"name\"\n            [disabled]=\"inputDisabled\"\n            [value]=\"value\"\n            (click)=\"removePlaceholder()\"\n            [ngClass]=\"{'light' : light,\n                        'error' : error,\n                        'auto-width' : autoWidth,\n                        'withUnit': unit,\n                        'disabled': inputDisabled,\n                        'text-align-left': textAlignIsLeft(),\n                        'text-align-center': textAlignIsCenter(),\n                        'white-placeholder': placeholderIsWhite(),\n                        'black-placeholder': placeholderIsBlack(),\n                        'blue-placeholder': placeholderIsBlue()}\"\n            [ngStyle]=\"{'color': textColor,\n                        'background-color': backgroundColor,\n                        'border-bottom': getCustomBorderColor(),\n                        'box-shadow': boxShadowColor ? getCustomBoxShadowColor() : defaultBoxShadowColor}\"\n            #target\n        >\n        <div class=\"da-input-unit\">\n            <div class=\"da-input-unit-wrapper\">\n                {{unit}}\n            </div>\n        </div>\n        <div class=\"da-input-info-button\" *ngIf=\"info\">\n            <lib-info-button \n            [light]=\"light\" \n            (infoPressed)=\"getInfo($event)\"\n            [id]=\"info\"\n            ></lib-info-button>\n        </div>\n    </label>\n    <div class=\"da-input-error\" *ngIf=\"error\" [ngClass]=\"{'light' : light}\">\n        <div class=\"da-tooltip-arrow\">\n            <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n        </div>\n        <div class=\"da-input-error-icon-wrapper\" [ngClass]=\"{'light' : light}\">\n            <svg-icon class=\"da-input-error-icon\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n        </div>\n        <span>{{errorText}}</span>\n    </div>\n</div>\n\n"
         },
         {
             "name": "InputDateComponent",
@@ -3624,7 +3624,7 @@
         },
         {
             "name": "TileComponent",
-            "id": "component-TileComponent-aded1fe3583baf89143ec8a1448a18f67200b07d7330007fd9ac85162e25ffd38bcb1b154835006a3f47b33624eb8cc2946ee7f823bea99c34d7698f17d05c24",
+            "id": "component-TileComponent-01bae81a694ab31e34b449650cedaddd1edf9a8cac3b622c5da0f07469f0a3e90b317b133a883d46040181adcd11ee4c17f25bc0fc42a773f17ec9adfac1bd02",
             "file": "projects/fm-library/src/lib/tiles/tile/tile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3654,8 +3654,17 @@
                     "name": "content",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "TemplateRef<any>",
+                    "decorators": []
+                },
+                {
+                    "name": "dark",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -3727,7 +3736,7 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -3739,7 +3748,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 20
                 },
                 {
                     "name": "screen",
@@ -3748,7 +3757,7 @@
                     "type": "HelperService",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 25,
                     "modifierKind": [
                         123
                     ]
@@ -3768,7 +3777,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3796,7 +3805,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 32,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3817,7 +3826,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -3840,17 +3849,17 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28
+                    "line": 29
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: string;\n  @Input() light: boolean = true;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: string;\n  @Input() light: boolean = true;\n  @Input() dark: boolean = false;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                background: #fff;\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n            &.dark {\n                background-color: $radiobutton-secondary-color;\n            }\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n\n        &.dark {\n            background-color: $tab-background;\n            box-shadow: 0px 8px 20px -5px $shadow-secondary-color;\n\n            .da-tile-image {\n                fill: $t4-secondary-color;\n                color: $t4-secondary-color;\n\n                &.checked {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n            }\n\n            .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                background: #fff;\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n            &.dark {\n                &:checked ~ .da-tile-image {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n        \n                &:checked ~ .da-tile-label {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -3868,7 +3877,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 21,
+                "line": 22,
                 "jsdoctags": [
                     {
                         "name": "screen",
@@ -3884,7 +3893,7 @@
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'dark' : dark, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'dark' : dark}\"\n        >\n        <div class=\"da-tile-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
@@ -4027,7 +4036,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"da-tiles\" [ngClass]=\"{'withIndex' : withIndex, 'mobile': screen.isSmallest()}\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
+            "templateData": "<div class=\"da-tiles\" [ngClass]=\"{'withIndex' : withIndex, 'mobile': screen.isSmallest()}\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [dark]=\"tile.dark\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
         },
         {
             "name": "TileRatingComponent",
@@ -5745,6 +5754,16 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -5755,11 +5774,11 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                "defaultValue": "{\n  args: {\n    tiles: testTilesDark\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dark",
@@ -5775,21 +5794,21 @@
                 "name": "Dark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    options: testOptions3,\n    localValue: '',\n    name: 'name',\n    light: true,\n    elementWidth: '100px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "Dark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Dark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    options: testOptions3,\n    localValue: '',\n    name: 'name',\n    light: true,\n    elementWidth: '100px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "Dark",
@@ -5875,21 +5894,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: false,\n    icon: 'assets/images/circleCheck.svg',\n    selectedItem: placeholderTest,\n    selectItems: testItems,\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: false,\n    icon: 'assets/images/circleCheck.svg',\n    selectedItem: placeholderTest,\n    selectItems: testItems,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -5935,21 +5954,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -5995,21 +6014,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    options: testOptions3,\n    localValue: '',\n    name: 'name',\n    light: false,\n    toggleWidth: '500px',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    options: testOptions3,\n    localValue: '',\n    name: 'name',\n    light: false,\n    toggleWidth: '500px',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -6085,21 +6104,21 @@
                 "name": "DefaultDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: true,\n    icon: 'assets/images/circleCheck.svg',\n    selectItems: testItems,\n    selectedItem: placeholderTest,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "DefaultDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "DefaultDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: true,\n    icon: 'assets/images/circleCheck.svg',\n    selectItems: testItems,\n    selectedItem: placeholderTest,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "DefaultDark",
@@ -6632,6 +6651,16 @@
                 "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3'\n  }\n]"
             },
             {
+                "name": "testTilesDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1',\n    'dark': true,\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2',\n    'dark': true,\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3',\n    'dark': true,\n  }\n]"
+            },
+            {
                 "name": "TwoTabs",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -6725,21 +6754,21 @@
                 "name": "WithInfo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    info: 'text-info',\n    size: '16px',\n  },\n}"
-            },
-            {
-                "name": "WithInfo",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: false,\n    info: 'text-info',\n  },\n}"
+            },
+            {
+                "name": "WithInfo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    info: 'text-info',\n    size: '16px',\n  },\n}"
             },
             {
                 "name": "withInfoDark",
@@ -6795,21 +6824,21 @@
                 "name": "WithInfoDark",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-            },
-            {
-                "name": "WithInfoDark",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "WithInfoDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
             },
             {
                 "name": "WithMaxDate",
@@ -6915,8 +6944,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<DropdownComponent>",
-                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
+                "rawtype": "StoryObj<TooltipComponent>",
+                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6926,8 +6955,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TooltipComponent>",
-                "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                "rawtype": "StoryObj<DropdownComponent>",
+                "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6981,8 +7010,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TileTextComponent>",
-                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                "rawtype": "StoryObj<HeaderTextComponent>",
+                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6992,8 +7021,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderTextComponent>",
-                "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                "rawtype": "StoryObj<TileTextComponent>",
+                "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7058,8 +7087,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleHorizontalComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                "rawtype": "StoryObj<ToggleCheckboxComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7069,8 +7098,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ToggleCheckboxComponent>",
-                "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                "rawtype": "StoryObj<ToggleHorizontalComponent>",
+                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7389,48 +7418,6 @@
                     "defaultValue": "{\n  args: {\n    placeholder: '0',\n    value: 0,\n    step: 1,\n    min: 0,\n    max: 10,\n    name: 'name',\n    light: false,\n  },\n}"
                 }
             ],
-            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
-                },
-                {
-                    "name": "WithInfo",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    info: 'text-info',\n    size: '16px',\n  },\n}"
-                },
-                {
-                    "name": "WithInfoDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                }
-            ],
             "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
                 {
                     "name": "Dark",
@@ -7473,6 +7460,90 @@
                     "defaultValue": "{\n  args: {\n    label: 'die Headline',\n    light: true,\n    info: 'text-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    size: '16px',\n  },\n}"
+                },
+                {
+                    "name": "WithInfo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: false,\n    info: 'text-info',\n    size: '16px',\n  },\n}"
+                },
+                {
+                    "name": "WithInfoDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'der Text',\n    light: true,\n    info: 'text-info-dark',\n    size: '16px',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tiles: testTilesDark\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
+                },
+                {
+                    "name": "testTiles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3'\n  }\n]"
+                },
+                {
+                    "name": "testTilesDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1',\n    'dark': true,\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2',\n    'dark': true,\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3',\n    'dark': true,\n  }\n]"
+                }
+            ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
                 {
                     "name": "Dark",
@@ -7503,6 +7574,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label1: 'Ja',\n    label2: 'Nein',\n    value1: 'true',\n    value2: 'false',\n    name: 'name',\n    inputDisabled: true,\n    localValue: 'true',\n    light: false,\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
+                {
+                    "name": "Dark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts": [
@@ -7555,28 +7648,6 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'value': 'value3'\n  },\n  {\n    'label': 'label4',\n    'value': 'value4'\n  },\n  {\n    'label': 'label5',\n    'value': 'value5'\n  }\n]"
-                }
-            ],
-            "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
-                {
-                    "name": "Dark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: true,\n    dynLabelClassName: 'dynamic-class'\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'das Label',\n    checked: true,\n    light: false,\n    dynLabelClassName: 'dynamic-class'\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
@@ -7757,6 +7828,28 @@
                     "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
+            "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
+                },
+                {
+                    "name": "DefaultDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
             "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
                 {
                     "name": "Default",
@@ -7817,28 +7910,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    name: 'id',\n    label: 'das Label',\n    light: true,\n    icon: 'assets/images/circleCheck.svg',\n    selectItems: testItems,\n    selectedItem: placeholderTest,\n    info: 'dropdown-info-dark',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
-                }
-            ],
-            "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    text: 'Der Info text',\n    icon: 'assets/images/circleInfo.svg',\n  },\n}"
-                },
-                {
-                    "name": "DefaultDark",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    text: 'Der Infotext',\n    light: true,\n    icon: 'assets/images/circleInfo.svg',\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/inputs/input-button/input-button.stories.ts": [
@@ -8141,28 +8212,6 @@
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3'\n  }\n]"
                 }
             ],
-            "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tiles: testTiles\n  },\n}"
-                },
-                {
-                    "name": "testTiles",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2'\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3'\n  }\n]"
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
                 {
                     "name": "Default",
@@ -8376,19 +8425,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<DropdownComponent>",
-                    "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
                 {
                     "name": "Story",
@@ -8396,6 +8432,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TooltipComponent>",
                     "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DropdownComponent>",
+                    "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -8454,19 +8503,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<TileTextComponent>",
-                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/text/header-text/header-text.stories.ts": [
                 {
                     "name": "Story",
@@ -8474,6 +8510,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HeaderTextComponent>",
                     "file": "projects/fm-library/src/lib/text/header-text/header-text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TileTextComponent>",
+                    "file": "projects/fm-library/src/lib/text/tile-text/tile-text.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -8545,19 +8594,6 @@
                     "kind": 177
                 }
             ],
-            "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ToggleHorizontalComponent>",
-                    "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts": [
                 {
                     "name": "Story",
@@ -8565,6 +8601,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ToggleCheckboxComponent>",
                     "file": "projects/fm-library/src/lib/toggle/toggle-checkbox/toggle-checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleHorizontalComponent>",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -9650,6 +9699,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Dark",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -9661,6 +9720,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "testTiles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "testTilesDark",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -9700,7 +9769,7 @@
                 "linktype": "component",
                 "name": "TileComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/18",
+                "coverageCount": "0/19",
                 "status": "low"
             },
             {

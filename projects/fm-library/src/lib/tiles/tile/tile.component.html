@@ -1,7 +1,7 @@
 <div class="da-tile-single">
     <label 
             class="da-tile" 
-            [ngClass]="{'expanded' : expanded, 'mobile' : screen.isSmallest()}"
+            [ngClass]="{'expanded' : expanded, 'dark' : dark, 'mobile' : screen.isSmallest()}"
         >
         <input 
             type="radio" 
@@ -9,6 +9,7 @@
             [checked]="checked"
             [name]="name"
             [value]="value"
+            [ngClass]="{'dark' : dark}"
         >
         <div class="da-tile-icon-wrapper" [ngClass]="{'checked' : checked}">
             <svg-icon class="da-tile-icon green" *ngIf="state === 'success'" src="assets/images/circleCheck.svg"></svg-icon>

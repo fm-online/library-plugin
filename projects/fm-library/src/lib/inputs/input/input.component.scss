@@ -72,7 +72,7 @@
         }
 
         input {
-            width: 115px;
+            width: 135px;
             height: 26px;
             border-radius: 24px;
             border: 0px solid transparent;
@@ -115,16 +115,16 @@
             }
 
             &.withUnit {
-                padding-right: 24px;
-                width: 128px;
+                padding-right: 30px;
+                width: 125px;
 
-                &.auto-width {
-                    padding-right: 30px;
+                // &.auto-width {
+                //     padding-right: 30px;
 
-                    .da-input-unit { 
-                        top: 0;
-                    }
-                }
+                //     .da-input-unit { 
+                //         top: 0;
+                //     }
+                // }
             }
 
             &.auto-width {
@@ -176,21 +176,15 @@
         .da-input-unit {
             position: relative;
             color: $t1-base-color;
-            right: 27px;
-            top: -1px;
+            right: 25px;
             width: 25px;
-            // display: flex;
-            // justify-content: flex-end;
             pointer-events: none;
 
-            // .da-input-unit-wrapper {
-            //     max-width: 25px;
-            //     margin-right: 10px;
-            //     overflow: hidden;
-            // }
 
             .da-input-unit-wrapper {
-                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
             }
 
             &.no-width {

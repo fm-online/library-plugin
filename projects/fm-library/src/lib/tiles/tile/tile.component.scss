@@ -24,6 +24,10 @@
             background-color: $button-base-color;
             border: 1px solid $button-base-color;
 
+            &.dark {
+                background-color: $radiobutton-secondary-color;
+            }
+
         }
 
         &.mobile {
@@ -31,6 +35,25 @@
             min-height: auto;
             padding-bottom: 0;
 
+        }
+
+        &.dark {
+            background-color: $tab-background;
+            box-shadow: 0px 8px 20px -5px $shadow-secondary-color;
+
+            .da-tile-image {
+                fill: $t4-secondary-color;
+                color: $t4-secondary-color;
+
+                &.checked {
+                    color: $t4-base-color;
+                    fill: $t4-base-color;
+                }
+            }
+
+            .da-tile-label {
+                color: $t4-secondary-color;
+            }
         }
      
         .da-tile-icon-wrapper {
@@ -112,6 +135,18 @@
             &:checked ~ .da-tile-label {
                 color: $t4-secondary-color;
                 fill: $t4-secondary-color;
+            }
+
+            &.dark {
+                &:checked ~ .da-tile-image {
+                    color: $t4-base-color;
+                    fill: $t4-base-color;
+                }
+        
+                &:checked ~ .da-tile-label {
+                    color: $t4-base-color;
+                    fill: $t4-base-color;
+                }
             }
         }
 
