@@ -3,7 +3,7 @@
         (click)="getValue()" 
         [ngClass]="{'light' : light, 'short' : iconButton, 'disabled' : disabled, 'auto-width' : autoWidth, 'mobile' : screen.isSmallest()}" 
         [disabled]="disabled"
-        [ngStyle]="{'width': width ? width + 'px' : ''}"
+        [ngStyle]="{'width': width && screen.isSmallest() ? '100%' : width && !screen.isSmallest() ? width + 'px' : ''}"
         #target
     >
         <svg-icon *ngIf="iconLeft" 
@@ -11,7 +11,7 @@
             [src]="iconLeft"
         >
         </svg-icon>
-        <span class="da-button-label" *ngIf="value">{{ value }}</span> 
+        <span class="da-button-label" *ngIf="value" [ngStyle]="{'margin': width && screen.isSmallest() ? '0 20px' : ''}" >{{ value }}</span> 
         <svg-icon *ngIf="icon" 
             class="da-button-icon main" 
             [ngClass]="{'mobile' : screen.isSmallest()}"

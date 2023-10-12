@@ -476,6 +476,15 @@
                     "decorators": []
                 },
                 {
+                    "name": "custom",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "light",
                     "defaultValue": "false",
                     "deprecated": false,
@@ -491,7 +500,7 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -504,7 +513,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "screen",
@@ -513,7 +522,7 @@
                     "type": "HelperService",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 17,
                     "modifierKind": [
                         123
                     ]
@@ -526,7 +535,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -536,7 +545,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -559,7 +568,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -587,7 +596,7 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20
+                    "line": 21
                 }
             ],
             "description": "",
@@ -615,7 +624,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 13,
+                "line": 14,
                 "jsdoctags": [
                     {
                         "name": "screen",
@@ -6569,6 +6578,16 @@
                 "defaultValue": "[\r\n  {\r\n    'iconLeft': 'assets/images/chevronLeft.svg',\r\n    'value': 'zurück',\r\n    'type': 'back'\r\n  },\r\n  {\r\n    'label': 'Fortschritt speichern',\r\n    'iconButton': true,\r\n    'icon': 'assets/images/diskSave.svg',\r\n    'type': 'save',\r\n  },\r\n  {\r\n    'iconRight': 'assets/images/chevronRight.svg',\r\n    'value': 'weiter',\r\n    'type': 'next',\r\n    'disabled': true,\r\n  }\r\n]"
             },
             {
+                "name": "testButtonsCustomWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'iconLeft': 'assets/images/chevronLeft.svg',\n    'value': 'zurück',\n    'type': 'back'\n  },\n  {\n    'label': 'Fortschritt speichern',\n    'iconButton': true,\n    'icon': 'assets/images/diskSave.svg',\n    'type': 'save',\n  },\n  {\n    'iconRight': 'assets/images/chevronRight.svg',\n    'value': 'zum Finanzierungszertifikat',\n    'type': 'next',\n    'disabled': true,\n    'width': '220'\n  }\n]"
+            },
+            {
                 "name": "testItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -6717,6 +6736,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    label: 'das Label',\r\n    name: 'id',\r\n    value: '1.200,00',\r\n    unit: '€',\r\n    touched: false,\r\n    light: true,\r\n    infoText: 'info Text',\r\n    infoHeader: 'info Überschrift',\r\n  },\r\n  parameters: {\r\n    backgrounds: {\r\n      default: 'dunkel',\r\n      values: [\r\n        { name: 'dunkel', value: '#203864' },\r\n      ],\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "withCustomWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    buttons: testButtonsCustomWidth,\n    light: false,\n    custom: true,\n  },\n}"
             },
             {
                 "name": "withInfo",
@@ -8687,7 +8716,7 @@
                 "linktype": "component",
                 "name": "ButtonGroupComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -8716,6 +8745,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "testButtons",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "testButtonsCustomWidth",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "withCustomWidth",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

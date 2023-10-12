@@ -59,6 +59,27 @@ const testButtons = [
   }
 ]
 
+const testButtonsCustomWidth = [
+  {
+    'iconLeft': 'assets/images/chevronLeft.svg',
+    'value': 'zurück',
+    'type': 'back'
+  },
+  {
+    'label': 'Fortschritt speichern',
+    'iconButton': true,
+    'icon': 'assets/images/diskSave.svg',
+    'type': 'save',
+  },
+  {
+    'iconRight': 'assets/images/chevronRight.svg',
+    'value': 'zum Finanzierungszertifikat',
+    'type': 'next',
+    'disabled': true,
+    'width': '220'
+  }
+]
+
 export const Default: Story = {
   args: {
     buttons: testButtons,
@@ -78,5 +99,13 @@ export const DefaultDark: Story = {
         { name: 'dunkel', value: '#203864' },
       ],
     },
+  },
+};
+
+export const withCustomWidth: Story = {
+  args: {
+    buttons: testButtonsCustomWidth,
+    light: false,
+    custom: true,
   },
 };
