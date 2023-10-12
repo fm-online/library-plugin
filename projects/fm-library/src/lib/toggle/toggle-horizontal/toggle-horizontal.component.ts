@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'lib-toggle-horizontal',
@@ -19,17 +19,19 @@ export class ToggleHorizontalComponent implements AfterViewInit {
   
   @ViewChild('toggleContainer') toggleContainer!: ElementRef<any>;
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
-    console.log(this.toggleContainer.nativeElement.offsetWidth);
     if (this.toggleWidthAuto()) {
       this.toggleWidth = this.toggleContainer.nativeElement.offsetWidth + 'px';
       this.elementWidth = (+this.toggleContainer.nativeElement.offsetWidth / this.getElementAmount()).toString() + 'px';
+      this.cdr.detectChanges();
     } else if (this.isAuto(this.toggleWidth)) {
       this.toggleWidth = this.getToggleWidthWithElementWidth();
+      this.cdr.detectChanges();
     } else if (this.isAuto(this.elementWidth)) {
       this.elementWidth = this.getElementWidthWithToggleWidth();
+      this.cdr.detectChanges();
     }
   }
 
