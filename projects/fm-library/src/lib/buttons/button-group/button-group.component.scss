@@ -9,5 +9,16 @@
 
     &.mobile {
         column-gap: 10px;
+
+        &.custom {
+            justify-content: flex-start;
+
+            lib-button:nth-child(1) {
+                order: 2;
+            }
+            lib-button:nth-child(2) {
+                order: 3;
+            }
+        }
     }
 }

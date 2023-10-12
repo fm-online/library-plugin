@@ -9,6 +9,7 @@ import { HelperService } from '../../services/helper.service';
 export class ButtonGroupComponent implements OnInit {
   @Input() buttons: any;
   @Input() light: boolean = false;
+  @Input() custom: boolean = false;
   localValue: string = 'localValue';
   @Output() public buttonValue: EventEmitter<any> = new EventEmitter<any>();
 
