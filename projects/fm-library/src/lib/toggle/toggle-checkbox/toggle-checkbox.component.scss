@@ -85,9 +85,8 @@
             white-space: normal !important;
         }
 
-        a, a:link, a:visited, a:hover, a:active {
+        a, a:link, a:visited, a:hover, a:active { // Scheint nicht zu funktionieren
             color: inherit !important;
-        } 
+        }
     }
 }
-
