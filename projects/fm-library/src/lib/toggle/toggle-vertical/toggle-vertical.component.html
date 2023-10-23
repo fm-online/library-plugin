@@ -13,7 +13,7 @@
                  [ngClass]="{'light' : light, 
                              'auto-height' : multiLine, 
                              'disabled': inputDisabled}">
-                <div class="da-switch-label">{{option.label}}</div>
+                <div class="da-switch-label">{{option.label | translate}}</div>
                 <svg-icon *ngIf="!inputDisabled" class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
             </div>
         </label>

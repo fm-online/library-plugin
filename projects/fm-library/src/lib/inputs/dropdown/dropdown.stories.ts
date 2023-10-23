@@ -5,8 +5,16 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfoButtonComponent } from '../../buttons/info-button/info-button.component';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
+
+function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new MultiTranslateHttpLoader(httpBackend, [
+    {prefix: "../assets/content/da-texts-", suffix: ".json"},
+  ]);
+}
 
 export default {
   title: 'inputs/DropdownComponent',
@@ -18,8 +26,15 @@ export default {
         AngularSvgIconModule.forRoot(),
         MatSelectModule,
         BrowserAnimationsModule,
-        NgbTooltipModule
-      ],
+        NgbTooltipModule,
+        TranslateModule.forRoot({
+          defaultLanguage: 'de-DE',
+          loader: {
+              provide: TranslateLoader,
+              useFactory: HttpLoaderFactory,
+              deps: [HttpBackend]
+          },
+      })],
       declarations: [
         InfoButtonComponent,
       ],

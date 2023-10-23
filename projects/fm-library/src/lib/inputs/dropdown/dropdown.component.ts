@@ -8,11 +8,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class DropdownComponent {
   @Input() name!: string;
   @Input() label!: string;
-  @Input() selectItems: any = [{'value': '', 'viewValue': 'bitte auswählen'}];
+  @Input() selectItems: any = [{'value': '', 'viewValue': 'COMMON.SELECT'}];
   @Input() icon: string = 'assets/images/circleCheck.svg';
   @Input() light: boolean = false;
   @Input() info: string = '';
-  @Input() selectedItem: any = {'value': '', 'viewValue': 'bitte auswählen'};
+  @Input() selectedItem: any = {'value': '', 'viewValue': 'COMMON.SELECT'};
   @Input() autoWidth: boolean = false;
   @Input() success: boolean = false;
 

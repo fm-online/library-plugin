@@ -10,6 +10,8 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { StarRatingModule } from 'angular-star-rating';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
 
 import { ButtonComponent } from './buttons/button/button.component';
 import { ButtonGroupComponent } from './buttons/button-group/button-group.component';
@@ -36,6 +38,16 @@ import { ProgressButtonComponent } from './buttons/progress-button/progress-butt
 import { StateIconComponent } from './icons/state-icon/state-icon.component';
 import { TooltipComponent } from './info/tooltip/tooltip.component';
 import { TextAreaComponent } from './inputs/text-area/text-area.component';
+import { HttpBackend } from '@angular/common/http';
+
+export function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new MultiTranslateHttpLoader(httpBackend, [
+    {prefix: "../assets/content/da-texts-", suffix: ".json"},
+    // {prefix: environment.host + "assets/localization/finance-request-enums-", suffix: ".json"},
+    // {prefix: environment.host + "assets/localization/finance-request-label-", suffix: ".json"},
+  ]);
+}
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -77,6 +89,14 @@ import { TextAreaComponent } from './inputs/text-area/text-area.component';
     ReactiveFormsModule,
     StarRatingModule.forRoot(),
     AngularSvgIconModule.forRoot(),
+    TranslateModule.forRoot({
+      defaultLanguage: 'de-DE',
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpBackend]
+      },
+  }),
   ],
   exports: [
     ButtonComponent,

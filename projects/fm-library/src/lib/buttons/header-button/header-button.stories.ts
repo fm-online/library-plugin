@@ -5,8 +5,16 @@ import {HeaderButtonComponent} from './header-button.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser} from '@fortawesome/free-solid-svg-icons';
 import { APP_INITIALIZER } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
+
+function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new MultiTranslateHttpLoader(httpBackend, [
+    {prefix: "../assets/content/da-texts-", suffix: ".json"},
+  ]);
+}
 
 export default {
   title: 'buttons/HeaderButtonComponent',
@@ -16,7 +24,14 @@ export default {
       imports: [
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
-      ],
+        TranslateModule.forRoot({
+          defaultLanguage: 'de-DE',
+          loader: {
+              provide: TranslateLoader,
+              useFactory: HttpLoaderFactory,
+              deps: [HttpBackend]
+          },
+      })],
     }),
   ],
 } as Meta;

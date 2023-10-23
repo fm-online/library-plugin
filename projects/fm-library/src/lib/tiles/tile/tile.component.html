@@ -30,7 +30,7 @@
         <div 
             class="da-tile-label"
             [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked}"
-        >{{label}}</div>
+        >{{label | translate}}</div>
         <div *ngIf="expanded" class="da-tile-expanded" [ngClass]="{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}">
             <ng-container *ngTemplateOutlet="content"></ng-container>
         </div>

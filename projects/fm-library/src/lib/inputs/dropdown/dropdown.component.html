@@ -8,9 +8,9 @@
         (valueChange)="getValue($event)" 
         [(value)]="selectedItem.value"
       >
-        <mat-option disabled [value]="selectedItem.value">{{selectedItem.viewValue}}</mat-option>
+        <mat-option disabled [value]="selectedItem.value">{{selectedItem.viewValue | translate}}</mat-option>
         <mat-option *ngFor="let item of selectItems" [value]="item.value">
-          {{item.viewValue}}
+          {{item.viewValue | translate}}
         </mat-option>
       </mat-select>
     </mat-form-field>

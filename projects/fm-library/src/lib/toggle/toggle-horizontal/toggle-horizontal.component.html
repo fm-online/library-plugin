@@ -12,7 +12,7 @@
                         [checked]="getCheckedOption(option.value)"
                     >
                     <div class="da-switch-slider top" [ngClass]="{'light' : light}" [ngStyle]="{ 'width': elementWidth }">
-                        <span class="da-switch-label">{{option.label}}</span>
+                        <span class="da-switch-label">{{option.label | translate}}</span>
                         <svg-icon class="da-switch-icon" src="assets/images/circleCheck.svg"></svg-icon>
                     </div>
                 </label>

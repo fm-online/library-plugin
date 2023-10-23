@@ -11,7 +11,9 @@
     "@fortawesome/free-solid-svg-icons",
     "@angular/material",
     "angular-star-rating",
-    "angular-svg-icon"
+    "angular-svg-icon",
+    "@ngx-translate/core",
+    "ngx-translate-multi-http-loader"
   ],
   "assets": [
     "./src/styles/_colors.scss",

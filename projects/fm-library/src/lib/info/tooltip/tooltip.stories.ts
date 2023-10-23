@@ -3,7 +3,15 @@
 import { moduleMetadata, Meta, StoryObj} from '@storybook/angular';
 import {TooltipComponent} from './tooltip.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpBackend, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
+
+function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new MultiTranslateHttpLoader(httpBackend, [
+    {prefix: "../assets/content/da-texts-", suffix: ".json"},
+  ]);
+}
 
 export default {
   title: 'info/TooltipComponent',
@@ -13,7 +21,14 @@ export default {
       imports: [
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
-      ],
+        TranslateModule.forRoot({
+          defaultLanguage: 'de-DE',
+          loader: {
+              provide: TranslateLoader,
+              useFactory: HttpLoaderFactory,
+              deps: [HttpBackend]
+          },
+      })],
     }),
   ],
 } as Meta;

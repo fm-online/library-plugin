@@ -1,21 +1,34 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { ToggleTristateComponent } from './toggle-tristate.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
+import { HttpBackend, HttpClientModule } from '@angular/common/http';
+
+function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new MultiTranslateHttpLoader(httpBackend, [
+    {prefix: "../assets/content/da-texts-", suffix: ".json"},
+  ]);
+}
 
 export default {
   title: 'switches/ToggleTristateComponent',
   component: ToggleTristateComponent,
-  parameters: {
-    backgrounds: {
-      default: 'dunkel',
-      values: [
-        { name: 'dunkel', value: '#203864' },
-      ],
-    },
-  },
   decorators: [
     moduleMetadata({
-      imports: [],
+      declarations: [
+        ToggleTristateComponent,
+      ],
+      imports: [
+        HttpClientModule,
+        TranslateModule.forRoot({
+        defaultLanguage: 'de-DE',
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpBackend]
+        },
+    })],
     }),
   ],
 } as Meta;
