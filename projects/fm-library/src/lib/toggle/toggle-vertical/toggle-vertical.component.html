@@ -7,7 +7,7 @@
                 [name]="name" 
                 [disabled]="inputDisabled"
                 [value]="option.value"
-                [checked]="getCheckedOption(option.value)"
+                [checked]="localValue === option.value"
             >
             <div class="da-switch-slider top" 
                  [ngClass]="{'light' : light, 

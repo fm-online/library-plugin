@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 @Component({
   selector: 'lib-toggle-vertical',
   templateUrl: './toggle-vertical.component.html',
@@ -15,6 +15,12 @@ export class ToggleVerticalComponent {
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
   
   constructor() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['localValue']) {
+      this.localValue = changes['localValue'].currentValue;
+    }
+  }
 
   getCheckedOption(value: string) {
     return this.localValue === value;

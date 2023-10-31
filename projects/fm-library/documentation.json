@@ -867,7 +867,7 @@
         },
         {
             "name": "DropdownComponent",
-            "id": "component-DropdownComponent-83b1a96becc5ae67c07afb77526cdcb6d55763d62b9ef113b0664dcd979ea74bd17b9387f5ae79c5521a2734305889cc5e8056f9740cfacc6485ef857ed9e548",
+            "id": "component-DropdownComponent-03cb59ca8b7ff9acd4e9f5c1028e75b9983bb0a6c89f72922893de95d9c2233c91af91ce3445957905ddb4229fc7e546ae35c80d52e8451cd5da915fa2d4f7a0",
             "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -938,7 +938,7 @@
                 },
                 {
                     "name": "selectedItem",
-                    "defaultValue": "{'value': '', 'viewValue': 'bitte auswählen'}",
+                    "defaultValue": "{'value': '', 'viewValue': 'COMMON.SELECT'}",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 15,
@@ -947,7 +947,7 @@
                 },
                 {
                     "name": "selectItems",
-                    "defaultValue": "[{'value': '', 'viewValue': 'bitte auswählen'}]",
+                    "defaultValue": "[{'value': '', 'viewValue': 'COMMON.SELECT'}]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -1048,7 +1048,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport class DropdownComponent {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() selectItems: any = [{'value': '', 'viewValue': 'bitte auswählen'}];\n  @Input() icon: string = 'assets/images/circleCheck.svg';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() selectedItem: any = {'value': '', 'viewValue': 'bitte auswählen'};\n  @Input() autoWidth: boolean = false;\n  @Input() success: boolean = false;\n\n  @Output() public selectValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  getValue(e: any) {\n    this.success = true;\n    this.selectValue.emit(e);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'lib-dropdown',\n  templateUrl: './dropdown.component.html',\n  styleUrls: ['./dropdown.component.scss']\n})\nexport class DropdownComponent {\n  @Input() name!: string;\n  @Input() label!: string;\n  @Input() selectItems: any = [{'value': '', 'viewValue': 'COMMON.SELECT'}];\n  @Input() icon: string = 'assets/images/circleCheck.svg';\n  @Input() light: boolean = false;\n  @Input() info: string = '';\n  @Input() selectedItem: any = {'value': '', 'viewValue': 'COMMON.SELECT'};\n  @Input() autoWidth: boolean = false;\n  @Input() success: boolean = false;\n\n  @Output() public selectValue:EventEmitter<any> = new EventEmitter<string>();\n  @Output() public infoValue:EventEmitter<any> = new EventEmitter<string>();\n\n  constructor() { }\n\n  getValue(e: any) {\n    this.success = true;\n    this.selectValue.emit(e);\n  }\n\n  getInfo(e: string) {\n    this.infoValue.emit(e);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3495,7 +3495,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"{'expanded' : checked, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-checkbox-single\">\n    <label \n            class=\"da-tile-checkbox\" \n            [ngClass]=\"{'expanded' : checked, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n        >\n        <div class=\"da-tile-checkbox-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-checkbox-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-checkbox-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-checkbox-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-checkbox-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label | translate}}</div>\n        <div *ngIf=\"checked\" class=\"da-tile-checkbox-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileCheckboxGroupComponent",
@@ -4265,7 +4265,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-tile-rating-single\">\n    <div class=\"da-tile-rating\" [ngClass]=\"{'mobile' : screen.isSmallest()}\">\n        <div class=\"da-tile-rating-icon-wrapper\" >\n            <svg-icon *ngIf=\"!success\" class=\"da-tile-rating-icon yellow\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon *ngIf=\"success\" class=\"da-tile-rating-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n        <div class=\"da-tile-rating-stars\">\n            <star-rating \n            [starType]=\"'svg'\"\n            size=\"large\"\n            [numOfStars]=\"stars\" \n            [rating]=\"rating\"\n            [hoverEnabled]=\"true\"\n            (starClickChange)=\"getValue($event)\"\n            ></star-rating>\n        </div>\n\n        <div class=\"da-tile-rating-label\">{{label}}\n            <div class=\"da-tile-rating-info-button\" *ngIf=\"info\">\n                <lib-info-button \n                    [light]=\"false\" \n                    [id]=\"info\"\n                    (infoPressed)=\"getInfo($event)\"\n                ></lib-info-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"da-tile-rating-single\">\n    <div class=\"da-tile-rating\" [ngClass]=\"{'mobile' : screen.isSmallest()}\">\n        <div class=\"da-tile-rating-icon-wrapper\" >\n            <svg-icon *ngIf=\"!success\" class=\"da-tile-rating-icon yellow\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon *ngIf=\"success\" class=\"da-tile-rating-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n        <div class=\"da-tile-rating-stars\">\n            <star-rating \n            [starType]=\"'svg'\"\n            size=\"large\"\n            [numOfStars]=\"stars\" \n            [rating]=\"rating\"\n            [hoverEnabled]=\"true\"\n            (starClickChange)=\"getValue($event)\"\n            ></star-rating>\n        </div>\n\n        <div class=\"da-tile-rating-label\">{{label | translate}}\n            <div class=\"da-tile-rating-info-button\" *ngIf=\"info\">\n                <lib-info-button \n                    [light]=\"false\" \n                    [id]=\"info\"\n                    (infoPressed)=\"getInfo($event)\"\n                ></lib-info-button>\n            </div>\n        </div>\n    </div>\n</div>\n"
         },
         {
             "name": "TileTextComponent",
@@ -4649,11 +4649,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-toggle-checkbox\">\n    <!-- Form Input -->\n    <label *ngIf=\"form\" class=\"da-switch\" [ngClass]=\"{'light' : light}\" [formGroup]=\"form\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [formControlName]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <!-- No Form Input -->\n    <label *ngIf=\"!form\" class=\"da-switch\" [ngClass]=\"{'light' : light}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <span [ngClass]=\"getLabelClassNames()\">{{label}}<a href=\"#\">Test 1 2 3</a></span>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-checkbox\">\n    <!-- Form Input -->\n    <label *ngIf=\"form\" class=\"da-switch\" [ngClass]=\"{'light' : light}\" [formGroup]=\"form\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [formControlName]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <!-- No Form Input -->\n    <label *ngIf=\"!form\" class=\"da-switch\" [ngClass]=\"{'light' : light}\">\n        <input \n            type=\"checkbox\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n        >\n        <span class=\"da-switch-slider\">\n            <svg-icon class=\"da-switch-icon\" src=\"assets/images/xmark.svg\"></svg-icon>\n        </span>\n    </label>\n    <span [ngClass]=\"getLabelClassNames()\">{{label}}</span>\n</div>\n\n"
         },
         {
             "name": "ToggleComponent",
-            "id": "component-ToggleComponent-12aa76a23c58e8399922723b2a76464cbfff52f69e9023f7564e48121d7b7150937e6289efa35fc6fe3b8a426b83cd24471b89036b47a98518de4f70296bf39a",
+            "id": "component-ToggleComponent-7246f04290ae7e772201184ad52f2a6872f8073787f113ca4b0255de2560df05f48a00c847d57f57ebec7b5bbaad5c061efe8d388dad6cbb28b44a72f2bb589e",
             "file": "projects/fm-library/src/lib/toggle/toggle/toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -4768,7 +4768,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -4796,41 +4796,13 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
                             "name": "e",
                             "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnChanges",
-                    "args": [
-                        {
-                            "name": "changes",
-                            "type": "SimpleChanges",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "changes",
-                            "type": "SimpleChanges",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -4847,7 +4819,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent implements OnChanges{\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() inputDisabled: boolean = false;\n  @Input() localValue: string = 'localValue';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() { }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes['localValue']) {\n      this.localValue = changes['localValue'].currentValue;\n    }\n  }\n\n  getCheckedOption(value: string) {\n    return this.localValue == value;\n  }\n\n  getValue(e: any) {\n    this.localValue = e.srcElement.value;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle',\n  templateUrl: './toggle.component.html',\n  styleUrls: ['./toggle.component.scss']\n})\nexport class ToggleComponent {\n  @Input() name: string = 'name';\n  @Input() label1: string = 'label1';\n  @Input() value1: string = 'value1';\n  @Input() label2: string = 'label2';\n  @Input() value2: string = 'value2';\n  @Input() inputDisabled: boolean = false;\n  @Input() localValue: string = 'localValue';\n  @Input() light: boolean = false;\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  getValue(e: any) {\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4864,10 +4836,7 @@
                 "args": [],
                 "line": 17
             },
-            "implements": [
-                "OnChanges"
-            ],
-            "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value1\"\n            [checked]=\"getCheckedOption(value1)\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value2\"\n            [checked]=\"getCheckedOption(value2)\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value1\"\n            [checked]=\"value1 === localValue\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value2\"\n            [checked]=\"value2 === localValue\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n</div>\n\n"
         },
         {
             "name": "ToggleHorizontalComponent",
@@ -5158,7 +5127,7 @@
             "implements": [
                 "AfterViewInit"
             ],
-            "templateData": "<div class=\"toggle-container\" #toggleContainer>\n    <div class=\"da-toggle-horizontal-wrapper\" [ngStyle]=\"{ 'width': toggleWidth }\">\n        <div class=\"da-toggle-horizontal-label\" [ngClass]=\"{'light' : light}\" *ngIf=\"label\">{{label}}</div>\n        <div class=\"da-toggle-horizontal\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngFor=\"let option of options; let num = index\">\n                <label class=\"da-switch top\" [ngStyle]=\"{ 'width': elementWidth }\">\n                    <input \n                        type=\"radio\" \n                        (change)=\"sendValue($event)\" \n                        [name]=\"name\" \n                        [value]=\"option.value\"\n                        [checked]=\"getCheckedOption(option.value)\"\n                    >\n                    <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\" [ngStyle]=\"{ 'width': elementWidth }\">\n                        <span class=\"da-switch-label\">{{option.label}}</span>\n                        <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n                    </div>\n                </label>\n            </ng-container>\n        </div>\n    </div>\n</div>"
+            "templateData": "<div class=\"toggle-container\" #toggleContainer>\n    <div class=\"da-toggle-horizontal-wrapper\" [ngStyle]=\"{ 'width': toggleWidth }\">\n        <div class=\"da-toggle-horizontal-label\" [ngClass]=\"{'light' : light}\" *ngIf=\"label\">{{label}}</div>\n        <div class=\"da-toggle-horizontal\" [ngClass]=\"{'light' : light}\">\n            <ng-container *ngFor=\"let option of options; let num = index\">\n                <label class=\"da-switch top\" [ngStyle]=\"{ 'width': elementWidth }\">\n                    <input \n                        type=\"radio\" \n                        (change)=\"sendValue($event)\" \n                        [name]=\"name\" \n                        [value]=\"option.value\"\n                        [checked]=\"getCheckedOption(option.value)\"\n                    >\n                    <div class=\"da-switch-slider top\" [ngClass]=\"{'light' : light}\" [ngStyle]=\"{ 'width': elementWidth }\">\n                        <span class=\"da-switch-label\">{{option.label | translate}}</span>\n                        <svg-icon class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n                    </div>\n                </label>\n            </ng-container>\n        </div>\n    </div>\n</div>"
         },
         {
             "name": "ToggleTristateComponent",
@@ -5275,7 +5244,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"da-toggle-tristate\">\n    <label class=\"da-tab\" *ngFor=\"let tab of tabs; let num = index\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"tab.name\" \n            [checked]=\"tab.checked\"\n            [value]=\"tab.value\"\n        >\n        <div class=\"da-tab-slider\">\n            <span class=\"da-tab-label\">{{tab.label}}</span>\n            <span class=\"da-tab-state\" [ngClass]=\"tab.state === 'success' ? 'success' : tab.state === 'error' ? 'error' : 'warning'\"></span>\n        </div>\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-tristate\">\n    <label class=\"da-tab\" *ngFor=\"let tab of tabs; let num = index\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"tab.name\" \n            [checked]=\"tab.checked\"\n            [value]=\"tab.value\"\n        >\n        <div class=\"da-tab-slider\">\n            <span class=\"da-tab-label\">{{tab.label | translate}}</span>\n            <span class=\"da-tab-state\" [ngClass]=\"tab.state === 'success' ? 'success' : tab.state === 'error' ? 'error' : 'warning'\"></span>\n        </div>\n    </label>\n</div>\n\n"
         },
         {
             "name": "ToggleVerticalComponent",
@@ -5443,7 +5412,7 @@
                 "args": [],
                 "line": 15
             },
-            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light, 'auto-height' : multiLine}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\" [ngClass]=\"{'auto-height' : multiLine, 'disabled': inputDisabled}\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [disabled]=\"inputDisabled\"\n                [value]=\"option.value\"\n                [checked]=\"getCheckedOption(option.value)\"\n            >\n            <div class=\"da-switch-slider top\" \n                 [ngClass]=\"{'light' : light, \n                             'auto-height' : multiLine, \n                             'disabled': inputDisabled}\">\n                <div class=\"da-switch-label\">{{option.label}}</div>\n                <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light, 'auto-height' : multiLine}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\" [ngClass]=\"{'auto-height' : multiLine, 'disabled': inputDisabled}\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [disabled]=\"inputDisabled\"\n                [value]=\"option.value\"\n                [checked]=\"getCheckedOption(option.value)\"\n            >\n            <div class=\"da-switch-slider top\" \n                 [ngClass]=\"{'light' : light, \n                             'auto-height' : multiLine, \n                             'disabled': inputDisabled}\">\n                <div class=\"da-switch-label\">{{option.label | translate}}</div>\n                <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
         },
         {
             "name": "TooltipComponent",
@@ -6967,6 +6936,34 @@
             },
             {
                 "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
                 "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
@@ -7051,7 +7048,175 @@
             },
             {
                 "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
                 "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
@@ -8628,6 +8793,36 @@
                     ]
                 }
             ],
+            "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts": [
                 {
                     "name": "HttpLoaderFactory",
@@ -8718,10 +8913,190 @@
                     ]
                 }
             ],
+            "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts": [
                 {
                     "name": "HttpLoaderFactory",
                     "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
                     "ctype": "miscellaneous",
                     "subtype": "function",
                     "deprecated": false,
@@ -9087,6 +9462,16 @@
                 "name": "ButtonGroupComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/buttons/button-group/button-group.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -10135,6 +10520,16 @@
             },
             {
                 "filePath": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-checkbox-group/tile-checkbox-group.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -10160,6 +10555,16 @@
                 "name": "TileCheckboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-checkbox/tile-checkbox.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -10242,6 +10647,16 @@
             },
             {
                 "filePath": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -10309,6 +10724,16 @@
             },
             {
                 "filePath": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-horizontal/toggle-horizontal.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -10368,6 +10793,16 @@
             },
             {
                 "filePath": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-tristate/toggle-tristate.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -10413,6 +10848,16 @@
                 "name": "ToggleVerticalComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -10501,7 +10946,7 @@
                 "linktype": "component",
                 "name": "ToggleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/13",
                 "status": "low"
             },
             {

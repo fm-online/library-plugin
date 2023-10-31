@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.component.scss']
 })
-export class ToggleComponent implements OnChanges{
+export class ToggleComponent {
   @Input() name: string = 'name';
   @Input() label1: string = 'label1';
   @Input() value1: string = 'value1';
@@ -16,20 +16,13 @@ export class ToggleComponent implements OnChanges{
 
   @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();
   
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if(changes['localValue']) {
-      this.localValue = changes['localValue'].currentValue;
-    }
-  }
+  constructor() {}
 
   getCheckedOption(value: string) {
-    return this.localValue == value;
+    return this.localValue === value;
   }
 
   getValue(e: any) {
-    this.localValue = e.srcElement.value;
     this.switchValue.emit(e.srcElement.value);
   }
 
