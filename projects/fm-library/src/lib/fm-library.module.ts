@@ -39,6 +39,7 @@ import { StateIconComponent } from './icons/state-icon/state-icon.component';
 import { TooltipComponent } from './info/tooltip/tooltip.component';
 import { TextAreaComponent } from './inputs/text-area/text-area.component';
 import { HttpBackend } from '@angular/common/http';
+import { DialogComponent } from './info/dialog/dialog.component';
 
 export function HttpLoaderFactory(httpBackend: HttpBackend) {
   return new MultiTranslateHttpLoader(httpBackend, [
@@ -75,6 +76,7 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     TooltipComponent,
     ToggleHorizontalComponent,
     TextAreaComponent,
+    DialogComponent,
   ],
   imports: [
     CommonModule,
@@ -123,7 +125,8 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     ProgressButtonComponent,
     StateIconComponent,
     TooltipComponent,
-    TextAreaComponent
+    TextAreaComponent,
+    DialogComponent
   ]
 })
 export class FmLibraryModule { }

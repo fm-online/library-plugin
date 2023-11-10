@@ -31,6 +31,18 @@
             class="da-tile-label"
             [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked}"
         >{{label | translate}}</div>
+        <div *ngIf="isEP"
+             class="da-tile-label-EP"
+             [ngClass]="{'checked' : checked}"
+        >
+             <lib-header-text
+                label="powered by AI technology from"
+                [light]="checked"
+                [thin]="true"
+                size="12px"
+            ></lib-header-text>
+            <svg-icon src="assets/images/ep-logo.svg"></svg-icon>
+        </div>
         <div *ngIf="expanded" class="da-tile-expanded" [ngClass]="{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}">
             <ng-container *ngTemplateOutlet="content"></ng-container>
         </div>

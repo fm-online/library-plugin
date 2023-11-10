@@ -1,0 +1,74 @@
+@import "../../../styles.scss"; 
+.da-dialog {
+    background-color: $button-base-color;
+    font-size: $t1-base-size;
+    font-family: $font;
+    color: $t1-secondary-color;
+    max-width: 30%;
+    position: absolute;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    z-index: 3;
+    margin-top: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.mobile {
+        max-width: 90%;
+    }
+
+    &.light {
+        color: $t1-base-color;
+        background-color: $button-secondary-color;
+        box-shadow: 0 3px 5px $shadow-base-color;
+    }
+
+    &.auto-width {
+        max-width: 100%;
+    }
+
+.da-dialog-arrow {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -18px;
+    right: 25px;
+
+    .da-arrow-up {
+        width: 0; 
+        height: 0; 
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid $button-base-color;
+
+        &.light {
+            border-bottom: 20px solid $button-secondary-color;
+        }
+      }
+}
+
+.da-dialog-icon-wrapper {
+    background: transparent;
+    border-radius: 20px;
+    position: relative;
+    margin-right: 20px;
+    box-shadow: 0 3px 5px $shadow-base-color;
+    width: 20px;
+    height: 20px;
+
+    .da-dialog-icon {
+        fill: $t1-secondary-color;
+        font-size: 20px;
+    }
+
+    &.light {
+        background: #fff;
+
+        .da-dialog-icon {
+            fill: $t1-base-color;
+        }
+    }
+}
+}

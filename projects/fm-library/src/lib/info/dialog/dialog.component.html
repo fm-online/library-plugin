@@ -1,0 +1,6 @@
+<div class="da-dialog" [ngClass]="{'light' : light, 'auto-width' : autoWidth, 'mobile' : screen.isSmallest()}">
+    <div class="da-dialog-arrow">
+        <div class="da-arrow-up" [ngClass]="{'light' : light}"></div>
+    </div>
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+</div>

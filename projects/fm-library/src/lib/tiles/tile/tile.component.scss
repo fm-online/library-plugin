@@ -136,6 +136,10 @@
                 color: $t4-secondary-color;
                 fill: $t4-secondary-color;
             }
+            &:checked ~ .da-tile-label-EP {
+                color: $t4-secondary-color;
+                fill: $t4-secondary-color;
+            }
 
             &.dark {
                 &:checked ~ .da-tile-image {
@@ -144,6 +148,11 @@
                 }
         
                 &:checked ~ .da-tile-label {
+                    color: $t4-base-color;
+                    fill: $t4-base-color;
+                }
+
+                &:checked ~ .da-tile-label-EP {
                     color: $t4-base-color;
                     fill: $t4-base-color;
                 }
@@ -174,7 +183,23 @@
                 color: $t4-secondary-color;
                 fill: $t4-secondary-color;
             }
+        }
 
+        .da-tile-label-EP {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            color: $t4-base-color;
+            fill: $t4-base-color;
+            width: 214px;
+            margin: -49px 15px 0 15px;
+
+            svg {
+                margin-top: 3px;
+                margin-left: 10px;
+            }
         }
     }
 

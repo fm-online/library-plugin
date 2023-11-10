@@ -866,6 +866,126 @@
             "templateData": "<div class=\"da-counter-wrapper\">\n    <button \n        type=\"button\" \n        class=\"da-counter-btn left\" \n        (click)=\"count(counter, 'down', min, max, step)\"\n        [ngClass]=\"{'light' : light}\"\n    >\n        <svg-icon class=\"da-switch-icon\" src=\"assets/images/minus.svg\"></svg-icon>\n    </button>\n    <label class=\"da-counter\" [ngClass]=\"{'light' : light}\">\n        <input\n        type=\"string\" \n        [placeholder]=\"placeholder\"\n        [step]=step\n        [min]=min\n        [max]=max\n        #counter\n        [name]=\"name\"\n        [value]=value />\n    </label>\n    <button \n        type=\"button\" \n        class=\"da-counter-btn right\" \n        (click)=\"count(counter, 'up', min, max, step)\"\n        [ngClass]=\"{'light' : light}\"\n    >\n        <svg-icon class=\"da-switch-icon\" src=\"assets/images/plus.svg\"></svg-icon>\n    </button>\n</div>\n"
         },
         {
+            "name": "DialogComponent",
+            "id": "component-DialogComponent-10c639255517b646af0d4f8042710bedbbab362e6d416a01cd6cb4765f37c9e8e739c8b81a5700ee6e42080e029854d3626fee5b1fea18879420aa6fe52641e9",
+            "file": "projects/fm-library/src/lib/info/dialog/dialog.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-dialog",
+            "styleUrls": [
+                "./dialog.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "autoWidth",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "content",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "TemplateRef<any>",
+                    "decorators": []
+                },
+                {
+                    "name": "light",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "screen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "HelperService",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-dialog',\n  templateUrl: './dialog.component.html',\n  styleUrls: ['./dialog.component.scss']\n})\nexport class DialogComponent implements OnInit {\n  @Input() autoWidth: boolean = false;\n  @Input() light: boolean = false;\n  @Input() content!: TemplateRef<any>;\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../styles.scss\"; \n.da-dialog {\n    background-color: $button-base-color;\n    font-size: $t1-base-size;\n    font-family: $font;\n    color: $t1-secondary-color;\n    max-width: 30%;\n    position: absolute;\n    border-radius: 10px;\n    padding: 10px;\n    display: flex;\n    z-index: 3;\n    margin-top: 15px;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n\n    &.mobile {\n        max-width: 90%;\n    }\n\n    &.light {\n        color: $t1-base-color;\n        background-color: $button-secondary-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n    }\n\n    &.auto-width {\n        max-width: 100%;\n    }\n\n.da-dialog-arrow {\n    width: 20px;\n    height: 20px;\n    position: absolute;\n    top: -18px;\n    right: 25px;\n\n    .da-arrow-up {\n        width: 0; \n        height: 0; \n        border-left: 20px solid transparent;\n        border-right: 20px solid transparent;\n        border-bottom: 20px solid $button-base-color;\n\n        &.light {\n            border-bottom: 20px solid $button-secondary-color;\n        }\n      }\n}\n\n.da-dialog-icon-wrapper {\n    background: transparent;\n    border-radius: 20px;\n    position: relative;\n    margin-right: 20px;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    width: 20px;\n    height: 20px;\n\n    .da-dialog-icon {\n        fill: $t1-secondary-color;\n        font-size: 20px;\n    }\n\n    &.light {\n        background: #fff;\n\n        .da-dialog-icon {\n            fill: $t1-base-color;\n        }\n    }\n}\n}",
+                    "styleUrl": "./dialog.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "screen",
+                        "type": "HelperService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"da-dialog\" [ngClass]=\"{'light' : light, 'auto-width' : autoWidth, 'mobile' : screen.isSmallest()}\">\n    <div class=\"da-dialog-arrow\">\n        <div class=\"da-arrow-up\" [ngClass]=\"{'light' : light}\"></div>\n    </div>\n    <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n</div>"
+        },
+        {
             "name": "DropdownComponent",
             "id": "component-DropdownComponent-03cb59ca8b7ff9acd4e9f5c1028e75b9983bb0a6c89f72922893de95d9c2233c91af91ce3445957905ddb4229fc7e546ae35c80d52e8451cd5da915fa2d4f7a0",
             "file": "projects/fm-library/src/lib/inputs/dropdown/dropdown.component.ts",
@@ -1052,7 +1172,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.mat-option,\n.mat-select {\n    font-family: $font!important;\n    color: $button-base-color!important;\n}\n\n.mat-select {\n    padding-top: 4px!important;\n}\n\n.mat-option {\n text-align: center!important;\n border-radius: 24px!important;\n\n &:hover {\n     background-color: $radiobutton-base-color!important;\n }\n}\n\n.mat-option-disabled {\n    opacity: 0.5!important;\n}\n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    width: 185px!important;\n    text-align: center!important;\n}\n\n.da-input-select-single {\n    font-family: $font!important;\n    position: relative;\n    background: #fff;\n    border-radius: 24px;\n    border: 0px solid transparent;\n    border-bottom: 1px solid $button-base-color;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    height: 42px;\n    width: 185px;\n\n    &.auto-width {\n        width: 100%;\n\n        .mat-form-field {\n            width: 100%!important;\n        }\n    }\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-input-select-label {\n        font-size: $t4-base-size;\n        top: -18px;\n        position: absolute;\n        margin-left: 20px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-select {\n        display: flex;\n        align-items: start;\n\n        .da-input-info-button {\n            top: 5px;\n            position: absolute;\n            right: -29px;\n        }\n    }\n\n    .da-input-select-success-icon {\n        color: $success-color;\n        fill: $success-color;\n        margin-top: 8px;\n        margin-left: 8px;\n        position: absolute;\n        font-size: 25px;\n        width: 23px;\n        height: 23px;\n        border-radius: 25px;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n    }\n}",
+                    "data": "@import \"../../../styles.scss\"; \n\n.mat-option,\n.mat-select {\n    font-family: $font!important;\n    color: $button-base-color!important;\n}\n\n.mat-select {\n    padding-top: 4px!important;\n}\n\n.mat-option {\n text-align: center!important;\n border-radius: 24px!important;\n\n &:hover {\n     background-color: $radiobutton-base-color!important;\n }\n}\n\n.mat-option-disabled {\n    opacity: 0.5!important;\n}\n\n.mat-form-field {\n    margin-top: -8px!important;\n    font-family: $font!important;\n    width: 185px!important;\n    text-align: center!important;\n}\n\n.da-input-select-single {\n    font-family: $font!important;\n    position: relative;\n    background: #fff;\n    border-radius: 24px;\n    border: 0px solid transparent;\n    border-bottom: 1px solid $button-base-color;\n    box-shadow: 0 3px 5px $shadow-base-color;\n    height: 42px;\n    width: 185px;\n\n    &.auto-width {\n        width: 100%;\n\n        .mat-form-field {\n            width: 100%!important;\n        }\n    }\n\n    &.light {\n        box-shadow: 0 3px 5px $shadow-secondary-color;\n    }\n\n    .da-input-select-label {\n        font-size: $t4-base-size;\n        top: -23px;\n        position: absolute;\n        margin-left: 20px;\n        color: $t4-base-color;\n    \n        &.light {\n            color: $t4-secondary-color;\n        }\n    }\n\n    .da-input-select {\n        display: flex;\n        align-items: start;\n\n        .da-input-info-button {\n            top: 12px;\n            position: absolute;\n            right: -29px;\n        }\n    }\n\n    .da-input-select-success-icon {\n        color: $success-color;\n        fill: $success-color;\n        margin-top: 8px;\n        margin-left: 8px;\n        position: absolute;\n        font-size: 25px;\n        width: 23px;\n        height: 23px;\n        border-radius: 25px;\n        box-shadow: 0 3px 5px $shadow-base-color;\n\n    }\n}",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -3633,7 +3753,7 @@
         },
         {
             "name": "TileComponent",
-            "id": "component-TileComponent-01bae81a694ab31e34b449650cedaddd1edf9a8cac3b622c5da0f07469f0a3e90b317b133a883d46040181adcd11ee4c17f25bc0fc42a773f17ec9adfac1bd02",
+            "id": "component-TileComponent-16bb424fc5fc9f075d9a52a2e2a432fe4f5e497f7a7c748e56911fa7cbe45f38adcba6689900cdaa1530b51bd68d0ad671af19b9604af9c12c3e916284292601",
             "file": "projects/fm-library/src/lib/tiles/tile/tile.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3663,7 +3783,7 @@
                     "name": "content",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "TemplateRef<any>",
                     "decorators": []
                 },
@@ -3672,7 +3792,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3682,6 +3802,15 @@
                     "deprecationMessage": "",
                     "line": 16,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "isEP",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -3698,7 +3827,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3745,7 +3874,7 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "EventEmitter<any>"
                 }
             ],
@@ -3757,7 +3886,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "screen",
@@ -3766,7 +3895,7 @@
                     "type": "HelperService",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 26,
                     "modifierKind": [
                         123
                     ]
@@ -3786,7 +3915,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 40,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3814,7 +3943,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3835,7 +3964,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -3858,17 +3987,17 @@
                     ],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29
+                    "line": 30
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: string;\n  @Input() light: boolean = true;\n  @Input() dark: boolean = false;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
+            "sourceCode": "import { Component, EventEmitter, HostListener, Input, OnChanges, Output, SimpleChanges, TemplateRef } from '@angular/core';\nimport { HelperService } from '../../services/helper.service';\n\n@Component({\n  selector: 'lib-tile',\n  templateUrl: './tile.component.html',\n  styleUrls: ['./tile.component.scss']\n})\nexport class TileComponent implements OnChanges {\n  @Input() label: string = 'label';\n  @Input() name: string = 'name';\n  @Input() checked: boolean = false;\n  @Input() value: string = 'value';\n  @Input() localValue: string = 'localValue';\n  @Input() state: string = 'state';\n  @Input() image?: string;\n  @Input() isEP: boolean = false;\n  @Input() light: boolean = true;\n  @Input() dark: boolean = false;\n  @Input() content!: TemplateRef<any>;\n  expanded!: boolean;\n\n  @Output() public checkboxValue: EventEmitter<any> = new EventEmitter<boolean>();\n\n  constructor(\n    public screen: HelperService\n  ) { }\n\n  @HostListener('window:resize', ['$event'])\n  onWindowResize() {\n    this.screen.updateScreenSizes();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes && changes['localValue']) {\n      this.expanded = this.localValue !== this.value ? false : true;\n    }\n  }\n\n  getValue(e: any) {\n    this.checkboxValue.emit(e.srcElement.value);\n  }\n\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n            &.dark {\n                background-color: $radiobutton-secondary-color;\n            }\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n\n        &.dark {\n            background-color: $tab-background;\n            box-shadow: 0px 8px 20px -5px $shadow-secondary-color;\n\n            .da-tile-image {\n                fill: $t4-secondary-color;\n                color: $t4-secondary-color;\n\n                &.checked {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n            }\n\n            .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                background: #fff;\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n            &.dark {\n                &:checked ~ .da-tile-image {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n        \n                &:checked ~ .da-tile-label {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
+                    "data": "@import \"../../../styles.scss\"; \n\n.da-tile-single {\n    font-family: $font;\n\n    .da-tile {\n        position: relative;\n        display: inline-block;\n        border-radius: 25px;\n        border: 1px solid transparent;\n        width: 242px;\n        min-height: 222px;\n        background-color: $radiobutton-base-color;\n        box-shadow: 0 3px 5px $shadow-base-color;\n        transition: all 0.25s ease-in-out;\n        padding-bottom: 14px;\n        cursor: pointer;\n\n        &:hover {\n            border: 1px solid $button-base-color;\n        }\n\n        &.expanded {\n            background-color: $button-base-color;\n            border: 1px solid $button-base-color;\n\n            &.dark {\n                background-color: $radiobutton-secondary-color;\n            }\n\n        }\n\n        &.mobile {\n            width: calc(100vw - 50px);\n            min-height: auto;\n            padding-bottom: 0;\n\n        }\n\n        &.dark {\n            background-color: $tab-background;\n            box-shadow: 0px 8px 20px -5px $shadow-secondary-color;\n\n            .da-tile-image {\n                fill: $t4-secondary-color;\n                color: $t4-secondary-color;\n\n                &.checked {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n            }\n\n            .da-tile-label {\n                color: $t4-secondary-color;\n            }\n        }\n     \n        .da-tile-icon-wrapper {\n                margin-left: 15px;\n                top: 15px;\n                position: absolute;\n                background: #fff;\n                font-size: 25px;\n                width: 23px;\n                height: 23px;\n                border-radius: 25px;\n                box-shadow: 0 3px 5px $shadow-base-color;\n                display: none;\n\n                &.checked {\n                    display: block;\n                }\n\n            .da-tile-icon {\n                position: absolute;\n                top: -1px;\n                left: -1px;\n\n                &.green {\n                    color: $success-color;\n                    fill: $success-color;\n                }\n\n                &.yellow {\n                    color: $attention-color;\n                    fill: $attention-color;\n                }\n\n                &.red {\n                    color: $warning-base-color;\n                    fill: $warning-base-color;\n                }\n            }\n        }\n        .da-tile-image {\n            width: 244px;\n            height: 90px;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            display: flex;\n            position: relative;\n            margin-bottom: 5px;\n            justify-content: center;\n            pointer-events: none;\n            font-size: 90px;\n\n            &.mobile {\n                width: 100%;\n                min-width: 244px;\n                font-size: 45px;\n                height: 45px;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n    \n        input {\n            opacity: 0;\n            width: 0;\n            height: 0;\n    \n            &:checked ~ .da-tile-icon-wrapper {\n                display: block;\n            }\n\n            &:checked ~ .da-tile-image {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n    \n            &:checked ~ .da-tile-label {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n            &:checked ~ .da-tile-label-EP {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n\n            &.dark {\n                &:checked ~ .da-tile-image {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n        \n                &:checked ~ .da-tile-label {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n\n                &:checked ~ .da-tile-label-EP {\n                    color: $t4-base-color;\n                    fill: $t4-base-color;\n                }\n            }\n        }\n\n        .da-tile-label {\n            font-size: 20px;\n            color: $t4-base-color;\n            height: 100px;\n            display: flex;\n            position: relative;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            width: 214px;\n            margin: 0 15px 15px;\n            overflow: hidden;\n            pointer-events: none;\n\n            &.mobile {\n                width: calc(100% - 30px);\n                font-size: 19px;\n                height: auto;\n            }\n\n            &.checked {\n                color: $t4-secondary-color;\n                fill: $t4-secondary-color;\n            }\n        }\n\n        .da-tile-label-EP {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            text-align: center;\n            justify-content: center;\n            color: $t4-base-color;\n            fill: $t4-base-color;\n            width: 214px;\n            margin: -49px 15px 0 15px;\n\n            svg {\n                margin-top: 3px;\n                margin-left: 10px;\n            }\n        }\n    }\n\n    .da-tile-expanded {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        transition: all 0.25s ease-in-out;\n\n        &.withContent {\n            padding-bottom: 14px;\n\n            &.mobile {\n                padding: 0 15px 35px 15px;\n            }\n        }\n    }\n}\n\n",
                     "styleUrl": "./tile.component.scss"
                 }
             ],
@@ -3886,7 +4015,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 22,
+                "line": 23,
                 "jsdoctags": [
                     {
                         "name": "screen",
@@ -3902,7 +4031,7 @@
             "implements": [
                 "OnChanges"
             ],
-            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'dark' : dark, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'dark' : dark}\"\n        >\n        <div class=\"da-tile-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label | translate}}</div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
+            "templateData": "<div class=\"da-tile-single\">\n    <label \n            class=\"da-tile\" \n            [ngClass]=\"{'expanded' : expanded, 'dark' : dark, 'mobile' : screen.isSmallest()}\"\n        >\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [checked]=\"checked\"\n            [name]=\"name\"\n            [value]=\"value\"\n            [ngClass]=\"{'dark' : dark}\"\n        >\n        <div class=\"da-tile-icon-wrapper\" [ngClass]=\"{'checked' : checked}\">\n            <svg-icon class=\"da-tile-icon green\" *ngIf=\"state === 'success'\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon yellow\" *ngIf=\"state === 'warning'\" src=\"assets/images/circleExclamation.svg\"></svg-icon>\n            <svg-icon class=\"da-tile-icon red\" *ngIf=\"state === 'error'\" src=\"assets/images/circleXmark.svg\"></svg-icon>\n        </div>\n        <svg-icon *ngIf=\"image\" \n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n            [src]=\"image\"\n        >\n        </svg-icon>\n        <div *ngIf=\"!image\"\n            class=\"da-tile-image\" \n            [ngClass]=\"{'mobile' : screen.isSmallest()}\"\n        >\n        </div>\n        <div \n            class=\"da-tile-label\"\n            [ngClass]=\"{'mobile' : screen.isSmallest(), 'checked' : checked}\"\n        >{{label | translate}}</div>\n        <div *ngIf=\"isEP\"\n             class=\"da-tile-label-EP\"\n             [ngClass]=\"{'checked' : checked}\"\n        >\n             <lib-header-text\n                label=\"powered by AI technology from\"\n                [light]=\"checked\"\n                [thin]=\"true\"\n                size=\"12px\"\n            ></lib-header-text>\n            <svg-icon src=\"assets/images/ep-logo.svg\"></svg-icon>\n        </div>\n        <div *ngIf=\"expanded\" class=\"da-tile-expanded\" [ngClass]=\"{'light' : light, 'withContent': content, 'mobile' : screen.isSmallest()}\">\n            <ng-container *ngTemplateOutlet=\"content\"></ng-container>\n        </div>\n    </label>\n</div>"
         },
         {
             "name": "TileGroupComponent",
@@ -4045,7 +4174,7 @@
                     }
                 ]
             },
-            "templateData": "<div class=\"da-tiles\" [ngClass]=\"{'withIndex' : withIndex, 'mobile': screen.isSmallest()}\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [dark]=\"tile.dark\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
+            "templateData": "<div class=\"da-tiles\" [ngClass]=\"{'withIndex' : withIndex, 'mobile': screen.isSmallest()}\">\n    <ng-container *ngFor=\"let tile of tiles; let num = index\">\n        <lib-tile \n            [label]=\"tile.label\"\n            [name]=\"tile.name\"\n            [checked]=\"tile.checked\"\n            [image]=\"tile.image\"\n            [state]=\"tile.state\"\n            [value]=\"tile.value\"\n            [content]=\"tile.content\"\n            [dark]=\"tile.dark\"\n            [isEP]=\"tile.isEP\"\n            [localValue]=\"localValue\"\n            (checkboxValue)=\"sendValue($event)\">\n        </lib-tile>\n    </ng-container>\n</div>\n"
         },
         {
             "name": "TileRatingComponent",
@@ -4836,7 +4965,7 @@
                 "args": [],
                 "line": 17
             },
-            "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value1\"\n            [checked]=\"value1 === localValue\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value2\"\n            [checked]=\"value2 === localValue\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle\" [ngClass]=\"{'light' : light}\">\n    <label class=\"da-switch left\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value1\"\n            [checked]=\"getCheckedOption(value1)\"\n        >\n        <div class=\"da-switch-slider left\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label1}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n    </label>\n    <label class=\"da-switch right\" [ngClass]=\"{'disabled': inputDisabled}\">\n        <input \n            type=\"radio\" \n            (change)=\"getValue($event)\" \n            [name]=\"name\" \n            [disabled]=\"inputDisabled\"\n            [value]=\"value2\"\n            [checked]=\"getCheckedOption(value2)\"\n        >\n        <div class=\"da-switch-slider right\" [ngClass]=\"{'light' : light, 'disabled': inputDisabled}\">\n            <span class=\"da-switch-label\">{{label2}}</span>\n            <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n        </div>\n\n    </label>\n</div>\n\n"
         },
         {
             "name": "ToggleHorizontalComponent",
@@ -5248,7 +5377,7 @@
         },
         {
             "name": "ToggleVerticalComponent",
-            "id": "component-ToggleVerticalComponent-b0cd4fb43a620c84d6a87cc5383eeab802e9d9739a33c8e5ec37839c93e094f8bec257c7975ff912154a80d0105f58ccb4a8a79c8b98a324340c7ba25faf8327",
+            "id": "component-ToggleVerticalComponent-ef92bbc792426f28e39a26c930f207f19c80ac31ebbf5b03245d8b75c85e12f0f0c236305adaa4f50fedf870efbc6db2066eb53d0627143501785281fc1ece80",
             "file": "projects/fm-library/src/lib/toggle/toggle-vertical/toggle-vertical.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5344,13 +5473,41 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
                             "name": "value",
                             "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -5372,7 +5529,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -5395,7 +5552,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent {\n  @Input() name: string = 'name';\n  @Input() options: any;\n  @Input() light: boolean = false;\n  @Input() inputDisabled: boolean = false;\n  @Input() multiLine: boolean = false;\n  @Input() localValue: string = 'localValue';\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';\n@Component({\n  selector: 'lib-toggle-vertical',\n  templateUrl: './toggle-vertical.component.html',\n  styleUrls: ['./toggle-vertical.component.scss']\n})\nexport class ToggleVerticalComponent {\n  @Input() name: string = 'name';\n  @Input() options: any;\n  @Input() light: boolean = false;\n  @Input() inputDisabled: boolean = false;\n  @Input() multiLine: boolean = false;\n  @Input() localValue: string = 'localValue';\n\n  @Output() public switchValue:EventEmitter<any> = new EventEmitter<string>();\n  \n  constructor() {}\n\n  ngOnChanges(changes: SimpleChanges) {\n    if(changes['localValue']) {\n      this.localValue = changes['localValue'].currentValue;\n    }\n  }\n\n  getCheckedOption(value: string) {\n    return this.localValue === value;\n  }\n\n  sendValue(e: any) {\n    this.localValue = e;\n    this.switchValue.emit(e.srcElement.value);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -5412,7 +5569,7 @@
                 "args": [],
                 "line": 15
             },
-            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light, 'auto-height' : multiLine}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\" [ngClass]=\"{'auto-height' : multiLine, 'disabled': inputDisabled}\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [disabled]=\"inputDisabled\"\n                [value]=\"option.value\"\n                [checked]=\"getCheckedOption(option.value)\"\n            >\n            <div class=\"da-switch-slider top\" \n                 [ngClass]=\"{'light' : light, \n                             'auto-height' : multiLine, \n                             'disabled': inputDisabled}\">\n                <div class=\"da-switch-label\">{{option.label | translate}}</div>\n                <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
+            "templateData": "<div class=\"da-toggle-vertical\" [ngClass]=\"{'light' : light, 'auto-height' : multiLine}\">\n    <ng-container *ngFor=\"let option of options; let num = index\">\n        <label class=\"da-switch top\" [ngClass]=\"{'auto-height' : multiLine, 'disabled': inputDisabled}\">\n            <input \n                type=\"radio\" \n                (change)=\"sendValue($event)\" \n                [name]=\"name\" \n                [disabled]=\"inputDisabled\"\n                [value]=\"option.value\"\n                [checked]=\"localValue === option.value\"\n            >\n            <div class=\"da-switch-slider top\" \n                 [ngClass]=\"{'light' : light, \n                             'auto-height' : multiLine, \n                             'disabled': inputDisabled}\">\n                <div class=\"da-switch-label\">{{option.label | translate}}</div>\n                <svg-icon *ngIf=\"!inputDisabled\" class=\"da-switch-icon\" src=\"assets/images/circleCheck.svg\"></svg-icon>\n            </div>\n        </label>\n    </ng-container>\n</div>\n\n"
         },
         {
             "name": "TooltipComponent",
@@ -5517,13 +5674,13 @@
     "modules": [
         {
             "name": "FmLibraryModule",
-            "id": "module-FmLibraryModule-652c71ee4576717572fa6fd643a85319a0d25751d3c922fde2730ad8c5a526a468020d181c0609c05af64b3188c9e9fc2bfc8b0f7dbbe9188509bf2745387ff5",
+            "id": "module-FmLibraryModule-9cf4097f1d32753001784646f7e363dcb68d1f19df7e6ca7fed335025cb390faefc2f260b5866fafdaa0346137216128c3d57138f433e833163dc4d42cc8e2ae",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/fm-library/src/lib/fm-library.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { TranslateLoader, TranslateModule } from '@ngx-translate/core';\nimport { MultiTranslateHttpLoader } from \"ngx-translate-multi-http-loader\";\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';\nimport { ToggleHorizontalComponent } from './toggle/toggle-horizontal/toggle-horizontal.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\nimport { HeaderButtonComponent } from './buttons/header-button/header-button.component';\nimport { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';\nimport { StateIconComponent } from './icons/state-icon/state-icon.component';\nimport { TooltipComponent } from './info/tooltip/tooltip.component';\nimport { TextAreaComponent } from './inputs/text-area/text-area.component';\nimport { HttpBackend } from '@angular/common/http';\n\nexport function HttpLoaderFactory(httpBackend: HttpBackend) {\n  return new MultiTranslateHttpLoader(httpBackend, [\n    {prefix: \"../assets/content/da-texts-\", suffix: \".json\"},\n    // {prefix: environment.host + \"assets/localization/finance-request-enums-\", suffix: \".json\"},\n    // {prefix: environment.host + \"assets/localization/finance-request-label-\", suffix: \".json\"},\n  ]);\n}\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n    StateIconComponent,\n    TooltipComponent,\n    ToggleHorizontalComponent,\n    TextAreaComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    FormsModule,\n    ReactiveFormsModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n    TranslateModule.forRoot({\n      defaultLanguage: 'de-DE',\n      loader: {\n          provide: TranslateLoader,\n          useFactory: HttpLoaderFactory,\n          deps: [HttpBackend]\n      },\n  }),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleHorizontalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n    StateIconComponent,\n    TooltipComponent,\n    TextAreaComponent\n  ]\n})\nexport class FmLibraryModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { MatSelectModule } from '@angular/material/select';\nimport { MatDatepickerModule } from '@angular/material/datepicker';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport {MatInputModule} from '@angular/material/input';\nimport { MatNativeDateModule } from '@angular/material/core';\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\nimport { StarRatingModule } from 'angular-star-rating';\nimport { AngularSvgIconModule } from 'angular-svg-icon';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { TranslateLoader, TranslateModule } from '@ngx-translate/core';\nimport { MultiTranslateHttpLoader } from \"ngx-translate-multi-http-loader\";\n\nimport { ButtonComponent } from './buttons/button/button.component';\nimport { ButtonGroupComponent } from './buttons/button-group/button-group.component';\nimport { InfoButtonComponent } from './buttons/info-button/info-button.component';\nimport { CounterComponent } from './counter/counter.component';\nimport { DropdownComponent } from './inputs/dropdown/dropdown.component';\nimport { InputComponent } from './inputs/input/input.component';\nimport { InputButtonComponent } from './inputs/input-button/input-button.component';\nimport { InputDateComponent } from './inputs/input-date/input-date.component';\nimport { TileComponent } from './tiles/tile/tile.component';\nimport { TileCheckboxComponent } from './tiles/tile-checkbox/tile-checkbox.component';\nimport { TileCheckboxGroupComponent } from './tiles/tile-checkbox-group/tile-checkbox-group.component';\nimport { TileGroupComponent } from './tiles/tile-group/tile-group.component';\nimport { TileRatingComponent } from './tiles/tile-rating/tile-rating.component';\nimport { ToggleComponent } from './toggle/toggle/toggle.component';\nimport { ToggleVerticalComponent } from './toggle/toggle-vertical/toggle-vertical.component';\nimport { ToggleHorizontalComponent } from './toggle/toggle-horizontal/toggle-horizontal.component';\nimport { ToggleCheckboxComponent } from './toggle/toggle-checkbox/toggle-checkbox.component';\nimport { ToggleTristateComponent } from './toggle/toggle-tristate/toggle-tristate.component';\nimport { TileTextComponent } from './text/tile-text/tile-text.component';\nimport { HeaderTextComponent } from './text/header-text/header-text.component';\nimport { HeaderButtonComponent } from './buttons/header-button/header-button.component';\nimport { ProgressButtonComponent } from './buttons/progress-button/progress-button.component';\nimport { StateIconComponent } from './icons/state-icon/state-icon.component';\nimport { TooltipComponent } from './info/tooltip/tooltip.component';\nimport { TextAreaComponent } from './inputs/text-area/text-area.component';\nimport { HttpBackend } from '@angular/common/http';\nimport { DialogComponent } from './info/dialog/dialog.component';\n\nexport function HttpLoaderFactory(httpBackend: HttpBackend) {\n  return new MultiTranslateHttpLoader(httpBackend, [\n    {prefix: \"../assets/content/da-texts-\", suffix: \".json\"},\n    // {prefix: environment.host + \"assets/localization/finance-request-enums-\", suffix: \".json\"},\n    // {prefix: environment.host + \"assets/localization/finance-request-label-\", suffix: \".json\"},\n  ]);\n}\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n    StateIconComponent,\n    TooltipComponent,\n    ToggleHorizontalComponent,\n    TextAreaComponent,\n    DialogComponent,\n  ],\n  imports: [\n    CommonModule,\n    FontAwesomeModule,\n    MatSelectModule,\n    MatFormFieldModule, \n    MatDatepickerModule,\n    MatInputModule,\n    MatNativeDateModule,\n    NgbTooltipModule,\n    FormsModule,\n    ReactiveFormsModule,\n    StarRatingModule.forRoot(),\n    AngularSvgIconModule.forRoot(),\n    TranslateModule.forRoot({\n      defaultLanguage: 'de-DE',\n      loader: {\n          provide: TranslateLoader,\n          useFactory: HttpLoaderFactory,\n          deps: [HttpBackend]\n      },\n  }),\n  ],\n  exports: [\n    ButtonComponent,\n    ButtonGroupComponent,\n    InfoButtonComponent,\n    CounterComponent,\n    DropdownComponent,\n    InputComponent,\n    InputButtonComponent,\n    InputDateComponent,\n    TileComponent,\n    TileCheckboxComponent,\n    TileCheckboxGroupComponent,\n    TileGroupComponent,\n    TileRatingComponent,\n    ToggleComponent,\n    ToggleVerticalComponent,\n    ToggleHorizontalComponent,\n    ToggleCheckboxComponent,\n    ToggleTristateComponent,\n    TileTextComponent,\n    HeaderTextComponent,\n    HeaderButtonComponent,\n    ProgressButtonComponent,\n    StateIconComponent,\n    TooltipComponent,\n    TextAreaComponent,\n    DialogComponent\n  ]\n})\nexport class FmLibraryModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -5540,6 +5697,9 @@
                         },
                         {
                             "name": "CounterComponent"
+                        },
+                        {
+                            "name": "DialogComponent"
                         },
                         {
                             "name": "DropdownComponent"
@@ -5624,6 +5784,9 @@
                         },
                         {
                             "name": "CounterComponent"
+                        },
+                        {
+                            "name": "DialogComponent"
                         },
                         {
                             "name": "DropdownComponent"
@@ -5890,6 +6053,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -6091,6 +6264,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "DefaultDark",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -6667,6 +6850,16 @@
                 "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1',\n    'dark': true,\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2',\n    'dark': true,\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3',\n    'dark': true,\n  }\n]"
             },
             {
+                "name": "testTilesEP",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'isEP': true,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2'\n  }\n]"
+            },
+            {
                 "name": "TwoTabs",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -6715,6 +6908,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    buttons: testButtonsCustomWidth,\n    light: false,\n    custom: true,\n  },\n}"
+            },
+            {
+                "name": "WithEPLogo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tiles: testTilesEP\n  },\n}"
             },
             {
                 "name": "withInfo",
@@ -6965,6 +7168,34 @@
             {
                 "name": "HttpLoaderFactory",
                 "file": "projects/fm-library/src/lib/buttons/header-button/header-button.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "httpBackend",
+                        "type": "HttpBackend",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "HttpLoaderFactory",
+                "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
                 "ctype": "miscellaneous",
                 "subtype": "function",
                 "deprecated": false,
@@ -7316,6 +7547,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StateIconComponent>",
                 "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DialogComponent>",
+                "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -7923,6 +8165,26 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1',\n    'dark': true,\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2',\n    'dark': true,\n  },\n  {\n    'label': 'label3',\n    'name': 'name',\n    'state': 'error',\n    'checked': false,\n    'image': 'assets/images/houseTree.svg',\n    'value': 'value3',\n    'dark': true,\n  }\n]"
+                },
+                {
+                    "name": "testTilesEP",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  {\n    'label': 'label1',\n    'name': 'name',\n    'state': 'success',\n    'checked': false,\n    'image': 'assets/images/houseCheckmark.svg',\n    'value': 'value1'\n  },\n  {\n    'label': 'label2',\n    'name': 'name',\n    'state': 'warning',\n    'checked': false,\n    'isEP': true,\n    'image': 'assets/images/houseFlag.svg',\n    'value': 'value2'\n  }\n]"
+                },
+                {
+                    "name": "WithEPLogo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tiles: testTilesEP\n  },\n}"
                 }
             ],
             "projects/fm-library/src/lib/toggle/toggle/toggle.stories.ts": [
@@ -8223,6 +8485,28 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/fm-library/src/lib/buttons/info-button/info-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    light: true,\n  },\n  parameters: {\n    backgrounds: {\n      default: 'dunkel',\n      values: [\n        { name: 'dunkel', value: '#203864' },\n      ],\n    },\n  },\n}"
+                }
+            ],
+            "projects/fm-library/src/lib/info/dialog/dialog.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n  },\n}"
+                },
+                {
+                    "name": "DefaultDark",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -8853,6 +9137,36 @@
                     ]
                 }
             ],
+            "projects/fm-library/src/lib/info/dialog/dialog.stories.ts": [
+                {
+                    "name": "HttpLoaderFactory",
+                    "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "httpBackend",
+                            "type": "HttpBackend",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "projects/fm-library/src/lib/info/tooltip/tooltip.stories.ts": [
                 {
                     "name": "HttpLoaderFactory",
@@ -9211,6 +9525,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<StateIconComponent>",
                     "file": "projects/fm-library/src/lib/icons/state-icon/state-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/fm-library/src/lib/info/dialog/dialog.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DialogComponent>",
+                    "file": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -9884,6 +10211,45 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Warning",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/info/dialog/dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "HttpLoaderFactory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/info/dialog/dialog.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DefaultDark",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -10637,6 +11003,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "testTilesEP",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/fm-library/src/lib/tiles/tile-group/tile-group.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithEPLogo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/fm-library/src/lib/tiles/tile-rating/tile-rating.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -10681,7 +11067,7 @@
                 "linktype": "component",
                 "name": "TileComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/19",
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
@@ -10847,7 +11233,7 @@
                 "linktype": "component",
                 "name": "ToggleVerticalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {

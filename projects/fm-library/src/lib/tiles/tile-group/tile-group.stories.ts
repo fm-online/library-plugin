@@ -6,6 +6,7 @@ import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { TileComponent } from '../tile/tile.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
+import { HeaderTextComponent } from '../../text/header-text/header-text.component';
 
 function HttpLoaderFactory(httpBackend: HttpBackend) {
   return new MultiTranslateHttpLoader(httpBackend, [
@@ -20,6 +21,8 @@ export default {
     moduleMetadata({
       declarations: [
         TileComponent,
+        HeaderTextComponent
+
       ],
       imports: [
         AngularSvgIconModule.forRoot(),
@@ -95,6 +98,26 @@ const testTilesDark = [
   }
 ]
 
+const testTilesEP = [
+  {
+    'label': 'label1',
+    'name': 'name',
+    'state': 'success',
+    'checked': false,
+    'image': 'assets/images/houseCheckmark.svg',
+    'value': 'value1'
+  },
+  {
+    'label': 'label2',
+    'name': 'name',
+    'state': 'warning',
+    'checked': false,
+    'isEP': true,
+    'image': 'assets/images/houseFlag.svg',
+    'value': 'value2'
+  }
+]
+
 export const Default: Story = {
   args: {
     tiles: testTiles
@@ -112,5 +135,11 @@ export const Dark: Story = {
         { name: 'dunkel', value: '#203864' },
       ],
     },
+  },
+};
+
+export const WithEPLogo: Story = {
+  args: {
+    tiles: testTilesEP
   },
 };
