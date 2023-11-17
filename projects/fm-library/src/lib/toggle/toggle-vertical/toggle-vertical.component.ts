@@ -17,6 +17,7 @@ export class ToggleVerticalComponent {
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
     if(changes['localValue']) {
       this.localValue = changes['localValue'].currentValue;
     }

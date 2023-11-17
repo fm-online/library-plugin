@@ -200,6 +200,12 @@
                 margin-top: 3px;
                 margin-left: 10px;
             }
+
+            &.mobile {
+                width: auto;
+                position: relative;
+                margin: 0 15px;
+            }
         }
     }
 

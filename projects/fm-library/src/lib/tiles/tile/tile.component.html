@@ -33,7 +33,7 @@
         >{{label | translate}}</div>
         <div *ngIf="isEP"
              class="da-tile-label-EP"
-             [ngClass]="{'checked' : checked}"
+             [ngClass]="{'checked' : checked, 'mobile' : screen.isSmallest()}"
         >
              <lib-header-text
                 label="powered by AI technology from"
