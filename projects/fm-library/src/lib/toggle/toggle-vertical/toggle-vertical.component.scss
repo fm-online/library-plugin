@@ -43,6 +43,7 @@
             opacity: 0;
             width: 0;
             height: 0;
+            position: absolute;
 
             &:checked + .da-switch-slider {
                 background-color: $success-color;
@@ -85,7 +86,6 @@
         .da-switch-slider {
             position: relative;
             cursor: pointer;
-            margin-top: -7px;
             bottom: 0;
             height: 42px;
             width: 100%;

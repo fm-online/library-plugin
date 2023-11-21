@@ -35,6 +35,14 @@
             min-height: auto;
             padding-bottom: 0;
 
+            &.double {
+                width: calc(48vw - 25px); 
+            }
+
+            &.twin {
+                min-height: 215px;
+            }
+
         }
 
         &.dark {
@@ -110,6 +118,11 @@
                 min-width: 244px;
                 font-size: 45px;
                 height: 45px;
+
+                &.double {
+                    min-width: auto;
+                    margin-bottom: 15px;
+                }
             }
 
             &.checked {
@@ -205,6 +218,13 @@
                 width: auto;
                 position: relative;
                 margin: 0 15px;
+
+                &.double {
+                    svg {
+                        margin-left: 0;
+                        width: 100px;
+                    }
+                }
             }
         }
     }

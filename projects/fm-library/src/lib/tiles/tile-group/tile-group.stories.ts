@@ -104,6 +104,7 @@ const testTilesEP = [
     'name': 'name',
     'state': 'success',
     'checked': false,
+    'isDouble': true,
     'image': 'assets/images/houseCheckmark.svg',
     'value': 'value1'
   },
@@ -113,6 +114,7 @@ const testTilesEP = [
     'state': 'warning',
     'checked': false,
     'isEP': true,
+    'isDouble': true,
     'image': 'assets/images/houseFlag.svg',
     'value': 'value2'
   }

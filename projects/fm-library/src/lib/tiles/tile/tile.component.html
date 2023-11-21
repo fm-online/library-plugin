@@ -1,7 +1,7 @@
 <div class="da-tile-single">
     <label 
             class="da-tile" 
-            [ngClass]="{'expanded' : expanded, 'dark' : dark, 'mobile' : screen.isSmallest()}"
+            [ngClass]="{'expanded' : expanded, 'dark' : dark, 'mobile' : screen.isSmallest(), 'double' : isDouble, 'twin' : isTwin}"
         >
         <input 
             type="radio" 
@@ -18,7 +18,7 @@
         </div>
         <svg-icon *ngIf="image" 
             class="da-tile-image" 
-            [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked}"
+            [ngClass]="{'mobile' : screen.isSmallest(), 'checked' : checked, 'double' : isDouble}"
             [src]="image"
         >
         </svg-icon>
@@ -33,7 +33,7 @@
         >{{label | translate}}</div>
         <div *ngIf="isEP"
              class="da-tile-label-EP"
-             [ngClass]="{'checked' : checked, 'mobile' : screen.isSmallest()}"
+             [ngClass]="{'checked' : checked, 'mobile' : screen.isSmallest(), 'double' : isDouble }"
         >
              <lib-header-text
                 label="powered by AI technology from"

@@ -1,30 +1,30 @@
-:host {
-    --font: 'futura-pt', sans-serif; /* base font */
-    --h1-base-size: 44px; /* Hauptüberschriften (Start-Slide) */
-    --h2-base-size: 28px; /* Überschriften (Slide-Fragen) */
-    --h3-base-size: 28px; /* Text neben Icons */
-    --t1-base-size: 16px; /* alle Textinhalte im Body */
-    --t2-base-size: 16px; /* Buttons, Platzhaltertexte, Infobubbletexte */
-    --t3-base-size: 18px; /* Text in Eingabefeldern und in Auswahlboxen */
-    --t4-base-size: 14px; /* Labels */
-    --t5-base-size: 13px; /* Warnmitteilungen */
-    --h1-base-color: 32, 56, 100; /* Hauptüberschriften (Start-Slide) */
-    --h2-base-color: 32, 56, 100; /* Überschriften (Slide-Fragen */
-    --h3-base-color: 32, 56, 100; /* Text neben Icons */
-    --t1-base-color: 32, 56, 100; /* alle Textinhalte im Body */
-    --t2-base-color: 32, 56, 100; /* Buttons, Platzhaltertexte, Infobubbletexte */
-    --t3-base-color: 255,255,255; /* Text in Eingabefeldern und in Auswahlboxen */
-    --t4-base-color: 32, 56, 100; /* Labels */
-    --t5-base-color: 199, 199, 199; /* Warnmitteilungen */
-    --h1-secondary-color: 255,255,255; /* Hauptüberschriften (Start-Slide) */
-    --h2-secondary-color: 255,255,255; /* Überschriften (Slide-Fragen) */
-    --h3-secondary-color: 255,255,255; /* Text neben Icons */
-    --t1-secondary-color: 255,255,255; /* alle Textinhalte im Body */
-    --t2-secondary-color: 255,255,255; /* Buttons, Platzhaltertexte, Infobubbletexte */
-    --t3-secondary-color: 255,255,255; /* Text in Eingabefeldern und in Auswahlboxen */
-    --t4-secondary-color: 255,255,255; /* Labels */
-    --t5-secondary-color: 255,255,255; /* Warnmitteilungen */
-}
+// :host {
+    // --font: 'futura-pt', sans-serif; /* base font */
+    // --h1-base-size: 44px; /* Hauptüberschriften (Start-Slide) */
+    // --h2-base-size: 28px; /* Überschriften (Slide-Fragen) */
+    // --h3-base-size: 28px; /* Text neben Icons */
+    // --t1-base-size: 16px; /* alle Textinhalte im Body */
+    // --t2-base-size: 16px; /* Buttons, Platzhaltertexte, Infobubbletexte */
+    // --t3-base-size: 18px; /* Text in Eingabefeldern und in Auswahlboxen */
+    // --t4-base-size: 14px; /* Labels */
+    // --t5-base-size: 13px; /* Warnmitteilungen */
+    // --h1-base-color: 32, 56, 100; /* Hauptüberschriften (Start-Slide) */
+    // --h2-base-color: 32, 56, 100; /* Überschriften (Slide-Fragen */
+    // --h3-base-color: 32, 56, 100; /* Text neben Icons */
+    // --t1-base-color: 32, 56, 100; /* alle Textinhalte im Body */
+    // --t2-base-color: 32, 56, 100; /* Buttons, Platzhaltertexte, Infobubbletexte */
+    // --t3-base-color: 255,255,255; /* Text in Eingabefeldern und in Auswahlboxen */
+    // --t4-base-color: 32, 56, 100; /* Labels */
+    // --t5-base-color: 199, 199, 199; /* Warnmitteilungen */
+    // --h1-secondary-color: 255,255,255; /* Hauptüberschriften (Start-Slide) */
+    // --h2-secondary-color: 255,255,255; /* Überschriften (Slide-Fragen) */
+    // --h3-secondary-color: 255,255,255; /* Text neben Icons */
+    // --t1-secondary-color: 255,255,255; /* alle Textinhalte im Body */
+    // --t2-secondary-color: 255,255,255; /* Buttons, Platzhaltertexte, Infobubbletexte */
+    // --t3-secondary-color: 255,255,255; /* Text in Eingabefeldern und in Auswahlboxen */
+    // --t4-secondary-color: 255,255,255; /* Labels */
+    // --t5-secondary-color: 255,255,255; /* Warnmitteilungen */
+// }
 
 // font-family
 $font: var(--font);
