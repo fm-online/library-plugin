@@ -7,6 +7,18 @@
     flex-direction: column;
     align-items: center;
 
+    &:hover {
+
+        .da-progress-button-state-wrapper .da-progress-button-state .da-progress-button-state-circle {
+            width: 16px;
+            height: 16px;
+        }
+
+        .da-progress-button-state-label {
+            visibility: visible;
+        }
+    }
+
     button {
         border: none;
         min-height: 22px;
@@ -95,25 +107,6 @@
                 }
             }
         }
-        &:hover {
-            .da-progress-button-state-wrapper .da-progress-button-icon {
-                font-size: 24px;
-                width: 30px;
-            }
-
-            .da-progress-button-label {
-                font-size: 14px;
-            }
-
-            .da-progress-button-state-wrapper .da-progress-button-state .da-progress-button-state-circle {
-                width: 16px;
-                height: 16px;
-            }
-
-            +.da-progress-button-state-label {
-                visibility: visible;
-            }
-        }
     }
     .da-progress-button-state-label {
         visibility: hidden;
@@ -126,7 +119,7 @@
         padding: 3px 10px;
         text-align: center;
         position: absolute;
-        bottom: -25px;
+        bottom: -5px;
         transition: all 0.4s ease-in-out 0s, visibility 0s;
     }
 }

@@ -40,3 +40,11 @@ export const DefaultDark: Story = {
     },
   },
 };
+
+export const Small: Story = {
+  args: {
+    light: false,
+    small: true,
+    id: 'the-info',
+  },
+};

@@ -49,4 +49,25 @@
             left: -1px;
         }
     }
+
+    &.small {
+        min-width: 14px;
+        min-height: 14px;
+        max-width: 14px;
+        max-height: 14px;
+        border-radius: 14px;
+
+        .da-info-icon {
+            fill: $t1-base-color;
+            font-size: 14px;
+            border-radius: 14px;
+            background-color: transparent;
+            box-shadow: none;
+
+            &:hover {
+                font-size: 16px;
+            }
+        }
+
+    }
 }

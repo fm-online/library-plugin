@@ -12,6 +12,7 @@ export class HeaderTextComponent implements OnInit {
   @Input() thin: boolean = false;
   @Input() info: string = '';
   @Input() convertMobile: boolean = false;
+  @Input() infoSmall: boolean = false;
   @Input() size: string = '38px';
   mobileSize: string = '25px';
   mobileLineHeight: string = '34px';

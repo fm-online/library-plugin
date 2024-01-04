@@ -2,12 +2,18 @@
 
 import { moduleMetadata, Meta, StoryObj} from '@storybook/angular';
 import {ProgressButtonComponent} from './progress-button.component';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faUser, faBarsProgress, faSquareParking, faCircleExclamation, faCircleCheck} from '@fortawesome/free-solid-svg-icons';
-import { APP_INITIALIZER } from '@angular/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpBackend, HttpClientModule } from '@angular/common/http';
+import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
+
+function HttpLoaderFactory(httpBackend: HttpBackend) {
+  return new MultiTranslateHttpLoader(httpBackend, [
+    {prefix: "../assets/content/da-texts-", suffix: ".json"},
+  ]);
+}
+
 
 export default {
   title: 'buttons/ProgressButtonComponent',
@@ -17,8 +23,15 @@ export default {
       imports: [
         BrowserAnimationsModule, 
         HttpClientModule,
-        AngularSvgIconModule.forRoot()
-      ],
+        AngularSvgIconModule.forRoot(),
+        TranslateModule.forRoot({
+          defaultLanguage: 'de-DE',
+          loader: {
+              provide: TranslateLoader,
+              useFactory: HttpLoaderFactory,
+              deps: [HttpBackend]
+          },
+      })],
     }),
   ],
 } as Meta;

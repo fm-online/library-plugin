@@ -12,6 +12,7 @@ export class TileTextComponent implements OnInit {
   @Input() thin: boolean = false;
   @Input() info: string = '';
   @Input() convertMobile: boolean = false;
+  @Input() infoSmall: boolean = false;
   @Input() size: string = '16px';
   mobileSize: string = '14px';
 

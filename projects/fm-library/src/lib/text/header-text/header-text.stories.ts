@@ -69,4 +69,13 @@ export const WithInfoDark: Story = {
   },
 };
 
+export const WithInfoSmall: Story = {
+  args: {
+    label: 'die Headline',
+    light: false,
+    info: 'text-info',
+    infoSmall: true
+  },
+};
+
 
