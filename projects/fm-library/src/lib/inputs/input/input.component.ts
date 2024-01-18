@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 })
 export class InputComponent implements OnInit {
   typingTimer: any;
-  @Input() doneTypingInterval: number = 3000;
+  @Input() doneTypingInterval: number = 3000000;
   @Input() form: any;
   @Input() label: string = '';
   @Input() name: string = '';

@@ -9,6 +9,7 @@
 
     &.mobile {
         column-gap: 10px;
+        row-gap: 10px;
 
         &.custom {
             justify-content: flex-start;
@@ -19,6 +20,10 @@
             lib-button:nth-child(2) {
                 order: 3;
             }
+        }
+
+        &.no-wrap {
+            flex-wrap: nowrap;
         }
     }
 }

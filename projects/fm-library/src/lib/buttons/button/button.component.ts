@@ -8,6 +8,7 @@ import { HelperService } from '../../services/helper.service';
 })
 export class ButtonComponent {
   @Input() iconButton: boolean = false;
+  @Input() noHover: boolean = false;
   @Input() light: boolean = false;
   @Input() type!: string;
   @Input() value!: string;

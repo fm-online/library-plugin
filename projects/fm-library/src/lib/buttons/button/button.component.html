@@ -24,5 +24,5 @@
         >
         </svg-icon>
     </button>
-    <div *ngIf="icon" class="da-button-icon-label" [ngClass]="{'light' : light}">{{label | translate}}</div>
+    <div *ngIf="icon && !noHover" class="da-button-icon-label" [ngClass]="{'light' : light}">{{label | translate}}</div>
 </div>

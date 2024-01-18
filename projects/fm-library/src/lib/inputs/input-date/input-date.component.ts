@@ -15,6 +15,7 @@ export class InputDateComponent implements OnInit {
   @Input() minDate!: Date;
   @Input() value!: Date;
   @Input() touched: boolean = false;
+  @Input() inputDisabled: boolean = false;
   @Input() error: boolean = false;
   @Input() errorText: string = '';
   @Input() placeholder!: string;
