@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
   @Input() value: string = '';
   @Input() touched: boolean = false;
   @Input() type: string = 'text';
-  @Input() inputmode: string = '';
+  @Input() inputmode: string = 'decimal';
   @Input() validationType: string = 'currency';
   @Input() unit!: string;
   @Input() info: string = '';
