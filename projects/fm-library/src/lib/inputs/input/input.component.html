@@ -22,6 +22,7 @@
             [placeholder]="placeholder"
             [formControlName]="name"
             [value]="value"
+            [attr.inputmode]="inputmode"
             [disabled]="inputDisabled"
             (click)="removePlaceholder()"
             [ngClass]="{'light' : light,
@@ -70,6 +71,7 @@
         <input 
             autocomplete="off"
             [type]="type" 
+            [attr.inputmode]="inputmode"
             (keyup)="getValue($event)" 
             (change)="doneTyping($event)"
             [placeholder]="placeholder"
