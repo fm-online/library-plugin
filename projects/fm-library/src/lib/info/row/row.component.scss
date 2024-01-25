@@ -1,0 +1,62 @@
+@import "../../../styles.scss"; 
+
+.da-row-single {
+    font-family: $font;
+    background: $header-base-color;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 0 25px;
+
+    &.padding {
+        padding: 0 10px 0 25px;
+    }
+
+    .da-row-left {
+        display: flex;
+        align-items: center;
+        column-gap: 25px;
+    }
+    .da-row-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 25px;
+
+        .da-row-button-single {
+
+            button {
+                width: 30px;
+                height: 30px;
+                border: 1px solid $button-base-color;
+                fill: $button-base-color;
+                font-size: $t2-base-size;
+                font-family: $font;
+                border-radius: 25px 25px 25px 0;
+                background: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+    
+                &:hover,
+                &:active {
+                    border: 1px solid $button-base-color;
+                    background: $button-base-color;
+                    color: $t2-secondary-color;
+                    fill: $t2-secondary-color;
+                }
+    
+                &.disabled {
+                    opacity: 0.2;
+                }
+
+                .da-row-button-icon {
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+}

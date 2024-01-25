@@ -40,6 +40,9 @@ import { TooltipComponent } from './info/tooltip/tooltip.component';
 import { TextAreaComponent } from './inputs/text-area/text-area.component';
 import { HttpBackend } from '@angular/common/http';
 import { DialogComponent } from './info/dialog/dialog.component';
+import { RowComponent } from './info/row/row.component';
+import { CheckboxComponent } from './toggle/checkbox/checkbox.component';
+import { IconButtonComponent } from './buttons/icon-button/icon-button.component';
 
 export function HttpLoaderFactory(httpBackend: HttpBackend) {
   return new MultiTranslateHttpLoader(httpBackend, [
@@ -77,6 +80,9 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     ToggleHorizontalComponent,
     TextAreaComponent,
     DialogComponent,
+    RowComponent,
+    CheckboxComponent,
+    IconButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -126,7 +132,10 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     StateIconComponent,
     TooltipComponent,
     TextAreaComponent,
-    DialogComponent
+    DialogComponent,
+    RowComponent,
+    CheckboxComponent,
+    IconButtonComponent
   ]
 })
 export class FmLibraryModule { }

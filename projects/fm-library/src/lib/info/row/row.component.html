@@ -1,0 +1,35 @@
+<div class="da-row-single" [ngClass]="{'padding' : button}" >
+    <div class="da-row-left">
+        <lib-checkbox (checkboxValue)="checkboxValue.emit($event)"></lib-checkbox>
+        <lib-tile-text
+            [label]="label"
+            size="16px"
+            [convertMobile]="true"
+        ></lib-tile-text>
+    </div>
+    <div class="da-row-right">
+        <div class="da-row-icon-button" *ngFor="let item of icons">
+            <lib-icon-button
+                [type]="item.type"
+                [icon]="item.icon"
+                [buttonDisabled]="item.disabled"
+                (iconButtonValue)="buttonValue.emit($event)"
+                >
+            </lib-icon-button>
+        </div>
+        <div class="da-row-button-single" *ngIf="button">
+            <button 
+                (click)="buttonValue.emit('link')" 
+                [ngClass]="{'disabled' : buttonDisabled}" 
+                [disabled]="buttonDisabled"
+                #target
+            >
+                <svg-icon 
+                    class="da-row-button-icon" 
+                    src="assets/images/chevronRight.svg"
+                >
+                </svg-icon>
+            </button>
+        </div>
+    </div>
+</div>

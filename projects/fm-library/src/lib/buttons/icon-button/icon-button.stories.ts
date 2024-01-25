@@ -1,7 +1,7 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 
 import { moduleMetadata, Meta, StoryObj} from '@storybook/angular';
-import {HeaderButtonComponent} from './header-button.component';
+import {IconButtonComponent} from './icon-button.component';
 import { HttpBackend, HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -14,8 +14,8 @@ function HttpLoaderFactory(httpBackend: HttpBackend) {
 }
 
 export default {
-  title: 'buttons/HeaderButtonComponent',
-  component: HeaderButtonComponent,
+  title: 'buttons/IconButtonComponent',
+  component: IconButtonComponent,
   decorators: [
     moduleMetadata({
       imports: [
@@ -33,12 +33,13 @@ export default {
   ],
 } as Meta;
 
-type Story = StoryObj<HeaderButtonComponent>;
+type Story = StoryObj<IconButtonComponent>;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 export const Default: Story = {
   args: {
-    value: 'button label',
+    type: 'default button',
+    icon: 'assets/images/lock.svg'
   },
   parameters: {
     backgrounds: {
@@ -52,52 +53,9 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
-    value: 'disabled button',
-    disabled: true,
-  },
-  parameters: {
-    backgrounds: {
-      default: 'header',
-      values: [
-        { name: 'header', value: '#DDE7EE' },
-      ],
-    },
-  },
-};
-
-export const Inactive: Story = {
-  args: {
-    value: 'inactive button',
-    inactive: true,
-  },
-  parameters: {
-    backgrounds: {
-      default: 'header',
-      values: [
-        { name: 'header', value: '#DDE7EE' },
-      ],
-    },
-  },
-};
-
-export const Active: Story = {
-  args: {
-    value: 'active button',
-    active: true,
-  },
-  parameters: {
-    backgrounds: {
-      default: 'header',
-      values: [
-        { name: 'header', value: '#DDE7EE' },
-      ],
-    },
-  },
-};
-
-export const Icon: Story = {
-  args: {
-    icon: 'assets/images/user.svg',
+    type: 'disabled button',
+    buttonDisabled: true,
+    icon: 'assets/images/lock.svg'
   },
   parameters: {
     backgrounds: {

@@ -1,0 +1,15 @@
+<div class="da-icon-button-single">
+    <button 
+        (click)="setValue(type)" 
+        [disabled]="buttonDisabled"
+        [ngClass]="{'disabled' : buttonDisabled}" 
+        #target
+    >
+        <svg-icon 
+            class="da-icon-button-icon" 
+            [src]="icon"
+            [ngClass]="{'disabled' : buttonDisabled}" 
+        >
+        </svg-icon>
+    </button>
+</div>

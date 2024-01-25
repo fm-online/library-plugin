@@ -1,0 +1,12 @@
+<div class="da-checkbox-single">
+    <label  class="da-checkbox" [ngClass]="{'checked' : checked}">
+        <input 
+            type="checkbox" 
+            (change)="getValue($event)" 
+            [checked]="checked"
+            [name]="name"
+        >
+        <svg-icon class="da-checkbox-icon" *ngIf="!checked" src="assets/images/xmark.svg"></svg-icon>
+        <svg-icon class="da-checkbox-icon" *ngIf="checked" src="assets/images/check.svg"></svg-icon>
+    </label>
+</div>

@@ -31,9 +31,9 @@
             }
     
             &:checked + .da-switch-slider {
-                -webkit-transform: translateX(-25px);
-                -ms-transform: translateX(-25px);
-                transform: translateX(-25px);
+                -webkit-transform: translateX(16px);
+                -ms-transform: translateX(16px);
+                transform: translateX(16px);
             }
 
             &:checked + .da-switch-slider >  .da-switch-icon{
@@ -50,7 +50,6 @@
             right: 0;
             bottom: 0;
             color: #fff;
-            left: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -64,7 +63,7 @@
             .da-switch-icon {
                 fill: #fff;
                 color: #fff;
-                margin-top: 6px;
+                margin-top: 5px;
                 -webkit-transition: 0.4s;
                 transition: 0.4s;
             }
